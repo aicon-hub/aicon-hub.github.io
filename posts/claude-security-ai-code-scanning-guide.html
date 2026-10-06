@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Security: AI code scanning for Enterprise teams | AiCoN</title>
+<meta name="description" content="What Claude Security does: scans code, checks findings and suggests patches. See who can use it, the Claude Code plugin beta, and why humans must review fixes.">
+<link rel="canonical" href="https://aicon-hub.github.io/posts/claude-security-ai-code-scanning-guide.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AiCoN">
+<meta property="og:title" content="Claude Security: AI code scanning for Enterprise teams">
+<meta property="og:description" content="Anthropic&#x27;s Claude Security scans a GitHub repo for vulnerabilities and suggests patches. It is Enterprise-only in public beta.">
+<meta property="og:url" content="https://aicon-hub.github.io/posts/claude-security-ai-code-scanning-guide.html">
+<meta property="og:image" content="https://aicon-hub.github.io/assets/og/claude-security-ai-code-scanning-guide.svg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-06">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Security: AI code scanning for Enterprise teams">
+<meta name="twitter:description" content="Anthropic&#x27;s Claude Security scans a GitHub repo for vulnerabilities and suggests patches. It is Enterprise-only in public beta.">
+<meta name="twitter:image" content="https://aicon-hub.github.io/assets/og/claude-security-ai-code-scanning-guide.svg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Security: AI code scanning for Enterprise teams", "description": "What Claude Security does: scans code, checks findings and suggests patches. See who can use it, the Claude Code plugin beta, and why humans must review fixes.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/claude-security-ai-code-scanning-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/claude-security-ai-code-scanning-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/article.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Claude Security: AI code scanning for Enterprise teams</p>
+<article class="post">
+<span class="chip">AI SECURITY</span>
+<h1>Claude Security: AI code scanning for Enterprise teams</h1>
+<p class="meta">By AiCoN | 6 October 2026 | 6 min read</p>
+<p class="lead">Claude Security is a tool from Anthropic that scans a code repository for security flaws and suggests fixes. It is in public beta for Claude Enterprise, so it is mainly for companies and security teams. A separate plugin for Claude Code is in beta for all Claude Code users.</p>
+<img class="cover" src="../assets/og/claude-security-ai-code-scanning-guide.svg" width="1200" height="630" alt="AiCoN cover: Claude Security code scanning">
+<h2>What is Claude Security?</h2>
+<p>Claude Security reads a codebase, looks for security problems and proposes patches. Anthropic says it traces data across files and looks for complex, multi-part flaws that rule-based scanners may miss. The official page names the model as Claude Mythos 5.1.</p>
+<p>It is built for teams that write software and need to find security bugs before attackers do. If you are a student or a hobby developer, you will probably not see the full app, because it is offered to Claude Enterprise customers.</p>
+<h2>How it works, according to Anthropic</h2>
+<ol>
+<li><b>Scan.</b> You connect a GitHub repository and Claude scans it. You can limit a scan to one directory and set up scheduled scans.</li>
+<li><b>Validate.</b> Anthropic says every finding goes through a verification pass in which Claude challenges its own result before showing it. Findings come back with confidence ratings.</li>
+<li><b>Review and patch.</b> Each finding comes with a suggested patch. Anthropic says teams stay in control, and every patch needs human review and approval.</li>
+<li><b>Hand off.</b> Findings can go to Slack, Jira or other ticketing tools through webhooks, or be exported as CSV or Markdown. You can open a finding in Claude Code on the web to fix it.</li>
+</ol>
+<h2>What kind of bugs does it look for?</h2>
+<p>The page says it focuses on high-severity issues: memory corruption, injection flaws, authentication bypasses and complex logic errors. It does not claim to find every kind of bug.</p>
+<h2>Who can use it?</h2>
+<table class="facts"><tr><th>Full Claude Security app</th><td>Public beta for Claude Enterprise. Admins enable it in the admin console. Scans on Claude Mythos 5.1 run only in the Claude Security app on Claude.ai.</td></tr><tr><th>Claude Code plugin</th><td>In beta for all Claude Code users. It scans, validates and patches inside Claude Code, and keeps code in your environment. It uses the models available in your Claude Code account, not Mythos.</td></tr><tr><th>Price</th><td>Not listed on the official page. Ask Anthropic or your account team. We give no rupee figure because none is published.</td></tr></table>
+<h2>If you are an individual developer</h2>
+<p>You can try the Claude Security plugin if you already use Claude Code. Check your own plan's limits first. Start with a small, non-sensitive project. Remember that the plugin does not give you the Mythos scans the app uses.</p>
+<h2>Why this matters in India and Kerala</h2>
+<p>Many small software firms, startups and IT service teams in Kerala ship code with few security staff. Tools like this aim to speed up the first review. They do not replace secure design, code review by your own engineers or a proper penetration test. The tool needs access to your repository, so read your company's data policy before you connect client code.</p>
+<h2>Risks and caveats</h2>
+<div class="box warn"><b>Review every patch</b>Anthropic says Claude can make mistakes. Review proposed patches before you apply them, especially for critical systems. A suggested fix can break other code or miss the root cause.</div>
+<ul><li>"Fewer false positives" and "finds what scanners miss" are Anthropic's claims. We did not run independent tests.</li><li>The product is in public beta, so features and limits may change.</li><li>A clean scan does not prove code is secure.</li></ul>
+<div class="box good"><b>AiCoN check</b>We read the official Claude Security page, including its FAQ. We did not test the app because it needs a Claude Enterprise account, and no price or free tier is published.</div>
+<h2>What changed since the short post?</h2><p>The current page describes Enterprise scans on Mythos 5.1 and a separate Claude Code plugin. These have different access and models. Suggested fixes still need human review.</p>
+<h2>Frequently asked questions</h2>
+<h3>Is Claude Security free?</h3><p>No free plan is listed. The full app is for Claude Enterprise customers.</p>
+<h3>Does it fix code by itself?</h3><p>No. It suggests patches, and Anthropic says each one needs human review and approval.</p>
+<h3>Does it work with Slack and Jira?</h3><p>Yes, per Anthropic, through webhooks. You can also export results as CSV or Markdown.</p>
+<h3>Can I scan only part of a repository?</h3><p>Yes. The page says you can scope a scan to a directory and schedule recurring scans.</p>
+
+<p class="src">Sources: <a href="https://claude.com/product/claude-security">Claude Security (Anthropic)</a>. Checked 6 October 2026.</p>
+<div class="share"><a href="https://claude.com/product/claude-security">Open the official page</a><a class="alt" href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">Follow AiCoN on WhatsApp</a><a class="alt" href="index.html">More posts</a></div>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br>Every tool and link verified before sharing.<br><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a></div></footer>
+</body></html>
