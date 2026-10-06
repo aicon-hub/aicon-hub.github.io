@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sarvam Saaras V4: speech to text for Indian languages | AiCoN</title>
+<meta name="description" content="Sarvam&#x27;s Saaras speech-to-text API covers 22 Indian languages plus English. See the modes, v3 vs v4, the Rs 30 per hour price and who it is for.">
+<link rel="canonical" href="https://aicon-hub.github.io/posts/sarvam-saaras-v4-speech-to-text-guide.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AiCoN">
+<meta property="og:title" content="Sarvam Saaras V4: speech to text for Indian languages">
+<meta property="og:description" content="Sarvam Saaras V4 transcribes 22 Indian languages and English via API at Rs 30 an hour. What it is, modes, price and caveats.">
+<meta property="og:url" content="https://aicon-hub.github.io/posts/sarvam-saaras-v4-speech-to-text-guide.html">
+<meta property="og:image" content="https://aicon-hub.github.io/assets/og/sarvam-saaras-v4-speech-to-text-guide.svg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-06">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sarvam Saaras V4: speech to text for Indian languages">
+<meta name="twitter:description" content="Sarvam Saaras V4 transcribes 22 Indian languages and English via API at Rs 30 an hour. What it is, modes, price and caveats.">
+<meta name="twitter:image" content="https://aicon-hub.github.io/assets/og/sarvam-saaras-v4-speech-to-text-guide.svg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Sarvam Saaras V4: speech to text for Indian languages", "description": "Sarvam's Saaras speech-to-text API covers 22 Indian languages plus English. See the modes, v3 vs v4, the Rs 30 per hour price and who it is for.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/sarvam-saaras-v4-speech-to-text-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/sarvam-saaras-v4-speech-to-text-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/article.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Sarvam Saaras V4: speech to text for Indian languages</p>
+<article class="post">
+<span class="chip">INDIAN AI</span>
+<h1>Sarvam Saaras V4: speech to text for Indian languages</h1>
+<p class="meta">By AiCoN | 6 October 2026 | 6 min read</p>
+<p class="lead">Saaras is Sarvam's speech-to-text model family for Indian languages, available through a paid developer API. Version 4 is the latest model. It is for people building apps, not a ready-made app for general use.</p>
+<img class="cover" src="../assets/og/sarvam-saaras-v4-speech-to-text-guide.svg" width="1200" height="630" alt="AiCoN cover: Sarvam Saaras V4: speech to text for Indian languages">
+<h2>What is Saaras?</h2>
+<p>Sarvam is an Indian AI company. Its docs describe Saaras as a speech recognition family that supports 23 languages: 22 Indian languages plus English. The speech-to-text page lists Malayalam (ml-IN) among them. It can detect the language automatically and handles code-mixed speech, where people switch between languages.</p>
+<h2>Five output modes</h2>
+<ul><li><b>Transcribe:</b> standard transcription.</li><li><b>Translate:</b> speech converted to English text.</li><li><b>Verbatim:</b> exactly what was said.</li><li><b>Translit:</b> the transcript written in another script.</li><li><b>Codemix:</b> mixed-language output.</li></ul>
+<h2>Saaras v3 or v4?</h2>
+<p>The docs say Saaras v4 is the latest model and adds Global English support, as well as Indian English, with the same 22 Indian languages. They also say Saaras v3 remains the default and recommended model. Both have the same request shape, so developers can change the model name to compare them.</p>
+<h2>Price in rupees</h2>
+<table class="facts"><tr><th>Speech to text</th><td>Rs 30 per hour of audio, billed per second.</td></tr><tr><th>With speaker identification</th><td>Rs 45 per hour.</td></tr><tr><th>With translation</th><td>Rs 30 per hour, per the pricing page.</td></tr><tr><th>Free credits</th><td>Sarvam confirms free signup credits, but the checked page gives no amount. Check your dashboard. Paid top-ups are non-refundable; unused credits currently do not expire.</td></tr></table>
+<p>Prices are in Indian rupees on Sarvam's own pricing page, so no conversion is needed.</p>
+<h2>How a developer can try it, step by step</h2>
+<ol><li>Create an account on the Sarvam dashboard and get an API key.</li><li>Read the Saaras page in the docs and choose REST for short clips, batch for recordings or streaming for live audio.</li><li>Send a short audio file with model set to saaras:v3 and then saaras:v4.</li><li>Try the same file in transcribe and codemix modes and compare the text.</li><li>Check accuracy on your own audio, such as a phone call in Malayalam with English words, before you plan a project.</li><li>Estimate monthly cost from your hours of audio at Rs 30 per hour.</li></ol>
+<div class="box warn"><b>Accuracy is the company's claim</b>Sarvam says it leads on Indian-language accuracy in its own benchmarks. We did not run independent tests. Noise, accents and dialects will change your results.</div>
+<div class="box good"><b>AiCoN check</b>We read Sarvam's pricing and Saaras documentation. We did not run the API. The original post said Saaras V4 was announced on 24 August with wider coverage in late September. We did not independently confirm those dates.</div>
+<h2>What changed since the short post?</h2><p>The current docs list v4 as latest but still recommend v3 by default. Official pricing confirms free signup credits, without an amount on the checked page. Benchmark claims are vendor claims.</p><h2>Frequently asked questions</h2><h3>Is there a free app?</h3><p>No. This is a developer API with pay-as-you-go pricing.</p><h3>Does it support Malayalam?</h3><p>Yes, the speech-to-text page lists Malayalam.</p><h3>Which version should I use?</h3><p>Docs recommend v3 as default. Try v4 if you need Global English.</p>
+<p class="src">Sources: <a href="https://docs.sarvam.ai/api/getting-started/models/saaras">Sarvam Saaras documentation</a>, <a href="https://www.sarvam.ai/api-pricing">Sarvam API pricing</a>, <a href="https://www.sarvam.ai/apis/speech-to-text">Sarvam speech to text</a>. Checked 6 October 2026.</p>
+<div class="share"><a href="https://www.sarvam.ai/apis/speech-to-text">Open Sarvam speech to text</a><a class="alt" href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">Follow AiCoN on WhatsApp</a><a class="alt" href="index.html">More posts</a></div>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br>Every tool and link verified before sharing.<br><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a></div></footer>
+</body></html>
