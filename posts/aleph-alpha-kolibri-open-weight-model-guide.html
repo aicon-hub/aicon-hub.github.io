@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aleph Alpha Kolibri: open English-German AI model | AiCoN</title>
+<meta name="description" content="Kolibri is Aleph Alpha&#x27;s open-weight AI model under Apache 2.0. See its size, languages, hardware needs and why it is for developers, not a chat app.">
+<link rel="canonical" href="https://aicon-hub.github.io/posts/aleph-alpha-kolibri-open-weight-model-guide.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AiCoN">
+<meta property="og:title" content="Aleph Alpha Kolibri: open English-German AI model">
+<meta property="og:description" content="Aleph Alpha released Kolibri, a 78B open-weight model for English and German. What it is, what it needs and who it is for.">
+<meta property="og:url" content="https://aicon-hub.github.io/posts/aleph-alpha-kolibri-open-weight-model-guide.html">
+<meta property="og:image" content="https://aicon-hub.github.io/assets/og/aleph-alpha-kolibri-open-weight-model-guide.svg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-06">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aleph Alpha Kolibri: open English-German AI model">
+<meta name="twitter:description" content="Aleph Alpha released Kolibri, a 78B open-weight model for English and German. What it is, what it needs and who it is for.">
+<meta name="twitter:image" content="https://aicon-hub.github.io/assets/og/aleph-alpha-kolibri-open-weight-model-guide.svg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Aleph Alpha Kolibri: open English-German AI model", "description": "Kolibri is Aleph Alpha's open-weight AI model under Apache 2.0. See its size, languages, hardware needs and why it is for developers, not a chat app.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/aleph-alpha-kolibri-open-weight-model-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/aleph-alpha-kolibri-open-weight-model-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/article.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Aleph Alpha Kolibri: open English-German AI model</p>
+<article class="post">
+<span class="chip">OPEN AI MODELS</span>
+<h1>Aleph Alpha Kolibri: open English-German AI model</h1>
+<p class="meta">By AiCoN | 6 October 2026 | 6 min read</p>
+<p class="lead">Kolibri is a new language model from Germany's Aleph Alpha. Its full weights are public under the Apache 2.0 licence. It handles English and German only and needs serious GPU hardware, so it is for developers and organisations, not everyday chat.</p>
+<img class="cover" src="../assets/og/aleph-alpha-kolibri-open-weight-model-guide.svg" width="1200" height="630" alt="AiCoN cover: Aleph Alpha Kolibri open-weight AI model">
+<h2>What is Kolibri?</h2>
+<p>Kolibri is a large language model from Aleph Alpha, a company based in Heidelberg, Germany. Aleph Alpha says it was available from 3 October 2026 and describes it as a specialised model for public administration and industry. It uses a mixture-of-experts design: about 78 billion parameters in total, with around 3.46 billion active for each token it processes. That design is meant to keep running costs lower than a dense model of the same total size.</p>
+<h2>Key facts</h2>
+<table class="facts"><tr><th>Licence</th><td>Apache 2.0. Weights are published on Hugging Face.</td></tr><tr><th>Languages</th><td>English and German. Indian languages, including Malayalam, are not listed.</td></tr><tr><th>Context length</th><td>Up to 1,048,576 tokens (1 million). The model card recommends 262,144 tokens for efficient running.</td></tr><tr><th>Hardware</th><td>About 78 GB of memory for FP8 weights. Minimum listed: 2x A100 80 GB, 2x H100 SXM5, 1x H200, 1x B200 or 1x B300.</td></tr><tr><th>Knowledge cutoff</th><td>18 June 2026 for English and German, per the model page.</td></tr><tr><th>Cost</th><td>The weights are free to download. The GPUs to run them are not. We give no rupee figure because no price is published, and your cloud or hardware cost will vary.</td></tr></table>
+<h2>What is it good at, according to Aleph Alpha?</h2>
+<p>The company lists multi-step reasoning, retrieval-augmented generation (answering from documents you supply), agent-style tool calling and an English-German assistant. It says the model is trained to say so when supplied documents do not contain enough evidence. It also has a reasoning control that lets you trade answer depth for speed.</p>
+<p>Aleph Alpha says Kolibri matches models with several times its active size on some math, coding and long-context tests. These are the company's own benchmark tables. Even there, the results are mixed. On one agent test (Tau2-Bench Telecom), the page shows Qwen3.6 35B-A3B scoring higher than Kolibri. Treat the numbers as a starting point and test on your own data.</p>
+<h2>Who is it for?</h2>
+<p>Kolibri suits teams that want a model they can run on their own servers, for example for sensitive documents, and that work in English or German. It is not a chat app. There is no sign-up page that gives ordinary readers a free chatbot.</p>
+<p>For most readers in Kerala, the practical meaning is smaller. It shows the growing choice of open models that organisations can host themselves. If you need Malayalam, Hindi or Tamil support, look at models that list those languages, such as the tools in our <a href="bhashini-indian-language-translation-guide.html">BHASHINI guide</a>.</p>
+<h2>How a developer can try it, step by step</h2>
+<ol>
+<li>Open the Kolibri page on aleph-alpha.com and read the model summary and hardware section.</li>
+<li>Open the model files on Hugging Face (Aleph-Alpha/Kolibri-1). Read the model card and the licence text.</li>
+<li>Check your hardware against the minimum list. If you do not own suitable GPUs, price a cloud GPU rental first.</li>
+<li>Download the weights and follow the setup instructions in the model card. Do not run unknown scripts from third-party pages.</li>
+<li>Test it on a small set of your own English or German tasks. Measure answer quality, speed and cost before you plan anything bigger.</li>
+</ol>
+<h2>Risks and caveats</h2>
+<div class="box warn"><b>Vendor claims</b>The speed, size and benchmark claims come from Aleph Alpha's own pages and technical report. We did not run independent tests. Open weights also do not mean open training data. Check the licence and model card for what the Apache 2.0 grant covers.</div>
+<ul><li>Not a chat app for everyday users.</li><li>English and German only, per the listed languages.</li><li>Downloading only from the official Hugging Face page avoids fake copies.</li></ul>
+<div class="box good"><b>AiCoN check</b>We read the Kolibri page, the Aleph Alpha press release and blog post, and the Hugging Face licence page via search. We did not download or run the model. Hardware figures come from the Kolibri page.</div>
+<h2>What changed since the short post?</h2><p>The current model card confirms the 3 October release, English and German languages, and Apache 2.0 weights. Public weights do not make the required GPU hardware free.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can I chat with Kolibri online for free?</h3><p>We did not find a public chat app on the pages checked. The model is released as downloadable weights.</p>
+<h3>Can I use it commercially?</h3><p>Aleph Alpha releases it under Apache 2.0. Read the licence and model card for exact terms before you use it in a product.</p>
+<h3>Does it support Malayalam?</h3><p>No. The model page lists German and English.</p>
+<h3>Why does it say 78B and 3B?</h3><p>78B is the total number of parameters. Only about 3B of them are used for each token because of the mixture-of-experts design.</p>
+
+<p class="src">Sources: <a href="https://aleph-alpha.com/kolibri">Aleph Alpha: Kolibri</a>, <a href="https://aleph-alpha.com/en/news/kolibri-sovereign-ai-made-in-germany/">Aleph Alpha press release, 5 October 2026</a>, <a href="https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/">Aleph Alpha blog: Kolibri has landed</a>, <a href="https://huggingface.co/Aleph-Alpha/Kolibri-1">Hugging Face model files</a>. Checked 6 October 2026.</p>
+<div class="share"><a href="https://aleph-alpha.com/kolibri">Open the Kolibri page</a><a class="alt" href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">Follow AiCoN on WhatsApp</a><a class="alt" href="index.html">More posts</a></div>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br>Every tool and link verified before sharing.<br><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a></div></footer>
+</body></html>
