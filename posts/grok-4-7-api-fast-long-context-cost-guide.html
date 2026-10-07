@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Grok 4.7: API costs, Fast limits and long-context pricing | AiCoN</title>
+<meta content="Grok 4.7 standard and long-context API rates, cache pricing, Fast only in Cursor/GrokBuild, threshold wording and vendor benchmark caveats." name="description"/>
+<link href="https://aicon-hub.github.io/posts/grok-4-7-api-fast-long-context-cost-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Grok 4.7: API costs, Fast limits and long-context pricing" property="og:title"/>
+<meta content="Grok 4.7 standard and long-context API rates, cache pricing, Fast only in Cursor/GrokBuild, threshold wording and vendor benchmark caveats." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/grok-4-7-api-fast-long-context-cost-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/grok-4-7-api-fast-long-context-cost-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-08" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/grok-4-7-api-fast-long-context-cost-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Grok 4.7: API costs, Fast limits and long-context pricing", "description": "Grok 4.7 standard and long-context API rates, cache pricing, Fast only in Cursor/GrokBuild, threshold wording and vendor benchmark caveats.", "datePublished": "2026-10-08", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/grok-4-7-api-fast-long-context-cost-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/grok-4-7-api-fast-long-context-cost-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-08"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/style.css?v=20261007audit1" rel="stylesheet"/><link href="../assets/article.css?v=20261007audit1" rel="stylesheet"/><meta content="TITLE" name="twitter:title"/><meta content="Grok 4.7 standard and long-context API rates, cache pricing, Fast only in Cursor/GrokBuild, threshold wording and vendor benchmark caveats." name="twitter:description"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261007audit1" rel="stylesheet"/><script src="../assets/theme.js?v=20261007audit1"></script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Grok 4.7: API costs, Fast limits and long-context pricing</p>
+<article class="post"><span class="chip">AI MODELS</span><h1>Grok 4.7: API costs, Fast limits and long-context pricing</h1><p class="meta">By AiCoN | Published 8 October 2026 | Sources checked 8 October 2026</p><p class="lead">Grok 4.7 is xAI's model for coding and knowledge work. Current docs list a 500,000-token context window and usage-based API rates. Fast is a separate serving option in Cursor and Grok Build, not a public xAI API model you can select.</p><img alt="AiCoN illustrative cover: Grok 4.7: API costs, Fast limits and long-context pricing" class="cover" height="630" src="../assets/og/grok-4-7-api-fast-long-context-cost-guide.svg" width="1200"/><div class="box warn"><b>Fast is not a public API option</b>Current docs say Grok 4.7 Fast is only in Cursor and Grok Build, billed through those plans. It is not included in Grok Build's free tier.</div>
+<h2>What is Grok 4.7?</h2><p>The vendor describes a model for coding, difficult knowledge work and tool use. Its model page lists text and image input, text output and the Responses API. Reasoning settings are low, medium, high by default, and xhigh.</p><p>The announcement's twice-as-fast and half-the-price comparison is xAI's own framing. It does not establish a universal advantage on every task or include tool costs, retries and human review. We did not run independent benchmarks or a billed request.</p>
+<h2>Standard and long-context rates</h2><table class="facts"><tr><th>Per million tokens</th><th>Short context</th><th>Long context</th></tr><tr><td>Input</td><td>$2</td><td>$4</td></tr><tr><td>Cached input</td><td>$0.50</td><td>$1</td></tr><tr><td>Output</td><td>$6</td><td>$12</td></tr></table><p>The pricing table labels long context at 200,000 tokens or more, while explanatory prose says when the prompt exceeds 200,000. At the exact boundary, confirm the billed behaviour rather than assuming the cheaper interpretation. Budget conservatively and keep the exact model identifier grok-4.7.</p><p>For base-rate short requests, one million uncached input tokens plus 100,000 output tokens totals $2.60 before tools, retries, taxes or other fees. That is not the cost of a single million-token prompt, which also exceeds the documented context window.</p>
+<h2>Fast mode rates</h2><p>Current pricing lists Fast below 200,000 prompt tokens at $4 input, $1 cached input and $12 output per million. Above that threshold it lists $6, $1.50 and $18. That is twice short-context Standard, but 1.5 times the listed long-context Standard rates.</p><p>Do not equate Fast with the public API's separate Priority Processing feature. They have different availability and billing mechanics. Read the actual route's terms and inspect the response and bill.</p>
+<h2>Other charges and region</h2><p>Tools and other endpoints can have separate charges. The pricing docs say the US regional endpoint adds 10% to token rates. That is a US processing option, not an India data-residency promise. Third-party routers and coding applications can charge through their own plans.</p><p>A consumer Grok subscription, Grok Build free tier and xAI API balance are different products. This guide does not establish a free chatbot allowance for Grok 4.7 or an Indian subscription checkout total.</p>
+<h2>A careful coding comparison</h2><ol><li>Choose the exact model, endpoint and mode.</li><li>Use a small permitted project and a clear test suite.</li><li>Leave external actions and deployment disabled during the first run.</li><li>Review code changes, tests and claims that files were edited.</li><li>Count billed tokens, cache use, tools and failed retries.</li><li>Set budget and approval controls before longer autonomous work.</li></ol><p>A model checking its own work can still miss errors. Long context is capacity, not proof that all details are understood or that private material is safe to upload.</p>
+<h2>India and privacy</h2><p>Check the chosen provider's current account eligibility, data terms and billing before using workplace code. Never include secrets in prompts. Router access does not automatically inherit the same contract or storage terms as a direct API.</p>
+<h2>Frequently asked questions</h2><h3>Can I call Fast in the public xAI API?</h3><p>Current docs say no.</p><h3>Is every request $2/$6?</h3><p>No. Long context, caching, region and tools change the bill.</p><h3>Were benchmark claims independently tested?</h3><p>No.</p>
+<h2>What changed since the earlier post?</h2><p>This guide adds cache and long-context rates, restricts Fast to its documented apps and notes the exact-boundary wording difference in official pricing.</p><p class="src">Sources: <a href="https://docs.x.ai/developers/grok-4-7">Exact model guide</a> · <a href="https://docs.x.ai/developers/pricing">Official pricing</a> · <a href="https://x.ai/news/grok-4-7">Vendor announcement</a>. Checked 8 October 2026.</p><div class="share"><a href="https://docs.x.ai/developers/grok-4-7">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+</body></html>
