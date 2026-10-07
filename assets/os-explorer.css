@@ -44,3 +44,5 @@
 #os-explorer .os-page-info{font-size:.9rem;color:var(--mute)}
 #os-explorer .os-empty{padding:18px;background:var(--card);border-radius:16px}
 @media(prefers-reduced-motion:reduce){#os-explorer .os-card{animation:none!important}}
+
+:root[data-theme=dark] #os-explorer .os-note,:root[data-theme=dark] #os-explorer .os-subtabs .os-tab[aria-selected="true"]{color:var(--black)}
