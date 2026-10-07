@@ -2,6 +2,11 @@
   var q=document.getElementById('q'),list=document.getElementById('postlist'),none=document.getElementById('nores');
   if(!q||!list)return;
   var items=[].slice.call(list.children),category=document.getElementById('category');
+  var form=q.closest('form'),status=document.getElementById('result-count');
+  if(form&&!form.querySelector('.search-field')){var qlabel=form.querySelector('label[for="q"]'),clabel=form.querySelector('label[for="category"]'),sf=document.createElement('div'),cf=document.createElement('div');sf.className='search-field';cf.className='category-field';if(qlabel)sf.appendChild(qlabel);sf.appendChild(q);if(clabel)cf.appendChild(clabel);if(category)cf.appendChild(category);form.appendChild(sf);form.appendChild(cf);var clear=document.createElement('button');clear.type='button';clear.textContent='Clear';clear.id='clear-search';clear.addEventListener('click',function(){q.value='';if(category)category.value='';history.replaceState(null,'',location.pathname);run();q.focus();});form.appendChild(clear);}
+  if(!status){status=document.createElement('p');status.id='result-count';status.className='search-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');list.insertAdjacentElement('beforebegin',status);}
+  if(!none){none=document.createElement('p');none.id='nores';list.insertAdjacentElement('afterend',none);}none.textContent='No guides match. Try another word or clear the filters.';
+
   function inCategory(li,key){
     if(!key)return true;
     var tag=li.querySelector('.tag'),t=tag?tag.textContent.toLowerCase():'',a=li.querySelector('a'),slug=a?a.getAttribute('href'):'';
@@ -23,7 +28,7 @@
       var ok=inCategory(li,category?category.value:'')&&words.every(function(w){return t.indexOf(w)>-1;});
       li.hidden=!ok;if(ok)shown++;
     });
-    if(none)none.hidden=shown>0;
+    if(none)none.hidden=shown>0;status.textContent=shown+' of '+items.length+' guides';
   }
   q.addEventListener('input',run);
   if(category){category.addEventListener('change',function(){var params=new URLSearchParams(location.search);if(category.value)params.set('category',category.value);else params.delete('category');history.replaceState(null,'',location.pathname+(params.toString()?'?'+params.toString():''));run();});var initial=new URLSearchParams(location.search).get('category');if(initial&&Array.from(category.options).some(function(o){return o.value===initial;}))category.value=initial;}
