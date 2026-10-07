@@ -17,6 +17,9 @@ on:
       photo_url:
         description: Optional public AiCoN PNG or JPEG poster URL
         required: false
+      photo_base64:
+        description: Optional JPEG or PNG as base64 instead of a URL
+        required: false
       article_url:
         description: Live AiCoN guide URL, required for publishing
         required: false
@@ -47,6 +50,20 @@ jobs:
               except Exception:raise RuntimeError('Transport outcome uncertain; reconcile before retry') from None
           
           def tg(method,data):
+              if method=='sendPhoto' and data.get('photo')=='upload':
+                  raw=base64.b64decode(json.load(open(os.environ['GITHUB_EVENT_PATH']))['inputs']['photo_base64'],validate=True)
+                  boundary='AiCoNMultipartBoundary'
+                  body=b''
+                  for k,v in data.items():
+                      if k=='photo':continue
+                      body+=('--'+boundary+'\r\nContent-Disposition: form-data; name="'+k+'"\r\n\r\n'+str(v)+'\r\n').encode()
+                  body+=('--'+boundary+'\r\nContent-Disposition: form-data; name="photo"; filename="poster.jpg"\r\nContent-Type: image/jpeg\r\n\r\n').encode()+raw+('\r\n--'+boundary+'--\r\n').encode()
+                  req=urllib.request.Request('https://api.telegram.org/bot'+os.environ['TELEGRAM_BOT_TOKEN']+'/'+method,data=body,headers={'Content-Type':'multipart/form-data; boundary='+boundary})
+                  try:
+                      with urllib.request.urlopen(req,timeout=40) as r: reply=json.load(r)
+                  except Exception:raise RuntimeError('Photo transport uncertain; inspect before retry') from None
+                  if not reply.get('ok'):raise RuntimeError('Telegram rejected poster')
+                  return reply['result']
               reply=request('https://api.telegram.org/bot'+os.environ['TELEGRAM_BOT_TOKEN']+'/'+method,data)
               if not reply.get('ok'):raise RuntimeError('Telegram rejected request')
               return reply['result']
@@ -62,7 +79,7 @@ jobs:
           
           def plan(text,photo):
               if not text or units(text)>4096:raise RuntimeError('Post text must fit 1-4096 UTF-16 units')
-              if photo and (not photo.startswith('https://aicon-hub.github.io/') or not photo.lower().endswith(('.png','.jpg','.jpeg'))):
+              if photo and photo!='upload' and (not photo.startswith('https://aicon-hub.github.io/') or not photo.lower().endswith(('.png','.jpg','.jpeg'))):
                   raise RuntimeError('Poster must be a public AiCoN PNG/JPEG URL')
               content=formatted(text)
               if photo and units(text)<=1024:return [('sendPhoto',{'photo':photo,'caption':content,'parse_mode':'HTML'})]
@@ -86,7 +103,7 @@ jobs:
                   print(json.dumps({'verified_channel_id':verify(),'posting_permission':True}));return
               post_id=data.get('post_id','').strip()
               if not post_id:raise RuntimeError('A stable post_id is required')
-              steps=plan(data.get('text',''),data.get('photo_url',''))
+              steps=plan(data.get('text',''),'upload' if data.get('photo_base64') else data.get('photo_url',''))
               # Article-first: require the published guide before any claim or send.
               article=data.get('article_url','')
               if not article.startswith('https://aicon-hub.github.io/posts/') or not article.endswith('.html'):raise RuntimeError('A live AiCoN article URL is required')
