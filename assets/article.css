@@ -28,3 +28,18 @@ form.search{display:flex;gap:10px;margin:0 0 16px}
 form.search input{flex:1;min-width:0;font:inherit;font-size:1.02rem;color:var(--black);background:var(--card);border:2px solid transparent;border-radius:20px;padding:14px 18px;outline:none}
 form.search input:focus{border-color:var(--green)}
 form.search button{font:inherit;font-weight:600;color:var(--black);background:var(--yellow);border:0;border-radius:20px;padding:0 22px;cursor:pointer}
+
+/* Reading pages: moving bubbles + smooth transitions (requested Oct 2026). Reduced-motion users are covered by the global rule in style.css. */
+body:not(.home-redesign)::before{animation:drift1 9s ease-in-out infinite;opacity:.16}
+body:not(.home-redesign)::after{animation:drift2 11s ease-in-out infinite;opacity:.14}
+[data-theme=dark] body:not(.home-redesign)::before,[data-theme=dark] body:not(.home-redesign)::after{opacity:.24}
+@keyframes article-zoom{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+article.post .cover{animation:article-zoom .8s cubic-bezier(.2,.7,.2,1) .08s both}
+article.post h1{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+article.post .lead{animation:rise .7s cubic-bezier(.2,.7,.2,1) .06s both}
+article.post a{transition:color .2s ease}
+article.post .box{transition:transform .2s ease,box-shadow .2s ease}
+article.post .box:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(73,71,62,.08)}
+.share a{transition:transform .15s ease,box-shadow .15s ease}
+.share a:hover{transform:translateY(-2px)}
+.facts tr{transition:transform .15s ease}
