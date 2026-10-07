@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Datris: self-hosted data pipelines for AI agents, with real costs | AiCoN</title>
+<meta content="Datris open-source data platform, Docker setup, MCP tools, AGPL licence, model and hosting costs, and security checks before use." name="description"/>
+<link href="https://aicon-hub.github.io/posts/datris-open-source-agent-data-platform-setup-cost-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Datris: self-hosted data pipelines for AI agents, with real costs" property="og:title"/>
+<meta content="Datris open-source data platform, Docker setup, MCP tools, AGPL licence, model and hosting costs, and security checks before use." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/datris-open-source-agent-data-platform-setup-cost-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/datris-open-source-agent-data-platform-setup-cost-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-07" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/datris-open-source-agent-data-platform-setup-cost-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Datris: self-hosted data pipelines for AI agents, with real costs", "description": "Datris open-source data platform, Docker setup, MCP tools, AGPL licence, model and hosting costs, and security checks before use.", "datePublished": "2026-10-07", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/datris-open-source-agent-data-platform-setup-cost-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/datris-open-source-agent-data-platform-setup-cost-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-07"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/style.css?v=20261007audit1" rel="stylesheet"/><link href="../assets/article.css?v=20261007audit1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261007audit1" rel="stylesheet"/><script src="../assets/theme.js?v=20261007audit1"></script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Datris: self-hosted data pipelines for AI agents, with real costs</p>
+<article class="post"><span class="chip">OPEN SOURCE</span><h1>Datris: self-hosted data pipelines for AI agents, with real costs</h1><p class="meta">By AiCoN | Published 7 October 2026 | Sources checked 7 October 2026</p><p class="lead">Datris is an open-source data platform that gives AI agents tools for ingesting, validating and working with data. The software is free to self-host under AGPL-3.0. Running it still needs infrastructure and may need paid model APIs. It is a technical platform, not a free hosted chatbot.</p><img alt="AiCoN illustrative cover: Datris: self-hosted data pipelines for AI agents, with real costs" class="cover" height="630" src="../assets/og/datris-open-source-agent-data-platform-setup-cost-guide.svg" width="1200"/><div class="box warn"><b>Try a local sample first</b>Do not connect production databases or expose the default local services to the internet for a first test. Review generated scripts and permission settings before allowing an agent to run them.</div>
+<h2>What is Datris?</h2><p>Datris calls itself an agent-native data platform. In plain words, it gives an AI client tools for managing data pipelines rather than only replying with text. The official repository describes ingestion, validation, transformation and delivery of data, with policies, audit logs, provenance and recovery features.</p><p>A pipeline is a defined path for moving and changing data. Provenance records where the data or operation came from. These can make work easier to inspect, but a logged operation can still be wrong if the data, policy or generated code is wrong.</p>
+<h2>What can it help with?</h2><p>The project describes Taps: generated Python scripts that fetch data from APIs, databases and other sources and push it into pipelines. It also describes scheduling, AI diagnosis and credentials handled through Vault. MCP tools let a compatible AI client work with the platform. A REST API is another connection path.</p><p>Its stack includes several services, such as PostgreSQL, MongoDB, Kafka, MinIO and Vault. This is more to run and maintain than a small script. The pricing page says the community build contains all features and governance controls, with no separate feature-gated enterprise edition. Treat that as the project's current product policy, not an independent reliability test.</p>
+<h2>Free access and costs in India</h2><table class="facts"><tr><th>Community software</th><td>$0 self-hosted under AGPL-3.0.</td></tr><tr><th>Infrastructure</th><td>Your computer or server, storage, backups and administration still cost resources.</td></tr><tr><th>AI services</th><td>Provider API use may be billed separately. The repository has Anthropic/OpenAI configuration options.</td></tr><tr><th>Commercial licence</th><td>Deployment-scoped proposal; no fixed public amount on the pricing page.</td></tr></table><p>There is no India-specific price or hosted free-plan guarantee in these pages. An Indian developer can inspect the public code, but that does not guarantee model-provider availability, billing access or a production support agreement.</p>
+<h2>How to start without rushing</h2><ol><li>Read the official repository's current Quick Start and licence. Use a local development machine with Docker and enough resources for its services.</li><li>Inspect downloaded installation scripts or compose files before running them. Prefer understanding what they start over pasting a shell command blindly.</li><li>Follow the repository's Docker route. The standalone instructions require Docker Compose 2.23 or later; source checkout instructions include an environment-file example.</li><li>Store model keys in the intended secret configuration. Do not commit them to Git or paste them into a public issue.</li><li>Check that the local interface and API are running. Use a small made-up CSV and verify each pipeline result against the input.</li><li>Only then consider a compatible MCP client. Inspect which tools it can call and the policies controlling changes.</li></ol><p>We did not install the stack, send data or test an AI client. Commands, ports and dependencies can change, so the linked repository is the source for exact setup.</p>
+<h2>Security and licence checks</h2><p>The README says the default local OSS setup uses USE_API_KEYS=false. That local convenience is not a safe public-server policy. Before shared or production use, enable appropriate authentication, restrict network access, review agent policies, keep backups and inspect audit records. Generated scripts can read, write or send data: review their code and destination first.</p><p>AGPL-3.0 has obligations for modified versions you distribute and, under its network clause, modified versions users interact with remotely. Datris offers commercial licences for other deployment arrangements. Read the licence and get legal advice for a business deployment; this guide is not a legal interpretation of your situation.</p>
+<h2>Frequently asked questions</h2><h3>Does free software mean free AI use?</h3><p>No. Model APIs, hardware and hosting are separate costs.</p><h3>Is it beginner friendly?</h3><p>The setup expects Docker, service configuration and data-security knowledge.</p><h3>Does self-hosting keep every operation local?</h3><p>Not automatically. External model providers, source APIs and generated scripts may create network traffic. Check configuration and code.</p>
+<h2>What changed since the earlier post?</h2><p>This guide uses the current public OSS repository, the $0 community pricing policy and the commercial licensing page. It separates code access from running costs and explains why local defaults are not production security. No installation or performance claim is made.</p><p class="src">Sources: <a href="https://github.com/datris/datris-platform-oss">Official open-source repository</a> · <a href="https://datris.ai/pricing/">Pricing and community policy</a> · <a href="https://datris.ai/licensing/">Licence guide</a>. Checked 7 October 2026.</p><div class="share"><a href="https://github.com/datris/datris-platform-oss">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+</body></html>
