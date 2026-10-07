@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Kong Portal MCP: OAuth, documentation and write-access limits | AiCoN</title>
+<meta content="Kong Portal MCP helps agents read published docs. Separate it from Konnect write tools, check OAuth permissions and verify plan/AI opt-in requirements." name="description"/>
+<link href="https://aicon-hub.github.io/posts/kong-portal-mcp-oauth-read-write-access-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Kong Portal MCP: OAuth, documentation and write-access limits" property="og:title"/>
+<meta content="Kong Portal MCP helps agents read published docs. Separate it from Konnect write tools, check OAuth permissions and verify plan/AI opt-in requirements." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/kong-portal-mcp-oauth-read-write-access-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/kong-portal-mcp-oauth-read-write-access-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-07" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/kong-portal-mcp-oauth-read-write-access-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Kong Portal MCP: OAuth, documentation and write-access limits", "description": "Kong Portal MCP helps agents read published docs. Separate it from Konnect write tools, check OAuth permissions and verify plan/AI opt-in requirements.", "datePublished": "2026-10-07", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/kong-portal-mcp-oauth-read-write-access-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/kong-portal-mcp-oauth-read-write-access-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-07"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261007audit1" rel="stylesheet"/><link href="../assets/article.css?v=20261007audit1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261007audit1" rel="stylesheet"/><script src="../assets/theme.js?v=20261007audit1"></script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Kong Portal MCP: OAuth, documentation and write-access limits</p>
+<article class="post"><span class="chip">DEVELOPER TOOLS</span><h1>Kong Portal MCP: OAuth, documentation and write-access limits</h1><p class="meta">By AiCoN | Published 7 October 2026 | Sources checked 7 October 2026</p><p class="lead">Kong's Portal MCP Server lets compatible agents discover and read Dev Portal pages and API specifications. Its announcement says existing access rules remain in force. The separate Konnect MCP Server can write portal content, so a documentation connection should not be confused with unrestricted publishing access.</p><img alt="AiCoN illustrative cover: Kong Portal MCP: OAuth, documentation and write-access limits" class="cover" height="630" src="../assets/og/kong-portal-mcp-oauth-read-write-access-guide.svg" width="1200"/><h2>What does Portal MCP replace?</h2><p>An agent otherwise may scrape HTML or guess where API information lives. The dedicated per-portal server gives it a structured route to published pages and specifications.</p><p>Structured access can reduce guessing, but the documentation can still be stale or wrong. Check the actual API version, permissions and response before building around an example.</p><h2>Anonymous and authenticated access</h2><p>The vendor says an anonymous agent sees what an anonymous developer can see. Authenticated agents are bound to the role permissions of the person they act for.</p><p>The post says drafts and restricted documentation remain hidden from unauthorised people. These are product rules, not an independent permission test performed here. Check with both an allowed account and a disallowed account before publishing private docs.</p><h2>OAuth with PKCE</h2><p>The announcement describes OAuth 2.0 Authorization Code flow with PKCE. The developer logs in and consents, while portal administrators control trusted clients and allowed dynamic-registration redirect URLs.</p><p>Consent connects an account. It does not mean every future disclosure or write is appropriate. Inspect the client, scope, redirect destination and the actual task before authorising access.</p><h2>Markdown is another route</h2><p>Kong says portal pages can be fetched as Markdown through an Accept: text/markdown header or a .md suffix. This is a readable version of the same content.</p><p>Markdown does not create new permissions or make external text safe to execute. Treat instructions in documentation as reference material, not authority to run unrelated commands or disclose credentials.</p><h2>Read tools versus write tools</h2><p>The Portal MCP Server focuses on discovery and reading. The separate Konnect MCP Server announcement describes creating, editing and publishing portal pages, snippets and Markdown Components.</p><p>Those writes are governed by PAT/SPAT permissions. A personal or system token with broad access can change public content. Keep credentials out of prompts, use narrow permissions and review the exact destination and text before publishing.</p><h2>Opt-in and plan questions</h2><p>The post says that after opting into AI features, enabling the server is a single toggle per portal. A simple toggle is not proof that every account or plan includes the feature.</p><p>No actual Konnect plan, final INR price or free allowance was verified. Check current subscription and administrator settings before promising that your team can enable it.</p><h2>A careful setup test</h2><ol><li>Identify the exact portal and owner.</li><li>Check current AI-feature availability and policy.</li><li>Choose a read-only documentation task first.</li><li>Review the OAuth client and requested permissions.</li><li>Use a harmless public page to test discovery.</li><li>Check a private page with permitted and unpermitted access.</li><li>Confirm that drafts are not exposed.</li><li>Keep write tools and tokens separate from read needs.</li><li>Review changes before publishing and test the result.</li><li>Remove unused connections.</li></ol><h2>API specifications need validation</h2><p>An agent can produce plausible code from the wrong endpoint or version. Validate the schema, authentication, rate limits and error handling against the actual service.</p><p>Documentation access is not permission to send live customer data, perform a payment or mutate a production database. Use harmless tests and the right approval process.</p><h2>India and practical limits</h2><p>No portal toggle, OAuth connection, token or page was changed for this guide. Indian billing, hosting and a specific developer portal's permissions remain untested.</p><p>Compatible agent examples are vendor-listed, not a claim that every current Claude, Cursor or VS Code account can connect without extra setup.</p><h2>What changed since the original post?</h2><p>We separate Portal reading from Konnect writing, qualify the plan and opt-in requirement, and add the distinction between OAuth consent, task approval and real permission enforcement.</p><h2>Frequently asked questions</h2><h3>Does Portal MCP grant publishing rights?</h3><p>The post describes writing through the separate Konnect MCP Server and token permissions.</p><h3>Can anonymous agents read private drafts?</h3><p>Kong says existing restrictions remain. Test your actual portal's rules.</p><h3>Was a portal enabled?</h3><p>No.</p><p class="src">Sources: <a href="https://konghq.com/blog/product-releases/portal-mcp-server">Official Portal MCP announcement</a>. Checked 7 October 2026.</p><div class="share"><a href="https://konghq.com/blog/product-releases/portal-mcp-server">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+</body></html>
