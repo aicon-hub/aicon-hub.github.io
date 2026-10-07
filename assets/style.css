@@ -1,4 +1,3 @@
-@import url('theme.css?v=20261007theme2');
 :root{--bg:#fff8e1;--card:#faf0ca;--yellow:#fde694;--green:#90cea1;--olive:#c4ae5c;--ink:#49473e;--black:#121212;--mute:#6b6858}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
