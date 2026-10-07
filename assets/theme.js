@@ -33,3 +33,31 @@ function addBrand(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addBrand);else addBrand();
 })();
+/* Article sharing: the reader chooses their own app and recipient. */
+(function(){
+ function init(){
+  var article=document.querySelector('main article');if(!article||document.getElementById('aicon-share-button'))return;
+  function meta(n){var el=document.querySelector('meta[property="'+n+'"],meta[name="'+n+'"]');return el?el.content.trim():'';}
+  var heading=article.querySelector('h1'),lead=article.querySelector('.lead'),canonical=document.querySelector('link[rel="canonical"]');
+  var title=meta('og:title')||(heading?heading.textContent.trim():document.title),description=meta('og:description')||meta('description')||(lead?lead.textContent.trim():''),url=canonical?canonical.href:location.href.split('#')[0];
+  var payload={title:title,text:title+'\n'+description,url:url},text=payload.text+'\n'+url;
+  var box=document.createElement('section');box.className='aicon-share-tools';box.setAttribute('aria-label','Share this post');
+  var button=document.createElement('button');button.type='button';button.id='aicon-share-button';button.textContent='Share this post';button.setAttribute('aria-expanded','false');
+  var choices=document.createElement('div');choices.className='aicon-share-choices';choices.hidden=true;
+  var status=document.createElement('p');status.className='aicon-share-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
+  var copyText=document.createElement('button');copyText.type='button';copyText.textContent='Copy title, description & link';
+  var copyLink=document.createElement('button');copyLink.type='button';copyLink.textContent='Copy link';
+  var manual=document.createElement('textarea');manual.readOnly=true;manual.hidden=true;manual.setAttribute('aria-label','Share text to copy');manual.rows=5;
+  async function copy(value){try{if(!navigator.clipboard)throw Error('unavailable');await navigator.clipboard.writeText(value);status.textContent=value===url?'Link copied. Paste it in your app.':'Title, description and link copied. Paste them in your app.';}catch(e){manual.value=value;manual.hidden=false;manual.focus();manual.select();status.textContent='Select and copy the text below, then paste it in your app.';}}
+  copyText.addEventListener('click',function(){copy(text);});copyLink.addEventListener('click',function(){copy(url);});
+  var email=document.createElement('a');email.href='mailto:?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(description+'\n\n'+url);email.textContent='Email';
+  var telegram=document.createElement('a');telegram.href='https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(title+'\n'+description);telegram.textContent='Telegram';telegram.target='_blank';telegram.rel='noopener noreferrer';
+  choices.append(copyText,copyLink,email,telegram,manual);box.append(button,choices,status);
+  button.addEventListener('click',async function(){
+   if(navigator.share){try{await navigator.share(payload);status.textContent='Share handed to your app.';return;}catch(e){if(e.name==='AbortError'){status.textContent='Sharing cancelled.';return;}}}
+   choices.hidden=!choices.hidden;button.setAttribute('aria-expanded',String(!choices.hidden));if(!choices.hidden)status.textContent='Choose an app, or copy the post summary and link. Your app may cache link previews.';
+  });
+  if(lead)lead.insertAdjacentElement('afterend',box);else if(heading)heading.insertAdjacentElement('afterend',box);else article.prepend(box);
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
