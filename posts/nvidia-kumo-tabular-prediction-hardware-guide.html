@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>NVIDIA Kumo Tabular: table prediction and costs | AiCoN</title>
+<meta content="Kumo Tabular predicts from labelled table context. Check Python and CUDA examples, separate code/weight licences and evaluation before using business data." name="description"/>
+<link href="https://aicon-hub.github.io/posts/nvidia-kumo-tabular-prediction-hardware-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="NVIDIA Kumo Tabular: table prediction and costs" property="og:title"/>
+<meta content="Kumo Tabular predicts from labelled table context. Check Python and CUDA examples, separate code/weight licences and evaluation before using business data." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/nvidia-kumo-tabular-prediction-hardware-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/nvidia-kumo-tabular-prediction-hardware-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-07" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/nvidia-kumo-tabular-prediction-hardware-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "NVIDIA Kumo Tabular: table prediction and costs", "description": "Kumo Tabular predicts from labelled table context. Check Python and CUDA examples, separate code/weight licences and evaluation before using business data.", "datePublished": "2026-10-07", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/nvidia-kumo-tabular-prediction-hardware-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/nvidia-kumo-tabular-prediction-hardware-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-07"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/><link href="../assets/article.css" rel="stylesheet"/></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / NVIDIA Kumo Tabular: table prediction and costs</p>
+<article class="post"><span class="chip">DATA SCIENCE</span><h1>NVIDIA Kumo Tabular: table prediction and costs</h1><p class="meta">By AiCoN | Published 7 October 2026 | Sources checked 7 October 2026</p><p class="lead">NVIDIA Kumo Tabular is a pretrained model for classification and regression on tables. You provide labelled examples as context and ask it to predict new rows. It is a developer model, not a point-and-click spreadsheet app.</p><img alt="AiCoN illustrative cover: NVIDIA Kumo Tabular: table prediction and costs" class="cover" height="630" src="../assets/og/nvidia-kumo-tabular-prediction-hardware-guide.svg" width="1200"/>
+<h2>Classification and regression</h2><p>Classification predicts a category or its probability, such as an invented label in a sample dataset. Regression predicts a numerical value. The official example uses known target values as context and obtains class probabilities for new rows.</p><p>Pretrained means the model was trained before your particular task. It does not mean you can skip data preparation, evaluation or careful separation of known and unknown answers.</p><h2>What hardware does it need?</h2><p>The official usage example places both table tensors and the model on CUDA. The linked structured-data-models library is GPU-native and currently lists Python 3.11 and PyTorch 2.7 or later.</p><p>Do not assume a free download will run comfortably on an ordinary office laptop. Check the exact model variant, memory and dependencies before buying or renting hardware.</p><h2>How to evaluate a table</h2><ol><li>Read the official model card and linked library requirements.</li><li>Review the weight licence and code licence separately.</li><li>Use a public dataset or invented rows with no personal information.</li><li>Create a separate Python environment and confirm suitable hardware.</li><li>Keep labelled context rows separate from a held-out test set.</li><li>Specify column types and the target correctly using the official example.</li><li>Compare predictions with simple baselines and inspect errors across groups.</li><li>Measure runtime, memory and total cost before using real business data.</li></ol><h2>Avoid leaking the answer</h2><p>If the target or a disguised copy appears in the input, a benchmark can look excellent without measuring useful prediction. Keep time-related datasets split appropriately and make sure information from the future does not appear in training context.</p><p>Do not use a table model alone for decisions about loans, hiring, medical care or other consequential outcomes. Poor or biased data can produce harmful predictions even when an overall score looks good.</p><h2>Free or paid?</h2><p>The model card says weights use OpenMDW 1.1. The library says NVIDIA-authored code uses Apache 2.0, with separate terms for some components. A code licence does not override the weight licence.</p><p>Compute, storage, cloud GPUs and engineering cost money. No standard INR inference price or free hosted endpoint is established. The fetched Hugging Face card says it is not deployed by an inference provider on that platform. NVIDIA also documents a NIM deployment route with separate container terms; that does not establish a free hosted endpoint.</p><h2>For Indian teams</h2><p>Test on data representing your users and processes. Do not send a spreadsheet containing Aadhaar numbers, bank details or health records to a public experiment. Check organisational permission and hosting before using customer data.</p><p>NVIDIA's current model documentation confirms three variants: about 28M, 62M and 215M parameters, pretrained on synthetic tables. The published performance figures remain the vendor's evaluations. This guide does not repeat an unverified winner claim.</p><h2>What changed since the original post?</h2><p>We added current Python/PyTorch requirements and separate code-versus-weight licensing. The three sizes are confirmed in NVIDIA documentation, while the ranking-first claim is not treated as an independently tested fact. No model was downloaded or benchmark run.</p><h2>Frequently asked questions</h2><h3>Can I click a cell to run it?</h3><p>The official route is Python code, not a consumer spreadsheet interface.</p><h3>Does pretrained mean no labels are needed?</h3><p>The example provides labelled context rows.</p><h3>Are code and weights licensed the same way?</h3><p>No. Read each set of terms.</p>
+<p class="src">Sources: <a href="https://huggingface.co/nvidia/Kumo-Tabular">Official NVIDIA model card</a> · <a href="https://github.com/NVIDIA/structured-data-models">NVIDIA library and requirements</a> · <a href="https://docs.api.nvidia.com/nim/reference/nvidia-kumo-tabular">Current NVIDIA model documentation</a>. Checked 7 October 2026.</p><div class="share"><a href="https://huggingface.co/nvidia/Kumo-Tabular">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a></div></footer>
+</body></html>
