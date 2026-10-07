@@ -1,0 +1,128 @@
+name: Publish AiCoN to Telegram
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: check or publish
+        required: true
+        default: check
+        type: choice
+        options: [check, publish]
+      post_id:
+        description: Stable unique post ID, reused on retries
+        required: false
+      text:
+        description: Final post text with optional single-star bold and underscore italic
+        required: false
+      photo_url:
+        description: Optional public AiCoN PNG or JPEG poster URL
+        required: false
+      article_url:
+        description: Live AiCoN guide URL, required for publishing
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: telegram-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify or publish
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,sys,hashlib,html,re,urllib.request,urllib.error,datetime,base64
+          
+          def request(url,payload=None,headers=None):
+              req=urllib.request.Request(url,data=None if payload is None else json.dumps(payload).encode(),headers={'Content-Type':'application/json',**(headers or {})},method=('PUT' if headers and payload is not None else None))
+              try:
+                  with urllib.request.urlopen(req,timeout=40) as r:return json.load(r)
+              except urllib.error.HTTPError as e:
+                  raise RuntimeError('Remote HTTP error '+str(e.code)) from None
+              except Exception:raise RuntimeError('Transport outcome uncertain; reconcile before retry') from None
+          
+          def tg(method,data):
+              reply=request('https://api.telegram.org/bot'+os.environ['TELEGRAM_BOT_TOKEN']+'/'+method,data)
+              if not reply.get('ok'):raise RuntimeError('Telegram rejected request')
+              return reply['result']
+          
+          def formatted(text):
+              # Only AiCoN's established single-star bold and single-underscore italic.
+              text=html.escape(text)
+              text=re.sub(r'(?<!\w)\*([^*\n]+)\*(?!\w)',r'<b>\1</b>',text)
+              text=re.sub(r'(?<!\w)_([^_\n]+)_(?!\w)',r'<i>\1</i>',text)
+              return text
+          
+          def units(text):return len(text.encode('utf-16-le'))//2
+          
+          def plan(text,photo):
+              if not text or units(text)>4096:raise RuntimeError('Post text must fit 1-4096 UTF-16 units')
+              if photo and (not photo.startswith('https://aicon-hub.github.io/') or not photo.lower().endswith(('.png','.jpg','.jpeg'))):
+                  raise RuntimeError('Poster must be a public AiCoN PNG/JPEG URL')
+              content=formatted(text)
+              if photo and units(text)<=1024:return [('sendPhoto',{'photo':photo,'caption':content,'parse_mode':'HTML'})]
+              result=[('sendMessage',{'text':content,'parse_mode':'HTML'})]
+              if photo:result.append(('sendPhoto',{'photo':photo}))
+              return result
+          
+          def verify():
+              me=tg('getMe',{})
+              if me.get('username','').lower()!='aiconate_bot':raise RuntimeError('Unexpected bot identity')
+              chat=tg('getChat',{'chat_id':'@AiCoN4tech'})
+              if chat.get('type')!='channel' or chat.get('username','').lower()!='aicon4tech':raise RuntimeError('Unexpected channel identity')
+              member=tg('getChatMember',{'chat_id':chat['id'],'user_id':me['id']})
+              if member.get('status')!='administrator' or not member.get('can_post_messages'):raise RuntimeError('Bot lacks posting permission')
+              return chat['id']
+          
+          def main():
+              event=json.load(open(os.environ['GITHUB_EVENT_PATH']))
+              data=event.get('inputs',{})
+              if data.get('mode','check')=='check':
+                  print(json.dumps({'verified_channel_id':verify(),'posting_permission':True}));return
+              post_id=data.get('post_id','').strip()
+              if not post_id:raise RuntimeError('A stable post_id is required')
+              steps=plan(data.get('text',''),data.get('photo_url',''))
+              # Article-first: require the published guide before any claim or send.
+              article=data.get('article_url','')
+              if not article.startswith('https://aicon-hub.github.io/posts/') or not article.endswith('.html'):raise RuntimeError('A live AiCoN article URL is required')
+              try:
+                  with urllib.request.urlopen(article,timeout=30) as r:
+                      if r.status!=200:raise RuntimeError('Article not live')
+              except Exception:raise RuntimeError('Article availability check failed') from None
+              chat_id=verify()
+              key=hashlib.sha256(post_id.encode()).hexdigest()
+              url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/contents/telegram-receipts/'+key+'.json'
+              headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
+              existing=None
+              try:existing=request(url,headers=headers)
+              except RuntimeError as e:
+                  if str(e)!='Remote HTTP error 404':raise
+              if existing:
+                  print('Post ID already claimed. No resend. Inspect its receipt and channel.');return
+              state={'post_id':post_id,'article_url':article,'status':'claimed','run_id':os.environ['GITHUB_RUN_ID'],'message_ids':[]}
+              sha=None
+              def save():
+                  nonlocal sha
+                  body={'message':'Record Telegram publishing state','content':base64.b64encode((json.dumps(state,indent=2)+'\n').encode()).decode(),'branch':'main'}
+                  if sha:body['sha']=sha
+                  sha=request(url,body,headers)['content']['sha']
+              save() # Durable claim BEFORE effect. Failure prevents sending.
+              for method,payload in steps:
+                  result=tg(method,{'chat_id':chat_id,**payload})
+                  state['message_ids'].append(result['message_id'])
+                  state['status']='partial'
+                  save() # Do not proceed to next part unless first receipt persisted.
+              state['status']='sent';save()
+              print(json.dumps({'channel_id':chat_id,'message_ids':state['message_ids'],'post_id':post_id}))
+          if __name__=='__main__':
+              try:main()
+              except Exception as e:
+                  # Do not print tracebacks, request URLs, or arbitrary remote content.
+                  print('Publisher stopped: '+str(e) if isinstance(e,RuntimeError) else 'Publisher stopped: check inputs or secret configuration',file=sys.stderr)
+                  sys.exit(1)
+          PYCODE
