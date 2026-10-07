@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Odysseus AI: a self-hosted workspace with hardware-aware model picks | AiCoN</title>
+<meta content="Odysseus AI AGPL-3.0 workspace, Model Cookbook, local versus cloud costs, current 7011 port and main-versus-dev install guidance." name="description"/>
+<link href="https://aicon-hub.github.io/posts/odysseus-self-hosted-ai-model-cookbook-install-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Odysseus AI: a self-hosted workspace with hardware-aware model picks" property="og:title"/>
+<meta content="Odysseus AI AGPL-3.0 workspace, Model Cookbook, local versus cloud costs, current 7011 port and main-versus-dev install guidance." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/odysseus-self-hosted-ai-model-cookbook-install-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/odysseus-self-hosted-ai-model-cookbook-install-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-07" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/odysseus-self-hosted-ai-model-cookbook-install-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Odysseus AI: a self-hosted workspace with hardware-aware model picks", "description": "Odysseus AI AGPL-3.0 workspace, Model Cookbook, local versus cloud costs, current 7011 port and main-versus-dev install guidance.", "datePublished": "2026-10-07", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/odysseus-self-hosted-ai-model-cookbook-install-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/odysseus-self-hosted-ai-model-cookbook-install-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-07"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/style.css?v=20261007audit1" rel="stylesheet"/><link href="../assets/article.css?v=20261007audit1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261007audit1" rel="stylesheet"/><script src="../assets/theme.js?v=20261007audit1"></script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Odysseus AI: a self-hosted workspace with hardware-aware model picks</p>
+<article class="post"><span class="chip">SELF-HOSTED AI</span><h1>Odysseus AI: a self-hosted workspace with hardware-aware model picks</h1><p class="meta">By AiCoN | Published 7 October 2026 | Sources checked 7 October 2026</p><p class="lead">Odysseus is a free, self-hosted workspace for chatting with models, running agents and working with research, files and other tools. Its Cookbook helps match models to your hardware. You install and maintain the workspace yourself; using a cloud model can still cost money.</p><img alt="AiCoN illustrative cover: Odysseus AI: a self-hosted workspace with hardware-aware model picks" class="cover" height="630" src="../assets/og/odysseus-self-hosted-ai-model-cookbook-install-guide.svg" width="1200"/><div class="box warn"><b>Use current repository instructions</b>The linked repository currently says open localhost:7011. An older install guide says 7000. Follow the checked-out version's configuration and logs rather than assuming an old port or branch is still right.</div>
+<h2>What does self-hosted mean?</h2><p>Odysseus runs on a computer or server that you manage. It is an interface around models and tools, not one AI model. The current repository describes chat, agents, research, documents, email, notes, tasks, calendar and model workflows. Built-in tools include files and shell access, and MCP can connect more tools. MCP is a way for an AI client to call another service.</p><p>This can suit people who want control of their setup and are comfortable with a terminal. It is not a maintenance-free phone app. Updates, access settings, backups and model troubleshooting remain your responsibility.</p>
+<h2>What does the Model Cookbook do?</h2><p>The official project page describes hardware-aware recommendations and one-click serving. The repository says Cookbook supports recommendations, downloads and serving. These help you find candidate models for your machine. A hardware-fit recommendation is not a benchmark ranking or a promise of good answers.</p><p>A model that fits memory may still be slow, weak at your task or limited at tool use. Compare a few small permitted tasks before relying on it. Exact fit depends on model size, precision, context and the selected backend. Do not buy a GPU solely because a launch post says a model should run.</p>
+<h2>Free software, separate operating costs</h2><table class="facts"><tr><th>Software license</th><td>GNU AGPL-3.0, per the current official repository.</td></tr><tr><th>Local model route</th><td>Your hardware, power and storage are still costs.</td></tr><tr><th>Cloud model route</th><td>Provider fees and terms apply separately.</td></tr><tr><th>Hosting</th><td>A rented server or GPU is not made free by the software license.</td></tr></table><p>AGPL has obligations, especially when changing the software or providing it over a network. Read the actual license for your use. Free workspace software does not mean every model license permits every commercial use.</p>
+<h2>A careful Docker start</h2><p>The current repository marks <code>dev</code> as the default branch for newest changes and <code>main</code> as more curated. For a cautious first test, read the current setup guide and consider main. You need Git and a working Docker Compose installation.</p><pre><code>git clone --branch main https://github.com/odysseus-dev/odysseus.git
+cd odysseus
+cp .env.example .env
+docker compose up -d --build</code></pre><p>When the containers are healthy, the current README says open <code>http://localhost:7011</code>. The first admin password is printed in <code>docker compose logs odysseus</code>. Do not paste it into a public support message. Check your selected version's environment file if the port differs.</p><p>The README says Compose pulls its official multi-architecture image and builds locally if that pull fails. For production, it recommends pinning an immutable image tag rather than a moving latest tag. We did not install it, read anyone's passwords or test the commands on a user device.</p>
+<h2>Connect models before private accounts</h2><p>Start with a supported local backend and harmless sample questions. If you choose an API backend, inspect the provider's billing and data terms first. Keep keys out of source control. Local-first means the workspace can be local; sending to a remote endpoint still sends your input there.</p><p>Only then consider email, calendar, files or shell tools. These can expose private information or change real work. Enable only what you need and review proposed recipients and actions. A model-fit score does not measure safe email sending.</p>
+<h2>Security and India fit</h2><p>The official README says keep authentication enabled for network access and keep localhost bypass off outside local development. Do not expose raw model or service ports publicly. Use the official HTTPS and deployment guidance, backups and updates if serving it beyond your computer.</p><p>No India-specific hosted enrollment is required for the local software, but this guide does not verify a local installation or every connected provider's Indian availability. Device and backend compatibility matter more than the reader's location for the self-hosted workspace.</p>
+<h2>Frequently asked questions</h2><h3>Does Cookbook prove a model is best?</h3><p>No. Hardware suitability and answer quality are different tests.</p><h3>Is everything private by default forever?</h3><p>No blanket promise is justified. Connected cloud endpoints and tools change the data path.</p><h3>Which project should I use?</h3><p>The checked source is odysseus-dev/odysseus and its repository-linked project page.</p>
+<h2>What changed since the earlier post?</h2><p>This guide grounds the project identity in the repository, adds the dev/main branch distinction and current 7011 port, and explains how local-first differs from using remote models. It keeps Cookbook recommendations separate from benchmarks.</p><p class="src">Sources: <a href="https://github.com/odysseus-dev/odysseus">Current official repository</a> · <a href="https://odysseus-dev.github.io/odysseus/">Repository-linked project page</a> · <a href="https://odysseusai.dev/install">Older install guide for comparison</a>. Checked 7 October 2026.</p><div class="share"><a href="https://github.com/odysseus-dev/odysseus">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+</body></html>
