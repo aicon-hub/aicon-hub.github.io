@@ -103,7 +103,7 @@ jobs:
                   print(json.dumps({'verified_channel_id':verify(),'posting_permission':True}));return
               post_id=data.get('post_id','').strip()
               if not post_id:raise RuntimeError('A stable post_id is required')
-              steps=plan(data.get('text',''),'upload' if data.get('photo_base64') else data.get('photo_url',''))
+              steps=plan(data.get('text','').replace('\\n','\n'),'upload' if data.get('photo_base64') else data.get('photo_url',''))
               # Article-first: require the published guide before any claim or send.
               article=data.get('article_url','')
               if not article.startswith('https://aicon-hub.github.io/posts/') or not article.endswith('.html'):raise RuntimeError('A live AiCoN article URL is required')
