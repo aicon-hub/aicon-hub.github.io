@@ -1,7 +1,8 @@
+@import url('theme.css?v=20261007theme2');
 :root{--bg:#fff8e1;--card:#faf0ca;--yellow:#fde694;--green:#90cea1;--olive:#c4ae5c;--ink:#49473e;--black:#121212;--mute:#6b6858}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;font-family:"Google Sans","Google Sans Flex",Outfit,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;position:relative;overflow-x:hidden}
+body{margin:0;min-height:100vh;font-family:Inter,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;position:relative;overflow-x:hidden}
 /* organic background blobs, pure CSS */
 body::before,body::after{content:"";position:fixed;z-index:-1;pointer-events:none}
 body::before{width:min(70vw,420px);height:min(70vw,420px);top:-14vmin;left:-14vmin;background:var(--yellow);border-radius:40% 60% 70% 30%/40% 50% 60% 50%}
@@ -69,3 +70,5 @@ footer a{font-weight:500}
 #category{display:block;width:100%;padding:10px 12px;margin:6px 0 12px;border:1px solid var(--olive);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}
 
 .search label{display:block}.search input[type="search"]{display:block;width:100%;padding:12px 14px;border:1px solid var(--olive);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}.search .sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+@import_not_used{}
