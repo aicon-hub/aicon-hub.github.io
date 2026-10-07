@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>GitHub Copilot desktop control: permissions and risks | AiCoN</title>
+<meta content="Copilot computer use is a Mac and Windows preview. Learn enable/disable commands, active permission modes, saved approvals and safe testing in India." name="description"/>
+<link href="https://aicon-hub.github.io/posts/github-copilot-desktop-computer-use-safety-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="GitHub Copilot desktop control: permissions and risks" property="og:title"/>
+<meta content="Copilot computer use is a Mac and Windows preview. Learn enable/disable commands, active permission modes, saved approvals and safe testing in India." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/github-copilot-desktop-computer-use-safety-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/github-copilot-desktop-computer-use-safety-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-07" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/github-copilot-desktop-computer-use-safety-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "GitHub Copilot desktop control: permissions and risks", "description": "Copilot computer use is a Mac and Windows preview. Learn enable/disable commands, active permission modes, saved approvals and safe testing in India.", "datePublished": "2026-10-07", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/github-copilot-desktop-computer-use-safety-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/github-copilot-desktop-computer-use-safety-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-07"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/><link href="../assets/article.css" rel="stylesheet"/></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / GitHub Copilot desktop control: permissions and risks</p>
+<article class="post"><span class="chip">CODING TOOLS</span><h1>GitHub Copilot desktop control: permissions and risks</h1><p class="meta">By AiCoN | Published 7 October 2026 | Sources checked 7 October 2026</p><p class="lead">GitHub Copilot can read and control desktop apps through computer use in its CLI and app on macOS and Windows. The feature is a public preview and disabled by default. Approval behaviour depends on the active permission settings.</p><img alt="AiCoN illustrative cover: GitHub Copilot desktop control: permissions and risks" class="cover" height="630" src="../assets/og/github-copilot-desktop-computer-use-safety-guide.svg" width="1200"/>
+<h2>What can it do?</h2><p>Copilot can inspect accessible app content or screenshots, click controls, type, scroll, drag and move through workflows. This can help with software that has no API, command-line interface or MCP tool.</p><p>Desktop control can also affect real files, accounts and other people. A signed-in app is not a harmless demonstration. Check the target and requested action before letting a tool control it.</p><h2>Read the permission mode first</h2><p>The launch says Copilot asks before controlling an app. The current docs qualify that: computer use follows the permission mode of the surface where the session runs. In the CLI, use /permissions show to review the active mode.</p><p>When approval is required, you can allow a session, deny it or choose Always allow. A saved app approval applies to both the Copilot app and CLI on the same computer. Removing it affects future sessions, but does not revoke access already granted in a running session.</p><h2>How to test with a harmless app</h2><ol><li>Read the official computer-use docs and check your organisation's policy.</li><li>Use a local Mac or Windows session with a test document and no private information on screen.</li><li>Review the current tool permission mode before enabling computer use.</li><li>In Copilot CLI, enter /computer on, then /computer show to check status. In the app, use Settings, Computer Use.</li><li>On macOS, inspect the requested Accessibility and Screen Recording permissions.</li><li>Ask for a small action in one non-sensitive app. Prefer session-only approval during the test.</li><li>Inspect the result. Stop unexpected work with Esc twice in the CLI, or Stop/Esc in the app.</li><li>Use /computer off and /computer show when done. Review saved app approvals and operating-system permissions separately.</li></ol><h2>What not to open during a test</h2><p>Avoid banking, password managers, private inboxes and production administration tools. On-screen text can be misleading or try to redirect the AI. GitHub warns that ambiguous instructions and unexpected content can cause unintended actions.</p><p>Do not choose Always allow for an app with sensitive information or high-impact actions. Organisation-managed settings can disable computer use; a local preference cannot override that policy.</p><h2>Free or paid in India?</h2><p>The checked launch and concept page do not identify every eligible Copilot plan or a separate computer-use price. Do not assume all free accounts have it. Check your current account and administrator settings before paying.</p><p>No fixed rupee price is confirmed here. We did not enable computer use, grant screen access or test its actions.</p><h2>What changed since the original post?</h2><p>We added the current docs' permission-mode qualification and the limits of revoking saved approval. The earlier broad promise that it always asks is not enough to describe every configuration.</p><h2>Frequently asked questions</h2><h3>Is it on by default?</h3><p>No. The docs say it must be enabled.</p><h3>Does removing Always allow stop a running session?</h3><p>No. The docs say existing running-session access is not revoked by that removal.</p><h3>Does it work on Linux?</h3><p>The checked feature docs list macOS and Windows local sessions.</p>
+<p class="src">Sources: <a href="https://docs.github.com/en/copilot/concepts/agents/computer-use">Current computer-use concepts</a> · <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use">CLI instructions</a> · <a href="https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/">Launch announcement</a>. Checked 7 October 2026.</p><div class="share"><a href="https://docs.github.com/en/copilot/concepts/agents/computer-use">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a></div></footer>
+</body></html>
