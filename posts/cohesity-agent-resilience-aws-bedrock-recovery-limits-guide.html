@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Cohesity Agent Resilience: AWS Bedrock and recovery limits | AiCoN</title>
+<meta content="Cohesity protects agent state and dependencies. Check current AWS Bedrock scope, trusted recovery points and why restore is not a universal undo button." name="description"/>
+<link href="https://aicon-hub.github.io/posts/cohesity-agent-resilience-aws-bedrock-recovery-limits-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Cohesity Agent Resilience: AWS Bedrock and recovery limits" property="og:title"/>
+<meta content="Cohesity protects agent state and dependencies. Check current AWS Bedrock scope, trusted recovery points and why restore is not a universal undo button." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/cohesity-agent-resilience-aws-bedrock-recovery-limits-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/cohesity-agent-resilience-aws-bedrock-recovery-limits-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-07" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/cohesity-agent-resilience-aws-bedrock-recovery-limits-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cohesity Agent Resilience: AWS Bedrock and recovery limits", "description": "Cohesity protects agent state and dependencies. Check current AWS Bedrock scope, trusted recovery points and why restore is not a universal undo button.", "datePublished": "2026-10-07", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/cohesity-agent-resilience-aws-bedrock-recovery-limits-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/cohesity-agent-resilience-aws-bedrock-recovery-limits-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-07"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261007audit1" rel="stylesheet"/><link href="../assets/article.css?v=20261007audit1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261007audit1" rel="stylesheet"/><script src="../assets/theme.js?v=20261007audit1"></script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Cohesity Agent Resilience: AWS Bedrock and recovery limits</p>
+<article class="post"><span class="chip">AI RECOVERY AND SECURITY</span><h1>Cohesity Agent Resilience: AWS Bedrock and recovery limits</h1><p class="meta">By AiCoN | Published 7 October 2026 | Sources checked 7 October 2026</p><p class="lead">Cohesity's current Agent Resilience page says it is available now for AWS Bedrock, with other agent platforms coming soon. It protects and restores supported agent state and affected resources. Calling it an undo button is convenient, but too broad for messages, payments or effects outside protected systems.</p><img alt="AiCoN illustrative cover: Cohesity Agent Resilience: AWS Bedrock and recovery limits" class="cover" height="630" src="../assets/og/cohesity-agent-resilience-aws-bedrock-recovery-limits-guide.svg" width="1200"/><h2>What agent state means here</h2><p>Cohesity lists memory, configuration, prompts, guardrails, credentials, workflows, permissions and operating context. These can influence future agent behaviour.</p><p>Restoring state can remove a bad configuration or compromised memory. It does not prove every past action has been reversed.</p><h2>Dependency mapping</h2><p>The page describes Agent Topology mapping relationships between agents, configuration, memory stores and data resources. The purpose is to identify protection gaps and assess impact.</p><p>A discovered resource is not necessarily backed up with the same policy as another one. Check coverage and recovery dependencies rather than treating a diagram as complete protection.</p><h2>Protected stack and impacted resources</h2><p>The official FAQ describes the agent stack plus supported databases, vector stores, file systems and logs that agents affect.</p><p>Actual support depends on your environment and configured protection. Credentials and permission state need careful handling so a restore does not revive expired access or a revoked secret.</p><h2>A trusted point in time</h2><p>Recovery needs a known-good point. A snapshot taken after malicious context entered the system can restore the same problem.</p><p>Check when the issue began, what changed and whether the source data was also affected. Test restoration quality rather than only checking that a backup exists.</p><h2>Current platform scope</h2><p>The checked page says AWS Bedrock is available now and additional platforms are coming soon.</p><p>Do not interpret coming soon as current support for every agent framework, cloud or local system. Confirm the exact Bedrock resources and related services covered in your proposal.</p><h2>Why universal undo is misleading</h2><p>A sent email may have been read. A payment may require a bank or merchant process. A data disclosure cannot be made unseen by restoring a memory store.</p><p>Recovery can complement prevention, governance and monitoring; it does not authorise riskier actions. Keep approvals and disclosure controls even when backups are strong.</p><h2>A recovery evaluation plan</h2><ol><li>List the agents and resources you actually run.</li><li>Map what each agent can read and change.</li><li>Confirm supported resources and protection policies.</li><li>Choose a harmless failure in a test environment.</li><li>Identify a known-good recovery point.</li><li>Restore and reconcile dependent data.</li><li>Check permissions and credentials separately.</li><li>Measure recovery time and missing changes.</li><li>Document effects that need manual external repair.</li></ol><h2>Governance versus resilience</h2><p>Cohesity says Agent Resilience complements tools that govern, observe and manage agents. Those tools can flag abnormal behaviour; recovery restores the state behind behaviour.</p><p>No monitoring system catches everything. Include human incident response, cause analysis and verification before allowing a recovered agent back into production.</p><h2>Price, India and free limits</h2><p>No final public tariff, free tier or INR deployment quote was established in the checked product page. Confirm licensing, storage, retention and recovery costs for your environment.</p><p>No Indian tenant, region, actual backup, restore job or SLA was tested. A supported cloud platform does not prove all processing remains in India.</p><h2>Credential and backup privacy</h2><p>State backups can contain sensitive business information and access material. Check encryption, privileged access, retention, deletion and who may restore them.</p><p>Do not paste secrets into a support chat or export a backup merely because an external message asks for diagnostics.</p><h2>What changed since the original post?</h2><p>We replace a blanket undo claim with supported state/resource recovery, preserve today's AWS Bedrock scope and separate future platforms, prevention and external effects.</p><h2>Frequently asked questions</h2><h3>Can it unsend every email?</h3><p>No universal reversal of external effects was established.</p><h3>Are all agent platforms supported now?</h3><p>The checked page names AWS Bedrock; others are coming soon.</p><h3>Was a restore tested?</h3><p>No.</p><p class="src">Sources: <a href="https://www.cohesity.com/platform/agent-resilience/">Current official Agent Resilience page</a>. Checked 7 October 2026.</p><div class="share"><a href="https://www.cohesity.com/platform/agent-resilience/">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+</body></html>
