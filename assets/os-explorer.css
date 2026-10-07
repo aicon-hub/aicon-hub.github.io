@@ -1,0 +1,46 @@
+/* AiCoN OS Explorer: scoped to #os-explorer. Uses site palette vars; dark mode via :root[data-theme=dark]. */
+#os-explorer{margin:26px 0}
+#os-explorer .os-search{margin:0 0 16px}
+#os-explorer .os-search input{display:block;width:100%;max-width:420px;min-height:48px;padding:10px 14px;border:1px solid var(--mute);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}
+#os-explorer .sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}
+#os-explorer .os-tabs,#os-explorer .os-subtabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px;-webkit-overflow-scrolling:touch}
+#os-explorer .os-subtabs{margin-top:10px}
+#os-explorer .os-tab{flex:0 0 auto;min-height:44px;padding:10px 18px;border-radius:999px;border:1px solid var(--mute);background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer;transition:transform .15s ease,background .15s ease}
+#os-explorer .os-tab:hover{transform:translateY(-1px)}
+#os-explorer .os-tab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#121212}
+#os-explorer .os-subtabs .os-tab[aria-selected="true"]{background:var(--olive);border-color:var(--olive)}
+#os-explorer .os-tab:focus-visible,#os-explorer .os-details-btn:focus-visible,#os-explorer .os-page-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+#os-explorer .os-note{margin:12px 0 0;padding:12px 16px;border-radius:14px;background:var(--yellow);color:#121212;font-size:.95rem}
+#os-explorer .os-panel{margin-top:18px}
+#os-explorer .os-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){#os-explorer .os-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){#os-explorer .os-grid{grid-template-columns:repeat(3,1fr)}}
+#os-explorer .os-card{background:var(--card);border:1px solid rgba(107,104,88,.35);border-radius:20px;padding:16px 18px;animation:os-rise .35s ease both}
+@keyframes os-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#os-explorer .os-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+#os-explorer .os-name{margin:0;font-size:1.1rem;line-height:1.3}
+#os-explorer .os-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+#os-explorer .os-badge{flex:0 0 auto;font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:999px;color:#121212}
+#os-explorer .os-badge.lvl-beginner{background:#90cea1}
+#os-explorer .os-badge.lvl-intermediate{background:#f0a24a}
+#os-explorer .os-badge.lvl-advanced{background:#e4573d;color:#fff}
+#os-explorer .os-badge.cat{background:#5b8fd6;color:#fff}
+#os-explorer .os-badge.st-unofficial{background:transparent;border:2px solid #b8860b;color:var(--ink)}
+#os-explorer .os-badge.st-pirated{background:transparent;border:2px solid #c0392b;color:#c0392b}
+:root[data-theme=dark] #os-explorer .os-badge.st-pirated{color:#ff8a75;border-color:#ff8a75}
+#os-explorer .os-summary{margin:8px 0 12px;font-size:.95rem;color:var(--ink)}
+#os-explorer .os-details-btn{min-height:44px;padding:8px 16px;border-radius:12px;border:1px solid var(--mute);background:var(--bg);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+#os-explorer .os-details-btn[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
+#os-explorer .os-details{margin-top:12px}
+#os-explorer .os-sec{border-top:1px solid rgba(107,104,88,.3);padding:10px 0 4px}
+#os-explorer .os-sec h4{margin:0 0 4px;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;color:var(--mute)}
+#os-explorer .os-sec ul{margin:0;padding-left:1.2em}
+#os-explorer .os-sec li{font-size:.93rem;margin-bottom:3px}
+#os-explorer .os-src{margin-top:10px;border-top:1px solid rgba(107,104,88,.3);padding-top:10px}
+#os-explorer .os-src a{font-weight:600}
+#os-explorer .os-pager{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+#os-explorer .os-page-btn{min-height:44px;padding:8px 16px;border-radius:12px;border:1px solid var(--mute);background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+#os-explorer .os-page-btn:disabled{opacity:.45;cursor:default}
+#os-explorer .os-page-info{font-size:.9rem;color:var(--mute)}
+#os-explorer .os-empty{padding:18px;background:var(--card);border-radius:16px}
+@media(prefers-reduced-motion:reduce){#os-explorer .os-card{animation:none!important}}
