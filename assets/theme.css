@@ -27,3 +27,14 @@ form.search button{min-height:48px;padding:10px 18px;border-radius:12px;backgrou
 :focus-visible{outline:3px solid var(--ink);outline-offset:4px}
 @media(max-width:640px){header.top .wrap,.home-redesign .header-row{padding:14px 20px;gap:10px}header nav{width:100%;gap:4px;justify-content:flex-start}header nav a{padding:8px 10px;font-size:13px}form.search{grid-template-columns:minmax(0,1fr) auto;gap:12px}.search-field{grid-column:1/-1}.on-this-page ul{columns:1}.on-this-page a{min-height:40px}article.post .cover{border-radius:16px}}
 #postlist li{animation:none!important}
+
+/* AiCoN official orange accent in dark mode. */
+:root[data-theme=dark]{--aicon-orange:#ff682f;--green:var(--aicon-orange);--olive:var(--aicon-orange)}
+[data-theme=dark] .chip,[data-theme=dark] ul.posts li small.tag{background:var(--aicon-orange);color:#090909}
+[data-theme=dark] article.post h1,[data-theme=dark] article.post h2,[data-theme=dark] article.post h3,[data-theme=dark] a,[data-theme=dark] header .brand span,[data-theme=dark] header .logo span{color:var(--aicon-orange)}
+[data-theme=dark] .home-redesign{--accent:var(--aicon-orange);--accent-2:var(--aicon-orange);--cta:var(--aicon-orange);--button:var(--aicon-orange)}
+[data-theme=dark] .home-redesign h1,[data-theme=dark] .home-redesign h2,[data-theme=dark] .home-redesign h3,[data-theme=dark] .home-redesign a{color:var(--aicon-orange)}
+[data-theme=dark] .home-redesign .button,[data-theme=dark] .home-redesign .btn,[data-theme=dark] .share>a{background:var(--aicon-orange);color:#090909}
+
+[data-theme=dark] h1,[data-theme=dark] h2,[data-theme=dark] h3{color:var(--aicon-orange)}
+[data-theme=dark] .home-redesign .cta-band h2,[data-theme=dark] .home-redesign .cta-band a{color:#090909}
