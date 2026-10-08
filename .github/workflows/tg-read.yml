@@ -21,8 +21,12 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: |
-          git fetch origin tg-inbox --depth=1 2>/dev/null && git checkout -B tg-inbox FETCH_HEAD || git checkout --orphan tg-inbox
-          git rm -rf . >/dev/null 2>&1 || true
+          if git fetch origin tg-inbox --depth=1 2>/dev/null; then
+            git checkout -B tg-inbox FETCH_HEAD
+          else
+            git checkout --orphan tg-inbox
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cat > reader.pem <<'CERT'
