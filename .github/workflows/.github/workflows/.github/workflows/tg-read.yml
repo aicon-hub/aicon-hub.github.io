@@ -1,0 +1,94 @@
+name: Telegram group reader
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: telegram-group-reader
+  cancel-in-progress: false
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Read updates
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          git fetch origin tg-inbox --depth=1 2>/dev/null && git checkout -B tg-inbox FETCH_HEAD || git checkout --orphan tg-inbox
+          git rm -rf . >/dev/null 2>&1 || true
+          cat > reader.pem <<'CERT'
+          -----BEGIN CERTIFICATE-----
+          MIIEFTCCAn2gAwIBAgIUIqNTYJe5VhbysfUJqHQHbDPAcgAwDQYJKoZIhvcNAQEL
+          BQAwGjEYMBYGA1UEAwwPYWljb24tdGctcmVhZGVyMB4XDTI2MTAwODA1MjIwNloX
+          DTI4MTAwNzA1MjIwNlowGjEYMBYGA1UEAwwPYWljb24tdGctcmVhZGVyMIIBojAN
+          BgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA4XGKooHwANKAdSsD40y2bcPcUtHo
+          WJGJlDAzKS4MJP8BLY+Rn6i4cdtqaiptuCFHBACiHDJYRdzP4yfVV5yElTz5f89E
+          tljCXs04kLZapMEhzTLkmCqvUutRye6jwkh7AYEjeX4YJIlTdU7s8eLSfua0Gtbl
+          nbsLtnVmFfh7EsJ/A0bjKQ+zyh2qXOzT3CbEoW1csNuohvqPq+Um0sfrdaVGxoRy
+          Iiwrzua9Ks4p9VHdLZyRj3nudSIiyzB24FGUjp86x82kKWn3+SiC6CrlvobokTFf
+          BHsYCHFAM0+4PW0NLamsCHS5KL7YvQa2zJbo6rA8/yzmDxoRkAPZc7LLgdtI6hDJ
+          t84ypCNn8DUSDhmldjlEZU33xUbphWWrZf7tqt9aJFAqmIO2DsmOtPJqT8otmDQL
+          fSs4gzMQaJocZ22wMGirY4WPVK/2v4zb3f9C5LOEkdmAw2MyDSYg88ACm8XzVptG
+          r95pPE9E96uk9XlUmdfpVFM3tY8Ok0P7lKmBAgMBAAGjUzBRMB0GA1UdDgQWBBQZ
+          J9uoOJIajXdXEFV4+YjF9CPdVDAfBgNVHSMEGDAWgBQZJ9uoOJIajXdXEFV4+YjF
+          9CPdVDAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBgQA+skwU4vCX
+          hqo+4IEhk/AJoP/wVPCO2jpFsGbmXv/OEwTyDQe5EWAwnalHhD8kJlIE8r+8WPsI
+          ZaHHwDH64BRbgJO/u0fwGhpzAKk8EFwCwtfnlLz3z+4uToV0Fl/GVvBkfm0kG8lt
+          QguFc3dJXGrYfiPtSpTTubNY0/QalkBdNh2VtRgwFeNI5BdAY8e4QC3LaVf5he7m
+          IRXUyWlDHm2UcpcY5ql/AbnXQm+DrcJbjzi+CF453oI5NywnRKEeys3n14YFcNp7
+          obpV+4KQpmMF3Kcp3jl5+XNJlElRQuC6zcZtVD5ZT17NIhGfjqYsjZc23g3/YaOX
+          KXkqRsKL2uSHEE+rqKvl+tvPFhy8WY9n9f4Cf4jT87w01NdDTfT0Lc2ZvuDWGKEP
+          9ktygISovquo4vp3kTTWsEAsXYbS7QEaWb22M/sZaN3bzn/DPgzpgMvMt2xf6wwO
+          0gsI/Hy5oy8oh6v1V0xb0T23IlvKzRg2cQtc4mrV6L0kqN3K8pWhcZU=
+          -----END CERTIFICATE-----
+          CERT
+          cat > reader.py <<'PYCODE'
+          import os, json, subprocess, sys, urllib.request, urllib.error, urllib.parse
+          T = os.environ.get('TELEGRAM_BOT_TOKEN', '')
+          def tg(method, **params):
+              q = urllib.parse.urlencode({k: (json.dumps(v) if isinstance(v, (list, dict)) else v) for k, v in params.items()})
+              try:
+                  with urllib.request.urlopen('https://api.telegram.org/bot' + T + '/' + method + ('?' + q if q else ''), timeout=30) as r:
+                      d = json.load(r)
+              except urllib.error.HTTPError as e:
+                  print('telegram http error', e.code); sys.exit(0)
+              except Exception:
+                  print('transport error'); sys.exit(0)
+              if not d.get('ok'):
+                  print('telegram rejected', method); sys.exit(0)
+              return d['result']
+          if not T:
+              print('missing secret'); sys.exit(0)
+          wh = tg('getWebhookInfo')
+          if wh.get('url'):
+              print('webhook is set; reader stands down, nothing changed'); sys.exit(0)
+          st = {}
+          try: st = json.load(open('inbox/state.json'))
+          except Exception: pass
+          off = st.get('offset')
+          args = dict(limit=100, timeout=0, allowed_updates=['message', 'edited_message', 'my_chat_member'])
+          if off: args['offset'] = off
+          ups = tg('getUpdates', **args)
+          print('updates:', len(ups))
+          if not ups: sys.exit(0)
+          first, last = ups[0]['update_id'], ups[-1]['update_id']
+          p = subprocess.run(['openssl', 'cms', '-encrypt', '-aes-256-cbc', '-outform', 'PEM', 'reader.pem'],
+                             input=json.dumps(ups).encode(), capture_output=True)
+          if p.returncode: print('encrypt failed'); sys.exit(1)
+          os.makedirs('inbox', exist_ok=True)
+          open('inbox/batch-%d-%d.cms' % (first, last), 'wb').write(p.stdout)
+          json.dump({'offset': last + 1}, open('inbox/state.json', 'w'))
+          print('stored batch', first, last)
+          PYCODE
+          python3 reader.py
+          rm -f reader.py reader.pem
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add inbox 2>/dev/null || true
+          git diff --cached --quiet || { git commit -m inbox && git push origin tg-inbox; }
