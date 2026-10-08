@@ -1,7 +1,9 @@
 {
   "post_id": "ai114-askmaps-2026-10-08",
   "article_url": "https://aicon-hub.github.io/posts/google-maps-ask-maps-gemini-india-how-to-use-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "37718856049",
-  "message_ids": []
+  "message_ids": [
+    30
+  ]
 }
