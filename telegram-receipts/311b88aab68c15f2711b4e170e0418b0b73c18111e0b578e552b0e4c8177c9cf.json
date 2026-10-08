@@ -1,7 +1,9 @@
 {
   "post_id": "ai122-myra-2026-10-08",
   "article_url": "https://aicon-hub.github.io/posts/makemytrip-myra-ai-trip-planner-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "37764859378",
-  "message_ids": []
+  "message_ids": [
+    43
+  ]
 }
