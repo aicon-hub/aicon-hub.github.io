@@ -2,7 +2,7 @@
 (function(){
 "use strict";
 var DATA_URL="assets/os-catalog.json";
-var PAGE_SIZE=9;
+var PAGE_SIZE=6;
 var LEVEL_ORDER=["beginner","intermediate","advanced"];
 var LEVEL_LABEL={beginner:"Beginner",intermediate:"Intermediate",advanced:"Advanced","n/a":"Windows"};
 var root=document.getElementById("os-explorer-app");
@@ -62,26 +62,24 @@ function render(){
   var head=el("div","os-head");
   var searchWrap=el("div","os-search");
   var label=el("label","sr","Search operating systems");label.setAttribute("for","os-q");
-  var q=document.createElement("input");q.id="os-q";q.type="search";q.placeholder="Search by name, family or keyword";q.value=state.query;
+  var q=document.createElement("input");q.id="os-q";q.type="search";q.placeholder="Search operating systems";q.value=state.query;
   q.addEventListener("input",function(){state.query=q.value;state.page=1;state.expanded=null;renderBody();});
   searchWrap.appendChild(label);searchWrap.appendChild(q);head.appendChild(searchWrap);root.appendChild(head);
 
   var top=el("div","os-tabs");top.setAttribute("role","tablist");top.setAttribute("aria-label","Operating system type");
-  var linuxTab=makeTab("Linux Distributions","os-tab-linux","os-panel",state.type==="linux");
-  var winTab=makeTab("Debloated Windows","os-tab-windows","os-panel",state.type==="windows");
+  var linuxTab=makeTab("Linux","os-tab-linux","os-panel",state.type==="linux");
+  var winTab=makeTab("Windows","os-tab-windows","os-panel",state.type==="windows");
   linuxTab.addEventListener("click",function(){if(state.type!=="linux"){state.type="linux";state.sub=null;state.page=1;state.expanded=null;render();root.querySelector(".os-tabs [aria-selected='true']").focus();}});
   winTab.addEventListener("click",function(){if(state.type!=="windows"){state.type="windows";state.sub=null;state.page=1;state.expanded=null;render();root.querySelector(".os-tabs [aria-selected='true']").focus();}});
   top.appendChild(linuxTab);top.appendChild(winTab);wireTabKeys(top);root.appendChild(top);
 
   var subs=subTabsFor(state.type);
   if(!state.sub||subs.indexOf(state.sub)===-1)state.sub=subs[0]||null;
-  var subBar=el("div","os-subtabs");subBar.setAttribute("role","tablist");subBar.setAttribute("aria-label",state.type==="linux"?"Experience level":"Windows categories");
-  subs.forEach(function(key,i){
-    var t=makeTab(subLabel(state.type,key),"os-sub-"+i,"os-panel",state.sub===key);
-    t.addEventListener("click",function(){if(state.sub!==key){state.sub=key;state.page=1;state.expanded=null;renderBody();syncSubSel();}});
-    subBar.appendChild(t);
-  });
-  wireTabKeys(subBar);root.appendChild(subBar);
+  var subBar=el("div","os-subtabs"),subLabelEl=el("label",null,state.type==="linux"?"Experience":"Group");
+  subLabelEl.setAttribute("for","os-group");var select=el("select","os-group");select.id="os-group";
+  subs.forEach(function(key){var option=el("option",null,subLabel(state.type,key));option.value=key;option.selected=state.sub===key;select.appendChild(option);});
+  select.addEventListener("change",function(){state.sub=select.value;state.page=1;state.expanded=null;renderBody();});
+  subBar.appendChild(subLabelEl);subBar.appendChild(select);root.appendChild(subBar);
 
   if(state.type==="windows"){
     var note=el("p","os-note","Unofficial and pirated builds are listed for awareness, not recommendation. No download links are provided for pirated items. Stick to official Microsoft sources or your own licensed ISO.");
@@ -126,11 +124,11 @@ function card(it){
   var top=el("div","os-card-top");
   top.appendChild(el("h3","os-name",it.name));
   var badges=el("div","os-badges");
-  badges.appendChild(el("span","os-badge "+b.cls,b.text));
+
   if(it.status==="unofficial")badges.appendChild(el("span","os-badge st-unofficial","Unofficial"));
   if(it.status==="pirated")badges.appendChild(el("span","os-badge st-pirated","Pirated"));
   top.appendChild(badges);c.appendChild(top);
-  c.appendChild(el("p","os-summary",it.summary));
+
   var btn=el("button","os-details-btn","View details");
   var det=el("div","os-details");
   var open=state.expanded===it.name;
@@ -145,7 +143,8 @@ function card(it){
       pair.det.hidden=!isOpen;
     });
   });
-  det.appendChild(section("Base / Family",[it.family||"—"]));
+  det.appendChild(el("p","os-summary",it.summary));
+  det.appendChild(section("Base / Family",[it.family||"Not listed"]));
   det.appendChild(section("Specs",it.specs));
   det.appendChild(section("Advantages",it.advantages));
   det.appendChild(section("Disadvantages",it.disadvantages));
