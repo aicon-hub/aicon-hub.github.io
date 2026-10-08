@@ -11,7 +11,7 @@ concurrency:
 jobs:
   read:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,6 +22,8 @@ jobs:
         run: |
           git fetch origin tg-inbox --depth=1 2>/dev/null && git checkout -B tg-inbox FETCH_HEAD || git checkout --orphan tg-inbox
           git rm -rf . >/dev/null 2>&1 || true
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cat > reader.pem <<'CERT'
           -----BEGIN CERTIFICATE-----
           MIIEFTCCAn2gAwIBAgIUIqNTYJe5VhbysfUJqHQHbDPAcgAwDQYJKoZIhvcNAQEL
@@ -49,46 +51,62 @@ jobs:
           -----END CERTIFICATE-----
           CERT
           cat > reader.py <<'PYCODE'
-          import os, json, subprocess, sys, urllib.request, urllib.error, urllib.parse
+          import os, json, subprocess, sys, time, urllib.request, urllib.error, urllib.parse
           T = os.environ.get('TELEGRAM_BOT_TOKEN', '')
+          START = time.time()
+          class Stop(Exception): pass
           def tg(method, **params):
               q = urllib.parse.urlencode({k: (json.dumps(v) if isinstance(v, (list, dict)) else v) for k, v in params.items()})
               try:
-                  with urllib.request.urlopen('https://api.telegram.org/bot' + T + '/' + method + ('?' + q if q else ''), timeout=30) as r:
+                  with urllib.request.urlopen('https://api.telegram.org/bot' + T + '/' + method + ('?' + q if q else ''), timeout=45) as r:
                       d = json.load(r)
               except urllib.error.HTTPError as e:
-                  print('telegram http error', e.code); sys.exit(0)
+                  print('telegram http error', e.code); raise Stop() if e.code in (401, 404, 409) else RuntimeError()
               except Exception:
-                  print('transport error'); sys.exit(0)
+                  print('transport error'); raise RuntimeError()
               if not d.get('ok'):
-                  print('telegram rejected', method); sys.exit(0)
+                  print('telegram rejected', method); raise Stop()
               return d['result']
+          def sh(*a):
+              return subprocess.run(a, capture_output=True)
           if not T:
               print('missing secret'); sys.exit(0)
-          wh = tg('getWebhookInfo')
+          try:
+              wh = tg('getWebhookInfo')
+          except (Stop, RuntimeError):
+              sys.exit(0)
           if wh.get('url'):
               print('webhook is set; reader stands down, nothing changed'); sys.exit(0)
           st = {}
           try: st = json.load(open('inbox/state.json'))
           except Exception: pass
           off = st.get('offset')
-          args = dict(limit=100, timeout=0, allowed_updates=['message', 'edited_message', 'my_chat_member'])
-          if off: args['offset'] = off
-          ups = tg('getUpdates', **args)
-          print('updates:', len(ups))
-          if not ups: sys.exit(0)
-          first, last = ups[0]['update_id'], ups[-1]['update_id']
-          p = subprocess.run(['openssl', 'cms', '-encrypt', '-aes-256-cbc', '-outform', 'PEM', 'reader.pem'],
-                             input=json.dumps(ups).encode(), capture_output=True)
-          if p.returncode: print('encrypt failed'); sys.exit(1)
-          os.makedirs('inbox', exist_ok=True)
-          open('inbox/batch-%d-%d.cms' % (first, last), 'wb').write(p.stdout)
-          json.dump({'offset': last + 1}, open('inbox/state.json', 'w'))
-          print('stored batch', first, last)
+          n = 0
+          while time.time() - START < 285:
+              args = dict(limit=100, timeout=25, allowed_updates=['message', 'edited_message', 'my_chat_member'])
+              if off: args['offset'] = off
+              try:
+                  ups = tg('getUpdates', **args)
+              except Stop:
+                  break
+              except RuntimeError:
+                  time.sleep(5); continue
+              if not ups: continue
+              first, last = ups[0]['update_id'], ups[-1]['update_id']
+              p = subprocess.run(['openssl', 'cms', '-encrypt', '-aes-256-cbc', '-outform', 'PEM', 'reader.pem'],
+                                 input=json.dumps(ups).encode(), capture_output=True)
+              if p.returncode: print('encrypt failed'); break
+              os.makedirs('inbox', exist_ok=True)
+              open('inbox/batch-%d-%d.cms' % (first, last), 'wb').write(p.stdout)
+              json.dump({'offset': last + 1}, open('inbox/state.json', 'w'))
+              sh('git', 'add', 'inbox')
+              c = sh('git', 'commit', '-m', 'inbox')
+              pu = sh('git', 'push', 'origin', 'tg-inbox')
+              if pu.returncode:
+                  sh('git', 'pull', '--rebase', 'origin', 'tg-inbox'); pu = sh('git', 'push', 'origin', 'tg-inbox')
+              if pu.returncode: print('push failed'); break
+              off = last + 1; n += 1
+              print('stored batch', first, last)
+          print('done, batches:', n)
           PYCODE
           python3 reader.py
-          rm -f reader.py reader.pem
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add inbox 2>/dev/null || true
-          git diff --cached --quiet || { git commit -m inbox && git push origin tg-inbox; }
