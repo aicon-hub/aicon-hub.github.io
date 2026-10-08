@@ -1,0 +1,45 @@
+name: Telegram group reply
+on:
+  workflow_dispatch:
+    inputs:
+      reply_to:
+        description: Message id to reply to (optional)
+        required: false
+      text:
+        description: Reply text (single line)
+        required: true
+permissions: {}
+concurrency:
+  group: telegram-group-reply
+  cancel-in-progress: false
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Send reply to the AiCoNiC TaLkS group
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          MSG_TEXT: ${{ inputs.text }}
+          MSG_REPLY_TO: ${{ inputs.reply_to }}
+        run: |
+          cat > reply.py <<'PYCODE'
+          import os, json, sys, urllib.request, urllib.error
+          T = os.environ.get('TELEGRAM_BOT_TOKEN', '')
+          CHAT = -1003502449469
+          text = os.environ.get('MSG_TEXT', '').strip()
+          rid = os.environ.get('MSG_REPLY_TO', '').strip()
+          if not T or not text or len(text) > 4000:
+              print('bad input'); sys.exit(1)
+          p = {'chat_id': CHAT, 'text': text, 'disable_web_page_preview': True}
+          if rid.isdigit(): p['reply_parameters'] = {'message_id': int(rid), 'allow_sending_without_reply': True}
+          req = urllib.request.Request('https://api.telegram.org/bot' + T + '/sendMessage', data=json.dumps(p).encode(), headers={'Content-Type': 'application/json'})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r: d = json.load(r)
+              print('sent' if d.get('ok') else 'rejected', d.get('result', {}).get('message_id'))
+          except urllib.error.HTTPError as e:
+              print('http error', e.code); sys.exit(1)
+          except Exception:
+              print('transport error'); sys.exit(1)
+          PYCODE
+          python3 reply.py
