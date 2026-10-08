@@ -12,6 +12,7 @@
     var assigned=(li.getAttribute('data-categories')||'').split(/\s+/);
     if(assigned.indexOf(key)>-1)return true;
     var tag=li.querySelector('.tag'),t=tag?tag.textContent.toLowerCase():'',a=li.querySelector('a'),slug=a?a.getAttribute('href'):'';
+    if(key==='events')return /hackathon|contest|challenge|events/.test(t);
     if(key==='linux')return /linux distro|linux distribution/.test(t);
     if(key==='pc-tools')return /pc tools|pc software|desktop software/.test(t);
     if(key==='ai')return /ai|coding|developer|open model|data science|design tools|cloud tools|creator tools/.test(t);
