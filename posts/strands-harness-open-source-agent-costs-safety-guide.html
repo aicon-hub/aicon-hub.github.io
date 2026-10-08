@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M235QTGB');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Strands Harness: open agent software, model costs and tool risks | AiCoN</title>
+<meta content="Strands Harness Python and TypeScript packages, Apache2 license, cloud versus local model costs, sessions on disk and safe developer evaluation." name="description"/>
+<link href="https://aicon-hub.github.io/posts/strands-harness-open-source-agent-costs-safety-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Strands Harness: open agent software, model costs and tool risks" property="og:title"/>
+<meta content="Strands Harness Python and TypeScript packages, Apache2 license, cloud versus local model costs, sessions on disk and safe developer evaluation." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/strands-harness-open-source-agent-costs-safety-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/og/strands-harness-open-source-agent-costs-safety-guide.svg" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>
+<meta content="2026-10-08" property="article:published_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/og/strands-harness-open-source-agent-costs-safety-guide.svg" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Strands Harness: open agent software, model costs and tool risks", "description": "Strands Harness Python and TypeScript packages, Apache2 license, cloud versus local model costs, sessions on disk and safe developer evaluation.", "datePublished": "2026-10-08", "inLanguage": "en-IN", "image": "https://aicon-hub.github.io/assets/og/strands-harness-open-source-agent-costs-safety-guide.svg", "mainEntityOfPage": "https://aicon-hub.github.io/posts/strands-harness-open-source-agent-costs-safety-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}, "dateModified": "2026-10-08"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/style.css?v=20261007audit1" rel="stylesheet"/><link href="../assets/article.css?v=20261007audit1" rel="stylesheet"/><meta content="TITLE" name="twitter:title"/><meta content="Strands Harness Python and TypeScript packages, Apache2 license, cloud versus local model costs, sessions on disk and safe developer evaluation." name="twitter:description"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261007audit1" rel="stylesheet"/><script src="../assets/theme.js?v=20261007audit1"></script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M235QTGB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Strands Harness: open agent software, model costs and tool risks</p>
+<article class="post"><span class="chip">DEVELOPER TOOLS</span><h1>Strands Harness: open agent software, model costs and tool risks</h1><p class="meta">By AiCoN | Published 8 October 2026 | Sources checked 8 October 2026</p><p class="lead">Strands Harness is a ready-assembled developer agent from the Strands Agents project. It bundles model access, tools and session features instead of making you assemble every part. Its source license is free, but cloud model calls and infrastructure can still cost money.</p><img alt="AiCoN illustrative cover: Strands Harness: open agent software, model costs and tool risks" class="cover" height="630" src="../assets/og/strands-harness-open-source-agent-costs-safety-guide.svg" width="1200"/><div class="box warn"><b>Local agent does not mean local-only data</b>The harness can run on your computer while sending prompts to a cloud model. Its default tools can affect files and run shell commands. Review both data flow and permissions before starting.</div>
+<h2>What is a harness?</h2><p>A harness is the software around an AI model: it manages messages, tools, context and continued work. Strands presents a general-purpose assembled agent, separate from its lower-level SDK and the Strands Decider model covered elsewhere.</p><p>The official launch on 21 September 2026 says the harness uses Python or TypeScript and is released under Apache 2.0. That license applies to the checked project, not automatically to every model, plugin or third-party dependency you add.</p>
+<h2>Install routes</h2><p>The current quickstart names Python 3.10 or newer for the Python package. It lists <code>pip install strands-harness</code> and <code>npm install @strands-agents/harness</code> for TypeScript. The optional CLI uses <code>npm install -g @strands-agents/cli</code>.</p><p>A package installation is not a complete production setup. You still need a permitted model provider, credentials when required, supported dependencies and a safe place to run tools. Follow the current official quickstart in an isolated project; do not install unfamiliar packages as an administrator just to avoid an error.</p>
+<h2>Models and costs</h2><p>The docs describe providers including Amazon Bedrock, Anthropic, OpenAI and Google, with Ollama for a locally served model. They say Bedrock is the default and that model choice depends on the configuration. Read current provider access and rates before making a call.</p><p>Cloud tokens, tool services and hosting can be billed separately. A local Ollama model avoids a cloud model API bill for that route, but still needs a suitable machine, storage, energy and the model's own license. Local model selection does not stop a web tool or plugin sending information elsewhere.</p>
+<h2>The 28% claim is a benchmark result</h2><p>The project reports 28% lower token costs across six benchmarks using the same Claude or GPT models, with nearly equal scores. It describes its own EC2-based test setup. This is not an independently tested saving for every task.</p><p>Compare final quality, retries, output tokens, tools and review time, not only a headline percentage. A cheaper wrong result is not a completed job.</p>
+<h2>Sessions and private files</h2><p>The quickstart says sessions are enabled by default and written under <code>./.agent/sessions</code>. A session lets later runs resume a conversation. Long-term memory is a separate feature.</p><p>Those saved files can contain task details or model responses. Review access, backups and deletion before using sensitive code or customer information. Never commit keys or private session records to a public repository.</p>
+<h2>A careful first run</h2><ol><li>Read the official repository, license and quickstart.</li><li>Create an isolated directory with harmless test files and a backup.</li><li>Select the exact model and set its billing controls.</li><li>Review enabled file, shell and external tools; remove what the test does not need.</li><li>Choose a small task with a clear result, without private data.</li><li>Inspect actual file changes, commands, session files and billed usage.</li><li>Review effects before sending, spending or deploying anything.</li></ol><p>No package was installed, provider key connected or billed task run for this guide. Code snippets here identify official install packages, not a tested deployment walkthrough.</p>
+<h2>India fit</h2><p>This is a developer tool, not a free consumer app. Provider availability, payments and data terms can differ in India. Use your organisation's approved model and environment for workplace material.</p>
+<h2>Frequently asked questions</h2><h3>Is the model free with the harness?</h3><p>No cloud allowance is established by its source license.</p><h3>Does it run only on AWS?</h3><p>The docs describe several providers and local Ollama.</p><h3>Was the 28% saving reproduced here?</h3><p>No.</p>
+<h2>What changed since the earlier post?</h2><p>This guide separates software licensing from provider costs, adds default session storage and tool risks, and labels the project's savings as a benchmark claim.</p><p class="src">Sources: <a href="https://strandsagents.com/blog/introducing-strands-harness/">Official launch</a> · <a href="https://strandsagents.com/docs/user-guide/harness/">Harness guide</a> · <a href="https://strandsagents.com/docs/user-guide/harness/quickstart/">Current quickstart</a> · <a href="https://github.com/strands-agents/harness-sdk">Official source repository</a>. Checked 8 October 2026.</p><div class="share"><a href="https://strandsagents.com/blog/introducing-strands-harness/">Read the official page</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every tool and link verified before sharing.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+</body></html>
