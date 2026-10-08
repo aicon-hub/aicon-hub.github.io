@@ -124,4 +124,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           now=$(date +%s); a=$(cat inbox/active.txt 2>/dev/null || echo $now)
-          if [ $((now-a)) -lt 10800 ]; then gh workflow run tg-read.yml --repo "$GITHUB_REPOSITORY" --ref main; fi
+          if [ $((now-a)) -lt 315360000 ]; then gh workflow run tg-read.yml --repo "$GITHUB_REPOSITORY" --ref main; fi
