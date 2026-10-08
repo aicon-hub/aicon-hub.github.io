@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: telegram-group-reader
   cancel-in-progress: false
@@ -82,6 +83,8 @@ jobs:
           except Exception: pass
           off = st.get('offset')
           n = 0
+          os.makedirs('inbox', exist_ok=True)
+          if not os.path.exists('inbox/active.txt'): open('inbox/active.txt','w').write(str(int(time.time())))
           while time.time() - START < 285:
               args = dict(limit=100, timeout=25, allowed_updates=['message', 'edited_message', 'my_chat_member'])
               if off: args['offset'] = off
@@ -99,6 +102,7 @@ jobs:
               os.makedirs('inbox', exist_ok=True)
               open('inbox/batch-%d-%d.cms' % (first, last), 'wb').write(p.stdout)
               json.dump({'offset': last + 1}, open('inbox/state.json', 'w'))
+              open('inbox/active.txt','w').write(str(int(time.time())))
               sh('git', 'add', 'inbox')
               c = sh('git', 'commit', '-m', 'inbox')
               pu = sh('git', 'push', 'origin', 'tg-inbox')
@@ -108,5 +112,12 @@ jobs:
               off = last + 1; n += 1
               print('stored batch', first, last)
           print('done, batches:', n)
+          sh('git', 'add', 'inbox'); sh('git', 'commit', '-m', 'inbox'); sh('git', 'push', 'origin', 'tg-inbox')
           PYCODE
           python3 reader.py
+      - name: Chain next long-poll while the group is active
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          now=$(date +%s); a=$(cat inbox/active.txt 2>/dev/null || echo $now)
+          if [ $((now-a)) -lt 10800 ]; then gh workflow run tg-read.yml --repo "$GITHUB_REPOSITORY" --ref main; fi
