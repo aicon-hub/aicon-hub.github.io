@@ -1,7 +1,9 @@
 {
   "post_id": "govt32-cyber-hygiene-2026-10-09",
   "article_url": "https://aicon-hub.github.io/posts/cyber-hygiene-quiz-ncsam-2026-isea-cert-in-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "37882708909",
-  "message_ids": []
+  "message_ids": [
+    58
+  ]
 }
