@@ -1,7 +1,9 @@
 {
   "post_id": "ai135-firefox-translations-2026-10-09",
   "article_url": "https://aicon-hub.github.io/posts/firefox-translations-private-on-device-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "37880200386",
-  "message_ids": []
+  "message_ids": [
+    57
+  ]
 }
