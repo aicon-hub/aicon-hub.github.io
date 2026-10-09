@@ -50,6 +50,14 @@ def main():
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
+ # Apply theme before paint and version shared assets on every generated page.
+ for page in [OUT/'index.html',*(OUT/'posts').glob('*.html')]:
+  text=page.read_text()
+  text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261009polish1',text)
+  text=re.sub(r'<script\b[^>]*src=[\"\'][^\"\']*assets/theme.js[^\"\']*[\"\'][^>]*></script>', '', text, flags=re.I)
+  prefix='assets/' if page.parent==OUT else '../assets/'
+  text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261009polish1\"></script>',1)
+  page.write_text(text)
  for path in (OUT/'posts').glob('*.html'):
   text,rec=transform(path.read_text(),str(path.relative_to(OUT)))
   if rec:
