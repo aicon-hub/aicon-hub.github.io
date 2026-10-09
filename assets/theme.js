@@ -63,3 +63,14 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+
+/* Reading position and restrained section entrances. */
+(function(){function init(){
+ var article=document.querySelector('article.post');
+ if(article){var rail=document.createElement('div');rail.className='aicon-reading-progress';rail.setAttribute('aria-hidden','true');var fill=document.createElement('span');rail.appendChild(fill);document.body.appendChild(rail);
+ var top=document.createElement('button');top.type='button';top.className='aicon-back-top';top.textContent='↑ Top';top.setAttribute('aria-label','Back to top');top.hidden=true;document.body.appendChild(top);
+ top.addEventListener('click',function(){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
+ var pending=false;function update(){var end=article.offsetTop+article.offsetHeight-innerHeight,start=article.offsetTop;var value=Math.max(0,Math.min(1,(scrollY-start)/Math.max(1,end-start)));fill.style.transform='scaleX('+value+')';top.hidden=scrollY<700;pending=false;}
+ window.addEventListener('scroll',function(){if(!pending){pending=true;requestAnimationFrame(update);}},{passive:true});window.addEventListener('resize',update);update();}
+ if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('aicon-enter');observer.unobserve(e.target);}});},{threshold:.12});document.querySelectorAll('.checks-grid,.category-grid .card,.guide-card,.event-guide,article.post h2,article.post .box').forEach(function(e){observer.observe(e);});}
+}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
