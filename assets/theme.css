@@ -48,7 +48,7 @@ form.search button{min-height:48px;padding:10px 18px;border-radius:12px;backgrou
 .aicon-share-tools{margin:1.2rem 0;padding:1rem;border:1px solid var(--border,#aaa);border-radius:14px;background:transparent;color:inherit}.aicon-share-tools button,.aicon-share-choices a{font:inherit;font-size:14px;line-height:1.4;border:1px solid currentColor;border-radius:9px;padding:.65rem .9rem;background:transparent;color:inherit;cursor:pointer;text-decoration:none;display:inline-block}.aicon-share-tools button:focus-visible,.aicon-share-choices a:focus-visible{outline:3px solid #ec7131;outline-offset:3px}.aicon-share-tools button:hover,.aicon-share-choices a:hover{background:rgba(128,128,128,.12)}#aicon-share-button{font-weight:700}.aicon-share-choices{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}.aicon-share-choices[hidden],.aicon-share-choices textarea[hidden]{display:none}.aicon-share-status{font-size:13px;margin:.6rem 0 0;line-height:1.5}.aicon-share-status:empty{display:none}.aicon-share-choices textarea{width:100%;box-sizing:border-box;color:inherit;background:transparent;border:1px solid currentColor;border-radius:7px;padding:.6rem;font:inherit}
 
 /* Theme polish, October 9: restrained home, stable reading and accessible controls. */
-[data-theme=dark] body.home-redesign{--accent:#a4c5b3;--cta:#a4c5b3;--button:#a4c5b3;--button-text:#101612;--green:#a4c5b3}
+
 body,header,main,.card,.deadline-panel,.checks-grid,.guide-card,.box,input,select,button{transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease}
 body:not(.home-redesign)::before,body:not(.home-redesign)::after{opacity:.07;pointer-events:none}
 [data-theme=dark] body:not(.home-redesign)::before,[data-theme=dark] body:not(.home-redesign)::after{opacity:.09}
@@ -74,3 +74,37 @@ article.post .on-this-page a[aria-current=true]{font-weight:700;text-decoration-
 #postlist li a{color:var(--ink)}[data-theme=dark] #postlist li a{color:var(--ink)!important}
 @media(max-width:640px){header.top .wrap,.home-redesign .header-row{padding:14px 20px}header nav{gap:2px}header nav a{padding:8px}.home-redesign .header-row{gap:8px}.home-redesign .hero-section{padding-top:48px;padding-bottom:52px}.home-redesign section{padding-top:48px;padding-bottom:48px}article.post h1{font-size:29px}article.post .facts th,article.post .facts td{padding:10px;font-size:14px}.on-this-page{padding:16px}.aicon-share-tools{padding:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* AiCoN orange is the brand accent in both themes. */
+:root{--brand-orange:#ff682f;--brand-link:#a9360e}
+:root[data-theme=dark]{--brand-link:#ff8c60}
+body.home-redesign{--accent:#ff682f;--cta:#ff682f;--button:#ff682f;--button-text:#16100c;--green:#ff682f}
+header .brand span,header .logo span,.home-redesign .logo span{color:var(--brand-orange)}
+article.post a,[data-theme=dark] body:not(.home-redesign) article.post a{color:var(--brand-link)}
+article.post .chip{background:var(--brand-orange);color:#16100c}
+.home-redesign .guide-meta span{color:var(--brand-link);border-color:var(--brand-link)}
+.home-redesign .cta-band{background:var(--surface);color:var(--text);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.home-redesign .cta-band .button{background:var(--brand-orange);color:#16100c!important}
+.home-redesign .cta-band .button.outline{background:transparent;color:var(--text)!important;border-color:var(--secondary)}
+.home-redesign .category-grid .card,.home-redesign .guide-card,.event-guide{box-shadow:0 4px 18px #00000008;transition:transform .2s cubic-bezier(.2,.7,.2,1),border-color .2s,box-shadow .2s,background-color .18s}
+.home-redesign .category-grid .card::after{color:var(--brand-link);transition:transform .18s ease}
+.home-redesign .category-grid .card:hover::after{transform:translateX(4px)}
+.home-redesign .guide-card .read-link{color:var(--brand-link);display:flex;align-items:center;justify-content:space-between}
+.home-redesign .guide-card .read-link::after{content:'↗';font-size:19px;transition:transform .18s ease}
+.home-redesign .guide-card:hover .read-link::after{transform:translate(2px,-2px)}
+.home-redesign .deadline-panel{box-shadow:0 12px 36px #0000000c}
+.home-redesign .deadline{transition:background-color .18s ease}
+.home-redesign .deadline:hover{background:var(--surface-alt)}
+.event-guide{background:var(--surface,var(--card));border-color:var(--line,var(--mute))}
+.event-guide .event-tag{color:var(--brand-link)}
+@media(hover:hover){.home-redesign .category-grid .card:hover,.home-redesign .guide-card:hover,.event-guide:hover{border-color:var(--brand-link);transform:translateY(-4px);box-shadow:0 12px 28px #00000014}}
+.home-redesign .checks-grid .number{background:transparent;color:var(--brand-link);border:1px solid var(--brand-link)}
+.aicon-reading-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:90;pointer-events:none;background:transparent}
+.aicon-reading-progress span{display:block;height:100%;background:var(--brand-orange);transform-origin:left;transform:scaleX(0)}
+.aicon-back-top{position:fixed;right:20px;bottom:20px;z-index:80;min-width:44px;min-height:44px;padding:10px 14px;border:1px solid var(--brand-link);border-radius:999px;background:var(--bg);color:var(--ink);box-shadow:0 4px 18px #0002;font:600 13px Inter,sans-serif;cursor:pointer;transition:transform .18s ease,opacity .18s ease}
+.aicon-back-top[hidden]{display:none}.aicon-back-top:hover{transform:translateY(-3px)}
+@keyframes aicon-enter{from{opacity:.6;transform:translateY(12px)}to{opacity:1;transform:none}}
+.aicon-enter{animation:aicon-enter .4s cubic-bezier(.2,.7,.2,1) both}
+@media(max-width:640px){.aicon-back-top{right:14px;bottom:14px}.home-redesign .category-grid .card{padding:20px}.home-redesign .guide-card{padding:22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+[data-theme=light] ul.posts li small.tag{background:var(--brand-orange);color:#16100c}
