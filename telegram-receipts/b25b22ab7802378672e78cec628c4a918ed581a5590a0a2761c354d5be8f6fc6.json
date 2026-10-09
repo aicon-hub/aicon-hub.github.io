@@ -1,7 +1,9 @@
 {
   "post_id": "ai150-pi-2026-10-10",
   "article_url": "https://aicon-hub.github.io/posts/pi-free-ai-chat-companion-reminders-voice-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "37975333503",
-  "message_ids": []
+  "message_ids": [
+    77
+  ]
 }
