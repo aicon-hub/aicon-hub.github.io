@@ -1,7 +1,9 @@
 {
   "post_id": "ai163-copilot-edge-2026-10-10",
   "article_url": "https://aicon-hub.github.io/posts/copilot-in-microsoft-edge-free-page-summaries-context-privacy-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "38049251914",
-  "message_ids": []
+  "message_ids": [
+    93
+  ]
 }
