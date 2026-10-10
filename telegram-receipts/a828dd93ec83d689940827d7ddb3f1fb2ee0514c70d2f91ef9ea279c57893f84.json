@@ -1,7 +1,9 @@
 {
   "post_id": "ai161-glasp-2026-10-10",
   "article_url": "https://aicon-hub.github.io/posts/glasp-free-highlights-youtube-summaries-public-by-default-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "38042138644",
-  "message_ids": []
+  "message_ids": [
+    90
+  ]
 }
