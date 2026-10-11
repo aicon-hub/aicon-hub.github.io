@@ -1,7 +1,9 @@
 {
   "post_id": "ai182-turboscribe-2026-10-11",
   "article_url": "https://aicon-hub.github.io/posts/turboscribe-free-3-transcripts-a-day-30-minute-audio-to-text-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "38128977750",
-  "message_ids": []
+  "message_ids": [
+    116
+  ]
 }
