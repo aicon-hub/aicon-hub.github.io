@@ -1,7 +1,9 @@
 {
   "post_id": "ai197-irisgo-2026-10-12",
   "article_url": "https://aicon-hub.github.io/posts/irisgo-free-beta-ai-learns-tasks-by-watching-windows-mac-privacy-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "38200511026",
-  "message_ids": []
+  "message_ids": [
+    134
+  ]
 }
