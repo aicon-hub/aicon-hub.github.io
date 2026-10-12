@@ -1,7 +1,9 @@
 {
   "post_id": "ai210-buzz-transcription-2026-10-12",
   "article_url": "https://aicon-hub.github.io/posts/buzz-open-source-offline-audio-video-transcription-translation-app-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "38278978488",
-  "message_ids": []
+  "message_ids": [
+    152
+  ]
 }
