@@ -57,6 +57,7 @@ def main():
   text=re.sub(r'<script\b[^>]*src=[\"\'][^\"\']*assets/theme.js[^\"\']*[\"\'][^>]*></script>', '', text, flags=re.I)
   prefix='assets/' if page.parent==OUT else '../assets/'
   text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261009orange2\"></script>',1)
+  text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=cinema1"/><script defer src="'+prefix+'cinema.js?v=cinema1"></script></head>',1) if 'cinema.css' not in text else text
   page.write_text(text)
  for path in (OUT/'posts').glob('*.html'):
   text,rec=transform(path.read_text(),str(path.relative_to(OUT)))
