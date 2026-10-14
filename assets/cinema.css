@@ -133,3 +133,6 @@ article.post a{color:var(--c-or)}
 .events-section .eyebrow,.section-intro .eyebrow{margin-bottom:12px}
 .cine-chap{margin-top:6px}
 .section-heading h2{text-align:left;flex:1 1 auto;margin:0}
+
+/* Keep category labels readable on the orange badge background. */
+ul.posts .tag{background:rgba(255,104,47,.14)!important;color:var(--c-or)!important;border:1px solid rgba(255,104,47,.4)}
