@@ -1,6 +1,8 @@
 (function(){
 var d=document,root=d.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
 try{if(!localStorage.getItem('aicon-theme')){root.dataset.theme='dark';root.style.colorScheme='dark';}}catch(e){}
+/* Keep the approved dark default after theme.js handles pageshow. Saved choices still win. */
+addEventListener('pageshow',function(){try{if(!localStorage.getItem('aicon-theme')){root.dataset.theme='dark';root.style.colorScheme='dark';var bt=d.getElementById('theme-toggle');if(bt){bt.textContent='☀ Light mode';bt.setAttribute('aria-label','Switch to light theme');bt.setAttribute('aria-pressed','true');}}}catch(e){}});
 root.classList.add('cine-js');
 function ready(f){d.readyState==='loading'?d.addEventListener('DOMContentLoaded',f):f();}
 ready(function(){
