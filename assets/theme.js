@@ -38,7 +38,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 /* Article sharing: the reader chooses their own app and recipient. */
 (function(){
  function init(){
-  var article=document.querySelector('main article');if(!article||document.getElementById('aicon-share-button'))return;
+  var article=document.querySelector('main article.post');if(!article||document.getElementById('aicon-share-button'))return;
   function meta(n){var el=document.querySelector('meta[property="'+n+'"],meta[name="'+n+'"]');return el?el.content.trim():'';}
   var heading=article.querySelector('h1'),lead=article.querySelector('.lead'),canonical=document.querySelector('link[rel="canonical"]');
   var title=meta('og:title')||(heading?heading.textContent.trim():document.title),description=meta('og:description')||meta('description')||(lead?lead.textContent.trim():''),url=canonical?canonical.href:location.href.split('#')[0];
