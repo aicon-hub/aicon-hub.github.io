@@ -3,13 +3,16 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: check or publish
+        description: check, publish, or edit an existing channel message
         required: true
         default: check
         type: choice
-        options: [check, publish]
+        options: [check, publish, edit]
+      message_id:
+        description: Existing channel message ID, required for edit (never deletes or reposts)
+        required: false
       post_id:
-        description: Stable unique post ID, reused on retries
+        description: Stable unique operation ID, reused on retries; use a new ID for each edit
         required: false
       text:
         description: Final post text with optional single-star bold and underscore italic
@@ -21,7 +24,7 @@ on:
         description: Optional JPEG or PNG as base64 instead of a URL
         required: false
       article_url:
-        description: Live AiCoN guide URL, required for publishing
+        description: Live AiCoN guide URL, required for publishing and editing
         required: false
 permissions:
   contents: write
@@ -50,14 +53,16 @@ jobs:
               except Exception:raise RuntimeError('Transport outcome uncertain; reconcile before retry') from None
           
           def tg(method,data):
-              if method=='sendPhoto' and data.get('photo')=='upload':
+              media_upload=method=='editMessageMedia' and data.get('media',{}).get('media')=='attach://poster'
+              if (method=='sendPhoto' and data.get('photo')=='upload') or media_upload:
                   raw=base64.b64decode(json.load(open(os.environ['GITHUB_EVENT_PATH']))['inputs']['photo_base64'],validate=True)
                   boundary='AiCoNMultipartBoundary'
                   body=b''
                   for k,v in data.items():
                       if k=='photo':continue
+                      if isinstance(v,dict):v=json.dumps(v)
                       body+=('--'+boundary+'\r\nContent-Disposition: form-data; name="'+k+'"\r\n\r\n'+str(v)+'\r\n').encode()
-                  body+=('--'+boundary+'\r\nContent-Disposition: form-data; name="photo"; filename="poster.jpg"\r\nContent-Type: image/jpeg\r\n\r\n').encode()+raw+('\r\n--'+boundary+'--\r\n').encode()
+                  body+=('--'+boundary+'\r\nContent-Disposition: form-data; name="'+('poster' if media_upload else 'photo')+'"; filename="poster.jpg"\r\nContent-Type: image/jpeg\r\n\r\n').encode()+raw+('\r\n--'+boundary+'--\r\n').encode()
                   req=urllib.request.Request('https://api.telegram.org/bot'+os.environ['TELEGRAM_BOT_TOKEN']+'/'+method,data=body,headers={'Content-Type':'multipart/form-data; boundary='+boundary})
                   try:
                       with urllib.request.urlopen(req,timeout=40) as r: reply=json.load(r)
@@ -87,6 +92,18 @@ jobs:
               if photo:result.append(('sendPhoto',{'photo':photo}))
               return result
           
+          def edit_plan(data):
+              mid=data.get('message_id','').strip()
+              if not mid.isdigit() or int(mid)<=0:raise RuntimeError('A positive existing message_id is required for edit')
+              text=data.get('text','').replace('\\n','\n')
+              if not text or units(text)>1024:raise RuntimeError('Edit requires the final full caption, 1-1024 UTF-16 units')
+              photo='upload' if data.get('photo_base64') else data.get('photo_url','')
+              if data.get('photo_base64') and data.get('photo_url'):raise RuntimeError('Provide only one poster source')
+              if photo:
+                  plan(text,photo) # Same poster URL restrictions as publish.
+                  return [('editMessageMedia',{'message_id':int(mid),'media':{'type':'photo','media':'attach://poster' if photo=='upload' else photo,'caption':formatted(text),'parse_mode':'HTML'}})]
+              return [('editMessageCaption',{'message_id':int(mid),'caption':formatted(text),'parse_mode':'HTML'})]
+
           def verify():
               me=tg('getMe',{})
               if me.get('username','').lower()!='aiconate_bot':raise RuntimeError('Unexpected bot identity')
@@ -99,11 +116,13 @@ jobs:
           def main():
               event=json.load(open(os.environ['GITHUB_EVENT_PATH']))
               data=event.get('inputs',{})
-              if data.get('mode','check')=='check':
+              mode=data.get('mode','check')
+              if mode not in ('check','publish','edit'):raise RuntimeError('Unknown mode')
+              if mode=='check':
                   print(json.dumps({'verified_channel_id':verify(),'posting_permission':True}));return
               post_id=data.get('post_id','').strip()
               if not post_id:raise RuntimeError('A stable post_id is required')
-              steps=plan(data.get('text','').replace('\\n','\n'),'upload' if data.get('photo_base64') else data.get('photo_url',''))
+              steps=edit_plan(data) if mode=='edit' else plan(data.get('text','').replace('\\n','\n'),'upload' if data.get('photo_base64') else data.get('photo_url',''))
               # Article-first: require the published guide before any claim or send.
               article=data.get('article_url','')
               if not article.startswith('https://aicon-hub.github.io/posts/') or not article.endswith('.html'):raise RuntimeError('A live AiCoN article URL is required')
@@ -112,7 +131,7 @@ jobs:
                       if r.status!=200:raise RuntimeError('Article not live')
               except Exception:raise RuntimeError('Article availability check failed') from None
               chat_id=verify()
-              key=hashlib.sha256(post_id.encode()).hexdigest()
+              key=hashlib.sha256((('edit:'+post_id) if mode=='edit' else post_id).encode()).hexdigest()
               url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/contents/telegram-receipts/'+key+'.json'
               headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
               existing=None
@@ -122,6 +141,7 @@ jobs:
               if existing:
                   print('Post ID already claimed. No resend. Inspect its receipt and channel.');return
               state={'post_id':post_id,'article_url':article,'status':'claimed','run_id':os.environ['GITHUB_RUN_ID'],'message_ids':[]}
+              if mode=='edit':state.update(mode='edit',target_message_id=int(data['message_id']),payload_sha256=hashlib.sha256(json.dumps(steps,sort_keys=True).encode()).hexdigest())
               sha=None
               def save():
                   nonlocal sha
@@ -131,10 +151,11 @@ jobs:
               save() # Durable claim BEFORE effect. Failure prevents sending.
               for method,payload in steps:
                   result=tg(method,{'chat_id':chat_id,**payload})
+                  if mode=='edit' and result.get('message_id')!=int(data['message_id']):raise RuntimeError('Unexpected edited message ID; reconcile receipt')
                   state['message_ids'].append(result['message_id'])
                   state['status']='partial'
                   save() # Do not proceed to next part unless first receipt persisted.
-              state['status']='sent';save()
+              state['status']='edited' if mode=='edit' else 'sent';save()
               print(json.dumps({'channel_id':chat_id,'message_ids':state['message_ids'],'post_id':post_id}))
           if __name__=='__main__':
               try:main()
