@@ -35,7 +35,7 @@ def prepare(out):
   page=out/'posts'/(slug+'.html');text=page.read_text()
   if 'remote' in record:
    import urllib.request,hashlib
-   data=urllib.request.urlopen(record['remote']).read()
+   data=urllib.request.urlopen(urllib.request.Request(record['remote'],headers={'User-Agent':'Mozilla/5.0'}),timeout=30).read()
    if hashlib.sha256(data).hexdigest()!=record['sha256']:raise ValueError('Artwork changed: '+slug)
    image=Image.open(io.BytesIO(data)).convert('RGBA')
   elif 'asset' in record:
@@ -54,6 +54,7 @@ def prepare(out):
   text=text.replace('assets/og/'+slug+'.png','assets/og/'+name)
   notice='<p class="src media-credit">'+escape(record['credit'])+' <a href="'+record['policy']+'">Artwork source and permission</a>'
   if record.get('licence'):notice+=' · <a href="'+record['licence']+'">Licence</a>'
+  if record.get('link'):notice+=' · <a href="'+record['link']+'">'+escape(record['link'])+'</a>'
   notice+='</p>'
   cover=re.search(r'<img\b[^>]*class="cover"[^>]*>',text)
   if cover:text=text.replace(cover[0],cover[0]+notice,1)
