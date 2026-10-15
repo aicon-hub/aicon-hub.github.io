@@ -28,5 +28,19 @@
     "credit": "Copyright (c) 1996-2010 VideoLAN. This logo or a modified version may be used or modified by anyone to refer to the VideoLAN project or any product developed by the VideoLAN team, but does not indicate endorsement by the project. Cone by Richard Øiestad.",
     "policy": "https://www.videolan.org/goodies.html",
     "short": "VLC cone: VideoLAN / Richard Øiestad. Published logo-use permission; no endorsement."
+  },
+  "proton-ai-paper-trail-free-report-what-chatgpt-claude-know-about-you-guide": {
+    "credit": "Official Proton media-kit image. Used under Proton media-kit permission. Independent guide, not affiliated.",
+    "policy": "https://proton.me/media/kit",
+    "link": "https://proton.me/",
+    "remote": "https://pmecdn.protonweb.com/image-transformation/?s=a&image=Proton_6352d10ef6.png&width=980&height=500",
+    "sha256": "91eaf31d497d9e72d3b0423d5967ef93b25a3d82a7abc8feee73fb561187c2ae"
+  },
+  "proton-lumo-2-private-ai-assistant-guide": {
+    "credit": "Official Proton media-kit image. Used under Proton media-kit permission. Independent guide, not affiliated.",
+    "policy": "https://proton.me/media/kit",
+    "link": "https://proton.me/",
+    "remote": "https://pmecdn.protonweb.com/image-transformation/?s=a&image=Proton_6352d10ef6.png&width=980&height=500",
+    "sha256": "91eaf31d497d9e72d3b0423d5967ef93b25a3d82a7abc8feee73fb561187c2ae"
   }
 }
