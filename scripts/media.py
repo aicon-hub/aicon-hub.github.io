@@ -50,6 +50,12 @@ def prepare(out):
    if record['selector']=='data-svg':data=cairosvg.svg2png(bytestring=data)
    image=Image.open(io.BytesIO(data)).convert('RGBA')
   canvas=Image.new('RGBA',(1200,630),record.get('background','#171717'));image=ImageOps.contain(image,(1000,490),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,(630-image.height)//2))
+  if record.get('image_credit'):
+   from PIL import ImageDraw,ImageFont
+   import subprocess
+   font_path=subprocess.check_output(['fc-match','-f','%{file}','Poppins:style=Regular'],text=True).strip()
+   draw=ImageDraw.Draw(canvas);font=ImageFont.truetype(font_path,25)
+   draw.text((600,595),record['image_credit'],font=font,fill='#585254',anchor='ms')
   name=slug+'-official.png';canvas.convert('RGB').save(out/'assets/og'/name,optimize=True);brand[slug]=name
   text=text.replace('assets/og/'+slug+'.png','assets/og/'+name)
   notice='<p class="src media-credit">'+escape(record['credit'])+' <a href="'+record['policy']+'">Artwork source and permission</a>'
