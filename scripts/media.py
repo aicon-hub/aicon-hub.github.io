@@ -10,18 +10,22 @@ def prepare(out):
   if not m:
    import cairosvg
    safe=re.sub(r'font-family="[^"]*"','font-family="Poppins,Inter,sans-serif"',text)
-   png=svg.with_suffix('.png');cairosvg.svg2png(bytestring=safe.encode(),write_to=str(png),output_width=1200,output_height=630)
+   png=svg.with_suffix('.png');cairosvg.svg2png(bytestring=safe.encode(),write_to=str(png),output_width=600,output_height=315)
+   from PIL import Image
+   with Image.open(png) as image:
+    image.convert("RGB").quantize(colors=128).save(png,optimize=True)
    mapping[svg.name]=png.name;continue
   data=base64.b64decode(m[1]);
   if not data.startswith(b'\x89PNG\r\n\x1a\n'):raise ValueError(svg)
   png=svg.with_suffix('.png');png.write_bytes(data);mapping[svg.name]=png.name
+ # Rewrite every cover reference, including the visible article cover.
  for page in (out/'posts').glob('*.html'):
   text=page.read_text()
-  for match in list(re.finditer(r'<meta\b[^>]*(?:og:image|twitter:image)[^>]*>',text)):
-   tag=match[0]
-   for old,new in mapping.items():
-    if old in tag:text=text.replace(tag,tag.replace(old,new));break
+  text=re.sub(r'(?P<prefix>assets/og/)(?P<name>[^\s"\'<>/]+\.svg)',lambda m:m['prefix']+mapping.get(m['name'],m['name']),text)
   page.write_text(text)
+ # Originals stay in source; avoid duplicating their data-URI payload in the public build.
+ for name in mapping:
+  (out/'assets/og'/name).unlink()
  # Reuse unchanged, already-credited official artwork where it is embedded in the guide.
  brand={}
  for page in (out/'posts').glob('*.html'):
