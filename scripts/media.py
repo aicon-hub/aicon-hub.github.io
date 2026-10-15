@@ -50,6 +50,17 @@ def prepare(out):
    if record['selector']=='data-svg':data=cairosvg.svg2png(bytestring=data)
    image=Image.open(io.BytesIO(data)).convert('RGBA')
   canvas=Image.new('RGBA',(1200,630),record.get('background','#171717'));image=ImageOps.contain(image,(1000,490),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,(630-image.height)//2))
+  if record.get('layout')=='brand-primary':
+   from PIL import ImageDraw,ImageFont
+   import subprocess
+   canvas=Image.new('RGBA',(1200,630),'#ffffff');draw=ImageDraw.Draw(canvas)
+   font_path=subprocess.check_output(['fc-match','-f','%{file}','Comfortaa:style=Medium'],text=True).strip()
+   word=ImageFont.truetype(font_path,170);label_path=subprocess.check_output(['fc-match','-f','%{file}','Poppins:style=Regular'],text=True).strip();label=ImageFont.truetype(label_path,30)
+   widths=[draw.textlength(c,font=word) for c in ['Ai','C','oN']];start=(1200-sum(widths))/2
+   for c,color,w in zip(['Ai','C','oN'],['#171717','#ff6b35','#171717'],widths):
+    draw.text((start,90),c,font=word,fill=color);start+=w
+   draw.text((600,300),'A plain-language guide to',font=label,fill='#585254',anchor='ms')
+   image=ImageOps.contain(Image.open(io.BytesIO(data)).convert('RGBA'),(420,130),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,370))
   if record.get('image_credit'):
    from PIL import ImageDraw,ImageFont
    import subprocess
