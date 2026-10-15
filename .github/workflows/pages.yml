@@ -20,6 +20,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: python -m pip install -r scripts/requirements-build.txt
+      - name: Load approved preview fonts
+        run: |
+          mkdir -p ~/.local/share/fonts
+          curl --fail --location 'https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf' -o ~/.local/share/fonts/Poppins-SemiBold.ttf
+          curl --fail --location 'https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf' -o ~/.local/share/fonts/Poppins-Regular.ttf
+          fc-cache -f
       - run: python scripts/build-pages.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
