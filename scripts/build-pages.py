@@ -98,6 +98,8 @@ def main():
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
+ for draft in ['_template.html','article-template.html']:
+  (OUT/'posts'/draft).unlink(missing_ok=True)
  # Apply theme before paint and version shared assets on every generated page.
  for page in [OUT/'index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
@@ -116,5 +118,7 @@ def main():
  from editorial import enrich
  enrich(OUT)
  refresh_home()
+ from media import prepare
+ prepare(OUT)
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
