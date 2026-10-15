@@ -278,5 +278,13 @@
     "link": "https://www.blender.org/",
     "short": "Blender Foundation · independent AiCoN guide",
     "image_credit": "Independent AiCoN guide · Not affiliated with Blender Foundation"
+  },
+  "telegram-ai-summaries-translate-cocoon-privacy-free-guide": {
+    "asset": "telegram-official-logo.svg",
+    "background": "#ffffff",
+    "credit": "Official Telegram logo from its logo package. Used under Telegram article-illustration permission, with original colours and proportions. Independent AiCoN guide, not an official Telegram publication.",
+    "policy": "https://telegram.org/tour/screenshots",
+    "short": "Telegram official logo · independent guide",
+    "image_credit": "Independent AiCoN guide · Not an official Telegram publication"
   }
   }
