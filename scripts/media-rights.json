@@ -42,5 +42,14 @@
     "link": "https://proton.me/",
     "remote": "https://pmecdn.protonweb.com/image-transformation/?s=a&image=Proton_6352d10ef6.png&width=980&height=500",
     "sha256": "91eaf31d497d9e72d3b0423d5967ef93b25a3d82a7abc8feee73fb561187c2ae"
+  },
+  "qgis-free-mapping-gis-software-windows-mac-linux-guide": {
+    "remote": "https://www.qgis.org/styleguide/visual/main_logo.png",
+    "sha256": "ab13f0b1b99a84672a27219e731d7d6c52aada4def388afadb0cc06bf784fc9b",
+    "credit": "Official QGIS logo. QGIS project trademark. Used under the article and linking permission in its brand guidelines. Proportional PNG display; artwork unchanged. Independent guide, not affiliated with or endorsed by QGIS.",
+    "policy": "https://qgis.org/community/organisation/guidelines/",
+    "link": "https://qgis.org",
+    "background": "#ffffff",
+    "short": "QGIS project · official logo"
   }
 }
