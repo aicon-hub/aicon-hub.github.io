@@ -33,7 +33,12 @@ def prepare(out):
  import io,cairosvg
  for slug,record in rights.items():
   page=out/'posts'/(slug+'.html');text=page.read_text()
-  if 'asset' in record:
+  if 'remote' in record:
+   import urllib.request,hashlib
+   data=urllib.request.urlopen(record['remote']).read()
+   if hashlib.sha256(data).hexdigest()!=record['sha256']:raise ValueError('Artwork changed: '+slug)
+   image=Image.open(io.BytesIO(data)).convert('RGBA')
+  elif 'asset' in record:
    original=Path(__file__).parents[1]/'assets/og'/record['asset']
    data=cairosvg.svg2png(url=str(original)) if original.suffix=='.svg' else original.read_bytes()
    image=Image.open(io.BytesIO(data)).convert('RGBA')
