@@ -1,0 +1,31 @@
+{
+  "f-droid-free-open-source-android-app-store-no-ads-guide": {
+    "selector": "data-svg",
+    "credit": "F-Droid logo: William Theaker, Robert Martinez, Andrew Nayenko. CC BY-SA 3.0. Original colours and proportions; PNG export.",
+    "policy": "https://gitlab.com/fdroid/artwork/-/blob/master/fdroid-logo-2015/README.md",
+    "licence": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "linux-mint-free-windows-alternative-operating-system-live-usb-guide": {
+    "selector": "data-svg",
+    "credit": "Linux Mint official logo. Used under Linux Mint FAQ permission. Independent guide, not affiliated.",
+    "policy": "https://linuxmint.com/faq.php"
+  },
+  "gimp-free-open-source-image-editor-windows-mac-linux-guide": {
+    "selector": "data-png",
+    "credit": "Wilber, GIMP mascot, by Aryeom Han. CC BY-SA 4.0. Original colours and proportions; PNG export.",
+    "policy": "https://www.gimp.org/about/linking.html",
+    "licence": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "handbrake-free-video-converter-windows-mac-linux-guide": {
+    "selector": "data-png",
+    "credit": "Copyright HandBrake Team (https://handbrake.fr). CC BY-SA 4.0. Original colours and proportions; PNG export.",
+    "policy": "https://github.com/HandBrake/HandBrake/blob/master/graphics/LICENSE",
+    "licence": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "vlc-media-player-free-no-ads-videolan-guide": {
+    "asset": "vlc-official-cone-ai227.svg",
+    "credit": "Copyright (c) 1996-2010 VideoLAN. This logo or a modified version may be used or modified by anyone to refer to the VideoLAN project or any product developed by the VideoLAN team, but does not indicate endorsement by the project. Cone by Richard Øiestad.",
+    "policy": "https://www.videolan.org/goodies.html",
+    "short": "VLC cone: VideoLAN / Richard Øiestad. Published logo-use permission; no endorsement."
+  }
+}
