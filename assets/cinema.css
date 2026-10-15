@@ -47,3 +47,11 @@ footer{background:var(--c-bg2)!important;color:var(--c-mute)}footer a{color:var(
 .hero-search{margin:24px 0}.hero-search label{display:block;font-weight:600;margin-bottom:8px}.hero-search>div{display:flex;gap:8px}.hero-search input{min-width:0;width:100%;background:var(--c-card);border:1px solid var(--c-line);border-radius:12px;padding:12px 14px;color:var(--c-text);font:400 15px Inter,sans-serif}.home-redesign #meet-aicon{order:6}.hero-section .intro{max-width:40rem}.home-redesign .site-header{background:var(--c-bg)!important}
 
 .days-left{display:inline-block!important;font:600 12px Inter,sans-serif;color:var(--c-link);border:1px solid var(--c-line);border-radius:999px;padding:5px 9px;margin:8px 8px 0 0}.deadline-action{display:inline-block;font:600 12px Inter,sans-serif;color:var(--c-link);margin-top:8px}.deadline-panel .deadline{padding-block:12px}.hero-section h1{max-width:11ch}.hero-search button{padding-inline:18px}.home-redesign .category-grid .card{background:var(--c-card)!important}.home-redesign .latest-grid .guide-card{min-width:0}.home-redesign #meet-aicon p{max-width:720px}.home-redesign #meet-aicon{border-block:1px solid var(--c-line)}
+
+.guide-preview{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:12px;margin-bottom:18px}.preview-link{display:block}.latest-grid .guide-card:first-child{border-top:3px solid var(--c-or)!important}
+@media(min-width:1000px){.latest-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.archive-preview{float:left;width:112px;height:66px;object-fit:contain;background:var(--c-bg2);border-radius:8px;margin:0 16px 8px 0}#postlist li{min-height:112px;display:flow-root}#postlist li[hidden]{display:none!important}.preview-link img{background:#171717}.guide-card .guide-preview{object-fit:contain}.guide-meta{flex-wrap:wrap}.guide-meta span{max-width:100%}
+@media(max-width:480px){.archive-preview{width:86px;height:52px;margin-right:12px}#postlist li{min-height:100px}}
+
+.preview-credit{display:block;clear:both;font:400 12px/1.5 Inter,sans-serif;color:var(--c-mute);margin-top:10px}.preview-credit a{color:var(--c-link)}
