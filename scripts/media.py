@@ -6,7 +6,7 @@ import re,base64,json
 def prepare(out):
  # Exact authored how-to PNGs travel as text through the repository editor.
  for encoded in (out/'assets/howto').glob('*.png.b64'):
-  raw=base64.b64decode(encoded.read_text(),validate=True)
+  raw=base64.b64decode(encoded.read_text().strip(),validate=True)
   if not raw.startswith(b'\x89PNG\r\n\x1a\n'):raise ValueError(encoded)
   encoded.with_suffix('').write_bytes(raw);encoded.unlink()
  mapping={}
