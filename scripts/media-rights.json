@@ -17,10 +17,11 @@
     "licence": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   "handbrake-free-video-converter-windows-mac-linux-guide": {
-    "selector": "data-png",
     "credit": "Copyright HandBrake Team (https://handbrake.fr). CC BY-SA 4.0. Original colours and proportions; PNG export.",
     "policy": "https://github.com/HandBrake/HandBrake/blob/master/graphics/LICENSE",
-    "licence": "https://creativecommons.org/licenses/by-sa/4.0/"
+    "licence": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "remote": "https://raw.githubusercontent.com/HandBrake/HandBrake/master/graphics/Logo/HandBrake-v2-1658%C3%971721.png",
+    "sha256": "39a9988bc8dcd7a702e1113916b27cc3f0f1f6108ee8a6af21f3dd3cea4ee6d7"
   },
   "vlc-media-player-free-no-ads-videolan-guide": {
     "asset": "vlc-official-cone-ai227.svg",
