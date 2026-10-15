@@ -49,18 +49,22 @@ def prepare(out):
    data=base64.b64decode(m[1])
    if record['selector']=='data-svg':data=cairosvg.svg2png(bytestring=data)
    image=Image.open(io.BytesIO(data)).convert('RGBA')
-  canvas=Image.new('RGBA',(1200,630),'#171717');image=ImageOps.contain(image,(1000,490),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,(630-image.height)//2))
+  canvas=Image.new('RGBA',(1200,630),record.get('background','#171717'));image=ImageOps.contain(image,(1000,490),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,(630-image.height)//2))
   name=slug+'-official.png';canvas.convert('RGB').save(out/'assets/og'/name,optimize=True);brand[slug]=name
   text=text.replace('assets/og/'+slug+'.png','assets/og/'+name)
   notice='<p class="src media-credit">'+escape(record['credit'])+' <a href="'+record['policy']+'">Artwork source and permission</a>'
   if record.get('licence'):notice+=' · <a href="'+record['licence']+'">Licence</a>'
+  if record.get('asset'):
+   import shutil
+   shutil.copy2(Path(__file__).parents[1]/'assets/og'/record['asset'],out/'assets/og'/record['asset'])
+   notice+=' · <a href="../assets/og/'+record['asset']+'">Original artwork source</a>'
   if record.get('link'):notice+=' · <a href="'+record['link']+'">'+escape(record['link'])+'</a>'
   notice+='</p>'
   cover=re.search(r'<img\b[^>]*class="cover"[^>]*>',text)
   if cover:text=text.replace(cover[0],cover[0]+notice,1)
   # The approved cover replaces the separate inline logo, rather than showing it twice.
   text=re.sub(r'<figure\b[^>]*>.*?</figure>',lambda m:'' if re.search(r'<img[^>]*(?:alt="Official|src="data:image)',m[0],re.I) else m[0],text,flags=re.S)
-  text=re.sub(r'<img\b[^>]*>',lambda m:'' if 'class="cover"' not in m[0] and ('src="data:image' in m[0] or re.search(r'alt="Official',m[0],re.I)) else m[0],text)
+  text=re.sub(r'<img\b[^>]*>',lambda m:'' if 'class="cover"' not in m[0] and ('src="data:image' in m[0] or re.search(r'alt="Official',m[0],re.I) or (record.get('asset') and record['asset'].replace('.svg','.png') in m[0])) else m[0],text)
   page.write_text(text)
  # Listings can show existing artwork now; official-brand replacement is a separately checked backlog.
  home=out/'index.html';text=home.read_text()
