@@ -40,7 +40,7 @@ def prepare(out):
    image=Image.open(io.BytesIO(data)).convert('RGBA')
   elif 'asset' in record:
    original=Path(__file__).parents[1]/'assets/og'/record['asset']
-   data=cairosvg.svg2png(url=str(original)) if original.suffix=='.svg' else original.read_bytes()
+   data=cairosvg.svg2png(url=str(original),output_width=record.get('svg_width')) if original.suffix=='.svg' else original.read_bytes()
    image=Image.open(io.BytesIO(data)).convert('RGBA')
   else:
    mime='svg\+xml' if record['selector']=='data-svg' else 'png'
