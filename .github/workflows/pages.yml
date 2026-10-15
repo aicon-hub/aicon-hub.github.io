@@ -26,6 +26,7 @@ jobs:
           mkdir -p ~/.local/share/fonts
           curl --fail --location 'https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf' -o ~/.local/share/fonts/Poppins-SemiBold.ttf
           curl --fail --location 'https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf' -o ~/.local/share/fonts/Poppins-Regular.ttf
+          curl --fail --location 'https://fonts.gstatic.com/s/comfortaa/v47/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4VrMPrQ.ttf' -o ~/.local/share/fonts/Comfortaa-Medium.ttf
           fc-cache -f
       - run: python scripts/build-pages.py
       - uses: actions/configure-pages@v5
