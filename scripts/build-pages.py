@@ -81,7 +81,9 @@ def refresh_home():
  deadlines=''
  for x in dates:
   day=x['date'][8:];month=datetime.fromisoformat(x['date']).strftime('%b').upper()
-  deadlines+='<a class="deadline" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="date-box"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small></span></a>'
+  days=(datetime.fromisoformat(x['date']).date()-datetime.fromisoformat(today).date()).days
+  badge='Closes today' if days==0 else ('1 day left' if days==1 else str(days)+' days left')
+  deadlines+='<a class="deadline" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="date-box"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small><b class="days-left">'+badge+'</b><span class="deadline-action">How to apply →</span></span></a>'
  home=re.sub(r'<a class="deadline"[^>]*>.*?</a>','',home,flags=re.S)
  home=home.replace('<a class="panel-end"',deadlines+'<a class="panel-end"',1)
  eventcards=''.join('<a class="event-guide" href="'+esc(x['href'])+'"><span class="event-tag">'+esc(x['tag'])+'</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['date']+' | '+x['description'])+'</p></a>' for x in events[:4])
@@ -109,8 +111,10 @@ def main():
   text,rec=transform(path.read_text(),str(path.relative_to(OUT)))
   if rec:
    path.write_text(text)
-   if 'template' not in path.name:audit.append(rec)
+   if 'template' not in path.name and path.name!='about-aicon.html':audit.append(rec)
  (OUT/'share-metadata-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2))
+ from editorial import enrich
+ enrich(OUT)
  refresh_home()
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
