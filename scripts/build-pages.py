@@ -43,6 +43,52 @@ def transform(text,path):
  if 'assets/theme.js' not in text:text=text.replace('</head>','<script defer src="../assets/theme.js?v=20261008share1"></script></head>',1)
  if 'assets/theme.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="../assets/theme.css?v=20261008share1"/></head>',1)
  return text,dict(path=path,title=title,description=desc,url=url,image=image)
+def replace_inner(text, marker, inner):
+ start=text.index(marker);a=text.index('>',start)+1;depth=1
+ for m in re.finditer(r'</?div\b[^>]*>',text[a:]):
+  depth+= -1 if m[0].startswith('</') else 1
+  if depth==0:return text[:a]+inner+text[a+m.start():]
+ raise ValueError(marker)
+def refresh_home():
+ from datetime import datetime
+ from zoneinfo import ZoneInfo
+ from html import escape as esc
+ today=datetime.now(ZoneInfo('Asia/Kolkata')).date().isoformat()
+ index=(OUT/'posts/index.html').read_text();rows=[];dates=[];events=[]
+ for li in re.findall(r'<li\b[^>]*>.*?</li>',index,re.S):
+  am=re.search(r'<a\b[^>]*href=["\x27]([^"\x27]+)["\x27][^>]*>(.*?)</a>',li,re.S)
+  if not am:continue
+  title=unescape(re.sub('<[^>]+>','',am[2]));href='posts/'+am[1]
+  tagm=re.search(r'<small[^>]*class=["\x27]tag["\x27][^>]*>(.*?)</small>',li,re.S)
+  tag=unescape(re.sub('<[^>]+>','',tagm[1])) if tagm else 'GUIDE'
+  smalls=re.findall(r'<small\b[^>]*>(.*?)</small>',li,re.S);summary=unescape(re.sub('<[^>]+>','',smalls[-1])) if smalls else ''
+  date,_,desc=summary.partition(' | ');row=dict(title=title,href=href,tag=tag,date=date,description=desc);rows.append(row)
+  if re.search('hackathon|contest|challenge|events',tag,re.I):events.append(row)
+  dm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
+  if dm:
+   try:
+    for dt in json.loads(unescape(dm[2])):
+     label=dt.get('label','Listed deadline').replace('closes23:45IST','closes 23:45 IST').replace('SFIC institution submission','Seva First institution submission')
+     if dt.get('date','')>=today:dates.append(dict(date=dt['date'],label=label,title=title,href=href))
+   except (ValueError,KeyError):pass
+ dates.sort(key=lambda x:(x['date'],x['title']));dates=dates[:6]
+ home=(OUT/'index.html').read_text()
+ cards=''.join('<article class="guide-card"><div class="guide-meta"><span>'+esc(x['tag'])+'</span><small>'+esc(x['date'])+'</small></div><h3><a href="'+esc(x['href'])+'">'+esc(x['title'])+'</a></h3><p>'+esc(x['description'])+'</p><a class="read-link" href="'+esc(x['href'])+'">Read guide →</a></article>' for x in rows[:6])
+ home=replace_inner(home,'<div class="latest-grid"',cards)
+ home=re.sub(r'Browse all \d+ guides on this page','Browse all '+str(len(rows))+' guides',home)
+ # Full archive belongs on its own page, not duplicated behind a disclosure.
+ home=re.sub(r'(<details class="archive">.*?)<ul class="posts">.*?</ul>',lambda m:m[1]+'<p><a href="posts/index.html">Open the full guide library →</a></p>',home,flags=re.S)
+ deadlines=''
+ for x in dates:
+  day=x['date'][8:];month=datetime.fromisoformat(x['date']).strftime('%b').upper()
+  deadlines+='<a class="deadline" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="date-box"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small></span></a>'
+ home=re.sub(r'<a class="deadline"[^>]*>.*?</a>','',home,flags=re.S)
+ home=home.replace('<a class="panel-end"',deadlines+'<a class="panel-end"',1)
+ eventcards=''.join('<a class="event-guide" href="'+esc(x['href'])+'"><span class="event-tag">'+esc(x['tag'])+'</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['date']+' | '+x['description'])+'</p></a>' for x in events[:4])
+ home=replace_inner(home,'<div class="events-grid" id="events-list"',eventcards)
+ (OUT/'index.html').write_text(home)
+ (OUT/'assets/deadlines-data.json').write_text(json.dumps(dates,ensure_ascii=False))
+
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
@@ -53,11 +99,11 @@ def main():
  # Apply theme before paint and version shared assets on every generated page.
  for page in [OUT/'index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
-  text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261009orange2',text)
+  text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261015smooth1',text)
   text=re.sub(r'<script\b[^>]*src=[\"\'][^\"\']*assets/theme.js[^\"\']*[\"\'][^>]*></script>', '', text, flags=re.I)
   prefix='assets/' if page.parent==OUT else '../assets/'
-  text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261009orange2\"></script>',1)
-  text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=cinema1"/><script defer src="'+prefix+'cinema.js?v=cinema1"></script></head>',1) if 'cinema.css' not in text else text
+  text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261015smooth1\"></script>',1)
+  text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=20261015smooth1"/><script defer src="'+prefix+'cinema.js?v=20261015smooth1"></script></head>',1) if 'cinema.css' not in text else text
   page.write_text(text)
  for path in (OUT/'posts').glob('*.html'):
   text,rec=transform(path.read_text(),str(path.relative_to(OUT)))
@@ -65,5 +111,6 @@ def main():
    path.write_text(text)
    if 'template' not in path.name:audit.append(rec)
  (OUT/'share-metadata-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2))
+ refresh_home()
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
