@@ -267,5 +267,16 @@
     "policy": "https://blog.google/image-library/",
     "short": "Source: Google · company logo",
     "image_credit": "Source: Google · Independent AiCoN guide"
+  },
+  "blender-free-open-source-3d-software-download-guide": {
+    "remote": "https://www.blender.org/wp-content/uploads/2020/07/blender_logo-1280x391.png",
+    "sha256": "b788f9cb48b38dd97e946e558a481110ad140209efa48a3cb71e163d3c2718dd",
+    "layout": "brand-primary",
+    "background": "#ffffff",
+    "credit": "Official complete Blender logo, unaltered and displayed proportionally. Blender is a registered trademark of the Blender Foundation. Used to identify the product under the published third-party guidelines, with AiCoN branding more prominent. Independent guide, not affiliated with or endorsed by Blender Foundation.",
+    "policy": "https://www.blender.org/about/logo/",
+    "link": "https://www.blender.org/",
+    "short": "Blender Foundation · independent AiCoN guide",
+    "image_credit": "Independent AiCoN guide · Not affiliated with Blender Foundation"
   }
-}
+  }
