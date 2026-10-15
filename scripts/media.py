@@ -57,6 +57,9 @@ def prepare(out):
   notice+='</p>'
   cover=re.search(r'<img\b[^>]*class="cover"[^>]*>',text)
   if cover:text=text.replace(cover[0],cover[0]+notice,1)
+  # The approved cover replaces the separate inline logo, rather than showing it twice.
+  text=re.sub(r'<figure\b[^>]*>.*?</figure>',lambda m:'' if re.search(r'<img[^>]*(?:alt="Official|src="data:image)',m[0],re.I) else m[0],text,flags=re.S)
+  text=re.sub(r'<img\b[^>]*>',lambda m:'' if 'class="cover"' not in m[0] and ('src="data:image' in m[0] or re.search(r'alt="Official',m[0],re.I)) else m[0],text)
   page.write_text(text)
  # Listings can show existing artwork now; official-brand replacement is a separately checked backlog.
  home=out/'index.html';text=home.read_text()
