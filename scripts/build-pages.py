@@ -64,10 +64,12 @@ def refresh_home():
   smalls=re.findall(r'<small\b[^>]*>(.*?)</small>',li,re.S);summary=unescape(re.sub('<[^>]+>','',smalls[-1])) if smalls else ''
   date,_,desc=summary.partition(' | ');row=dict(title=title,href=href,tag=tag,date=date,description=desc);rows.append(row)
   if re.search('hackathon|contest|challenge|events',tag,re.I):events.append(row)
+  guide=OUT/'posts'/am[1]
+  gm=re.search(r'<script\b[^>]*id=["\x27]aicon-deadlines["\x27][^>]*>(.*?)</script>',guide.read_text(),re.S) if guide.exists() else None
   dm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
-  if dm:
+  if gm or dm:
    try:
-    for dt in json.loads(unescape(dm[2])):
+    for dt in json.loads(gm[1] if gm else unescape(dm[2])):
      label=dt.get('label','Listed deadline').replace('closes23:45IST','closes 23:45 IST').replace('SFIC institution submission','Seva First institution submission')
      if dt.get('date','')>=today:dates.append(dict(date=dt['date'],label=label,title=title,href=href))
    except (ValueError,KeyError):pass
