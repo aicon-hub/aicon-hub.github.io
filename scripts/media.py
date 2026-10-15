@@ -26,16 +26,33 @@ def prepare(out):
  # Originals stay in source; avoid duplicating their data-URI payload in the public build.
  for name in mapping:
   (out/'assets/og'/name).unlink()
- # Reuse unchanged, already-credited official artwork where it is embedded in the guide.
+ # A source-grounded registry, not a blanket software-licence assumption.
+ rights=json.loads((Path(__file__).parent/'media-rights.json').read_text())
  brand={}
- for page in (out/'posts').glob('*.html'):
-  if not any(x in page.name for x in ['f-droid-free','linux-mint-free']):continue
-  text=page.read_text();m=re.search(r'<img\b[^>]*alt="Official[^>]*src="(data:image/svg\+xml;base64,[^"]+)"',text)
-  if not m:continue
-  svg=base64.b64decode(m[1].split(',',1)[1]);name=page.stem+'-official.png'
-  import cairosvg
-  cairosvg.svg2png(bytestring=svg,write_to=str(out/'assets/og'/name),output_width=600,output_height=315,background_color='#171717')
-  brand[page.stem]=name
+ from PIL import Image,ImageOps
+ import io,cairosvg
+ for slug,record in rights.items():
+  page=out/'posts'/(slug+'.html');text=page.read_text()
+  if 'asset' in record:
+   original=Path(__file__).parents[1]/'assets/og'/record['asset']
+   data=cairosvg.svg2png(url=str(original)) if original.suffix=='.svg' else original.read_bytes()
+   image=Image.open(io.BytesIO(data)).convert('RGBA')
+  else:
+   mime='svg\+xml' if record['selector']=='data-svg' else 'png'
+   m=re.search(r'src="data:image/'+mime+r';base64,([^"\s]+)"',text)
+   if not m:raise ValueError('Missing approved artwork: '+slug)
+   data=base64.b64decode(m[1])
+   if record['selector']=='data-svg':data=cairosvg.svg2png(bytestring=data)
+   image=Image.open(io.BytesIO(data)).convert('RGBA')
+  canvas=Image.new('RGBA',(1200,630),'#171717');image=ImageOps.contain(image,(1000,490),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,(630-image.height)//2))
+  name=slug+'-official.png';canvas.convert('RGB').save(out/'assets/og'/name,optimize=True);brand[slug]=name
+  text=text.replace('assets/og/'+slug+'.png','assets/og/'+name)
+  notice='<p class="src media-credit">'+escape(record['credit'])+' <a href="'+record['policy']+'">Artwork source and permission</a>'
+  if record.get('licence'):notice+=' · <a href="'+record['licence']+'">Licence</a>'
+  notice+='</p>'
+  cover=re.search(r'<img\b[^>]*class="cover"[^>]*>',text)
+  if cover:text=text.replace(cover[0],cover[0]+notice,1)
+  page.write_text(text)
  # Listings can show existing artwork now; official-brand replacement is a separately checked backlog.
  home=out/'index.html';text=home.read_text()
  def add(m):
@@ -44,7 +61,7 @@ def prepare(out):
   slug=Path(a[1]).stem;preview=brand.get(slug,slug+'.png');img=out/'assets/og'/preview
   if img.exists():card=card.replace('<div class="guide-meta">','<a class="preview-link" href="posts/'+escape(a[1])+'" tabindex="-1" aria-hidden="true"><img class="guide-preview" src="assets/og/'+preview+'" alt="" width="1200" height="630" loading="lazy"/></a><div class="guide-meta">',1)
   if slug in brand:
-   credit='F-Droid logo: Theaker, Martinez, Nayenko · CC BY-SA 3.0' if slug.startswith('f-droid') else 'Linux Mint logo · used under its FAQ permission'
+   credit=rights[slug].get('short',rights[slug]['credit'])
    card=card.replace('</article>','<small class="preview-credit">'+credit+' · <a href="posts/'+escape(a[1])+'">Source and credit</a></small></article>')
   return card
  text=re.sub(r'<article class="guide-card">.*?</article>',add,text,flags=re.S);home.write_text(text)
@@ -57,7 +74,7 @@ def prepare(out):
   image='<img class="archive-preview" src="../assets/og/'+preview+'" alt="" width="1200" height="630" loading="lazy"/>'
   li=li.replace(a[0],image+a[0],1)
   if slug in brand:
-   credit='F-Droid logo: Theaker, Martinez, Nayenko · CC BY-SA 3.0' if slug.startswith('f-droid') else 'Linux Mint logo · FAQ permission'
+   credit=rights[slug].get('short',rights[slug]['credit'])
    li=li.replace('</li>','<small class="preview-credit">'+credit+' · <a href="'+escape(a[1])+'">Source and credit</a></small></li>')
   return li
  text=re.sub(r'<li\b[^>]*>.*?</li>',thumb,text,flags=re.S);index.write_text(text)
@@ -68,5 +85,7 @@ def prepare(out):
   for row in rows:
    old=Path(row.get('image') or '').name
    if old in mapping:row['image']=row['image'].replace(old,mapping[old])
+   slug=Path(row.get('path','')).stem
+   if slug in brand:row['image']=row['image'].replace(slug+'.png',brand[slug])
   ledger.write_text(json.dumps(rows,ensure_ascii=False,indent=2))
  return mapping
