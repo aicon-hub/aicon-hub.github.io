@@ -6,6 +6,9 @@ import json,re
 def apply(out):
  registry=Path(__file__).with_name('official-remote-media.json')
  records=json.loads(registry.read_text()) if registry.exists() else {}
+ # Official hosts that failed repeated real article loads stay text-only.
+ unavailable=['cadence-chipstack-rtl-agent-early-access-limits-guide', 'glasp-free-highlights-youtube-summaries-public-by-default-guide', 'pm-svanidhi-street-vendor-loan-guide', 'aadhaar-biometric-lock-unlock', 'pm-mudra-loan-shishu-tarun-plus-guide', 'lg-thinq-claw-beta-india-availability-guide', 'national-frontier-ai-compute-fund-proposal-status-guide', 'digital-arrest-scam-india-report-guide', 'online-fraud-1930-first-hour-reporting-guide', 'abha-health-id-create-free', 'sanchar-saathi-check-sim-block-lost-phone', 'hdfc-bank-eva-ai-chatbot-free-banking-questions-guide', 'cybercrime-suspect-repository-check-before-paying', 'pm-vishwakarma-artisan-scheme-guide', 'pm-internship-scheme-paid-internships-guide', 'myupi-npci-fimi-support-safety-controls-guide', 'rbi-ombudsman-complaint-guide-2026', 'adobe-premiere-mobile-free-video-editor-guide', 'youth-entrepreneurs-challenge-2027-vbyld-age-18-35-cash-prizes-up-to-rs-1-5-lakh-guide', 'apprenticeship-india-registration-stipend-guide', 'esanjeevani-free-online-doctor-kerala-guide', 'prismor-ai-agent-security-free-runtime-policy-guide', 'undp-internships-how-they-work-how-to-apply-guide', 'adobe-scan-free-ai-document-scanner-guide', 'adobe-gemini-claude-creative-acrobat-access-guide']
+ records={s:x for s,x in records.items() if s not in unavailable}
  applied={}
  # Articles without a usable official hotlink are intentionally text-only.
  for page in (out/'posts').glob('*.html'):
