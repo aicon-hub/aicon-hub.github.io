@@ -1,7 +1,9 @@
 {
   "post_id": "ai277-commonvoice-2026-10-16",
   "article_url": "https://aicon-hub.github.io/posts/mozilla-common-voice-donate-voice-open-speech-dataset-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "38868502969",
-  "message_ids": []
+  "message_ids": [
+    240
+  ]
 }
