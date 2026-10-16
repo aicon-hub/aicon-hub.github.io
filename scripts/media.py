@@ -9,86 +9,11 @@ def prepare(out):
   raw=base64.b64decode(encoded.read_text().strip(),validate=True)
   if not raw.startswith(b'\x89PNG\r\n\x1a\n'):raise ValueError(encoded)
   encoded.with_suffix('').write_bytes(raw);encoded.unlink()
- mapping={}
- for svg in (out/'assets/og').glob('*.svg'):
-  text=svg.read_text();m=re.search(r'data:image/png;base64,([A-Za-z0-9+/=\s]+)',text)
-  if not m:
-   import cairosvg
-   safe=re.sub(r'font-family="[^"]*"','font-family="Poppins,Inter,sans-serif"',text)
-   png=svg.with_suffix('.png');cairosvg.svg2png(bytestring=safe.encode(),write_to=str(png),output_width=600,output_height=315)
-   from PIL import Image
-   with Image.open(png) as image:
-    image.convert("RGB").quantize(colors=128).save(png,optimize=True)
-   mapping[svg.name]=png.name;continue
-  data=base64.b64decode(m[1]);
-  if not data.startswith(b'\x89PNG\r\n\x1a\n'):raise ValueError(svg)
-  png=svg.with_suffix('.png');png.write_bytes(data);mapping[svg.name]=png.name
- # Rewrite every cover reference, including the visible article cover.
- for page in (out/'posts').glob('*.html'):
-  text=page.read_text()
-  text=re.sub(r'(?P<prefix>assets/og/)(?P<name>[^\s"\'<>/]+\.svg)',lambda m:m['prefix']+mapping.get(m['name'],m['name']),text)
-  page.write_text(text)
- # Originals stay in source; avoid duplicating their data-URI payload in the public build.
- for name in mapping:
-  (out/'assets/og'/name).unlink()
- # A source-grounded registry, not a blanket software-licence assumption.
- rights=json.loads((Path(__file__).parent/'media-rights.json').read_text())
- brand={}
- from PIL import Image,ImageOps
- import io,cairosvg
- for slug,record in rights.items():
-  if slug in json.loads(Path(__file__).with_name('official-remote-media.json').read_text()):continue
-  page=out/'posts'/(slug+'.html');text=page.read_text()
-  if 'remote' in record:
-   import urllib.request,hashlib
-   data=urllib.request.urlopen(urllib.request.Request(record['remote'],headers={'User-Agent':'Mozilla/5.0'}),timeout=30).read()
-   if hashlib.sha256(data).hexdigest()!=record['sha256']:raise ValueError('Artwork changed: '+slug)
-   image=Image.open(io.BytesIO(data)).convert('RGBA')
-  elif 'asset' in record:
-   original=Path(__file__).parents[1]/'assets/og'/record['asset']
-   data=cairosvg.svg2png(url=str(original),output_width=record.get('svg_width')) if original.suffix=='.svg' else original.read_bytes()
-   image=Image.open(io.BytesIO(data)).convert('RGBA')
-  else:
-   mime='svg\+xml' if record['selector']=='data-svg' else 'png'
-   m=re.search(r'src="data:image/'+mime+r';base64,([^"\s]+)"',text)
-   if not m:raise ValueError('Missing approved artwork: '+slug)
-   data=base64.b64decode(m[1])
-   if record['selector']=='data-svg':data=cairosvg.svg2png(bytestring=data)
-   image=Image.open(io.BytesIO(data)).convert('RGBA')
-  canvas=Image.new('RGBA',(1200,630),record.get('background','#171717'));image=ImageOps.contain(image,(1000,490),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,(630-image.height)//2))
-  if record.get('layout')=='brand-primary':
-   from PIL import ImageDraw,ImageFont
-   import subprocess
-   canvas=Image.new('RGBA',(1200,630),'#ffffff');draw=ImageDraw.Draw(canvas)
-   font_path=subprocess.check_output(['fc-match','-f','%{file}','Comfortaa:style=Medium'],text=True).strip()
-   word=ImageFont.truetype(font_path,170);label_path=subprocess.check_output(['fc-match','-f','%{file}','Poppins:style=Regular'],text=True).strip();label=ImageFont.truetype(label_path,30)
-   widths=[draw.textlength(c,font=word) for c in ['Ai','C','oN']];start=(1200-sum(widths))/2
-   for c,color,w in zip(['Ai','C','oN'],['#171717','#ff6b35','#171717'],widths):
-    draw.text((start,90),c,font=word,fill=color);start+=w
-   draw.text((600,300),'A plain-language guide to',font=label,fill='#585254',anchor='ms')
-   image=ImageOps.contain(Image.open(io.BytesIO(data)).convert('RGBA'),(420,130),Image.Resampling.LANCZOS);canvas.alpha_composite(image,((1200-image.width)//2,370))
-  if record.get('image_credit'):
-   from PIL import ImageDraw,ImageFont
-   import subprocess
-   font_path=subprocess.check_output(['fc-match','-f','%{file}','Poppins:style=Regular'],text=True).strip()
-   draw=ImageDraw.Draw(canvas);font=ImageFont.truetype(font_path,25)
-   draw.text((600,595),record['image_credit'],font=font,fill='#585254',anchor='ms')
-  name=slug+'-official.png';canvas.convert('RGB').save(out/'assets/og'/name,optimize=True);brand[slug]=name
-  text=text.replace('assets/og/'+slug+'.png','assets/og/'+name)
-  notice='<p class="src media-credit">'+escape(record['credit'])+' <a href="'+record['policy']+'">Artwork source and permission</a>'
-  if record.get('licence'):notice+=' · <a href="'+record['licence']+'">Licence</a>'
-  if record.get('asset'):
-   import shutil
-   shutil.copy2(Path(__file__).parents[1]/'assets/og'/record['asset'],out/'assets/og'/record['asset'])
-   notice+=' · <a href="../assets/og/'+record['asset']+'">Original artwork source</a>'
-  if record.get('link'):notice+=' · <a href="'+record['link']+'">'+escape(record['link'])+'</a>'
-  notice+='</p>'
-  cover=re.search(r'<img\b[^>]*class="cover"[^>]*>',text)
-  if cover:text=text.replace(cover[0],cover[0]+notice,1)
-  # The approved cover replaces the separate inline logo, rather than showing it twice.
-  text=re.sub(r'<figure\b[^>]*>.*?</figure>',lambda m:'' if re.search(r'<img[^>]*(?:alt="Official|src="data:image)',m[0],re.I) else m[0],text,flags=re.S)
-  text=re.sub(r'<img\b[^>]*>',lambda m:'' if 'class="cover"' not in m[0] and ('src="data:image' in m[0] or re.search(r'alt="Official',m[0],re.I) or (record.get('asset') and record['asset'].replace('.svg','.png') in m[0])) else m[0],text)
-  page.write_text(text)
+ mapping={};brand={};rights={}
+ # Generated covers and locally copied publisher art are not deployed.
+ import shutil
+ shutil.rmtree(out/'assets/og',ignore_errors=True)
+ (out/'assets/og').mkdir(parents=True,exist_ok=True)
  # Official artwork hosted by its publisher remains remote, including list previews.
  remote_previews={}
  for page in (out/'posts').glob('*.html'):
