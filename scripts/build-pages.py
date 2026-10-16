@@ -102,6 +102,10 @@ def main():
   elif src.is_file():shutil.copy2(src,OUT/name)
  for draft in ['_template.html','article-template.html']:
   (OUT/'posts'/draft).unlink(missing_ok=True)
+ # Standalone AGPL avatar guide: decode corresponding source, load independent host.
+ import base64
+ (OUT/'assets/avatar-guide-source.tar.gz').write_bytes(base64.b64decode((ROOT/'assets/avatar-guide-source.tar.gz.b64').read_text()))
+ (OUT/'assets/avatar-guide-source.tar.gz.b64').unlink(missing_ok=True)
  # Apply theme before paint and version shared assets on every generated page.
  for page in [OUT/'index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
@@ -110,6 +114,7 @@ def main():
   prefix='assets/' if page.parent==OUT else '../assets/'
   text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261015smooth1\"></script>',1)
   text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=20261015smooth1"/><script defer src="'+prefix+'cinema.js?v=20261015smooth1"></script></head>',1) if 'cinema.css' not in text else text
+  text=text.replace('</body>','<script defer src="'+prefix+'avatar-loader.js?v=20261016guide1"></script></body>',1)
   page.write_text(text)
  for path in (OUT/'posts').glob('*.html'):
   text,rec=transform(path.read_text(),str(path.relative_to(OUT)))
