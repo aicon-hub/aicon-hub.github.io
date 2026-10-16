@@ -88,13 +88,22 @@ def prepare(out):
   text=re.sub(r'<figure\b[^>]*>.*?</figure>',lambda m:'' if re.search(r'<img[^>]*(?:alt="Official|src="data:image)',m[0],re.I) else m[0],text,flags=re.S)
   text=re.sub(r'<img\b[^>]*>',lambda m:'' if 'class="cover"' not in m[0] and ('src="data:image' in m[0] or re.search(r'alt="Official',m[0],re.I) or (record.get('asset') and record['asset'].replace('.svg','.png') in m[0])) else m[0],text)
   page.write_text(text)
- # Listings can show existing artwork now; official-brand replacement is a separately checked backlog.
+ # Official artwork hosted by its publisher remains remote, including list previews.
+ remote_previews={}
+ for page in (out/'posts').glob('*.html'):
+  text=page.read_text();m=re.search(r'<img\b[^>]*class="cover"[^>]*src="(https://[^"<>]+)"|<img\b[^>]*src="(https://[^"<>]+)"[^>]*class="cover"',text)
+  if m:remote_previews[page.stem]=m[1] or m[2]
+ # Remove obsolete generated/local Freesound artwork from the deployed site.
+ for obsolete in [out/'assets/og/freesound-free-sound-effects-recordings-creative-commons-guide.svg',out/'assets/og/freesound-free-sound-effects-recordings-creative-commons-guide.png',out/'assets/howto/freesound-official-icon.png']:
+  obsolete.unlink(missing_ok=True)
+ # Listings can use official remote artwork or existing supplied covers.
+
  home=out/'index.html';text=home.read_text()
  def add(m):
   card=m[0];a=re.search(r'href="posts/([^"]+)"',card)
   if not a:return card
   slug=Path(a[1]).stem;preview=brand.get(slug,slug+'.png');img=out/'assets/og'/preview
-  if img.exists():card=card.replace('<div class="guide-meta">','<a class="preview-link" href="posts/'+escape(a[1])+'" tabindex="-1" aria-hidden="true"><img class="guide-preview" src="assets/og/'+preview+'" alt="" width="1200" height="630" loading="lazy"/></a><div class="guide-meta">',1)
+  if slug in remote_previews or img.exists():card=card.replace('<div class="guide-meta">','<a class="preview-link" href="posts/'+escape(a[1])+'" tabindex="-1" aria-hidden="true"><img class="guide-preview" src="'+escape(remote_previews.get(slug,'assets/og/'+preview),quote=True)+'" alt="" width="1200" height="630" loading="lazy"/></a><div class="guide-meta">',1)
   if slug in brand:
    credit=rights[slug].get('short',rights[slug]['credit'])
    card=card.replace('</article>','<small class="preview-credit">'+credit+' · <a href="posts/'+escape(a[1])+'">Source and credit</a></small></article>')
@@ -105,8 +114,8 @@ def prepare(out):
   li=m[0];a=re.search(r'<a[^>]*href="([^"]+)"',li)
   if not a:return li
   slug=Path(a[1]).stem;preview=brand.get(slug,slug+'.png')
-  if not (out/'assets/og'/preview).exists():return li
-  image='<img class="archive-preview" src="../assets/og/'+preview+'" alt="" width="1200" height="630" loading="lazy"/>'
+  if slug not in remote_previews and not (out/'assets/og'/preview).exists():return li
+  image='<img class="archive-preview" src="'+escape(remote_previews.get(slug,'../assets/og/'+preview),quote=True)+'" alt="" width="1200" height="630" loading="lazy"/>'
   li=li.replace(a[0],image+a[0],1)
   if slug in brand:
    credit=rights[slug].get('short',rights[slug]['credit'])
