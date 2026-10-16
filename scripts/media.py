@@ -37,6 +37,7 @@ def prepare(out):
  from PIL import Image,ImageOps
  import io,cairosvg
  for slug,record in rights.items():
+  if slug in json.loads(Path(__file__).with_name('official-remote-media.json').read_text()):continue
   page=out/'posts'/(slug+'.html');text=page.read_text()
   if 'remote' in record:
    import urllib.request,hashlib
@@ -91,8 +92,11 @@ def prepare(out):
  # Official artwork hosted by its publisher remains remote, including list previews.
  remote_previews={}
  for page in (out/'posts').glob('*.html'):
-  text=page.read_text();m=re.search(r'<img\b[^>]*class="cover"[^>]*src="(https://[^"<>]+)"|<img\b[^>]*src="(https://[^"<>]+)"[^>]*class="cover"',text)
-  if m:remote_previews[page.stem]=m[1] or m[2]
+  text=page.read_text()
+  for tag in re.findall(r'<img\b[^>]*>',text):
+   if not re.search(r'class="[^"]*\bcover\b[^"]*"',tag):continue
+   m=re.search(r'src="(https://[^"<>]+)"',tag)
+   if m:remote_previews[page.stem]=unescape(m[1])
  # Remove obsolete generated/local Freesound artwork from the deployed site.
  for obsolete in [out/'assets/og/freesound-free-sound-effects-recordings-creative-commons-guide.svg',out/'assets/og/freesound-free-sound-effects-recordings-creative-commons-guide.png',out/'assets/howto/freesound-official-icon.png']:
   obsolete.unlink(missing_ok=True)
