@@ -7,6 +7,18 @@ def apply(out):
  registry=Path(__file__).with_name('official-remote-media.json')
  records=json.loads(registry.read_text()) if registry.exists() else {}
  applied={}
+ # Articles without a usable official hotlink are intentionally text-only.
+ for page in (out/'posts').glob('*.html'):
+  slug=page.stem;text=page.read_text()
+  text=re.sub(r'<figure\b[^>]*>.*?</figure>',lambda m:'' if re.search(r'<img[^>]*src=["\x27](?:data:image|(?:\.\./)?assets/og/)',m[0],re.I) else m[0],text,flags=re.S)
+  text=re.sub(r'<img\b[^>]*>',lambda m:'' if re.search(r'src=["\x27](?:data:image|(?:\.\./)?assets/og/|https://aicon-hub.github.io/assets/og/)',m[0],re.I) and not re.search(r'class=["\x27][^"\x27]*\bcover\b',m[0],re.I) else m[0],text)
+  if slug not in records:
+   text=re.sub(r'<img\b[^>]*class=["\x27][^"\x27]*\bcover\b[^"\x27]*["\x27][^>]*>','',text,flags=re.I)
+   text=re.sub(r'<meta\b(?=[^>]*(?:name|property)=["\x27](?:og:image(?::(?:width|height))?|twitter:image)["\x27])[^>]*>','',text,flags=re.I)
+   text=re.sub(r'("image"\s*:\s*)"https://aicon-hub.github.io/assets/og/[^"<>]+"\s*,?', '',text)
+   text=re.sub(r'<p\b[^>]*class=["\x27][^"\x27]*media-credit[^"\x27]*["\x27][^>]*>.*?</p>','',text,flags=re.S)
+   text=re.sub(r'(<meta[^>]*(?:name|property)=["\x27]twitter:card["\x27][^>]*content=["\x27])summary_large_image',r'\1summary',text)
+  page.write_text(text)
  for slug,x in records.items():
   p=out/'posts'/(slug+'.html')
   if not p.exists():continue
@@ -52,6 +64,6 @@ def apply(out):
   rows=json.loads(ledger.read_text())
   for row in rows:
    slug=Path(row.get('path','')).stem
-   if slug in applied:row['image']=applied[slug]['image']
+   row['image']=applied[slug]['image'] if slug in applied else None
   ledger.write_text(json.dumps(rows,ensure_ascii=False,indent=2))
  return applied
