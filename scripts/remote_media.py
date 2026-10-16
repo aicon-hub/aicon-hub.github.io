@@ -17,7 +17,7 @@ def apply(out):
    sm=re.search(r'src=["\x27]([^"\x27]+)',m[0]);old.extend([sm[1]] if sm else [])
   logo=not x.get('poster_url');w=x.get('width',1200);h=x.get('height',630)
   label='Official publisher logo' if logo else 'Official publisher artwork'
-  img='<img class="cover official-remote-media" src="'+escape(u,quote=True)+'" alt="'+label+'; independent guide, not sponsored" referrerpolicy="no-referrer" width="'+str(w)+'" height="'+str(h)+'" style="object-fit:contain;width:100%;max-width:'+(str(x.get('display_max_width','240px')) if logo else '100%')+';height:auto;max-height:460px;border-radius:0;background:'+escape(x.get('background','transparent'),quote=True)+'"/>'
+  img='<img class="cover official-remote-media" src="'+escape(u,quote=True)+'" alt="'+label+'; independent guide, not sponsored" referrerpolicy="no-referrer" width="'+str(w)+'" height="'+str(h)+'" style="object-fit:contain;width:100%;max-width:'+(str(x.get('display_max_width','240px')) if logo else '100%')+';height:auto;max-height:460px;border-radius:0;background:'+escape(x.get('background','#fff' if logo else 'transparent'),quote=True)+'"/>'
   if re.search(r'<img\b[^>]*class=["\x27][^"\x27]*\bcover\b',text,re.I):text=re.sub(r'<img\b[^>]*class=["\x27][^"\x27]*\bcover\b[^"\x27]*["\x27][^>]*>',lambda _:img,text,count=1,flags=re.I)
   else:text=text.replace('</h1>','</h1>'+img,1)
   text=re.sub(r'<p\b[^>]*class=["\x27][^"\x27]*media-credit[^"\x27]*["\x27][^>]*>.*?</p>','',text,flags=re.S)
