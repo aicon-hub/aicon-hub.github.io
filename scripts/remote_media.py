@@ -23,6 +23,12 @@ def apply(out):
   text=re.sub(r'<p\b[^>]*class=["\x27][^"\x27]*media-credit[^"\x27]*["\x27][^>]*>.*?</p>','',text,flags=re.S)
   credit='<p class="src media-credit">'+label+' hosted by its publisher. <a href="'+escape(source,quote=True)+'">Official source</a>. Independent guide, not affiliated or sponsored. Artwork and trademarks belong to their owners.</p>'
   text=text.replace(img,img+credit,1)
+  video=x.get('embed_url','');watch=x.get('video_url','')
+  if video.startswith('https://www.youtube.com/embed/') and watch.startswith('https://'):
+   title=x.get('video_title','Official publisher video');video=video.replace('www.youtube.com/embed/','www.youtube-nocookie.com/embed/')
+   panel='<figure class="official-video" style="margin:24px 0"><iframe src="'+escape(video,quote=True)+'" title="'+escape(title,quote=True)+'" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px"></iframe><figcaption class="src">Official publisher video: '+escape(title)+'. <a href="'+escape(watch,quote=True)+'">Watch on YouTube</a>. Published by <a href="'+escape(x.get('video_channel_url',''),quote=True)+'">'+escape(x.get('video_channel','publisher'))+'</a>. Independent guide, not sponsored.</figcaption></figure>'
+   text=text.replace(credit,credit+panel,1)
+
   # Do not label a generic homepage asset as a picture of the feature discussed.
   for oldurl in old:
    text=text.replace(oldurl,u)
