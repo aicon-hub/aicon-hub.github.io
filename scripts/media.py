@@ -15,6 +15,7 @@ def prepare(out):
  shutil.rmtree(out/'assets/og',ignore_errors=True)
  (out/'assets/og').mkdir(parents=True,exist_ok=True)
  # Official artwork hosted by its publisher remains remote, including list previews.
+ registry=json.loads(Path(__file__).with_name('official-remote-media.json').read_text())
  remote_previews={}
  for page in (out/'posts').glob('*.html'):
   text=page.read_text()
@@ -32,7 +33,8 @@ def prepare(out):
   card=m[0];a=re.search(r'href="posts/([^"]+)"',card)
   if not a:return card
   slug=Path(a[1]).stem;preview=brand.get(slug,slug+'.png');img=out/'assets/og'/preview
-  if slug in remote_previews or img.exists():card=card.replace('<div class="guide-meta">','<a class="preview-link" href="posts/'+escape(a[1])+'" tabindex="-1" aria-hidden="true"><img class="guide-preview" src="'+escape(remote_previews.get(slug,'assets/og/'+preview),quote=True)+'" alt="" width="1200" height="630" loading="lazy"/></a><div class="guide-meta">',1)
+  background=registry.get(slug,{}).get('background','#fff' if registry.get(slug,{}).get('logo_url') and not registry.get(slug,{}).get('poster_url') else 'transparent')
+  if slug in remote_previews or img.exists():card=card.replace('<div class="guide-meta">','<a class="preview-link" href="posts/'+escape(a[1])+'" tabindex="-1" aria-hidden="true"><img class="guide-preview" style="background:'+escape(background,quote=True)+'" src="'+escape(remote_previews.get(slug,'assets/og/'+preview),quote=True)+'" alt="" width="1200" height="630" loading="lazy"/></a><div class="guide-meta">',1)
   if slug in brand:
    credit=rights[slug].get('short',rights[slug]['credit'])
    card=card.replace('</article>','<small class="preview-credit">'+credit+' · <a href="posts/'+escape(a[1])+'">Source and credit</a></small></article>')
@@ -44,7 +46,8 @@ def prepare(out):
   if not a:return li
   slug=Path(a[1]).stem;preview=brand.get(slug,slug+'.png')
   if slug not in remote_previews and not (out/'assets/og'/preview).exists():return li
-  image='<img class="archive-preview" src="'+escape(remote_previews.get(slug,'../assets/og/'+preview),quote=True)+'" alt="" width="1200" height="630" loading="lazy"/>'
+  background=registry.get(slug,{}).get('background','#fff' if registry.get(slug,{}).get('logo_url') and not registry.get(slug,{}).get('poster_url') else 'transparent')
+  image='<img class="archive-preview" style="background:'+escape(background,quote=True)+'" src="'+escape(remote_previews.get(slug,'../assets/og/'+preview),quote=True)+'" alt="" width="1200" height="630" loading="lazy"/>'
   li=li.replace(a[0],image+a[0],1)
   if slug in brand:
    credit=rights[slug].get('short',rights[slug]['credit'])
