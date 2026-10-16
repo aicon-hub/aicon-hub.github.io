@@ -1,7 +1,9 @@
 {
   "post_id": "ai283-thonny-2026-10-16",
   "article_url": "https://aicon-hub.github.io/posts/thonny-python-ide-beginners-step-by-step-debugger-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "38909298477",
-  "message_ids": []
+  "message_ids": [
+    248
+  ]
 }
