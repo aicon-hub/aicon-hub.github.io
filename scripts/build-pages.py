@@ -125,6 +125,8 @@ def main():
  from editorial import enrich
  enrich(OUT)
  refresh_home()
+ from remote_media import apply
+ apply(OUT)
  from media import prepare
  prepare(OUT)
  print('Built',len(audit),'article cards')
