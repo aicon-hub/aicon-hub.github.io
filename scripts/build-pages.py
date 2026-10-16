@@ -122,6 +122,11 @@ def main():
    path.write_text(text)
    if 'template' not in path.name and path.name!='about-aicon.html':audit.append(rec)
  (OUT/'share-metadata-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2))
+ # Remove old local-logo panels before the contents list is generated.
+ for page in (OUT/'posts').glob('*.html'):
+  text=page.read_text()
+  text=re.sub(r'<section\b[^>]*class=["\x27]official-media["\x27][^>]*>.*?</section>',lambda m:'' if re.search(r'<img[^>]*src=["\x27](?:data:image|(?:\.\./)?assets/og/)',m[0],re.I) else m[0],text,flags=re.S)
+  page.write_text(text)
  from editorial import enrich
  enrich(OUT)
  refresh_home()
