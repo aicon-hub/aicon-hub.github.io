@@ -1,9 +1,11 @@
 {
   "post_id": "gov77-ayushman-pmjay-2026-10-17-edit1",
   "article_url": "https://aicon-hub.github.io/posts/ayushman-pmjay-8-years-reel-contest-rs-50000-ends-27-october-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39036029824",
-  "message_ids": [],
+  "message_ids": [
+    274
+  ],
   "mode": "edit",
   "target_message_id": 274,
   "payload_sha256": "2354cf795e2d76c84a701c03d5ec3082281499bad8ee522c867a56d3a4df8f77"
