@@ -1,9 +1,11 @@
 {
   "post_id": "ai315-oracle-cloud-2026-10-18-edit1",
   "article_url": "https://aicon-hub.github.io/posts/oracle-cloud-always-free-arm-server-ampere-a1-step-by-step-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39096005871",
-  "message_ids": [],
+  "message_ids": [
+    287
+  ],
   "mode": "edit",
   "target_message_id": 287,
   "payload_sha256": "2d1f10d4316dac11d4dab1d38fd68155bfb957ef3f23378535dc6332b64d07ec"
