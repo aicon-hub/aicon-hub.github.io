@@ -24,7 +24,7 @@ on:
         description: Optional JPEG or PNG as base64 instead of a URL
         required: false
       article_url:
-        description: Live AiCoN guide URL, required for publishing and editing
+        description: Live AiCoN guide URL, required for article posts; pass none or leave empty for a Telegram-only post
         required: false
 permissions:
   contents: write
@@ -123,13 +123,16 @@ jobs:
               post_id=data.get('post_id','').strip()
               if not post_id:raise RuntimeError('A stable post_id is required')
               steps=edit_plan(data) if mode=='edit' else plan(data.get('text','').replace('\\n','\n'),'upload' if data.get('photo_base64') else data.get('photo_url',''))
-              # Article-first: require the published guide before any claim or send.
-              article=data.get('article_url','')
-              if not article.startswith('https://aicon-hub.github.io/posts/') or not article.endswith('.html'):raise RuntimeError('A live AiCoN article URL is required')
-              try:
-                  with urllib.request.urlopen(article,timeout=30) as r:
-                      if r.status!=200:raise RuntimeError('Article not live')
-              except Exception:raise RuntimeError('Article availability check failed') from None
+              # Article-first for article posts: require the live guide before any claim or send. Telegram-only posts pass article_url none/empty and skip the URL checks.
+              article=data.get('article_url','').strip()
+              telegram_only=article=='' or article.lower()=='none'
+              if not telegram_only:
+                  if not article.startswith('https://aicon-hub.github.io/posts/') or not article.endswith('.html'):raise RuntimeError('A live AiCoN article URL is required (pass none for a Telegram-only post)')
+                  try:
+                      with urllib.request.urlopen(article,timeout=30) as r:
+                          if r.status!=200:raise RuntimeError('Article not live')
+                  except Exception:raise RuntimeError('Article availability check failed') from None
+              else:article='none'
               chat_id=verify()
               key=hashlib.sha256((('edit:'+post_id) if mode=='edit' else post_id).encode()).hexdigest()
               url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/contents/telegram-receipts/'+key+'.json'
