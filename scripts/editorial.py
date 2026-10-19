@@ -38,5 +38,5 @@ def enrich(out):
  for p in (out/'posts').glob('*.html'):
   text=p.read_text().replace('Every tool and link verified before sharing.','Every guide shows what we checked.')
   if p.name not in ['about-aicon.html','_template.html','article-template.html']:
-   text=text.replace('</nav>','<a href="about-aicon.html">About AiCoN</a></nav>',1)
+   if 'about-aicon.html">About AiCoN' not in text.split('</header>')[0]:text=text.replace('</nav>','<a href="about-aicon.html">About AiCoN</a></nav>',1)
   p.write_text(text)
