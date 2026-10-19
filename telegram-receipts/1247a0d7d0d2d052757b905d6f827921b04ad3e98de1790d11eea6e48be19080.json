@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-nasa-eyes-3d-solar-system-asteroids-earth-web-apps-browser-guide-2026-10-19",
   "article_url": "https://aicon-hub.github.io/posts/nasa-eyes-3d-solar-system-asteroids-earth-web-apps-browser-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39288526099",
-  "message_ids": []
+  "message_ids": [
+    346
+  ]
 }
