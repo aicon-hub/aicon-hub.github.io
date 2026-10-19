@@ -1,7 +1,9 @@
 {
   "post_id": "tgbot-rose-2026-10-19",
   "article_url": "none",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39230585176",
-  "message_ids": []
+  "message_ids": [
+    327
+  ]
 }
