@@ -1,7 +1,9 @@
 {
   "post_id": "tgfile-pixabay-2026-10-19",
   "article_url": "none",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39326928022",
-  "message_ids": []
+  "message_ids": [
+    356
+  ]
 }
