@@ -30,25 +30,30 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cat > reader.pem <<'CERT'
-          -----BEGIN CERTIFICATE-----
-          MIIDCTCCAfGgAwIBAgIUHKLErc20xGVG7wLMpDfYZRdpdYMwDQYJKoZIhvcNAQEL
-          BQAwFDESMBAGA1UEAwwJdGctcmVhZGVyMB4XDTI2MTAxNTEwNTcyMVoXDTI3MTAx
-          NTEwNTcyMVowFDESMBAGA1UEAwwJdGctcmVhZGVyMIIBIjANBgkqhkiG9w0BAQEF
-          AAOCAQ8AMIIBCgKCAQEA3QtGrc69ED7s5cWGAyco3mvSx2uL4dM0zhNkO44heuFb
-          1ipywp0bv0AxpTIMxNVOLqDZPL4mZX1fUKlDxMIxbfdATPauQutWTQd1UDnLYDj0
-          V3MJdhZr8HQzTf9MzfTNsizY4JUJaL6QWEoGkZImN4J9wEG6yYnfNC8qIMLtFwMh
-          R4YFbD08C9gbUtqNWxs9aU+yGIkK33PE2eBkPiD4gL/sIeE8i4B6h3ZBZM0BS+Lx
-          VCvTXSpwsvW97kOkIgjlROQyLv+QPtJv+kL98J7oMVnnoNtgV5nf2Xx6mvqWBPkC
-          quJYCt2bO8HCWvxOZgP3ptZSmPkL8zjOoYSc02Ud1QIDAQABo1MwUTAdBgNVHQ4E
-          FgQUQ2znI2rOJ1rfvTxZNyOzMCVXIVYwHwYDVR0jBBgwFoAUQ2znI2rOJ1rfvTxZ
-          NyOzMCVXIVYwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEApGLg
-          /RnbVVdmowt4myKrkgESJaFkSSXr3pVCCTsb1afI+i4NQuiKjStMcdhm7ZsenHEM
-          jQfETphkF8+QOobAWweqwb2wahOaQsvOby1dZl8mev3yQX9Qawja5QaRPhnplHfJ
-          4MjK9Zod/bEdcyf8AAhtgR//Z/C7b7Xw8nDTIzkqC/TUT/f/GLNHsY7WMD4hriic
-          PZTT+d7K1jGauoknyz0wCP/I+1i1L1DDRGE7opp0eJLrcsLobtPqlsRQDe0V5ssz
-          lX24ga5DSJkoAhaYCP3eCQskhhchxo42AOhLpd/LhYp5xIDC5mONMy5Xcr8F+7wc
-          vRmOO7w34q9tjIGT5w==
-          -----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIECTCCAnGgAwIBAgIUXRu1CvTYG6cXSKw2O3aX/kXz6Z0wDQYJKoZIhvcNAQEL
+BQAwFDESMBAGA1UEAwwJdGctcmVhZGVyMB4XDTI2MTAxOTAzMjQzNFoXDTM2MTAx
+NjAzMjQzNFowFDESMBAGA1UEAwwJdGctcmVhZGVyMIIBojANBgkqhkiG9w0BAQEF
+AAOCAY8AMIIBigKCAYEA3qoTd2/d7HQuXC7olrtMnt1gKymEoyhV9A4n+f116R12
+PdpFG29GN1C+taUn9sozdQR+GvXE/3gjJ376xV9cKrCYUb2LQ05loehYXYV8m+Gh
+N3LAJxprDHxSZlqvNr//naVC0ruy1y0i/pjLU7KLAykhZjmpg8EXjGm6ud49CDGE
+hPEtD+jv/oMhQKhpoAsx57KC/EkNR7cedR4F/4yCiE1NgnQgWxa4ATvE00ufPUlq
+XbldHyki8ngQBA8dhkjkf4sSmvekQgCCtuXQKkRowpreH+V4LoJ5Vybe+cPpgJRH
+zbAaYTMT2YHZu/fJxSUEHoezoBui8SoFHlijKOOPkvJnwLaCS2WIDd61eu/U7b9b
+3ETtdJMTTiqr0h77DF7npSFFHsX+5Z/QbMVlBVUm8tr2pi+AEw/0mXdK3RX2n1zt
+LpdYnswL6fpwrq7Fst3nmzXL+wepuN9s1QsXNTmud9sAdlbyPYN5pJ8wFax9bcaK
+6yAwsWmuTAJ+vNjBWKJJAgMBAAGjUzBRMB0GA1UdDgQWBBTTAWUeG2NmfjVXrpDK
+dhURfdJMyjAfBgNVHSMEGDAWgBTTAWUeG2NmfjVXrpDKdhURfdJMyjAPBgNVHRMB
+Af8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBgQA9zOI9jO0A7yBLHS3zMP5Bwuhk
+NbrENQ8Cl/c5scUDqvgUBP0lmsESlwv8XBefbxPn6F5rnISrHdlra2guavC4VLNx
+EhRtWEVsSczVPQHasiNX5kim5i3oUEHWnCzcGNkTjD75VtpFLOAbw1vJ+PfZUWdf
+6YAxDaQ4YZ8O3x+BfZT3FMayfdOWssDb+y1KvDoN5Z2HzjqNh+AVhbHfsEfwsuqe
+QBpX1WwCpGxKezZUkXXZun8p4GzrPKH9gt1F54fKWxcJtcGbxAjWi93K9bQBDRfr
+pRwQcCBLWwQXFLjwYDcdURyqbBceZXVY/CwzGID5qPiFryBeJKmh1iSXLJpjn54V
+Ei1xEqJdG46WeH0myRWEBpLsEr3E/qNGPLhtL+LMH2SYrlIV1xPWwDyk0hgclVEg
+iskbHJT9SIi8h92/763+4mbS44HKPWFFvt6Z8LCAKUs1gfcA8iDbqtT78JeVrppM
+3SJxSfqsf3NbJFDbo4UR0ouIPIiJpiWgVaNiWjk=
+-----END CERTIFICATE-----
           CERT
           cat > reader.py <<'PYCODE'
           import os, json, subprocess, sys, time, urllib.request, urllib.error, urllib.parse
