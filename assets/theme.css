@@ -108,3 +108,7 @@ article.post .chip{background:var(--brand-orange);color:#16100c}
 @media(max-width:640px){.aicon-back-top{right:14px;bottom:14px}.home-redesign .category-grid .card{padding:20px}.home-redesign .guide-card{padding:22px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 [data-theme=light] ul.posts li small.tag{background:var(--brand-orange);color:#16100c}
+/* AiCoN mark 3 logo, 19 Oct 2026: orange tile + wordmark lockup replaces text wordmark (theme.js rewrites brand innerHTML, so style, not markup) */
+header .brand,header .logo,footer .logo{font-size:0!important;display:inline-block;width:124px;height:30px;background:url("aicon-lockup-light-text.svg") no-repeat left center/contain;vertical-align:middle}
+header .brand span,header .logo span,footer .logo span{display:none}
+html[data-theme="light"] header .brand,html[data-theme="light"] header .logo,html[data-theme="light"] footer .logo{background-image:url("aicon-lockup-dark-text.svg")}
