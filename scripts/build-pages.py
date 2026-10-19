@@ -96,7 +96,7 @@ def refresh_home():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
