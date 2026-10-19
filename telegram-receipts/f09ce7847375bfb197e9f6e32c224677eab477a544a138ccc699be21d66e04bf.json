@@ -1,7 +1,9 @@
 {
   "post_id": "tgbot-premiumbot-2026-10-19",
   "article_url": "none",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39245829621",
-  "message_ids": []
+  "message_ids": [
+    334
+  ]
 }
