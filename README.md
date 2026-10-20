@@ -1,53 +1,101 @@
 <div align="center">
 
-# AiCoN
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://aicon-hub.github.io/assets/aicon-lockup-light-text.svg">
+  <img src="https://aicon-hub.github.io/assets/aicon-lockup-dark-text.svg" alt="AiCoN" width="300">
+</picture>
+
+# Useful tech. Clear answers.
 
 **Your Trusted Tech Companion**
 
-### The next tool. A clearer decision.
+Source-checked guides to technology and opportunities.<br>
+Made for readers in Kerala and across India.
 
-AI moves fast. Useful guidance should stay clear.
+[Explore AiCoN](https://aicon-hub.github.io/) · [Find a guide](https://aicon-hub.github.io/posts/index.html) · [How we check](https://aicon-hub.github.io/posts/about-aicon.html)
 
-[Explore the live site](https://aicon-hub.github.io) · [Browse the guides](https://aicon-hub.github.io/posts/index.html)
+[WhatsApp](https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c) · [Telegram](https://t.me/AiCoN4tech)
 
 </div>
 
 ---
 
-## A signal, not more noise
+## The AiCoN mission
 
-AiCoN publishes plain-language guides to AI tools, apps, computer software, digital safety, government events and services, and scholarships. The focus is practical use in India, with Kerala context where it matters.
+Useful information should lead to a clearer decision, not another confusing tab.
 
-Each guide explains what the tool or opportunity offers, how to get started, what it costs and where the limits are. Official sources and the date checked stay visible. When availability, pricing or performance could not be confirmed, the guide says so.
+AiCoN turns official product pages and notices into plain-language guides. We cover AI tools, everyday apps, PC software, digital safety, scholarships, government services, student offers, events and hackathons. The focus is practical: what it does, who it is for, what it costs, how to use it and what to watch out for.
 
-## Explore the interface
+Founded by **Muhammed Salman CC** as a WhatsApp channel in **December 2024**, AiCoN now brings its detailed guides together on a searchable website, with short updates on WhatsApp and Telegram.
 
-| Section | What you can do |
-| --- | --- |
-| Guides archive | Search the full archive and filter by category. |
-| Category tiles | Jump into AI tools, apps, Linux, PC software, safety, scholarships and government guides. |
-| Dates panel | See upcoming dates drawn from the guide index. The panel filters out past dates using India time. |
-| Light and dark mode | Choose the reading theme that suits your screen. |
-| Detailed guides | Find practical steps, costs, eligibility or access limits, FAQs and source links. |
+## Explore by need
 
-The dates panel updates from published guide metadata. It does not monitor every official portal for changes. Always check the linked official notice before applying or paying.
+| You want to... | Start here |
+| :--- | :--- |
+| Find a useful tool or understand an AI product | Search the [guide archive](https://aicon-hub.github.io/posts/index.html). |
+| Choose apps, PC software or Linux tools | Explore the categories and OS Explorer on the [website](https://aicon-hub.github.io/). |
+| Understand scholarships, government services or student offers | Read the eligibility, costs, dates and official links in each guide. |
+| Find events, hackathons or time-sensitive opportunities | Check the website's dates panel, then confirm the linked official notice. |
+| Check a risk before installing or signing up | Read the digital safety guides and the limits in each article. |
 
-## Built for the open web
+## How a guide earns its place
 
-This repository is the source for the static AiCoN website on **GitHub Pages**.
+```mermaid
+flowchart LR
+    A[Find a useful resource] --> B[Read official sources]
+    B --> C[Check costs and conditions]
+    C --> D[Explain steps and limits]
+    D --> E[Publish sources and date checked]
+```
 
-- **HTML** for pages and guides.
-- **CSS** for layout, responsive reading and themes.
-- **JavaScript** for search, category filters, theme controls and the dates panel.
-- **A sitemap and page metadata** to help readers and search engines find the guides.
+- **Sources first.** Official product pages, documentation and notices support the guide.
+- **Conditions visible.** Free tiers, paid features, eligibility, deadlines and platform limits are explained where they matter.
+- **India context.** Availability and Kerala or India-specific requirements are checked when relevant. Unconfirmed details are labelled.
+- **Testing is not assumed.** Reading documentation is not the same as installing an app, completing an application or testing performance.
+- **No referral links.** The aim is a useful next step, not a referral conversion.
 
-The site keeps a restrained homepage and orange accents on dark article pages. The aim is simple: make the next step easier to understand, without hiding the caveats.
+> Prices, deadlines and services can change. A published guide is not a guarantee of availability, safety, eligibility or a successful application. Check the official source before paying, applying or sharing personal information.
 
-## Stay connected
+[Browse the full archive →](https://aicon-hub.github.io/posts/index.html)
 
-Visit **[aicon-hub.github.io](https://aicon-hub.github.io)**.
+## A website built to help you act
 
-Questions or corrections: [aicon4tech@proton.me](mailto:aicon4tech@proton.me) · [aicon4tech@gmail.com](mailto:aicon4tech@gmail.com)
+<details open>
+<summary><strong>Find the right guide</strong></summary>
+
+Search the archive, filter by category, or start from a topic on the homepage. The OS Explorer groups operating-system options without turning the homepage into a wall of technical detail.
+
+</details>
+
+<details>
+<summary><strong>Read comfortably</strong></summary>
+
+The website supports light and dark themes, responsive pages and detailed step-by-step guides. Official publisher artwork helps identify the tool or opportunity. An animated, draggable AiCoN orb opens quick routes around the site; it is a site guide, not an AI chatbot.
+
+</details>
+
+<details>
+<summary><strong>Keep dates in context</strong></summary>
+
+The dates panel draws from published guide metadata and filters out expired dates. It does not guarantee that every official deadline change has been detected. Always confirm the official notice before applying.
+
+</details>
+
+## Built on the open web
+
+The public website uses **HTML, CSS, JavaScript and Python build scripts**, hosted on **GitHub Pages**. Search, category filters, theme controls and the guide index keep the reading experience direct. The site includes a sitemap and page metadata for discovery.
+
+[Website source repository](https://github.com/aicon-hub/aicon-hub.github.io)
+
+## Trust, corrections and contact
+
+AiCoN currently operates without advertisements or affiliate links. Clear sources and visible limits take priority over hype.
+
+Found a mistake or a changed condition? Send the article link and the detail that needs checking.
+
+- **Email:** [aicon4tech@proton.me](mailto:aicon4tech@proton.me) · [aicon4tech@gmail.com](mailto:aicon4tech@gmail.com)
+- **About AiCoN:** [Mission and checking approach](https://aicon-hub.github.io/posts/about-aicon.html)
+- **Updates:** [WhatsApp channel](https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c) · [Telegram channel](https://t.me/AiCoN4tech)
 
 ---
 
