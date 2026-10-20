@@ -112,3 +112,11 @@ article.post .chip{background:var(--brand-orange);color:#16100c}
 header .brand,header .logo,footer .logo{font-size:0!important;display:inline-block;width:124px;height:30px;background:url("aicon-lockup-light-text.svg") no-repeat left center/contain;vertical-align:middle}
 header .brand span,header .logo span,footer .logo span{display:none}
 html[data-theme="light"] header .brand,html[data-theme="light"] header .logo,html[data-theme="light"] footer .logo{background-image:url("aicon-lockup-dark-text.svg")}
+/* Reading-page header: keep theme control beside the brand on phones. */
+@media(max-width:640px){
+ header.top .wrap{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+ header.top .brand{grid-column:1/4;grid-row:1}
+ header.top nav{display:contents}
+ header.top #theme-toggle{grid-column:4/7;grid-row:1;justify-self:end}
+ header.top nav a{grid-column:span 2;padding-inline:2px;font-size:12px;text-align:center}
+}
