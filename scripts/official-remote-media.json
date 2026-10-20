@@ -1481,6 +1481,14 @@
     "source_page": "https://foldingathome.org/",
     "width": 1440
   },
+  "foobar2000-free-music-player-windows-mac-android-ios-guide": {
+    "background": "#fff",
+    "display_max_width": "240px",
+    "height": 49,
+    "logo_url": "https://www.foobar2000.org/foobarlogo.svg",
+    "source_page": "https://www.foobar2000.org/",
+    "width": 324
+  },
   "foodvisor-ai-food-photo-logging-free-limits-guide": {
     "height": 512,
     "logo_url": "https://cdn.foodvisor.io/app-icon/180.png",
@@ -2442,6 +2450,15 @@
     "slug": "lg-thinq-claw-beta-india-availability-guide",
     "source_page": "https://www.lg.com/in/",
     "width": 720
+  },
+  "librecad-free-open-source-2d-cad-drawing-software-windows-mac-linux-guide": {
+    "background": "#fff",
+    "display_max_width": "240px",
+    "height": 73,
+    "logo_url": "https://librecad.org/img/logo.png",
+    "slug": "librecad-free-open-source-2d-cad-drawing-software-windows-mac-linux-guide",
+    "source_page": "https://librecad.org/",
+    "width": 335
   },
   "libreoffice-free-office-suite-no-forced-ai-guide": {
     "height": 713,
@@ -3488,6 +3505,13 @@
     "poster_url": "https://framerusercontent.com/images/4TtUlXm3f93J5GBWNoPoHbWNL4.png",
     "slug": "pi-free-ai-chat-companion-reminders-voice-guide",
     "source_page": "https://pi.ai/",
+    "width": 1200
+  },
+  "pinta-free-open-source-simple-image-editor-windows-mac-linux-guide": {
+    "height": 1200,
+    "poster_url": "https://pinta-project.com/img/pinta-og.png",
+    "slug": "pinta-free-open-source-simple-image-editor-windows-mac-linux-guide",
+    "source_page": "https://www.pinta-project.com/",
     "width": 1200
   },
   "pinterest-genai-settings-opt-out-training-see-fewer-ai-pins-guide": {
@@ -4794,21 +4818,6 @@
     "poster_url": "https://static.zooniverse.org/assets/zooniverse-icon-web-black.png",
     "slug": "zooniverse-citizen-science-volunteer-research-projects-guide",
     "source_page": "https://www.zooniverse.org/",
-    "width": 1200
-  },
-  "foobar2000-free-music-player-windows-mac-android-ios-guide": {
-    "background": "#fff",
-    "display_max_width": "240px",
-    "height": 49,
-    "logo_url": "https://www.foobar2000.org/foobarlogo.svg",
-    "source_page": "https://www.foobar2000.org/",
-    "width": 324
-  },
-  "pinta-free-open-source-simple-image-editor-windows-mac-linux-guide": {
-    "height": 1200,
-    "poster_url": "https://pinta-project.com/img/pinta-og.png",
-    "slug": "pinta-free-open-source-simple-image-editor-windows-mac-linux-guide",
-    "source_page": "https://www.pinta-project.com/",
     "width": 1200
   }
 }
