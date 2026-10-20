@@ -4803,5 +4803,12 @@
     "logo_url": "https://www.foobar2000.org/foobarlogo.svg",
     "source_page": "https://www.foobar2000.org/",
     "width": 324
+  },
+  "pinta-free-open-source-simple-image-editor-windows-mac-linux-guide": {
+    "height": 1200,
+    "poster_url": "https://pinta-project.com/img/pinta-og.png",
+    "slug": "pinta-free-open-source-simple-image-editor-windows-mac-linux-guide",
+    "source_page": "https://www.pinta-project.com/",
+    "width": 1200
   }
 }
