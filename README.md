@@ -40,13 +40,7 @@ Founded by **Muhammed Salman CC** as a WhatsApp channel in **December 2024**, Ai
 
 ## How a guide earns its place
 
-```mermaid
-flowchart LR
-    A[Find a useful resource] --> B[Read official sources]
-    B --> C[Check costs and conditions]
-    C --> D[Explain steps and limits]
-    D --> E[Publish sources and date checked]
-```
+**Find a useful resource → Read official sources → Check costs and conditions → Explain steps and limits → Publish sources and date checked**
 
 - **Sources first.** Official product pages, documentation and notices support the guide.
 - **Conditions visible.** Free tiers, paid features, eligibility, deadlines and platform limits are explained where they matter.
