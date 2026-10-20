@@ -170,6 +170,26 @@ def seo_pass():
  today=date.today().isoformat()
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
 
+def write_llms():
+ base='https://aicon-hub.github.io/'
+ n=len([f for f in (OUT/'posts').glob('*.html') if f.name not in ('index.html','about-aicon.html') and 'template' not in f.name])
+ lines=['# AiCoN','',
+ '> AiCoN is a source-checked guide site for readers in Kerala and across India: verified tech and AI tool guides, scholarship and government service guides, and student events. It is run by Salman and published at '+base+'.','',
+ '## Key sections','',
+ '- [Guides index]('+base+'posts/): every guide on the site, each a plain-language article',
+ '- [Funded abroad]('+base+'funded/): funded study and opportunity listings abroad',
+ '- [About AiCoN]('+base+'posts/about-aicon.html): what AiCoN is and how it works',
+ '- [Sitemap]('+base+'sitemap.xml): every page on the site','',
+ '## How content is verified','',
+ '- Tools, apps and links are checked against official sources before they are shared.',
+ '- Scholarship, government and event details come from the organiser or government site.',
+ '- No referral or affiliate links.','',
+ '## Contact','',
+ '- Email: aicon4tech@gmail.com',
+ '- WhatsApp channel: https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c',
+ '- Telegram: https://t.me/AiCoN4tech','']
+ (OUT/'llms.txt').write_text('\n'.join(lines),encoding='utf-8')
+
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
@@ -213,5 +233,6 @@ def main():
  from media import prepare
  prepare(OUT)
  seo_pass()
+ write_llms()
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
