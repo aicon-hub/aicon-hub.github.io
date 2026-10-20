@@ -3832,6 +3832,15 @@
   "source_page": "https://lumo.proton.me/",
   "width": 1800
  },
+ "prusaslicer-free-open-source-3d-printing-slicer-windows-mac-linux-guide": {
+  "background": "#fff",
+  "display_max_width": "128px",
+  "height": 128,
+  "logo_url": "https://raw.githubusercontent.com/prusa3d/PrusaSlicer/master/resources/icons/PrusaSlicer_128px.png",
+  "slug": "prusaslicer-free-open-source-3d-printing-slicer-windows-mac-linux-guide",
+  "source_page": "https://www.prusa3d.com/prusaslicer/",
+  "width": 128
+ },
  "public-ai-agents-prediction-markets-us-fees-risk-guide": {
   "height": 1260,
   "logo_url": "https://public.com/wp-content/uploads/2026/03/favicon-dark-180x180-1.png",
