@@ -149,6 +149,27 @@ def refresh_home():
  (OUT/'index.html').write_text(home)
  (OUT/'assets/deadlines-data.json').write_text(json.dumps(dates,ensure_ascii=False))
 
+
+def seo_pass():
+ import json,re
+ from datetime import date
+ base='https://aicon-hub.github.io/'
+ title='AiCoN | Verified Tech, AI, Scholarship and Govt Service Guides for India'
+ desc='Plain-language, source-checked guides to AI tools, apps, digital safety, scholarships, government services and student events for readers in Kerala and across India.'
+ ld=json.dumps([{"@context":"https://schema.org","@type":"Organization","name":"AiCoN","url":base,"logo":base+"assets/aicon-icon.svg","sameAs":["https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c","https://t.me/AiCoN4tech"],"email":"aicon4tech@gmail.com"},{"@context":"https://schema.org","@type":"WebSite","name":"AiCoN","url":base,"inLanguage":"en-IN","potentialAction":{"@type":"SearchAction","target":base+"posts/index.html?q={search_term_string}","query-input":"required name=search_term_string"}}],ensure_ascii=False)
+ page=OUT/'index.html';t=page.read_text()
+ t=re.sub(r'<title>.*?</title>','<title>'+title+'</title>',t,count=1,flags=re.S)
+ t=setmeta(t,'description',desc)
+ for n,v in [('og:type','website'),('og:site_name','AiCoN'),('og:title',title),('og:description',desc),('og:url',base),('twitter:card','summary'),('twitter:title',title),('twitter:description',desc)]:t=setmeta(t,n,v)
+ if 'rel="canonical"' not in t:t=t.replace('</head>','<link rel="canonical" href="'+base+'"/></head>',1)
+ if 'application/ld+json' not in t:t=t.replace('</head>','<script type="application/ld+json">'+ld+'</script></head>',1)
+ t=t.replace('<a href="#posts">Latest guides</a><a href="#checks">How we check</a>','<a href="#posts">Latest guides</a><a href="#checks">How we check</a><a href="posts/about-aicon.html">About</a><a href="#contact">Contact</a>',1)
+ page.write_text(t)
+ # sitemap: every built page
+ urls=[base,base+'posts/',base+'funded/']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html']
+ today=date.today().isoformat()
+ (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
+
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
@@ -191,5 +212,6 @@ def main():
  apply(OUT)
  from media import prepare
  prepare(OUT)
+ seo_pass()
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
