@@ -174,7 +174,7 @@ def write_llms():
  base='https://aicon-hub.github.io/'
  n=len([f for f in (OUT/'posts').glob('*.html') if f.name not in ('index.html','about-aicon.html') and 'template' not in f.name])
  lines=['# AiCoN','',
- '> AiCoN is a source-checked guide site for readers in Kerala and across India: verified tech and AI tool guides, scholarship and government service guides, and student events. It is run by Salman and published at '+base+'.','',
+ '> AiCoN is a source-checked guide site for readers in Kerala and across India: verified tech and AI tool guides, scholarship and government service guides, and student events. It was founded by Muhammed Salman CC, runs without ads or affiliate links, and is published at '+base+'.','',
  '## Key sections','',
  '- [Guides index]('+base+'posts/): every guide on the site, each a plain-language article',
  '- [Funded abroad]('+base+'funded/): funded study and opportunity listings abroad',
