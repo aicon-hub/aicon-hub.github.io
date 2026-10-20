@@ -49,6 +49,62 @@ def replace_inner(text, marker, inner):
   depth+= -1 if m[0].startswith('</') else 1
   if depth==0:return text[:a]+inner+text[a+m.start():]
  raise ValueError(marker)
+def render_funded():
+ from datetime import datetime,timezone
+ from zoneinfo import ZoneInfo
+ from html import escape as esc
+ ist=ZoneInfo('Asia/Kolkata');now=datetime.now(ist)
+ page=OUT/'funded/index.html'
+ if not page.exists():return
+ data=json.loads((ROOT/'assets/funded-abroad.json').read_text())
+ progs=data['programs']
+ def parsedl(v):
+  if not v:return None
+  if 'T' in v:return datetime.fromisoformat(v.replace('Z','+00:00')).astimezone(ist)
+  return datetime.fromisoformat(v+'T23:59:59').replace(tzinfo=ist)
+ def box(t):
+  if not t:return '<span class="date-box"><b>~</b><small>TBA</small></span>'
+  return '<span class="date-box"><b>'+str(t.day)+'</b><small>'+t.strftime('%b').upper()+'</small></span>'
+ def count(t,status):
+  if not t:return 'Watch this space'
+  ms=(t-now).total_seconds();days=int(ms//86400)+ (1 if ms%86400>0 else 0)
+  if ms<=0:return 'Applications closed'
+  return 'Closes today' if days<=1 else str(days)+' days left'
+ typelabel={'study':'Study','teach':'Teach & work','research':'Research'}
+ statuslabel={'open':'Open now','expected':'Expected soon','closed':'Closed this cycle'}
+ cards=[]
+ for pr in progs:
+  t=parsedl(pr.get('deadline'));st=pr['status']
+  if t and (t-now).total_seconds()<=0:st='closed'
+  attrs='data-status="'+st+'" data-type="'+pr['type']+'"'+((' data-deadline="'+pr['deadline']+'"') if pr.get('deadline') else '')
+  c='<article class="ff-card" '+attrs+'>'
+  c+='<div class="ff-top"><span class="ff-country">'+esc(pr['country'])+'</span><span class="ff-type">'+typelabel.get(pr['type'],pr['type'])+'</span><span class="ff-status ff-'+st+'">'+statuslabel[st]+'</span></div>'
+  c+='<h3>'+esc(pr['name'])+'</h3>'
+  c+='<p><b>Funding.</b> '+esc(pr['funding'])+'</p>'
+  c+='<p><b>Who can apply.</b> '+esc(pr['eligibility'])+'</p>'
+  c+='<div class="ff-deadline">'+box(t)+'<span class="ff-dl-text"><b class="ff-count">'+count(t,st)+'</b><small>'+esc(pr['deadlineLabel'])+'</small></span></div>'
+  if pr.get('note'):c+='<p class="ff-note">'+esc(pr['note'])+'</p>'
+  c+='<div class="ff-actions"><a class="button primary" href="'+esc(pr['url'])+'" rel="noopener">'+esc(pr.get('cta','Official page'))+'</a>'
+  if pr.get('guide'):c+='<a class="ff-guide" href="../'+esc(pr['guide'])+'">Read the AiCoN guide</a>'
+  c+='</div><small class="ff-verified">Checked on '+esc(pr['verified'])+' against the official page.</small></article>'
+  cards.append(c)
+ text=page.read_text()
+ def swap(txt,marker,inner):
+  open_m='<!--'+marker+'-->';close_m='<!--/'+marker+'-->'
+  a=txt.index(open_m)+len(open_m);b=txt.index(close_m);return txt[:a]+inner+txt[b:]
+ text=swap(text,'FF-CARDS','\n'.join(cards))
+ open_n=sum(1 for pr in progs if pr['status']=='open');exp_n=sum(1 for pr in progs if pr['status']=='expected')
+ upd=datetime.fromisoformat(data['updated']).strftime('%-d %B %Y')
+ summary=('<div class="ff-stat"><b>'+str(len(progs))+'</b>programmes tracked</div>'
+  '<div class="ff-stat"><b>'+str(open_n)+'</b>open now</div>'
+  '<div class="ff-stat"><b>'+str(exp_n)+'</b>expected soon</div>'
+  '<div class="ff-stat"><b>'+upd+'</b>last verified</div>')
+ text=swap(text,'FF-SUMMARY',summary)
+ ne='\n'.join('<li><b>'+esc(x['name'])+'.</b> '+esc(x['why'])+'</li>' for x in data.get('notEligible',[]))
+ text=swap(text,'FF-NOTELIGIBLE',ne)
+ page.write_text(text)
+
+
 def refresh_home():
  from datetime import datetime
  from zoneinfo import ZoneInfo
@@ -96,7 +152,7 @@ def refresh_home():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
@@ -107,7 +163,7 @@ def main():
  (OUT/'assets/avatar-guide-source.tar.gz').write_bytes(base64.b64decode((ROOT/'assets/avatar-guide-source.tar.gz.b64').read_text()))
  (OUT/'assets/avatar-guide-source.tar.gz.b64').unlink(missing_ok=True)
  # Apply theme before paint and version shared assets on every generated page.
- for page in [OUT/'index.html',*(OUT/'posts').glob('*.html')]:
+ for page in [OUT/'index.html',OUT/'funded/index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
   text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261015smooth1',text)
   text=re.sub(r'<script\b[^>]*src=[\"\'][^\"\']*assets/theme.js[^\"\']*[\"\'][^>]*></script>', '', text, flags=re.I)
@@ -129,6 +185,7 @@ def main():
   page.write_text(text)
  from editorial import enrich
  enrich(OUT)
+ render_funded()
  refresh_home()
  from remote_media import apply
  apply(OUT)
