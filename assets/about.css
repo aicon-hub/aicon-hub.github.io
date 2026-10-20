@@ -79,3 +79,7 @@ article.about-page h2{font-family:Comfortaa,sans-serif!important;font-weight:500
 }
 
 @media(prefers-reduced-motion:reduce){.follow-btn{transition:none}}
+
+/* Founder pills that are real links */
+.founder-links a.fl-pill{text-decoration:none;color:var(--ink)}
+.founder-links a.fl-pill:hover{border-color:var(--brand-link);color:var(--brand-link)}
