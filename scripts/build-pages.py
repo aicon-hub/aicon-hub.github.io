@@ -223,12 +223,12 @@ def main():
  # Apply theme before paint and version shared assets on every generated page.
  for page in [OUT/'index.html',OUT/'funded/index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
-  text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261020mobile1',text)
+  text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261020float1',text)
   text=re.sub(r'<script\b[^>]*src=[\"\'][^\"\']*assets/theme.js[^\"\']*[\"\'][^>]*></script>', '', text, flags=re.I)
   prefix='assets/' if page.parent==OUT else '../assets/'
-  text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261020mobile1\"></script>',1)
-  text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=20261020mobile1"/><script defer src="'+prefix+'cinema.js?v=20261020mobile1"></script></head>',1) if 'cinema.css' not in text else text
-  text=text.replace('</body>','<script defer src="'+prefix+'avatar-loader.js?v=20261020mobile1"></script></body>',1)
+  text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261020float1\"></script>',1)
+  text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=20261020float1"/><script defer src="'+prefix+'cinema.js?v=20261020float1"></script></head>',1) if 'cinema.css' not in text else text
+  text=text.replace('</body>','<script defer src="'+prefix+'avatar-loader.js?v=20261020float1"></script></body>',1)
   page.write_text(text)
  for path in (OUT/'posts').glob('*.html'):
   text,rec=transform(path.read_text(),str(path.relative_to(OUT)))
