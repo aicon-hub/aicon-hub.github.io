@@ -1239,6 +1239,15 @@
   "source_page": "https://doory.art/",
   "width": 1200
  },
+ "double-commander-free-open-source-two-panel-file-manager-windows-linux-mac-guide": {
+  "background": "#fff",
+  "display_max_width": "128px",
+  "height": 256,
+  "logo_url": "https://raw.githubusercontent.com/doublecmd/doublecmd/master/pixmaps/mainicon/dc_256.svg",
+  "slug": "double-commander-free-open-source-two-panel-file-manager-windows-linux-mac-guide",
+  "source_page": "https://doublecmd.sourceforge.io/",
+  "width": 256
+ },
  "dpdp-logo-tagline-contest-closed-rules-guide": {
   "height": 340,
   "poster_url": "https://static.mygov.in/static/resources/s3fs-public/2026-09/mygov_1788438864_ea8716aa.jpg",
