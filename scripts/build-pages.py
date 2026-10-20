@@ -72,11 +72,17 @@ def render_funded():
   return 'Closes today' if days<=1 else str(days)+' days left'
  typelabel={'study':'Study','teach':'Teach & work','research':'Research'}
  statuslabel={'open':'Open now','expected':'Expected soon','closed':'Closed this cycle'}
- cards=[]
- for pr in progs:
+ far=datetime.max.replace(tzinfo=ist)
+ rankmap={'open':0,'expected':1,'closed':2}
+ decorated=[]
+ for i,pr in enumerate(progs):
   t=parsedl(pr.get('deadline'));st=pr['status']
   if t and (t-now).total_seconds()<=0:st='closed'
-  attrs='data-status="'+st+'" data-type="'+pr['type']+'"'+((' data-deadline="'+pr['deadline']+'"') if pr.get('deadline') else '')
+  decorated.append((pr,t,st,i))
+ decorated.sort(key=lambda x:(rankmap[x[2]],x[1] or far,x[3]))
+ cards=[]
+ for pr,t,st,i in decorated:
+  attrs='data-status="'+st+'" data-type="'+pr['type']+'" data-country="'+esc(pr['country'])+'"'+((' data-deadline="'+pr['deadline']+'"') if pr.get('deadline') else '')
   c='<article class="ff-card" '+attrs+'>'
   c+='<div class="ff-top"><span class="ff-country">'+esc(pr['country'])+'</span><span class="ff-type">'+typelabel.get(pr['type'],pr['type'])+'</span><span class="ff-status ff-'+st+'">'+statuslabel[st]+'</span></div>'
   c+='<h3>'+esc(pr['name'])+'</h3>'
@@ -93,7 +99,7 @@ def render_funded():
   open_m='<!--'+marker+'-->';close_m='<!--/'+marker+'-->'
   a=txt.index(open_m)+len(open_m);b=txt.index(close_m);return txt[:a]+inner+txt[b:]
  text=swap(text,'FF-CARDS','\n'.join(cards))
- open_n=sum(1 for pr in progs if pr['status']=='open');exp_n=sum(1 for pr in progs if pr['status']=='expected')
+ open_n=sum(1 for _,_,s,_ in decorated if s=='open');exp_n=sum(1 for _,_,s,_ in decorated if s=='expected')
  upd=datetime.fromisoformat(data['updated']).strftime('%-d %B %Y')
  summary=('<div class="ff-stat"><b>'+str(len(progs))+'</b>programmes tracked</div>'
   '<div class="ff-stat"><b>'+str(open_n)+'</b>open now</div>'
