@@ -63,21 +63,6 @@
       "verified": "2026-10-20"
     },
     {
-      "id": "eiffel-2027",
-      "name": "France Excellence Eiffel Scholarship 2027",
-      "country": "France",
-      "type": "study",
-      "status": "open",
-      "deadline": "2027-01-08",
-      "deadlineLabel": "Campus France call open until 8 January 2027",
-      "funding": "€1,200/month for master's or €2,100/month for PhD, plus international transport, insurance and housing help. Tuition fees are NOT covered by Eiffel.",
-      "eligibility": "Master's and PhD candidates in 7 listed fields. Applications are submitted only by French higher education institutions; direct student applications are rejected.",
-      "note": "First secure admission at a French institution and ask it to nominate you. The call page headline states 8 January while one paragraph says 6 January; the 2027 regulations PDF governs.",
-      "url": "https://www.campusfrance.org/en/the-france-excellence-eiffel-scholarship-program",
-      "cta": "Campus France - Eiffel 2027",
-      "verified": "2026-10-20"
-    },
-    {
       "id": "swiss-eskas-2027",
       "name": "Swiss Government Excellence Scholarships 2027-28",
       "country": "Switzerland",
@@ -244,9 +229,21 @@
     }
   ],
   "notEligible": [
-    {"name": "EPIK (English Program in Korea)", "why": "Open only to citizens of seven listed native-English countries; India is not one of them."},
-    {"name": "British Council Language Assistants", "why": "Requires a UK (or limited European) passport; not open to Indians."},
-    {"name": "Australia Awards", "why": "India is not on the current list of participating countries."},
-    {"name": "DAAD WISE (research internship)", "why": "Discontinued; no current call. Other DAAD schemes have their own deadlines."}
+    {
+      "name": "EPIK (English Program in Korea)",
+      "why": "Open only to citizens of seven listed native-English countries; India is not one of them."
+    },
+    {
+      "name": "British Council Language Assistants",
+      "why": "Requires a UK (or limited European) passport; not open to Indians."
+    },
+    {
+      "name": "Australia Awards",
+      "why": "India is not on the current list of participating countries."
+    },
+    {
+      "name": "DAAD WISE (research internship)",
+      "why": "Discontinued; no current call. Other DAAD schemes have their own deadlines."
+    }
   ]
 }
