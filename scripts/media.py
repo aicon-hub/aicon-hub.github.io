@@ -43,7 +43,7 @@ def prepare(out):
  index=out/'posts/index.html';text=index.read_text()
  def thumb(m):
   li=m[0];a=re.search(r'<a[^>]*href="([^"]+)"',li)
-  if not a:return li
+  if not a or 'archive-preview' in li:return li
   slug=Path(a[1]).stem;preview=brand.get(slug,slug+'.png')
   if slug not in remote_previews and not (out/'assets/og'/preview).exists():return li
   background=registry.get(slug,{}).get('background','#fff' if registry.get(slug,{}).get('logo_url') and not registry.get(slug,{}).get('poster_url') else 'transparent')
