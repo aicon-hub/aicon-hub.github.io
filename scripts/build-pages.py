@@ -190,6 +190,17 @@ def write_llms():
  '- Telegram: https://t.me/AiCoN4tech','']
  (OUT/'llms.txt').write_text('\n'.join(lines),encoding='utf-8')
 
+def preserve_search_console_verification():
+ # Google rechecks ownership. Retain this permanent root file in every Pages artifact.
+ name='google5c239e66451d43a6.html'
+ expected='google-site-verification: '+name+'\n'
+ source=ROOT/name
+ if source.read_text(encoding='utf-8')!=expected:
+  raise ValueError('Search Console verification file is missing or changed')
+ shutil.copy2(source,OUT/name)
+ if (OUT/name).read_bytes()!=source.read_bytes():
+  raise ValueError('Search Console verification file was not preserved')
+
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
@@ -234,5 +245,6 @@ def main():
  prepare(OUT)
  seo_pass()
  write_llms()
+ preserve_search_console_verification()
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
