@@ -4338,6 +4338,15 @@
   "source_page": "https://github.com/hovancik/stretchly",
   "width": 1117
  },
+ "subtitle-edit-free-open-source-subtitle-editor-srt-windows-mac-linux-guide": {
+  "background": "#fff",
+  "display_max_width": "128px",
+  "height": 128,
+  "logo_url": "https://raw.githubusercontent.com/SubtitleEdit/subtitleedit/main/installer/flatpak/icons/dk.nikse.subtitleedit-128.png",
+  "slug": "subtitle-edit-free-open-source-subtitle-editor-srt-windows-mac-linux-guide",
+  "source_page": "https://subtitleedit.github.io/subtitleedit/",
+  "width": 128
+ },
  "sumatrapdf-free-fast-pdf-epub-reader-windows-no-ads-guide": {
   "height": 1038,
   "logo_url": "https://www.sumatrapdfreader.org/favicon.ico",
