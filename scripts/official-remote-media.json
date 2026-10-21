@@ -4953,7 +4953,9 @@
   "poster_url": "https://www.zohowebstatic.com/sites/zweb/images/ogimage/catalyst-logo.png",
   "slug": "zoho-catalyst-students-free-cloud-project-guide",
   "source_page": "https://catalyst.zoho.com/",
-  "width": 1024
+  "width": 1024,
+  "credit_url": "https://www.zoho.com/",
+  "credit_notice": "Official publisher logo hosted by its publisher. {url} . Independent guide, not affiliated or sponsored. Artworks and trademarks belong to their owners."
  },
  "zoho-notebook-ai-student-plan-guide": {
   "height": 1024,
@@ -4961,7 +4963,9 @@
   "poster_url": "https://www.zohowebstatic.com/sites/zweb/images/ogimage/zoho-logo.png",
   "slug": "zoho-notebook-ai-student-plan-guide",
   "source_page": "https://www.zoho.com/",
-  "width": 1024
+  "width": 1024,
+  "credit_url": "https://www.zoho.com/",
+  "credit_notice": "Official publisher logo hosted by its publisher. {url} . Independent guide, not affiliated or sponsored. Artworks and trademarks belong to their owners."
  },
  "zoho-zia-chat-early-access-india-byok-cost-guide": {
   "height": 1024,
@@ -4969,7 +4973,9 @@
   "poster_url": "https://www.zohowebstatic.com/sites/zweb/images/ogimage/zoho-logo.png",
   "slug": "zoho-zia-chat-early-access-india-byok-cost-guide",
   "source_page": "https://www.zoho.com/",
-  "width": 1024
+  "width": 1024,
+  "credit_url": "https://www.zoho.com/",
+  "credit_notice": "Official publisher logo hosted by its publisher. {url} . Independent guide, not affiliated or sponsored. Artworks and trademarks belong to their owners."
  },
  "zooniverse-citizen-science-volunteer-research-projects-guide": {
   "height": 1200,

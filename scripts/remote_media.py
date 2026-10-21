@@ -36,7 +36,12 @@ def apply(out):
   if re.search(r'<img\b[^>]*class=["\x27][^"\x27]*\bcover\b',text,re.I):text=re.sub(r'<img\b[^>]*class=["\x27][^"\x27]*\bcover\b[^"\x27]*["\x27][^>]*>',lambda _:img,text,count=1,flags=re.I)
   else:text=text.replace('</h1>','</h1>'+img,1)
   text=re.sub(r'<p\b[^>]*class=["\x27][^"\x27]*media-credit[^"\x27]*["\x27][^>]*>.*?</p>','',text,flags=re.S)
-  credit='<p class="src media-credit">'+label+' hosted by its publisher. <a href="'+escape(source,quote=True)+'">Official source</a>. Independent guide, not affiliated or sponsored. Artwork and trademarks belong to their owners.</p>'
+  notice=x.get('credit_notice')
+  if notice:
+   nurl=x.get('credit_url') or source
+   credit='<p class="src media-credit">'+escape(notice).replace('{url}','<a href="'+escape(nurl,quote=True)+'">'+escape(nurl)+'</a>')+'</p>'
+  else:
+   credit='<p class="src media-credit">'+label+' hosted by its publisher. <a href="'+escape(source,quote=True)+'">Official source</a>. Independent guide, not affiliated or sponsored. Artwork and trademarks belong to their owners.</p>'
   text=text.replace(img,img+credit,1)
   video=x.get('embed_url','');watch=x.get('video_url','')
   if video.startswith('https://www.youtube.com/embed/') and watch.startswith('https://'):
