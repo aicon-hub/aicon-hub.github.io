@@ -7,7 +7,7 @@ on:
         required: true
         default: check
         type: choice
-        options: [check, publish, edit]
+        options: [check, publish, edit, delete]
       message_id:
         description: Existing channel message ID, required for edit (never deletes or reposts)
         required: false
@@ -117,9 +117,15 @@ jobs:
               event=json.load(open(os.environ['GITHUB_EVENT_PATH']))
               data=event.get('inputs',{})
               mode=data.get('mode','check')
-              if mode not in ('check','publish','edit'):raise RuntimeError('Unknown mode')
+              if mode not in ('check','publish','edit','delete'):raise RuntimeError('Unknown mode')
               if mode=='check':
                   print(json.dumps({'verified_channel_id':verify(),'posting_permission':True}));return
+              if mode=='delete':
+                  mid=data.get('message_id','').strip()
+                  if not mid.isdigit() or int(mid)<=0:raise RuntimeError('A positive existing message_id is required for delete')
+                  chat_id=verify()
+                  tg('deleteMessage',{'chat_id':chat_id,'message_id':int(mid)})
+                  print(json.dumps({'deleted_message_id':int(mid)}));return
               post_id=data.get('post_id','').strip()
               if not post_id:raise RuntimeError('A stable post_id is required')
               steps=edit_plan(data) if mode=='edit' else plan(data.get('text','').replace('\\n','\n'),'upload' if data.get('photo_base64') else data.get('photo_url',''))
