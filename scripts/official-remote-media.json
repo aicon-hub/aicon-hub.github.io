@@ -1548,6 +1548,15 @@
   "source_page": "https://foldingathome.org/",
   "width": 1440
  },
+ "fontforge-free-font-editor-design-typefaces-windows-mac-guide": {
+  "background": "#fff",
+  "display_max_width": "128px",
+  "height": 256,
+  "logo_url": "https://raw.githubusercontent.com/fontforge/fontforge/master/desktop/tango/256x256/org.fontforge.FontForge.png",
+  "slug": "fontforge-free-font-editor-design-typefaces-windows-mac-guide",
+  "source_page": "https://fontforge.org/en-US/",
+  "width": 256
+ },
  "foobar2000-free-music-player-windows-mac-android-ios-guide": {
   "background": "#fff",
   "display_max_width": "240px",
