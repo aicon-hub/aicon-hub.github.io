@@ -55,3 +55,31 @@ footer{background:var(--c-bg2)!important;color:var(--c-mute)}footer a{color:var(
 @media(max-width:480px){.archive-preview{width:86px;height:52px;margin-right:12px}#postlist li{min-height:100px}}
 
 .preview-credit{display:block;clear:both;font:400 12px/1.5 Inter,sans-serif;color:var(--c-mute);margin-top:10px}.preview-credit a{color:var(--c-link)}
+
+/* Deadline cards refresh, 21 October 2026: each date becomes its own tappable card. */
+.home-redesign .deadline-panel{background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible}
+.home-redesign .deadline-panel .panel-title{padding:4px 4px 12px}
+.home-redesign .deadline-panel .deadline{position:relative;display:flex;align-items:flex-start;gap:14px;margin:0 0 10px;padding:15px 16px;border:1px solid var(--c-line)!important;border-radius:16px;background:var(--c-card);color:var(--c-text);text-decoration:none;box-shadow:0 1px 2px rgba(18,12,6,.06);transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease,background-color .15s ease!important;touch-action:manipulation}
+.home-redesign .deadline-panel .deadline:hover{background:var(--c-card);border-color:var(--c-or)!important;transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,104,47,.16);padding-left:16px}
+.home-redesign .deadline-panel .deadline:active{transform:translateY(0);box-shadow:0 2px 6px rgba(255,104,47,.12)}
+.home-redesign .deadline-panel .deadline:focus-visible{outline:2px solid var(--c-or);outline-offset:2px}
+.home-redesign .deadline-panel .date-box{flex:none;width:52px;min-width:52px;height:52px;min-height:52px;border:1.5px solid var(--c-line);border-radius:13px;color:var(--c-text)}
+.home-redesign .deadline-panel .date-box b{font-size:20px;font-weight:700}
+.home-redesign .deadline-panel .date-box small{font-size:10px!important;letter-spacing:.1em}
+.home-redesign .deadline-panel .deadline:first-of-type .date-box{border-color:var(--c-or);box-shadow:0 4px 12px rgba(255,104,47,.35)}
+.home-redesign .deadline-panel .deadline-info{flex:1;min-width:0}
+.home-redesign .deadline-panel .deadline-info>strong{display:block;font-size:14px;font-weight:600;line-height:1.4;color:var(--c-text)}
+.home-redesign .deadline-panel .deadline-info>small{display:block;margin-top:4px;font-size:12px;line-height:1.45;color:var(--c-mute)}
+.home-redesign .deadline-panel .deadline-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.home-redesign .deadline-panel .days-left{display:inline-block;font:600 12px/1 Inter,sans-serif;color:var(--c-link);background:color-mix(in srgb,var(--c-or) 10%,transparent);border:1px solid var(--c-line);border-color:color-mix(in srgb,var(--c-or) 40%,transparent);border-radius:999px;padding:6px 11px;margin:0}
+.home-redesign .deadline-panel .days-left--soon,.home-redesign .deadline-panel .days-left--today{background:var(--c-or);border-color:var(--c-or);color:#1a0f08}
+.home-redesign .deadline-panel .deadline-action{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 Inter,sans-serif;color:var(--c-link);border:1px solid var(--c-line);border-color:color-mix(in srgb,var(--c-or) 40%,transparent);border-radius:999px;padding:6px 12px;margin:0 0 0 auto;transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+.home-redesign .deadline-panel .deadline:hover .deadline-action{background:var(--c-or);border-color:var(--c-or);color:#1a0f08}
+.home-redesign .deadline-panel .panel-end{display:block;margin:2px 0 0;padding:13px 16px;border:1px solid var(--c-line);border-radius:14px;text-align:center;font-size:13px;font-weight:600;color:var(--c-link);text-decoration:none;transition:border-color .15s ease,color .15s ease}
+.home-redesign .deadline-panel .panel-end:hover{border-color:var(--c-or);background:var(--c-card)}
+@media(max-width:640px){.home-redesign .deadline-panel .deadline{padding:13px 14px;gap:12px;margin-bottom:8px}
+.home-redesign .deadline-panel .deadline:hover{padding-left:14px}
+.home-redesign .deadline-panel .date-box{width:46px;min-width:46px;height:46px;min-height:46px}
+.home-redesign .deadline-panel .date-box b{font-size:18px}
+.home-redesign .deadline-panel .deadline-info>strong{font-size:13.5px}}
+

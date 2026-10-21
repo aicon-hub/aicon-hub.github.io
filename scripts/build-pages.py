@@ -147,7 +147,8 @@ def refresh_home():
   day=x['date'][8:];month=datetime.fromisoformat(x['date']).strftime('%b').upper()
   days=(datetime.fromisoformat(x['date']).date()-datetime.fromisoformat(today).date()).days
   badge='Closes today' if days==0 else ('1 day left' if days==1 else str(days)+' days left')
-  deadlines+='<a class="deadline" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="date-box"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small><b class="days-left">'+badge+'</b><span class="deadline-action">How to apply →</span></span></a>'
+  urgency=' days-left--today' if days==0 else (' days-left--soon' if days<=2 else '')
+  deadlines+='<a class="deadline" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="date-box"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span class="deadline-info"><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small><span class="deadline-tags"><b class="days-left'+urgency+'">'+badge+'</b><span class="deadline-action">How to apply →</span></span></span></a>'
  home=re.sub(r'<a class="deadline"[^>]*>.*?</a>','',home,flags=re.S)
  home=home.replace('<a class="panel-end"',deadlines+'<a class="panel-end"',1)
  eventcards=''.join('<a class="event-guide" href="'+esc(x['href'])+'"><span class="event-tag">'+esc(x['tag'])+'</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['date']+' | '+x['description'])+'</p></a>' for x in events[:4])
@@ -223,12 +224,12 @@ def main():
  # Apply theme before paint and version shared assets on every generated page.
  for page in [OUT/'index.html',OUT/'funded/index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
-  text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261020float1',text)
+  text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261021dates1',text)
   text=re.sub(r'<script\b[^>]*src=[\"\'][^\"\']*assets/theme.js[^\"\']*[\"\'][^>]*></script>', '', text, flags=re.I)
   prefix='assets/' if page.parent==OUT else '../assets/'
-  text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261020float1\"></script>',1)
-  text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=20261020float1"/><script defer src="'+prefix+'cinema.js?v=20261020float1"></script></head>',1) if 'cinema.css' not in text else text
-  text=text.replace('</body>','<script defer src="'+prefix+'avatar-loader.js?v=20261020float1"></script></body>',1)
+  text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261021dates1\"></script>',1)
+  text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=20261021dates1"/><script defer src="'+prefix+'cinema.js?v=20261021dates1"></script></head>',1) if 'cinema.css' not in text else text
+  text=text.replace('</body>','<script defer src="'+prefix+'avatar-loader.js?v=20261021dates1"></script></body>',1)
   page.write_text(text)
  for path in (OUT/'posts').glob('*.html'):
   text,rec=transform(path.read_text(),str(path.relative_to(OUT)))
