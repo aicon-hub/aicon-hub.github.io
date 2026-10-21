@@ -1,9 +1,11 @@
 {
   "post_id": "aicon-article-aicte-saraswati-scholarship-2026-27-bba-bca-bms-girls-guide-2026-10-19-edit1",
   "article_url": "https://aicon-hub.github.io/posts/aicte-saraswati-scholarship-2026-27-bba-bca-bms-girls-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39620968359",
-  "message_ids": [],
+  "message_ids": [
+    415
+  ],
   "mode": "edit",
   "target_message_id": 415,
   "payload_sha256": "95bf0f4daff7f723325dc69ca8e27dd57e159583ffdefc0b04f9e592ca1dfd7f"
