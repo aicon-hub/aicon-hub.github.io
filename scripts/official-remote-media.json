@@ -4219,6 +4219,15 @@
   "source_page": "https://getsharex.com/",
   "width": 1280
  },
+ "sigil-free-epub-ebook-editor-windows-mac-guide": {
+  "background": "#fff",
+  "display_max_width": "128px",
+  "height": 512,
+  "logo_url": "https://raw.githubusercontent.com/Sigil-Ebook/Sigil/master/src/Resource_Files/icon/app_icons_orig/app_icon_512.png",
+  "slug": "sigil-free-epub-ebook-editor-windows-mac-guide",
+  "source_page": "https://sigil-ebook.com/sigil/",
+  "width": 512
+ },
  "sima-ai-series-c-physical-ai-chips-funding-guide": {
   "embed_url": "https://www.youtube.com/embed/oJBoyx3dvl8",
   "height": 1256,
