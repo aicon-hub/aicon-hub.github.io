@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-musicbrainz-picard-free-music-tagger-organize-mp3-flac-guide-2026-10-19",
   "article_url": "https://aicon-hub.github.io/posts/musicbrainz-picard-free-music-tagger-organize-mp3-flac-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39545742524",
-  "message_ids": []
+  "message_ids": [
+    403
+  ]
 }
