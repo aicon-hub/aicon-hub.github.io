@@ -1861,6 +1861,15 @@
   "source_page": "https://gortex.dev/",
   "width": 500
  },
+ "gparted-free-disk-partition-editor-resize-partitions-bootable-usb-guide": {
+  "background": "#fff",
+  "display_max_width": "128px",
+  "height": 256,
+  "logo_url": "https://gitlab.gnome.org/GNOME/gparted/-/raw/master/logo.png",
+  "slug": "gparted-free-disk-partition-editor-resize-partitions-bootable-usb-guide",
+  "source_page": "https://gparted.org/",
+  "width": 256
+ },
  "gpt-6-1-sol-api-pricing-limits-india-guide": {
   "height": 630,
   "logo_url": "https://developers.openai.com/favicon.png",
