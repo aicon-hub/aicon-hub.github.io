@@ -44,3 +44,6 @@ article.post .box:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(73,71
 .share a:hover{transform:translateY(-2px)}
 .facts tr{transition:transform .15s ease}
 .post img{max-width:100%;height:auto}
+/* official product logo between category chip and heading (remote_media.apply) */
+.tool-logo{display:block;width:76px;height:76px;object-fit:contain;border-radius:16px;padding:5px;margin:12px 0 8px;background:#fff}
+@media (max-width:640px){.tool-logo{width:64px;height:64px}}
