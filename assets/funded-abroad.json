@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-22",
   "programs": [
     {
       "id": "jet-2027-alt",
@@ -15,22 +15,22 @@
       "url": "https://jetprogramme.org/en/",
       "cta": "Official JET site (CLAIR)",
       "guide": "posts/jet-programme-2027-alt-teach-english-japan-india-guide.html",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "commonwealth-masters-2027",
       "name": "Commonwealth Master's Scholarships 2027/28",
       "country": "United Kingdom",
       "type": "study",
-      "status": "open",
+      "status": "closed",
       "deadline": "2026-10-20T15:00:00Z",
-      "deadlineLabel": "Closes 20 October 2026, 16:00 BST (8:30 PM IST)",
+      "deadlineLabel": "Closed 20 October 2026, 16:00 BST (8:30 PM IST)",
       "funding": "Funded by the UK Foreign, Commonwealth & Development Office: tuition, airfare and a living allowance.",
       "eligibility": "Citizens of eligible Commonwealth countries, including India. A 2:1 honours degree (or 2:2 plus a relevant postgraduate qualification) by September 2027. Applying through a nominator is compulsory.",
       "note": "For master's study starting September/October 2027. Nominators may set earlier internal cut-offs.",
       "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
       "cta": "Commonwealth Scholarship Commission",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "france-ela-2027",
@@ -45,7 +45,7 @@
       "note": "The closest programme to Japan's JET for Indians: teach English in France, no teaching degree needed.",
       "url": "https://www.institutfrancaisindia.in/assistant-danglais/",
       "cta": "Institut Français India - apply",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "erasmus-mundus-2027",
@@ -60,7 +60,7 @@
       "note": "Apply directly to each master's through the official Erasmus Mundus catalogue; there is no single central form.",
       "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters-scholarships",
       "cta": "Erasmus+ official page and catalogue",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "swiss-eskas-2027",
@@ -75,7 +75,7 @@
       "note": "Check the India country page on the FCS/SERI site for the exact Indian deadline and the embassy contact.",
       "url": "https://www.sbfi.admin.ch/en/swiss-government-excellence-scholarships",
       "cta": "SERI / FCS official page",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "stipendium-hungaricum-2027",
@@ -105,7 +105,7 @@
       "note": "Applications are received in one period each year on the official portal only.",
       "url": "https://www.turkiyeburslari.gov.tr/",
       "cta": "Türkiye Scholarships official portal",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "csc-china-2027",
@@ -135,7 +135,7 @@
       "note": "Never send documents directly to MEXT in Japan; the embassy route is the only one for India.",
       "url": "https://www.studyinjapan.go.jp/en/smap-stopj-applications-research.html",
       "cta": "Study in Japan (official)",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "fulbright-nehru-2028",
@@ -150,7 +150,7 @@
       "note": "USIEF (United States-India Educational Foundation) is the only official channel in India.",
       "url": "https://www.usief.org.in/",
       "cta": "USIEF official site",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "spain-auxiliares-2027",
@@ -165,7 +165,7 @@
       "note": "Run by Spain's Ministry of Education, which charges no fee. Any payment request means it is not the official programme.",
       "url": "https://www.educacionfpydeportes.gob.es/india/en/convocatorias-programas/auxiliares-en-espana0.html",
       "cta": "Ministerio de Educación - India page",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "gks-2027",
@@ -178,9 +178,9 @@
       "funding": "Full funding: tuition, airfare, monthly allowance and Korean language training.",
       "eligibility": "Indian citizens via the Embassy of Korea in India (embassy track) or directly through universities (university track).",
       "note": "Embassy track applications are filed on the Study in Korea portal inside the announced window only.",
-      "url": "https://www.studyinkorea.go.kr/en/scholarship/main.do",
+      "url": "https://www.studyinkorea.go.kr/en/main.do",
       "cta": "Study in Korea (official)",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "goi-ies-2027",
@@ -195,7 +195,7 @@
       "note": "Managed by Ireland's Higher Education Authority; one application per candidate per cycle.",
       "url": "https://hea.ie/policy/internationalisation/goi-ies/",
       "cta": "HEA official page",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "bdgs-2027",
@@ -210,7 +210,7 @@
       "note": "Watch the official MFA page for the 2027/28 announcement; expected around mid-December 2026.",
       "url": "https://www.mfa.gov.bn/Pages/online-bdgs.aspx",
       "cta": "Brunei MFA - BDGS",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
     },
     {
       "id": "chevening-2028",
@@ -225,7 +225,97 @@
       "note": "Applications open every August and close around early October. Mark August 2027.",
       "url": "https://www.chevening.org/scholarships/",
       "cta": "Chevening official site",
-      "verified": "2026-10-20"
+      "verified": "2026-10-22"
+    },
+    {
+      "id": "daad-epos-2027",
+      "name": "DAAD EPOS - Development-Related Postgraduate Courses (Germany)",
+      "country": "Germany",
+      "type": "study",
+      "status": "open",
+      "deadline": null,
+      "deadlineLabel": "Each course sets its own deadline; for the 2027/28 intake most close between late August and mid-October 2026 - check the official EPOS course list",
+      "funding": "German government funding via DAAD: 992 EUR per month for graduates (1,400 EUR for doctoral candidates from February 2026), health and liability insurance, and a travel allowance. Funding runs 12 to 42 months depending on the course.",
+      "eligibility": "Graduates from developing and newly industrialised countries, including India, with at least two years of professional experience, applying to a listed development-related postgraduate course in Germany.",
+      "note": "Apply through the university that runs your chosen EPOS course, not directly to DAAD.",
+      "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50076777",
+      "cta": "DAAD scholarship database (official)",
+      "verified": "2026-10-22"
+    },
+    {
+      "id": "banach-nawa-2027",
+      "name": "Stefan Banach Scholarship Programme (NAWA, Poland)",
+      "country": "Poland",
+      "type": "study",
+      "status": "expected",
+      "deadline": null,
+      "deadlineLabel": "The 2026 call closed on 8 May 2026; the next call is expected around spring 2027",
+      "funding": "PLN 2,500 monthly scholarship, tuition fee exemption at public universities, and a PLN 2,500 travel allowance for second-cycle (master's) studies.",
+      "eligibility": "Indian citizens - India is on the programme's official country list - applying for master's studies in Poland, in Polish or English.",
+      "note": "Run by NAWA under the Polish Ministry of Foreign Affairs development cooperation programme.",
+      "url": "https://nawa.gov.pl/en/students/foreign-students/the-banach-scholarship-programme/landing",
+      "cta": "NAWA Banach Programme (official)",
+      "verified": "2026-10-22"
+    },
+    {
+      "id": "mtcp-2027",
+      "name": "MTCP Scholarship (Malaysian Technical Cooperation Programme)",
+      "country": "Malaysia",
+      "type": "study",
+      "status": "expected",
+      "deadline": null,
+      "deadlineLabel": "The 2026/27 call was announced in May 2026 and is closed; the next call is expected around May-July 2027",
+      "funding": "Full tuition fees, monthly allowances and a return economy-class air ticket for master's study at selected Malaysian public universities.",
+      "eligibility": "Citizens of MTCP recipient countries - India is one of the 144 listed - aged 45 or under, with IELTS 6.0 / TOEFL iBT 60 or a previous degree taught in English.",
+      "note": "Apply only through the official MTCP portal; the application is free.",
+      "url": "https://mtcp.kln.gov.my/",
+      "cta": "MTCP official portal",
+      "verified": "2026-10-22"
+    },
+    {
+      "id": "knb-2027",
+      "name": "KNB Scholarship (Kemitraan Negara Berkembang, Indonesia)",
+      "country": "Indonesia",
+      "type": "study",
+      "status": "expected",
+      "deadline": null,
+      "deadlineLabel": "The 2026 cycle ran 2 February - 31 March 2026; the next call is expected around February-March 2027",
+      "funding": "Full funding for a master's degree in Indonesia: tuition, living and book allowances, health insurance and a return air ticket.",
+      "eligibility": "Citizens of developing countries, including India, aged 35 or under with a bachelor's degree. A recommendation letter from the Indonesian Embassy in New Delhi is compulsory.",
+      "note": "The only application channel is the official KNB portal; using paid agents is prohibited.",
+      "url": "https://knb.kemdiktisaintek.go.id/",
+      "cta": "KNB official portal",
+      "verified": "2026-10-22"
+    },
+    {
+      "id": "romania-mfa-2027",
+      "name": "Romanian Government Scholarship (MFA)",
+      "country": "Romania",
+      "type": "study",
+      "status": "expected",
+      "deadline": null,
+      "deadlineLabel": "The 2026-27 call closed on 31 March 2026; the next call is expected around December 2026 - March 2027",
+      "funding": "Free tuition and a monthly stipend for bachelor, master or PhD study. Teaching is in Romanian, with a free preparatory language year included (except PhD). Airfare is not covered.",
+      "eligibility": "Non-EU citizens, including Indians, with a valid passport. PhD applicants must first get a doctoral tutor's written agreement.",
+      "note": "Applications only via the official scholarships platform; no fee is charged.",
+      "url": "https://studyinromania.gov.ro/",
+      "cta": "Study in Romania (official)",
+      "verified": "2026-10-22"
+    },
+    {
+      "id": "maeci-2027",
+      "name": "Italian Government (MAECI) Scholarships",
+      "country": "Italy",
+      "type": "study",
+      "status": "expected",
+      "deadline": null,
+      "deadlineLabel": "The 2026-27 call closed on 26 March 2026; the next call is expected around March-April 2027",
+      "funding": "900 EUR per month grant, tuition-fee waivers at participating universities and health insurance; grants run 3, 6 or 9 months per academic year.",
+      "eligibility": "Foreign citizens, including Indians, for master's degrees, PhD, research or Italian language courses. Age limits apply: 28 or under for master's, 30 for PhD.",
+      "note": "Applications only through the official Study in Italy portal.",
+      "url": "https://studyinitaly.esteri.it/",
+      "cta": "Study in Italy (official MAECI portal)",
+      "verified": "2026-10-22"
     }
   ],
   "notEligible": [
@@ -244,6 +334,14 @@
     {
       "name": "DAAD WISE (research internship)",
       "why": "Discontinued; no current call. Other DAAD schemes have their own deadlines."
+    },
+    {
+      "name": "Manaaki New Zealand Scholarships",
+      "why": "India is not on the eligible-country list; the Asia list covers Cambodia, Indonesia, Lao PDR, Malaysia, Nepal, Philippines, Thailand, Timor-Leste and Vietnam."
+    },
+    {
+      "name": "Czech Government Scholarships 2027/28",
+      "why": "The 2027/28 country list does not include India (it covers Bosnia and Herzegovina, Georgia, Ukraine, Belarus, Ethiopia, Gabon, Mauritania, Zambia, Bangladesh, Cambodia, Palestine, Guatemala and Honduras)."
     }
   ]
 }
