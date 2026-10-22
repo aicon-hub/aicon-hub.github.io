@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261021dates1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>GhostESP: learn wireless security on a cheap ESP32 board | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/ghostesp-esp32-wireless-security-learning-own-devices-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-22" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "GhostESP: learn wireless security on a cheap ESP32 board", "description": "GhostESP is free open-source firmware that turns 45+ ESP32 boards into a WiFi/BLE/NFC/RF security learning platform, flashed from your browser. For your own devices and lab only.", "datePublished": "2026-10-22", "inLanguage": "en-IN", "mainEntityOfPage": "https://aicon-hub.github.io/posts/ghostesp-esp32-wireless-security-learning-own-devices-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261021dates1" rel="stylesheet"/><link href="../assets/article.css?v=20261021dates1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261021dates1" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/cinema.css?v=20261015smooth1"/><script defer src="../assets/cinema.js?v=20261015smooth1"></script>
+<meta name="description" content="GhostESP is free open-source firmware that turns 45+ ESP32 boards into a WiFi/BLE/NFC/RF security learning platform, flashed from your browser. For your own devices and lab only."/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="AiCoN"/>
+<meta property="og:title" content="GhostESP: learn wireless security on a cheap ESP32 board"/>
+<meta property="og:description" content="GhostESP is free open-source firmware that turns 45+ ESP32 boards into a WiFi/BLE/NFC/RF security learning platform, flashed from your browser. For your own devices and lab only."/>
+<meta property="og:url" content="https://aicon-hub.github.io/posts/ghostesp-esp32-wireless-security-learning-own-devices-guide.html"/>
+<meta property="og:image" content="https://ghostesp.net/images/IMG_1178.webp"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GhostESP: learn wireless security on a cheap ESP32 board"/>
+<meta name="twitter:description" content="GhostESP is free open-source firmware that turns 45+ ESP32 boards into a WiFi/BLE/NFC/RF security learning platform, flashed from your browser. For your own devices and lab only."/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / GhostESP</p>
+<article class="post">
+<span class="chip">LEARNING</span>
+<h1>GhostESP: learn wireless security on a cheap ESP32 board</h1>
+<p class="meta">By AiCoN | Published 22 October 2026 | Sources checked 22 October 2026</p>
+<p class="lead">GhostESP is free, open-source firmware that turns an ordinary ESP32 board into a wireless security learning platform - WiFi, Bluetooth, NFC, infrared and RF tools in one place. It is for testing your own devices and networks in your own lab. Using tools like this on other people's networks or devices can be a crime; read the safety section before flashing.</p>
+<img alt="An ESP32 board running GhostESP, official project image" class="cover" src="https://ghostesp.net/images/IMG_1178.webp"/>
+<p><i>Image: official GhostESP project image, from ghostesp.net.</i></p>
+<h2>Quick facts</h2><ul><li><b>What it is:</b> open-source firmware, web tools and companion apps for 45+ ESP32 boards - a wireless security research and learning platform covering WiFi, Bluetooth LE, NFC, infrared, SubGHz/RF and USB HID.</li><li><b>Price:</b> firmware and releases are free; the project says donations cover test hardware, hosting and development. You need an ESP32 board and a USB cable; prices vary by model, so check the official supported-boards list before buying.</li><li><b>Install:</b> flash from your browser at ghostesp.net/flasher - connect the board over USB, pick your board, flash. No software install needed (a Chromium browser like Chrome or Edge is required for web flashing).</li><li><b>Use limit:</b> your own boards, your own router, your own lab - or equipment you are explicitly authorized to test. Nothing else.</li><li><b>Best for:</b> students and hobbyists learning wireless security hands-on, and anyone who wants to understand how WiFi and BLE attacks work in order to defend against them.</li></ul>
+<h2>What it is</h2><p>GhostESP (Revival) is a community firmware project for the ESP32 family. Once flashed, a small, cheap board becomes a multi-radio security toolkit you control from its screen or a companion app. The official features page lists 133 capabilities across WiFi (2.4 and 5 GHz scanning, capture and monitoring), Bluetooth LE scanning and analysis, NFC and infrared read/write/replay, SubGHz and RF spectrum analysis, and BadUSB/HID output. Features depend on the exact board and add-on hardware. It belongs to the same family of learning tools as the Flipper Zero - at a fraction of the price, since ESP32 boards are cheap.</p>
+<h2>Stay safe and legal - read this first</h2><p>Security tools like this exist so students and professionals can test defences on equipment they own. The rules are simple and strict:</p><ul><li>Test only devices and networks you own, or where you have clear, explicit permission from the owner - for your own router, your own boards, your own lab.</li><li>Never use it against other people's or public networks - hostels, colleges, cafes, neighbours. Interfering with networks or capturing other people's data without authorization can be a crime under cyber laws, in India and most countries, even if you meant it as a prank or a test.</li><li>Do not use it to collect other people's data or credentials under any circumstances.</li><li>If you want a career in security, learn through authorized labs and courses - they exist so you can practise legally.</li></ul><p>AiCoN shares this only for lawful, authorized, educational use on your own equipment. We deliberately publish no attack instructions.</p>
+<h2>Is it free?</h2><p>Yes. The firmware and releases are free and open source; the official site says donations cover test hardware, hosting and development time. Your real cost is the board and any add-on modules (GPS, NFC, SD card) - the site lists which of the 45+ supported boards have which capabilities, so check before buying.</p>
+<h2>India</h2><ul><li>ESP32 boards are widely available from Indian electronics stores and online marketplaces; pick a board from the official supported list and confirm current prices with the seller.</li><li>The browser flasher works from any laptop with Chrome/Edge and a USB data cable - no drivers to hunt down in most cases.</li><li>A reasonable fit for engineering students curious about cybersecurity - inside the safety rules above.</li></ul>
+<h2>Good to know</h2><ul><li>Capabilities vary a lot by board; the official "supported boards" page compares tested targets before you flash.</li><li>Flashing new firmware can wipe the board's existing software - back up and follow the official guide.</li><li>Install firmware only from the project's official releases; random builds from forums can be unsafe.</li></ul>
+<div class="box good"><b>AiCoN check</b>Source-based verification on 22 October 2026: we read the official GhostESP site, features list and web flasher page. Board support (45+ targets), free firmware and browser-based flashing are from those pages. We did not flash a board or run any wireless test, and we publish no attack instructions. The safety rules above are general guidance, not legal advice.</div>
+<h2>Frequently asked questions</h2><h3>Is GhostESP free?</h3><p>The firmware is free and open source. You pay only for the ESP32 board and any optional add-ons.</p><h3>Do I need a Flipper Zero?</h3><p>No - GhostESP runs on cheap ESP32 boards and covers similar learning territory (WiFi, BLE, NFC, IR, RF), depending on the board.</p><h3>Can I try it on my college WiFi?</h3><p>Not without explicit permission from whoever owns and runs that network. Treat "my college" or "my hostel" as someone else's network unless you have that permission.</p>
+<p class="src">Sources: <a href="https://ghostesp.net/">GhostESP</a>, <a href="https://ghostesp.net/features">GhostESP features</a>, <a href="https://ghostesp.net/flasher">GhostESP web flasher</a>. Checked 22 October 2026.</p></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer src="../assets/avatar-loader.js?v=20261016guide1"></script><script defer src="../assets/avatar-loader.js?v=20261021dates1"></script></body></html>
