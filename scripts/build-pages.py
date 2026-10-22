@@ -229,6 +229,7 @@ def main():
   prefix='assets/' if page.parent==OUT else '../assets/'
   text=text.replace('<head>','<head><script src=\"'+prefix+'theme.js?v=20261021dates1\"></script>',1)
   text=text.replace('</head>','<link rel="stylesheet" href="'+prefix+'cinema.css?v=20261021dates1"/><script defer src="'+prefix+'cinema.js?v=20261021dates1"></script></head>',1) if 'cinema.css' not in text else text
+  text=re.sub(r'<script\b[^>]*src=["\x27][^"\x27]*assets/avatar-loader\.js[^"\x27]*["\x27][^>]*></script>','',text)
   text=text.replace('</body>','<script defer src="'+prefix+'avatar-loader.js?v=20261021dates1"></script></body>',1)
   page.write_text(text)
  for path in (OUT/'posts').glob('*.html'):
