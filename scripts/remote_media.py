@@ -48,6 +48,7 @@ def apply(out):
  records.get("naps2-free-open-source-document-scanner-pdf-windows-mac-linux-guide", {}).update(poster_url=None, under_chip_only=True)
  records.get("flow-launcher-free-open-source-windows-app-and-file-search-launcher-guide", {}).update(poster_url=None, under_chip_only=True)
  records.get("freecad-free-3d-parametric-modeler-design-real-objects-3d-print-guide", {}).update(logo_url="https://www.freecad.org/svg/logo-freecad.svg", poster_url=None, under_chip_only=True)
+ records.get("calibre-free-ebook-manager-converter-reader-guide", {}).update(poster_url="https://raw.githubusercontent.com/kovidgoyal/calibre/master/manual/images/edit-book.png", width=1411, height=844)
  records.setdefault("anki-free-flashcards-spaced-repetition-app-windows-mac-android-guide", {}).update(logo_url="https://raw.githubusercontent.com/ankitects/anki/main/docs-site/media/anki-logo.svg", logo_width=288, logo_height=288, poster_url=None, under_chip_only=True)
  records.get("scrcpy-free-open-source-show-android-screen-on-pc-usb-guide", {}).update(logo_url="https://raw.githubusercontent.com/Genymobile/scrcpy/master/app/data/scrcpy.svg", logo_width=48, logo_height=48, under_chip_only=True)
  # Official hosts that failed repeated real article loads stay text-only.
