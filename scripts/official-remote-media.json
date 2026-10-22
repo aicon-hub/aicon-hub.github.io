@@ -5500,5 +5500,10 @@
     "logo_width": 288,
     "logo_height": 288,
     "under_chip_only": true
+  },
+  "musopen-free-classical-music-recordings-sheet-music-nonprofit-guide": {
+    "logo_url": "https://musopen.org/favicon.ico",
+    "source_page": "https://musopen.org/",
+    "under_chip_only": true
   }
 }
