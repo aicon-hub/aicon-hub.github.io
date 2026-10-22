@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-ghostesp-esp32-wireless-security-learning-own-devices-guide-2026-10-19",
   "article_url": "https://aicon-hub.github.io/posts/ghostesp-esp32-wireless-security-learning-own-devices-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39714078318",
-  "message_ids": []
+  "message_ids": [
+    429
+  ]
 }
