@@ -53,6 +53,8 @@ def apply(out):
    if cm:text=text[:cm.end()]+limg+text[cm.end():]
    else:text=re.sub(r'<h1\b',lambda _:limg+'<h1',text,count=1,flags=re.I)
   if x.get('under_chip_only'):
+   # Remove only obsolete locally generated covers, never authored tutorial media.
+   text=re.sub(r'<img\b[^>]*>',lambda m:'' if re.search(r'class=["\x27][^"\x27]*\bcover\b',m[0],re.I) and re.search(r'src=["\x27](?:\.\./)?assets/og/',m[0],re.I) else m[0],text,flags=re.I)
    p.write_text(text);continue
   u=x.get('poster_url') or x.get('logo_url')
   if not u or not u.startswith('https://'):continue
