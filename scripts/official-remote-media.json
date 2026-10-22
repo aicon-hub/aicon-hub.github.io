@@ -5512,5 +5512,12 @@
     "logo_width": 192,
     "logo_height": 192,
     "under_chip_only": true
+  },
+  "tensorflow-playground-neural-network-learn-browser-free-guide": {
+    "logo_url": "https://www.tensorflow.org/images/tf_logo_transp.png",
+    "source_page": "https://www.tensorflow.org/",
+    "logo_width": 1068,
+    "logo_height": 1077,
+    "under_chip_only": true
   }
 }
