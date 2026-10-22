@@ -13,6 +13,7 @@ def apply(out):
  # Articles without a usable official hotlink are intentionally text-only.
  for page in (out/'posts').glob('*.html'):
   slug=page.stem;text=page.read_text()
+  text=re.sub(r'<img\b[^>]*class=["\x27][^"\x27]*\btool-logo\b[^"\x27]*["\x27][^>]*>','',text,flags=re.I)
   text=re.sub(r'<figure\b[^>]*>.*?</figure>',lambda m:'' if re.search(r'<img[^>]*src=["\x27](?:data:image|(?:\.\./)?assets/og/)',m[0],re.I) else m[0],text,flags=re.S)
   text=re.sub(r'<img\b[^>]*>',lambda m:'' if re.search(r'src=["\x27](?:data:image|(?:\.\./)?assets/og/|https://aicon-hub.github.io/assets/og/)',m[0],re.I) and not re.search(r'class=["\x27][^"\x27]*\bcover\b',m[0],re.I) else m[0],text)
   if slug not in records:
@@ -25,9 +26,19 @@ def apply(out):
  for slug,x in records.items():
   p=out/'posts'/(slug+'.html')
   if not p.exists():continue
+  source=x.get('source_page','');text=p.read_text();old=[]
+  lurl=x.get('logo_url','')
+  if lurl.startswith('https://'):
+   lw=x.get('logo_width');lh=x.get('logo_height')
+   dim=(' width="'+str(lw)+'" height="'+str(lh)+'"') if lw and lh else ''
+   limg='<img class="tool-logo" src="'+escape(lurl,quote=True)+'" alt="Official publisher logo; independent guide, not sponsored" referrerpolicy="no-referrer"'+dim+' decoding="async"/>'
+   cm=re.search(r'<span\b[^>]*class=["\x27][^"\x27]*\bchip\b[^"\x27]*["\x27][^>]*>.*?</span>',text,re.I|re.S)
+   if cm:text=text[:cm.end()]+limg+text[cm.end():]
+   else:text=re.sub(r'<h1\b',lambda _:limg+'<h1',text,count=1,flags=re.I)
+  if x.get('under_chip_only'):
+   p.write_text(text);continue
   u=x.get('poster_url') or x.get('logo_url')
   if not u or not u.startswith('https://'):continue
-  source=x.get('source_page','');text=p.read_text();old=[]
   for m in re.finditer(r'<img\b[^>]*class=["\x27][^"\x27]*\bcover\b[^"\x27]*["\x27][^>]*>',text,re.I):
    sm=re.search(r'src=["\x27]([^"\x27]+)',m[0]);old.extend([sm[1]] if sm else [])
   logo=not x.get('poster_url');w=x.get('width',1200);h=x.get('height',630)
