@@ -50,7 +50,7 @@ def apply(out):
    text=text.replace(credit,credit+panel,1)
 
   # Do not label a generic homepage asset as a picture of the feature discussed.
-  for oldurl in old:
+  for oldurl in old[:1]:
    text=text.replace(oldurl,u)
    full='https://aicon-hub.github.io/'+oldurl.replace('../','')
    text=text.replace(full,u)
