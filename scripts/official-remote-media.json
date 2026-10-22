@@ -5526,5 +5526,12 @@
     "logo_width": 512,
     "logo_height": 512,
     "under_chip_only": true
+  },
+  "flightradar24-live-flight-tracker-free-map-guide": {
+    "logo_url": "https://www.flightradar24.com/static/favicons/android-icon-192x192.png",
+    "source_page": "https://www.flightradar24.com/",
+    "logo_width": 192,
+    "logo_height": 192,
+    "under_chip_only": true
   }
 }
