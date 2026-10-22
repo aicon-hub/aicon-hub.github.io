@@ -24,7 +24,9 @@ def enrich(out):
   if not keys:keys.append('other')
   li=re.sub(r'\sdata-categories=["\x27].*?["\x27]','',li);return li.replace('<li','<li data-categories="'+' '.join(sorted(set(keys)))+'"',1)
  text=re.sub(r'<li\b[^>]*>.*?</li>',classify,text,flags=re.S)
- text=text.replace('<option value="">All posts</option>','<option value="">All posts</option><option value="learning">Learning &amp; resources</option><option value="other">More guides</option>')
+ opts='<option value="learning">Learning &amp; resources</option><option value="other">More guides</option>'
+ text=text.replace(opts,'')
+ text=text.replace('<option value="">All posts</option>','<option value="">All posts</option>'+opts)
  text=text.replace('PC Tools &amp; Softwares','PC tools &amp; software');index.write_text(text)
  # Visible search and beginner introduction, while preserving existing wordmark.
  home=out/'index.html';text=home.read_text();text=text.replace('<h1>Tech, AI and government help,<br/>checked before you click</h1>','<h1>Useful tech. Clear answers.</h1>')
