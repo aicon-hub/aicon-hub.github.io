@@ -104,7 +104,7 @@ def render_funded():
  summary=('<div class="ff-stat"><b>'+str(len(progs))+'</b>programmes tracked</div>'
   '<div class="ff-stat"><b>'+str(open_n)+'</b>open now</div>'
   '<div class="ff-stat"><b>'+str(exp_n)+'</b>expected soon</div>'
-  '<div class="ff-stat ff-stat--date"><b>'+upd+'</b>last verified</div>')
+  '<div class="ff-stat ff-stat--date"><b>'+upd+'</b>last full refresh (per-card check dates below)</div>')
  text=swap(text,'FF-SUMMARY',summary)
  ne='\n'.join('<li><b>'+esc(x['name'])+'.</b> '+esc(x['why'])+'</li>' for x in data.get('notEligible',[]))
  text=swap(text,'FF-NOTELIGIBLE',ne)
@@ -255,3 +255,4 @@ def main():
  preserve_search_console_verification()
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
+
