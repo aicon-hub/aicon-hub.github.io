@@ -988,6 +988,12 @@
   "source_page": "https://canoe.contentstack.com/",
   "width": 1200
  },
+ "coolify-free-self-hosted-paas-deploy-apps-databases-guide": {
+  "height": 2160,
+  "poster_url": "https://coolify.io/docs/images/resources/product-ui/dashboard.webp",
+  "source_page": "https://coolify.io/docs/",
+  "width": 3840
+ },
  "copilot-in-microsoft-edge-free-page-summaries-context-privacy-guide": {
   "height": 180,
   "logo_url": "https://support.microsoft.com/apple-touch-icon.png",
@@ -1734,6 +1740,12 @@
   "slug": "geogebra-free-graphing-calculator-geometry-maths-apps-guide",
   "source_page": "https://www.geogebra.org/",
   "width": 200
+ },
+ "ghostesp-esp32-wireless-security-learning-own-devices-guide": {
+  "height": 826,
+  "poster_url": "https://ghostesp.net/images/IMG_1178.webp",
+  "source_page": "https://ghostesp.net/features",
+  "width": 1472
  },
  "gimp-free-open-source-image-editor-windows-mac-linux-guide": {
   "height": 200,
@@ -3358,6 +3370,12 @@
   "source_page": "https://www.openevidence.com/",
   "width": 2400
  },
+ "openhands-free-open-source-ai-coding-agent-self-host-guide": {
+  "height": 2160,
+  "poster_url": "https://assets.openhands.dev/screenshot/automation-preview.png",
+  "source_page": "https://openhands.dev/",
+  "width": 3840
+ },
  "openhuman-local-memory-cloud-costs-guide": {
   "height": 630,
   "logo_url": "https://tinyhumans.ai/apple-touch-icon.png",
@@ -4346,6 +4364,12 @@
   "source_page": "https://stackoverflow.co/",
   "width": 1200
  },
+ "stirling-pdf-free-open-source-50-tools-offline-guide": {
+  "height": 2268,
+  "poster_url": "https://framerusercontent.com/images/QSL2kEcqnBFF5EGxpb2qJCOiLg.png",
+  "source_page": "https://stirlingpdf.com/",
+  "width": 3200
+ },
  "storyweaver-pratham-books-free-childrens-stories-many-languages-guide": {
   "height": 149,
   "poster_url": "https://storage.googleapis.com/static.storyweaver.org.in/seo_metadata/images/338/original/pb-storyweaver-logo-01-4acd9848be4ca29481825c4b23848b97.svg",
@@ -4398,6 +4422,12 @@
   "slug": "suno-speech-beta-voice-music-india-guide",
   "source_page": "https://suno.com/",
   "width": 1920
+ },
+ "supabase-free-postgres-backend-auth-storage-guide": {
+  "height": 1007,
+  "poster_url": "https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png",
+  "source_page": "https://github.com/supabase/supabase",
+  "width": 1440
  },
  "super-productivity-free-open-source-todo-time-tracker-guide": {
   "height": 628,
