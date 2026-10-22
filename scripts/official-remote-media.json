@@ -5512,12 +5512,5 @@
     "logo_width": 192,
     "logo_height": 192,
     "under_chip_only": true
-  },
-  "machine-learning-for-kids-train-ai-models-browser-free-scratch-guide": {
-    "logo_url": "https://machinelearningforkids.co.uk/static/images/mlforkids-logo.svg",
-    "source_page": "https://machinelearningforkids.co.uk/",
-    "logo_width": 215,
-    "logo_height": 210,
-    "under_chip_only": true
   }
 }
