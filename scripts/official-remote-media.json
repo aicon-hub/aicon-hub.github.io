@@ -5488,5 +5488,10 @@
     "logo_width": 180,
     "logo_height": 180,
     "under_chip_only": true
+  },
+  "molview-free-browser-chemistry-sketcher-3d-molecules-no-signup-guide": {
+    "logo_url": "https://molview.com/icon.svg",
+    "source_page": "https://molview.com/",
+    "under_chip_only": true
   }
 }
