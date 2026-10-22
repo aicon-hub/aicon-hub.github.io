@@ -5519,5 +5519,12 @@
     "logo_width": 1068,
     "logo_height": 1077,
     "under_chip_only": true
+  },
+  "photopea-free-online-photo-editor-psd-browser-guide": {
+    "logo_url": "https://www.photopea.com/promo/icon512.png",
+    "source_page": "https://www.photopea.com/",
+    "logo_width": 512,
+    "logo_height": 512,
+    "under_chip_only": true
   }
 }
