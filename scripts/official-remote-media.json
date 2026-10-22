@@ -5512,5 +5512,12 @@
     "logo_width": 195,
     "logo_height": 195,
     "under_chip_only": true
+  },
+  "instructables-free-diy-projects-step-by-step-guides-makers-guide": {
+    "logo_url": "https://www.instructables.com/assets/img/instructables-logo-2023.svg",
+    "source_page": "https://www.instructables.com/",
+    "logo_width": 367,
+    "logo_height": 124,
+    "under_chip_only": true
   }
 }
