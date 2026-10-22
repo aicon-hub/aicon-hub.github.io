@@ -1,0 +1,65 @@
+name: Upload AiCoN asset
+on:
+  workflow_dispatch:
+    inputs:
+      file_name:
+        description: Target path under assets/posters/ (png/jpg/jpeg)
+        required: true
+        type: string
+      p1:
+        description: base64 part 1
+        required: true
+      p2:
+        description: base64 part 2
+        required: false
+      p3:
+        description: base64 part 3
+        required: false
+      p4:
+        description: base64 part 4
+        required: false
+      p5:
+        description: base64 part 5
+        required: false
+      p6:
+        description: base64 part 6
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: asset-uploader
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode and commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,base64,re,subprocess,sys
+          event=json.load(open(os.environ['GITHUB_EVENT_PATH']))
+          data=event.get('inputs',{})
+          name=(data.get('file_name') or '').strip()
+          if not re.fullmatch(r'assets/posters/[a-z0-9][a-z0-9-]{1,60}\.(png|jpg|jpeg)',name):
+              raise SystemExit('bad file_name')
+          b64=''.join((data.get(f'p{i}') or '') for i in range(1,7))
+          raw=base64.b64decode(b64,validate=True)
+          if not (1000<=len(raw)<=800000):
+              raise SystemExit('bad size %d'%len(raw))
+          if raw[:8]!=b'\x89PNG\r\n\x1a\n' and raw[:3]!=b'\xff\xd8\xff':
+              raise SystemExit('not a png/jpeg')
+          os.makedirs(os.path.dirname(name),exist_ok=True)
+          if os.path.exists(name):
+              print('exists already; refusing overwrite');sys.exit(1)
+          open(name,'wb').write(raw)
+          subprocess.run(['git','config','user.name','aiconate-bot'],check=True)
+          subprocess.run(['git','config','user.email','bot@aicon-hub.github.io'],check=True)
+          subprocess.run(['git','add',name],check=True)
+          subprocess.run(['git','commit','-m','Add poster '+name],check=True)
+          subprocess.run(['git','push'],check=True)
+          print('committed',name,len(raw))
+          PYCODE
