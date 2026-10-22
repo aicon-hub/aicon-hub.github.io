@@ -5505,5 +5505,12 @@
     "logo_url": "https://musopen.org/favicon.ico?v=20261022",
     "source_page": "https://musopen.org/",
     "under_chip_only": true
+  },
+  "concentrix-scholarship-2026-27-mbbs-women-government-college-guide": {
+    "logo_url": "https://www.concentrix.com/wp-content/uploads/2022/10/favicon-195x195.png",
+    "source_page": "https://www.concentrix.com/",
+    "logo_width": 195,
+    "logo_height": 195,
+    "under_chip_only": true
   }
 }
