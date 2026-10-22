@@ -5533,19 +5533,5 @@
     "logo_width": 192,
     "logo_height": 192,
     "under_chip_only": true
-  },
-  "the-true-size-of-drag-countries-compare-map-free-guide": {
-    "logo_url": "https://thetruesize.com/assets/truesize-icon-BTAR5aIw.svg",
-    "source_page": "https://thetruesize.com/",
-    "logo_width": 1008,
-    "logo_height": 1016,
-    "under_chip_only": true
-  },
-  "numbeo-cost-of-living-compare-cities-free-guide": {
-    "logo_url": "https://www.numbeo.com/apple-touch-icon.png",
-    "source_page": "https://www.numbeo.com/",
-    "logo_width": 152,
-    "logo_height": 152,
-    "under_chip_only": true
   }
 }
