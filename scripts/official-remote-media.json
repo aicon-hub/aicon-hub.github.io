@@ -5533,5 +5533,6 @@
     "logo_width": 192,
     "logo_height": 192,
     "under_chip_only": true
-  }
+  },
+  "windy-com-free-weather-maps-radar-india": {"logo_url": "https://img.windy.com/albums/icons/logo-full.png?w=180", "source_page": "https://www.windy.com/", "logo_width": 180, "logo_height": 180, "under_chip_only": true}
 }
