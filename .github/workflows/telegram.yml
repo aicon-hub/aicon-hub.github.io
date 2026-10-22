@@ -161,7 +161,7 @@ jobs:
               existing=None
               try:existing=request(url,headers=headers)
               except RuntimeError as e:
-                  if str(e)!='Remote HTTP error 404':raise
+                  if not str(e).startswith('Remote HTTP error 404'):raise
               if existing:
                   print('Post ID already claimed. No resend. Inspect its receipt and channel.');return
               state={'post_id':post_id,'article_url':article,'status':'claimed','run_id':os.environ['GITHUB_RUN_ID'],'message_ids':[]}
