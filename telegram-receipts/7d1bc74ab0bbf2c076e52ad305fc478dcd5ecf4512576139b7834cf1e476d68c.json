@@ -1,9 +1,11 @@
 {
   "post_id": "aicon-edit-aedp-poster-white-2026-10-22",
   "article_url": "none",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "39817989857",
-  "message_ids": [],
+  "message_ids": [
+    450
+  ],
   "mode": "edit",
   "target_message_id": 450,
   "payload_sha256": "6d796a9edddaaeb2fdc660f9fbb0e1ec6760d5433a921ea1db6832a86cbca060"
