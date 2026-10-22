@@ -3,7 +3,10 @@
     "height": 1024,
     "poster_url": "https://play0ad.com/wp-content/uploads/2014/10/Empires-Ascendant-2048.png",
     "source_page": "https://play0ad.com/",
-    "width": 2048
+    "width": 2048,
+    "logo_url": "https://play0ad.com/wp-content/themes/nova/images/logo.png",
+    "logo_width": 186,
+    "logo_height": 336
   },
   "7-zip-free-file-archiver-zip-rar-windows-guide": {
     "background": "#fff",
@@ -65,11 +68,13 @@
   },
   "adobe-firefly-ai-music-speech-sound-guide": {
     "height": 519,
-    "logo_url": "",
+    "logo_url": "https://www.adobe.com/favicon.ico",
     "poster_url": "https://blog.adobe.com/en/publish/2026/08/20/media_17b9d423833b7a2ade0ab2b04d359394f8ccbb73d.jpg?width=1200&format=pjpg&optimize=medium",
     "slug": "adobe-firefly-ai-music-speech-sound-guide",
     "source_page": "https://blog.adobe.com/en/publish/2026/08/20/adobe-firefly-expands-its-creative-ai-studio-generate-music-speech-and-sound-effects-in-one-place",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 48,
+    "logo_height": 48
   },
   "adobe-gemini-claude-creative-acrobat-access-guide": {
     "background": "#fff",
@@ -195,7 +200,10 @@
     "height": 269,
     "poster_url": "https://apps.ankiweb.net/graphics/deck-graphic-light.svg",
     "source_page": "https://apps.ankiweb.net/",
-    "width": 493
+    "width": 493,
+    "logo_url": "https://github.com/ankitects.png?size=420",
+    "logo_width": 420,
+    "logo_height": 420
   },
   "antennapod-free-ad-free-podcast-player-android-guide": {
     "height": 400,
@@ -209,7 +217,10 @@
     "height": 1260,
     "poster_url": "https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/68309ab48369f7ad9b4a40e1_open-graph.jpg",
     "source_page": "https://www.anthropic.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "apna-ai-job-prep-free-ai-mock-interview-practice-guide": {
     "height": 512,
@@ -406,11 +417,13 @@
   },
   "be-scam-ready-google-scam-awareness-game": {
     "height": 630,
-    "logo_url": "",
+    "logo_url": "https://bescamready.withgoogle.com/assets/images/favicon.png",
     "poster_url": "https://bescamready.withgoogle.com/assets/images/shareable.png",
     "slug": "be-scam-ready-google-scam-awareness-game",
     "source_page": "https://bescamready.withgoogle.com/intl/en",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 180,
+    "logo_height": 180
   },
   "beroe-abi-procurement-analyst-rollout-guide": {
     "height": 300,
@@ -767,7 +780,10 @@
     "height": 1260,
     "poster_url": "https://assets.claude.com/f66071070c4701ea2c37fc01b3c0f83623cf29d3.jpg?w=2400&h=1260&fit=crop",
     "source_page": "https://claude.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://claude.com/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "claude-docs-slides-design-free-plan-limits-export-guide": {
     "height": 1260,
@@ -779,7 +795,10 @@
     "height": 1260,
     "poster_url": "https://assets.claude.com/f66071070c4701ea2c37fc01b3c0f83623cf29d3.jpg?w=2400&h=1260&fit=crop",
     "source_page": "https://claude.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://claude.com/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "claude-free-plan-docs-slides-design-artifacts-export-powerpoint-guide": {
     "height": 1260,
@@ -791,31 +810,46 @@
     "height": 1260,
     "poster_url": "https://assets.claude.com/f66071070c4701ea2c37fc01b3c0f83623cf29d3.jpg?w=2400&h=1260&fit=crop",
     "source_page": "https://claude.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://claude.com/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "claude-opus-5-5-api-prices-safety-cost-guide": {
     "height": 1260,
     "poster_url": "https://assets.claude.com/f66071070c4701ea2c37fc01b3c0f83623cf29d3.jpg?w=2400&h=1260&fit=crop",
     "source_page": "https://claude.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://claude.com/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "claude-security-ai-code-scanning-guide": {
     "height": 1260,
     "poster_url": "https://assets.claude.com/f66071070c4701ea2c37fc01b3c0f83623cf29d3.jpg?w=2400&h=1260&fit=crop",
     "source_page": "https://claude.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://claude.com/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "claude-sonnet-55-api-pricing-speed-guide": {
     "height": 1260,
     "poster_url": "https://assets.claude.com/f66071070c4701ea2c37fc01b3c0f83623cf29d3.jpg?w=2400&h=1260&fit=crop",
     "source_page": "https://claude.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://claude.com/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "claude-tag-slack-personal-connectors-review-guide": {
     "height": 1260,
     "poster_url": "https://assets.claude.com/f66071070c4701ea2c37fc01b3c0f83623cf29d3.jpg?w=2400&h=1260&fit=crop",
     "source_page": "https://claude.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://claude.com/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "cleanup-pictures-free-ai-photo-retouching": {
     "height": 400,
@@ -843,11 +877,13 @@
   },
   "clm-8b-contrastive-decision-model-licence-cost-guide": {
     "height": 600,
-    "logo_url": "",
+    "logo_url": "https://github.com/Contrastive-LM.png?size=420",
     "poster_url": "https://opengraph.githubassets.com/47f94ffbfd070f7fc9961e4dfe8f7028f858f21e2c082debd53d7d21a87c5442/Contrastive-LM/CLM",
     "slug": "clm-8b-contrastive-decision-model-licence-cost-guide",
     "source_page": "https://github.com/Contrastive-LM/CLM",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 420,
+    "logo_height": 420
   },
   "cloudflare-ai-search-ga-pricing-ocr-guide": {
     "height": 628,
@@ -992,7 +1028,10 @@
     "height": 2160,
     "poster_url": "https://coolify.io/docs/images/resources/product-ui/dashboard.webp",
     "source_page": "https://coolify.io/docs/",
-    "width": 3840
+    "width": 3840,
+    "logo_url": "https://coolify.io/apple-touch-icon.png",
+    "logo_width": 144,
+    "logo_height": 144
   },
   "copilot-in-microsoft-edge-free-page-summaries-context-privacy-guide": {
     "height": 180,
@@ -1022,7 +1061,10 @@
     "height": 828,
     "poster_url": "https://crystalmark.info/en/wp-content/uploads/sites/3/CrystalDiskInfo9Aoi-en.png",
     "source_page": "https://crystalmark.info/en/software/crystaldiskinfo/",
-    "width": 1505
+    "width": 1505,
+    "logo_url": "https://crystalmark.info/favicon.ico",
+    "logo_width": 32,
+    "logo_height": 32
   },
   "cua-spaces-ai-desktop-sandbox-guide": {
     "height": 180,
@@ -1086,11 +1128,13 @@
   },
   "datris-open-source-agent-data-platform-setup-cost-guide": {
     "height": 640,
-    "logo_url": "",
+    "logo_url": "https://github.com/datris.png?size=420",
     "poster_url": "https://repository-images.githubusercontent.com/1188256397/ef8055c6-6c19-442e-a543-89496097b1ad",
     "slug": "datris-open-source-agent-data-platform-setup-cost-guide",
     "source_page": "https://github.com/datris/datris-platform-oss",
-    "width": 1280
+    "width": 1280,
+    "logo_width": 138,
+    "logo_height": 138
   },
   "dazzle-photo-ai-assistant-india-privacy-guide": {
     "height": 180,
@@ -1160,7 +1204,10 @@
     "height": 1453,
     "poster_url": "https://www.digikam.org/img/content/main/main.webp",
     "source_page": "https://www.digikam.org/",
-    "width": 900
+    "width": 900,
+    "logo_url": "https://www.digikam.org/favicon.ico",
+    "logo_width": 32,
+    "logo_height": 32
   },
   "digilocker-digital-documents-guide": {
     "height": 909,
@@ -1243,7 +1290,10 @@
     "height": 630,
     "poster_url": "https://doory.art/og-image.png",
     "source_page": "https://doory.art/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://doory.art/icons/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "double-commander-free-open-source-two-panel-file-manager-windows-linux-mac-guide": {
     "background": "#fff",
@@ -1392,7 +1442,10 @@
     "height": 630,
     "poster_url": "https://cdn2.unrealengine.com/Diesel%2Fcollections%2Ffree-games%2FEpicGamesStore_lg-black-1200x630-3b7faa2c648f075f126343747afa1a4fb9b6e1a8.png",
     "source_page": "https://store.epicgames.com/en-US/free-games",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://static-assets-prod.epicgames.com/epic-store/static/favicon.ico",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "esanjeevani-free-online-doctor-kerala-guide": {
     "background": "#fff",
@@ -1414,7 +1467,10 @@
     "height": 239,
     "poster_url": "https://www.voidtools.com/sssmall4.png",
     "source_page": "https://www.voidtools.com/",
-    "width": 282
+    "width": 282,
+    "logo_url": "https://www.voidtools.com/favicon.ico",
+    "logo_width": 32,
+    "logo_height": 32
   },
   "exa-agent-ultra-research-budgets-credits-guide": {
     "height": 1260,
@@ -1441,7 +1497,10 @@
     "height": 1254,
     "poster_url": "https://assets.exercism.org/meta/og.png",
     "source_page": "https://exercism.org/",
-    "width": 2400
+    "width": 2400,
+    "logo_url": "https://assets.exercism.org/meta/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "ey-microsoft-ai-skills-passport-free-10-hour-course-age-16-guide": {
     "height": 2560,
@@ -1591,7 +1650,10 @@
     "height": 1170,
     "poster_url": "https://www.fossify.org/assets/apps/gallery/screenshot-1.webp",
     "source_page": "https://www.fossify.org/apps/gallery/",
-    "width": 540
+    "width": 540,
+    "logo_url": "https://www.fossify.org/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "free-coaching-sc-obc-pm-cares-2026-27-nsp-competitive-exams-guide": {
     "background": "#fff",
@@ -1613,7 +1675,10 @@
     "height": 307,
     "poster_url": "https://www.freecad.org/images/banner.jpg",
     "source_page": "https://www.freecad.org/",
-    "width": 800
+    "width": 800,
+    "logo_url": "https://www.freecad.org/images/favicon.ico",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "freecodecamp-free-coding-courses-certifications-nonprofit-guide": {
     "height": 1080,
@@ -1627,7 +1692,10 @@
     "height": 690,
     "poster_url": "https://freefilesync.org/images/screenshots/Windows-dark.png",
     "source_page": "https://freefilesync.org/",
-    "width": 1178
+    "width": 1178,
+    "logo_url": "https://freefilesync.org/favicon.ico",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "freesound-free-sound-effects-recordings-creative-commons-guide": {
     "height": 180,
@@ -1745,7 +1813,10 @@
     "poster_url": "https://static.wixstatic.com/media/35ea10_30c1a7ec6ead46d39aef8aea8c2ede48~mv2.jpg/v1/fill/w_498,h_603,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/35ea10_30c1a7ec6ead46d39aef8aea8c2ede48~mv2.jpg",
     "source_page": "https://ghostesp.net/boards",
     "width": 498,
-    "height": 603
+    "height": 603,
+    "logo_url": "https://ghostesp.net/images/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "gimp-free-open-source-image-editor-windows-mac-linux-guide": {
     "height": 200,
@@ -1927,7 +1998,10 @@
     "height": 667,
     "poster_url": "https://raw.githubusercontent.com/gramps-project/gramps/master/images/gramps.svg",
     "source_page": "https://github.com/gramps-project/gramps",
-    "width": 667
+    "width": 667,
+    "logo_url": "https://github.com/gramps-project.png?size=420",
+    "logo_width": 125,
+    "logo_height": 125
   },
   "grok-4-7-api-fast-long-context-cost-guide": {
     "height": 512,
@@ -2056,7 +2130,10 @@
     "height": 630,
     "poster_url": "https://www.home-assistant.io/images/default-social.png",
     "source_page": "https://www.home-assistant.io/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://www.home-assistant.io/images/favicon-192x192.png",
+    "logo_width": 191,
+    "logo_height": 192
   },
   "huawei-openpangu-2-training-code-ascend-guide": {
     "height": 500,
@@ -2258,7 +2335,10 @@
     "height": 630,
     "poster_url": "https://jellyfin.org/images/social.png",
     "source_page": "https://jellyfin.org/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://github.com/jellyfin.png?size=420",
+    "logo_width": 420,
+    "logo_height": 420
   },
   "jenni-ai-academic-writing-free-limits-guide": {
     "embed_url": "https://www.youtube.com/embed/JryftzFzeuk?si=-qSuffzNtkd470FS&iv_load_policy=3&rel=0&modestbranding=1&playsinline=1&autoplay=0",
@@ -2442,15 +2522,20 @@
     "height": 1344,
     "poster_url": "https://get.kiwix.org/wp-content/uploads/2026/02/open-graph_get-kiwix-reader-scaled.jpg",
     "source_page": "https://get.kiwix.org/en/solutions/applications/kiwix-reader/",
-    "width": 2560
+    "width": 2560,
+    "logo_url": "https://get.kiwix.org/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "knowt-free-ai-flashcards-india": {
     "height": 1260,
-    "logo_url": "",
+    "logo_url": "https://knowt.com/favicon.ico",
     "poster_url": "https://assets.knowt.com/images/SEO/main.png",
     "slug": "knowt-free-ai-flashcards-india",
     "source_page": "https://knowt.com/",
-    "width": 2400
+    "width": 2400,
+    "logo_width": 48,
+    "logo_height": 48
   },
   "kolibri-free-offline-learning-platform-lessons-videos-android-guide": {
     "height": 256,
@@ -2510,11 +2595,13 @@
   },
   "kstars-free-planetarium-software-windows-mac-linux-guide": {
     "height": 900,
-    "logo_url": "",
+    "logo_url": "https://kde.org/favicon.ico",
     "poster_url": "https://kstars.kde.org/img/kstars_main.png",
     "slug": "kstars-free-planetarium-software-windows-mac-linux-guide",
     "source_page": "https://kstars.kde.org/",
-    "width": 1600
+    "width": 1600,
+    "logo_width": 48,
+    "logo_height": 48
   },
   "langsmith-engine-v2-redteam-fine-tuning-access-guide": {
     "height": 630,
@@ -2735,11 +2822,13 @@
   },
   "malwarebytes-scam-guard-free-check-guide": {
     "height": 196,
-    "logo_url": "",
+    "logo_url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2026/10/app.png?w=180",
     "poster_url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2026/01/Malwarebytes-wordmark-horiz-Brand-Blue.png?w=810",
     "slug": "malwarebytes-scam-guard-free-check-guide",
     "source_page": "https://www.malwarebytes.com/",
-    "width": 810
+    "width": 810,
+    "logo_width": 180,
+    "logo_height": 180
   },
   "manus-2-cascade-free-credits-cloud-computer-guide": {
     "height": 655,
@@ -2803,21 +2892,30 @@
     "poster_url": "https://about.fb.com/wp-content/uploads/2024/06/01_IG-Group-Chat-AI.gif?w=1200",
     "slug": "meta-ai-whatsapp-how-to-use-india",
     "source_page": "https://about.fb.com/news/2024/06/meta-ai-arrives-in-india-leading-ai-assistant-now-at-your-fingertip/",
-    "width": 960
+    "width": 960,
+    "logo_url": "https://www.meta.com/favicon.ico",
+    "logo_width": 32,
+    "logo_height": 32
   },
   "meta-enterprise-platform-muse-business-ai-launch": {
     "height": 675,
     "poster_url": "https://about.fb.com/wp-content/uploads/2026/09/Meta_Header.jpg?w=1200",
     "slug": "meta-enterprise-platform-muse-business-ai-launch",
     "source_page": "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://www.meta.com/favicon.ico",
+    "logo_width": 32,
+    "logo_height": 32
   },
   "meta-muse-ai-glasses-access-pricing-privacy-guide": {
     "height": 1440,
     "poster_url": "https://lookaside.fbsbx.com/mwp/media/?path=wp-content%2Fuploads%2F2026%2F09%2FRay-Ban-Meta-Gen-3-Lifestyle2-scaled.webp",
     "slug": "meta-muse-ai-glasses-access-pricing-privacy-guide",
     "source_page": "https://www.meta.com/blog/muse-personal-agent-ai-glasses/",
-    "width": 2560
+    "width": 2560,
+    "logo_url": "https://www.meta.com/favicon.ico",
+    "logo_width": 32,
+    "logo_height": 32
   },
   "microsoft-copilot-home-code-autopilot-rollout-cost-guide": {
     "height": 315,
@@ -2861,11 +2959,13 @@
   },
   "microsoft-powertoys-free-windows-utilities-text-extractor-image-resizer-guide": {
     "height": 630,
-    "logo_url": "",
+    "logo_url": "https://github.com/microsoft.png?size=420",
     "poster_url": "https://learn.microsoft.com/en-us/media/open-graph-image.png",
     "slug": "microsoft-powertoys-free-windows-utilities-text-extractor-image-resizer-guide",
     "source_page": "https://learn.microsoft.com/en-us/windows/powertoys/",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 420,
+    "logo_height": 420
   },
   "microsoft-translator-free-text-voice-photo-offline-guide": {
     "background": "#fff",
@@ -2877,11 +2977,13 @@
   },
   "mindtrip-personal-travel-assistant-memory-privacy-guide": {
     "height": 630,
-    "logo_url": "",
+    "logo_url": "https://mindtrip.ai/favicon.ico",
     "poster_url": "https://mindtrip.ai/img/og-generic.jpg",
     "slug": "mindtrip-personal-travel-assistant-memory-privacy-guide",
     "source_page": "https://mindtrip.ai/",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 48,
+    "logo_height": 48
   },
   "miro-ai-free-plan-10-credits-a-month-guide": {
     "height": 630,
@@ -2901,31 +3003,41 @@
   },
   "mistral-vibe-le-chat-free-assistant-guide": {
     "height": 630,
-    "logo_url": "",
+    "logo_url": "https://mistral.ai/favicon.ico",
     "poster_url": "https://mistral.ai/cms-media/api/media/file/cover-mistral-sovereign%20copie.webp",
     "slug": "mistral-vibe-le-chat-free-assistant-guide",
     "source_page": "https://mistral.ai/",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 256,
+    "logo_height": 256
   },
   "mit-app-inventor-free-build-android-apps-blocks-browser-guide": {
     "height": 355,
     "poster_url": "https://appinventor.mit.edu/landing_page_assets/video/aiorg-video-poster.jpg",
     "source_page": "https://appinventor.mit.edu/",
-    "width": 720
+    "width": 720,
+    "logo_url": "https://appinventor.mit.edu/favicon.ico",
+    "logo_width": 64,
+    "logo_height": 64
   },
   "mit-opencourseware-free-online-course-materials-no-signup-guide": {
     "height": 630,
-    "logo_url": "",
+    "logo_url": "https://ocw.mit.edu/favicon.ico",
     "poster_url": "https://ocw.mit.edu/static_shared/images/ocw_logo_white_on_black.dc6662ab918cec1c2f31.png",
     "slug": "mit-opencourseware-free-online-course-materials-no-signup-guide",
     "source_page": "https://ocw.mit.edu/",
-    "width": 1600
+    "width": 1600,
+    "logo_width": 32,
+    "logo_height": 32
   },
   "mixxx-free-dj-software-mix-music-laptop-windows-mac-linux-guide": {
     "height": 717,
     "poster_url": "https://mixxx.org/theme/images/splash-1080x717.png",
     "source_page": "https://mixxx.org/",
-    "width": 1080
+    "width": 1080,
+    "logo_url": "https://github.com/mixxxdj.png?size=420",
+    "logo_width": 420,
+    "logo_height": 420
   },
   "mnre-mural-design-contest-october9-deadline-guide": {
     "background": "#fff",
@@ -3010,7 +3122,10 @@
     "height": 272,
     "poster_url": "https://mynoise.world/Data/IRISHCOAST/iphone-bigthumb@2x.jpg",
     "source_page": "https://mynoise.net/",
-    "width": 272
+    "width": 272,
+    "logo_url": "https://mynoise.net/Pix/Favicon/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "myscheme-find-government-schemes-guide": {
     "background": "#fff",
@@ -3038,11 +3153,13 @@
   },
   "n8n-agents-preview-workflows-credits-pricing-guide": {
     "height": 630,
-    "logo_url": "",
+    "logo_url": "https://n8n.io/apple-touch-icon.png",
     "poster_url": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-stage/assets/og_image_website_3_afd66761a9.png",
     "slug": "n8n-agents-preview-workflows-credits-pricing-guide",
     "source_page": "https://n8n.io/",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 180,
+    "logo_height": 180
   },
   "naive-n05-flash-open-model-runtime-api-limits": {
     "background": "#fff",
@@ -3134,7 +3251,10 @@
     "height": 421,
     "poster_url": "https://nflq.nism.ac.in/downloadTemplateFile/NFLQ2026-HomeBanner.jpg",
     "source_page": "https://nflq.nism.ac.in/",
-    "width": 1600
+    "width": 1600,
+    "logo_url": "https://nflq.nism.ac.in/images/favicon.ico",
+    "logo_width": 256,
+    "logo_height": 256
   },
   "nice-cognigy-india-hosting-languages-cost-guide": {
     "height": 628,
@@ -3223,11 +3343,13 @@
   },
   "nvidia-broadcast-free-ai-noise-removal-virtual-background-rtx-windows-guide": {
     "height": 630,
-    "logo_url": "",
+    "logo_url": "https://www.nvidia.com/favicon.ico",
     "poster_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/broadcast-app/v1/nvidia-broadcast-og-image-1200x630.jpg",
     "slug": "nvidia-broadcast-free-ai-noise-removal-virtual-background-rtx-windows-guide",
     "source_page": "https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 48,
+    "logo_height": 48
   },
   "nvidia-isaac-ros-5-cuda-buffer-migration-guide": {
     "height": 630,
@@ -3257,7 +3379,10 @@
     "height": 840,
     "poster_url": "https://obsproject.com/assets/images/features-new/layouts.png",
     "source_page": "https://obsproject.com/",
-    "width": 1080
+    "width": 1080,
+    "logo_url": "https://obsproject.com/favicon-96x96.png",
+    "logo_width": 96,
+    "logo_height": 96
   },
   "odysseus-self-hosted-ai-model-cookbook-install-guide": {
     "height": 630,
@@ -3374,7 +3499,10 @@
     "height": 2160,
     "poster_url": "https://assets.openhands.dev/screenshot/automation-preview.png",
     "source_page": "https://openhands.dev/",
-    "width": 3840
+    "width": 3840,
+    "logo_url": "https://github.com/OpenHands.png",
+    "logo_width": 460,
+    "logo_height": 460
   },
   "openhuman-local-memory-cloud-costs-guide": {
     "height": 630,
@@ -3446,7 +3574,10 @@
     "height": 628,
     "poster_url": "https://www.oracle.com/a/ocom/img/social-og-oci-logo-1200x628.jpg",
     "source_page": "https://www.oracle.com/cloud/free/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://www.oracle.com/asset/web/favicons/favicon-180.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "oracle-health-oncology-ehr-planned-capabilities-guide": {
     "height": 630,
@@ -3466,11 +3597,13 @@
   },
   "organic-maps-free-offline-maps-gps-app-no-ads-guide": {
     "height": 3040,
-    "logo_url": "",
+    "logo_url": "https://organicmaps.app/apple-touch-icon.png",
     "poster_url": "https://organicmaps.app/images/screenshots/prague.jpg",
     "slug": "organic-maps-free-offline-maps-gps-app-no-ads-guide",
     "source_page": "https://organicmaps.app/",
-    "width": 1440
+    "width": 1440,
+    "logo_width": 180,
+    "logo_height": 180
   },
   "otter-ai-meeting-notes-free-limits-guide": {
     "height": 630,
@@ -3516,7 +3649,10 @@
     "height": 853,
     "poster_url": "https://pdfsam.org/imgs/home.png",
     "source_page": "https://pdfsam.org/",
-    "width": 1444
+    "width": 1444,
+    "logo_url": "https://pdfsam.org/icns/apple-touch-icon-180x180.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "pencil2d-free-open-source-hand-drawn-2d-animation-software-guide": {
     "embed_url": "https://www.youtube.com/embed/ma52j9B1kEM",
@@ -3615,7 +3751,10 @@
     "height": 328,
     "poster_url": "https://www.cgsecurity.org/mw/images/Photorec.png",
     "source_page": "https://www.cgsecurity.org/wiki/PhotoRec",
-    "width": 521
+    "width": 521,
+    "logo_url": "https://www.cgsecurity.org/apple-touch-icon.png",
+    "logo_width": 57,
+    "logo_height": 57
   },
   "photoroom-product-photos-guide": {
     "height": 630,
@@ -3645,7 +3784,10 @@
     "poster_url": "https://pinta-project.com/img/pinta-og.png",
     "slug": "pinta-free-open-source-simple-image-editor-windows-mac-linux-guide",
     "source_page": "https://www.pinta-project.com/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://pinta-project.com/favicon.ico",
+    "logo_width": 200,
+    "logo_height": 200
   },
   "pinterest-genai-settings-opt-out-training-see-fewer-ai-pins-guide": {
     "height": 144,
@@ -3867,7 +4009,10 @@
     "height": 630,
     "poster_url": "https://proton.me/images/social/proton-og.png",
     "source_page": "https://proton.me/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://proton.me/favicon.ico",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "proton-lumo-2-private-ai-assistant-guide": {
     "height": 945,
@@ -3911,11 +4056,13 @@
   },
   "qgis-free-mapping-gis-software-windows-mac-linux-guide": {
     "height": 767,
-    "logo_url": "",
+    "logo_url": "https://qgis.org/favicon.ico",
     "poster_url": "https://qgis.org/img/QGIScover.png",
     "slug": "qgis-free-mapping-gis-software-windows-mac-linux-guide",
     "source_page": "https://qgis.org/",
-    "width": 1200
+    "width": 1200,
+    "logo_width": 48,
+    "logo_height": 48
   },
   "quicklook-free-windows-file-preview-press-space-explorer-guide": {
     "background": "#fff",
@@ -3960,7 +4107,10 @@
     "height": 630,
     "poster_url": "https://www.rainmeter.net/img/media_image.png",
     "source_page": "https://www.rainmeter.net/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://www.rainmeter.net/favicon.ico?v=2",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "rbi-ombudsman-complaint-guide-2026": {
     "background": "#fff",
@@ -3974,7 +4124,10 @@
     "height": 630,
     "poster_url": "https://rxresu.me/opengraph/banner.jpg",
     "source_page": "https://rxresu.me/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://rxresu.me/apple-touch-icon-180x180.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "read-along-google-free-reading-app-kids-hindi-offline-guide": {
     "height": 300,
@@ -3996,7 +4149,10 @@
     "height": 610,
     "poster_url": "https://static.recipesage.com/assets/icons/logo-black-trimmed-2025-05-03.png",
     "source_page": "https://recipesage.com/",
-    "width": 1751
+    "width": 1751,
+    "logo_url": "https://recipesage.com/app/assets/icon/apple-touch-icon.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "reclaim-free-ai-calendar-planner-guide": {
     "height": 1007,
@@ -4057,11 +4213,13 @@
   },
   "ros-2-lyrical-luth-lts-beginner-install-guide": {
     "height": 150,
-    "logo_url": null,
+    "logo_url": "https://www.ros.org/favicon.ico",
     "poster_url": "https://docs.ros.org/en/lyrical/_static/lyrical-small.png",
     "slug": "ros-2-lyrical-luth-lts-beginner-install-guide",
     "source_page": "https://docs.ros.org/en/lyrical/",
-    "width": 150
+    "width": 150,
+    "logo_width": 32,
+    "logo_height": 32
   },
   "runable-ai-general-agent-free-plan-limits-pricing-guide": {
     "height": 630,
@@ -4304,11 +4462,13 @@
   },
   "smithsonian-open-access-free-images-cc0-download-reuse-guide": {
     "height": 2813,
-    "logo_url": null,
+    "logo_url": "https://www.si.edu/apple-touch-icon.png",
     "poster_url": "https://www.si.edu/sites/default/files/page_banner/social-banner.jpeg",
     "slug": "smithsonian-open-access-free-images-cc0-download-reuse-guide",
     "source_page": "https://www.si.edu/openaccess",
-    "width": 5000
+    "width": 5000,
+    "logo_width": 180,
+    "logo_height": 180
   },
   "snapchat-lens-plus-chat-to-song-privacy-guide": {
     "height": 737,
@@ -4354,7 +4514,10 @@
     "height": 1024,
     "poster_url": "https://squoosh.app/c/icon-large-maskable-c2078ced.png",
     "source_page": "https://squoosh.app/",
-    "width": 1024
+    "width": 1024,
+    "logo_url": "https://squoosh.app/c/icon-large-maskable-c2078ced.png",
+    "logo_width": 1024,
+    "logo_height": 1024
   },
   "stack-internal-starter-knowledge-credits-guide": {
     "height": 630,
@@ -4368,7 +4531,10 @@
     "height": 2268,
     "poster_url": "https://framerusercontent.com/images/QSL2kEcqnBFF5EGxpb2qJCOiLg.png",
     "source_page": "https://stirlingpdf.com/",
-    "width": 3200
+    "width": 3200,
+    "logo_url": "https://framerusercontent.com/images/4Q5tlRJijroUIAT4pCxhwmdSiQ.png",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "storyweaver-pratham-books-free-childrens-stories-many-languages-guide": {
     "height": 149,
@@ -4427,13 +4593,19 @@
     "height": 1007,
     "poster_url": "https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png",
     "source_page": "https://github.com/supabase/supabase",
-    "width": 1440
+    "width": 1440,
+    "logo_url": "https://supabase.com/favicon/android-icon-512x512.png",
+    "logo_width": 512,
+    "logo_height": 512
   },
   "super-productivity-free-open-source-todo-time-tracker-guide": {
     "height": 628,
     "poster_url": "https://super-productivity.com/_astro/default.0d-Tb3Q-_25CtE7.jpg",
     "source_page": "https://super-productivity.com/",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://app.super-productivity.com/favicon.ico",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "supertake-free-beta-practice-autopilot-india-guide": {
     "height": 630,
@@ -4708,7 +4880,10 @@
     "height": 757,
     "poster_url": "https://www.ventoy.net/static/img/screen/screen_uefi_en.png",
     "source_page": "https://www.ventoy.net/en/index.html",
-    "width": 1007
+    "width": 1007,
+    "logo_url": "https://www.ventoy.net/favicon.ico",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "vercel-pixel-canary-free-stealth-code-privacy-guide": {
     "height": 1350,
@@ -4827,13 +5002,19 @@
     "height": 424,
     "poster_url": "https://thumb.wikimedia.org/wikivoyage/en/thumb/8/8b/BlueMarble_main_page_banner.png/960px-BlueMarble_main_page_banner.png",
     "source_page": "https://www.wikivoyage.org/",
-    "width": 960
+    "width": 960,
+    "logo_url": "https://www.wikivoyage.org/static/favicon/wikivoyage.ico",
+    "logo_width": 48,
+    "logo_height": 48
   },
   "windirstat-free-disk-space-analyzer-treemap-windows-guide": {
     "height": 761,
     "poster_url": "https://windirstat.net/images/windirstat.jpg",
     "source_page": "https://windirstat.net/",
-    "width": 1010
+    "width": 1010,
+    "logo_url": "https://windirstat.net/favicon.ico",
+    "logo_width": 32,
+    "logo_height": 32
   },
   "windows-11-live-captions-on-device-free-built-in-guide": {
     "height": 1920,
@@ -4959,7 +5140,10 @@
     "height": 675,
     "poster_url": "https://zcode.z.ai/images/summary_large_image.png?v=20260628",
     "source_page": "https://zcode.z.ai/en",
-    "width": 1200
+    "width": 1200,
+    "logo_url": "https://zcode.z.ai/apple-icon.png?v=20260707-transparent",
+    "logo_width": 180,
+    "logo_height": 180
   },
   "zerodha-varsity-free-stock-market-investing-lessons-india-guide": {
     "height": 545,
@@ -5014,5 +5198,281 @@
     "slug": "zooniverse-citizen-science-volunteer-research-projects-guide",
     "source_page": "https://www.zooniverse.org/",
     "width": 1200
+  },
+  "auto-dark-mode-free-automatic-windows-theme-switcher-guide": {
+    "logo_url": "https://github.com/AutoDarkMode.png?size=420",
+    "source_page": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode",
+    "logo_width": 420,
+    "logo_height": 420,
+    "under_chip_only": true
+  },
+  "bbc-sound-effects-free-archive-30000-recordings-mp3-wav-guide": {
+    "logo_url": "https://sound-effects.bbcrewind.co.uk/favicon.ico",
+    "source_page": "https://sound-effects.bbcrewind.co.uk/",
+    "logo_width": 32,
+    "logo_height": 32,
+    "under_chip_only": true
+  },
+  "bhashini-indian-language-translation-guide": {
+    "logo_url": "https://bhashini.gov.in/favicon.ico",
+    "source_page": "https://bhashini.gov.in/",
+    "logo_width": 48,
+    "logo_height": 48,
+    "under_chip_only": true
+  },
+  "blockly-games-free-puzzle-games-teach-programming-kids-hindi-guide": {
+    "logo_url": "https://blockly.games/favicon.ico",
+    "source_page": "https://blockly.games/",
+    "logo_width": 32,
+    "logo_height": 32,
+    "under_chip_only": true
+  },
+  "clonezilla-free-disk-imaging-cloning-backup-usb-boot-guide": {
+    "logo_url": "https://clonezilla.org/images/clonezilla_logo_transparent.gif",
+    "source_page": "https://clonezilla.org/",
+    "logo_width": 644,
+    "logo_height": 912,
+    "under_chip_only": true
+  },
+  "cs50x-harvard-free-intro-computer-science-course-no-experience-needed-guide": {
+    "logo_url": "https://cs50.harvard.edu/x/favicon.ico?1792633678",
+    "source_page": "https://cs50.harvard.edu/x/",
+    "logo_width": 64,
+    "logo_height": 64,
+    "under_chip_only": true
+  },
+  "drawio-diagrams-net-free-diagram-maker-no-signup-privacy-guide": {
+    "logo_url": "https://www.drawio.com/favicon.ico",
+    "source_page": "https://www.drawio.com/",
+    "logo_width": 48,
+    "logo_height": 48,
+    "under_chip_only": true
+  },
+  "figma-education-free-professional-plan-students-guide": {
+    "logo_url": "https://static.figma.com/app/icon/2/touch-180.png",
+    "source_page": "https://www.figma.com/education/",
+    "logo_width": 180,
+    "logo_height": 180,
+    "under_chip_only": true
+  },
+  "free-music-archive-free-creative-commons-music-downloads-licence-guide": {
+    "logo_url": "https://freemusicarchive.org/img/favicon.svg",
+    "source_page": "https://freemusicarchive.org/about",
+    "under_chip_only": true
+  },
+  "freeplane-free-open-source-mind-mapping-guide": {
+    "logo_url": "https://github.com/freeplane.png?size=420",
+    "source_page": "https://www.freeplane.org",
+    "logo_width": 420,
+    "logo_height": 420,
+    "under_chip_only": true
+  },
+  "gauth-ai-course-digital-canvas-india-guide": {
+    "logo_url": "https://www.gauthmath.com/favicon.ico",
+    "source_page": "https://en.prnasia.com/releases/global/gauth-launches-unlimited-digital-canvas-gives-students-one-continuous-whiteboard-to-visualize-explore-and-understand-complex-topics-550383.shtml",
+    "logo_width": 256,
+    "logo_height": 256,
+    "under_chip_only": true
+  },
+  "github-student-developer-pack-2026-guide": {
+    "logo_url": "https://github.com/github.png?size=420",
+    "source_page": "https://github.com/education/students",
+    "logo_width": 420,
+    "logo_height": 420,
+    "under_chip_only": true
+  },
+  "kdenlive-free-open-source-video-editor-windows-mac-linux-guide": {
+    "logo_url": "https://kdenlive.org/favicon.ico",
+    "source_page": "https://kdenlive.org/",
+    "logo_width": 48,
+    "logo_height": 48,
+    "under_chip_only": true
+  },
+  "layla-ai-travel-planner-web-guide-india": {
+    "logo_url": "https://layla.ai/theme/layla/app-icon-180.png?v=2026-10",
+    "source_page": "https://layla.ai/",
+    "logo_width": 180,
+    "logo_height": 180,
+    "under_chip_only": true
+  },
+  "lichess-free-chess-no-ads-puzzles-lessons-guide": {
+    "logo_url": "https://lichess1.org/assets/logo/lichess.svg",
+    "source_page": "https://lichess.org/about",
+    "under_chip_only": true
+  },
+  "lmms-free-open-source-music-making-software-guide": {
+    "logo_url": "https://github.com/LMMS.png?size=420",
+    "source_page": "https://lmms.io/",
+    "logo_width": 420,
+    "logo_height": 420,
+    "under_chip_only": true
+  },
+  "losslesscut-free-lossless-video-trimmer-cut-without-quality-loss-guide": {
+    "logo_url": "https://losslesscut.app/apple-touch-icon.png",
+    "source_page": "https://losslesscut.app/",
+    "logo_width": 180,
+    "logo_height": 180,
+    "under_chip_only": true
+  },
+  "mathigon-free-interactive-maths-courses-textbook-of-the-future-guide": {
+    "logo_url": "https://mathigon.org/images/favicons/favicon-192.png",
+    "source_page": "https://mathigon.org/",
+    "logo_width": 192,
+    "logo_height": 192,
+    "under_chip_only": true
+  },
+  "meta-horizon-create-studio-early-access-game-building-guide": {
+    "logo_url": "https://www.meta.com/favicon.ico",
+    "source_page": "https://developers.meta.com/blog/meta-connect-recap-horizon-create-and-horizon-studio/",
+    "logo_width": 32,
+    "logo_height": 32,
+    "under_chip_only": true
+  },
+  "musicca-free-music-theory-exercises-instruments-guide": {
+    "logo_url": "https://www.musicca.com/templates/musicca/images/favicon.png",
+    "source_page": "https://www.musicca.com/",
+    "logo_width": 192,
+    "logo_height": 192,
+    "under_chip_only": true
+  },
+  "nasa-eyes-3d-solar-system-asteroids-earth-web-apps-browser-guide": {
+    "logo_url": "https://science.nasa.gov/wp-content/plugins/nasa-hds-core-setup/assets/favicons/apple-touch-icon-180x180.png",
+    "source_page": "https://eyes.nasa.gov/",
+    "logo_width": 180,
+    "logo_height": 180,
+    "under_chip_only": true
+  },
+  "office-365-education-free-students-guide": {
+    "logo_url": "https://www.microsoft.com/favicon.ico?v2",
+    "source_page": "https://www.microsoft.com/en-in/education/products/office",
+    "logo_width": 128,
+    "logo_height": 128,
+    "under_chip_only": true
+  },
+  "pdf24-free-pdf-tools-online-and-offline-creator-guide": {
+    "logo_url": "https://tools.pdf24.org/static/img/appIcons/v3/icon_192.png?v=5ca75609",
+    "source_page": "https://tools.pdf24.org/en/",
+    "logo_width": 192,
+    "logo_height": 192,
+    "under_chip_only": true
+  },
+  "ray-ban-meta-audio-india-coming-soon-guide": {
+    "logo_url": "https://www.meta.com/favicon.ico",
+    "source_page": "https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/",
+    "logo_width": 32,
+    "logo_height": 32,
+    "under_chip_only": true
+  },
+  "ray-ban-meta-gen-3-india-price-privacy-guide": {
+    "logo_url": "https://www.meta.com/favicon.ico",
+    "source_page": "https://about.fb.com/news/2026/10/announcing-ranveer-singh-as-brand-ambassador-for-ray-ban-and-ray-ban-meta-in-india-along-with-exciting-new-updates-to-our-ai-glasses/",
+    "logo_width": 32,
+    "logo_height": 32,
+    "under_chip_only": true
+  },
+  "rustdesk-free-open-source-remote-desktop-scam-warning-guide": {
+    "logo_url": "https://rustdesk.com/_astro/apple-touch-icon.DNoXgPv7.png",
+    "source_page": "https://rustdesk.com/",
+    "logo_width": 128,
+    "logo_height": 128,
+    "under_chip_only": true
+  },
+  "scratch-free-block-coding-games-animations-guide": {
+    "logo_url": "https://scratch.mit.edu/favicon.ico",
+    "source_page": "https://scratch.mit.edu",
+    "logo_width": 32,
+    "logo_height": 32,
+    "under_chip_only": true
+  },
+  "scrcpy-free-open-source-show-android-screen-on-pc-usb-guide": {
+    "logo_url": "https://github.com/Genymobile.png?size=420",
+    "source_page": "https://github.com/Genymobile/scrcpy",
+    "logo_width": 420,
+    "logo_height": 420,
+    "under_chip_only": true
+  },
+  "syncthing-keep-folders-in-sync-between-your-devices-open-source-guide": {
+    "logo_url": "https://syncthing.net/img/favicon.png",
+    "source_page": "https://syncthing.net/",
+    "logo_width": 64,
+    "logo_height": 64,
+    "under_chip_only": true
+  },
+  "ted-ed-free-animated-lessons-teachers-students-accounts-age-guide": {
+    "logo_url": "https://teded.tedcdn.com/assets/favicons/favicon-180x180-b40f54b7.png",
+    "source_page": "https://ed.ted.com/",
+    "logo_width": 180,
+    "logo_height": 180,
+    "under_chip_only": true
+  },
+  "teleocr-local-document-parsing-guide": {
+    "logo_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64368160eef1f55654ab21dc/HGow19-5fgUcp_IEMZoXG.png",
+    "source_page": "https://huggingface.co/XingChen-AGI/TeleOCR",
+    "logo_width": 200,
+    "logo_height": 200,
+    "under_chip_only": true
+  },
+  "thonny-python-ide-beginners-step-by-step-debugger-guide": {
+    "logo_url": "https://github.com/thonny.png?size=420",
+    "source_page": "https://thonny.org",
+    "logo_width": 256,
+    "logo_height": 256,
+    "under_chip_only": true
+  },
+  "tmplayer-free-open-source-telegram-video-player-tv-phone-pc-guide": {
+    "logo_url": "https://tmplayer.org/icon-512.png",
+    "source_page": "https://tmplayer.org",
+    "logo_width": 512,
+    "logo_height": 512,
+    "under_chip_only": true
+  },
+  "translucenttb-free-transparent-windows-taskbar-guide": {
+    "logo_url": "https://github.com/TranslucentTB.png?size=420",
+    "source_page": "https://github.com/TranslucentTB/TranslucentTB",
+    "logo_width": 268,
+    "logo_height": 268,
+    "under_chip_only": true
+  },
+  "twine-free-interactive-story-maker-no-coding-windows-mac-guide": {
+    "logo_url": "https://twinery.org/favicon-152.png",
+    "source_page": "https://twinery.org/",
+    "logo_width": 152,
+    "logo_height": 152,
+    "under_chip_only": true
+  },
+  "wayback-machine-free-old-web-pages-save-page-now-guide": {
+    "logo_url": "https://web-static.archive.org/_static/images/archive.ico",
+    "source_page": "https://web.archive.org/",
+    "logo_width": 32,
+    "logo_height": 32,
+    "under_chip_only": true
+  },
+  "winmerge-free-compare-files-folders-windows-guide": {
+    "logo_url": "https://winmerge.org/apple-touch-icon-precomposed.png",
+    "source_page": "https://winmerge.org/",
+    "logo_width": 180,
+    "logo_height": 180,
+    "under_chip_only": true
+  },
+  "winscp-free-ftp-sftp-file-transfer-client-windows-guide": {
+    "logo_url": "https://winscp.net/favicon.ico",
+    "source_page": "https://winscp.net/eng/index.php",
+    "logo_width": 64,
+    "logo_height": 64,
+    "under_chip_only": true
+  },
+  "xing4-29b-open-weight-agent-memory-guide": {
+    "logo_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64368160eef1f55654ab21dc/HGow19-5fgUcp_IEMZoXG.png",
+    "source_page": "https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B",
+    "logo_width": 200,
+    "logo_height": 200,
+    "under_chip_only": true
+  },
+  "xournal-plus-plus-open-source-handwritten-notes-guide": {
+    "logo_url": "https://xournalpp.github.io/img/favicon.ico",
+    "source_page": "https://xournalpp.github.io/",
+    "logo_width": 256,
+    "logo_height": 256,
+    "under_chip_only": true
   }
 }
