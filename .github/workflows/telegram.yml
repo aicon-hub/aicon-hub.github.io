@@ -121,11 +121,19 @@ jobs:
               if mode=='check':
                   print(json.dumps({'verified_channel_id':verify(),'posting_permission':True}));return
               if mode=='delete':
-                  mid=data.get('message_id','').strip()
-                  if not mid.isdigit() or int(mid)<=0:raise RuntimeError('A positive existing message_id is required for delete')
+                  mids=[x.strip() for x in data.get('message_id','').split(',') if x.strip()]
+                  if not mids or not all(x.isdigit() and int(x)>0 for x in mids):raise RuntimeError('Positive existing message_id(s) required for delete, comma-separated')
                   chat_id=verify()
-                  tg('deleteMessage',{'chat_id':chat_id,'message_id':int(mid)})
-                  print(json.dumps({'deleted_message_id':int(mid)}));return
+                  results={}
+                  for x in mids:
+                      try:
+                          tg('deleteMessage',{'chat_id':chat_id,'message_id':int(x)})
+                          results[x]='deleted'
+                      except RuntimeError as e:
+                          results[x]='failed:'+str(e)
+                  print(json.dumps({'delete_results':results}))
+                  if any(v!='deleted' for v in results.values()):sys.exit(1)
+                  return
               post_id=data.get('post_id','').strip()
               if not post_id:raise RuntimeError('A stable post_id is required')
               steps=edit_plan(data) if mode=='edit' else plan(data.get('text','').replace('\\n','\n'),'upload' if data.get('photo_base64') else data.get('photo_url',''))
