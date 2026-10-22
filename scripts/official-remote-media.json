@@ -5493,5 +5493,12 @@
     "logo_url": "https://molview.com/icon.svg",
     "source_page": "https://molview.com/",
     "under_chip_only": true
+  },
+  "oppia-free-interactive-maths-science-lessons-story-hindi-browser-guide": {
+    "logo_url": "https://raw.githubusercontent.com/oppia/oppia/develop/assets/images/logo/288x288_logo_mint.png",
+    "source_page": "https://www.oppia.org/",
+    "logo_width": 288,
+    "logo_height": 288,
+    "under_chip_only": true
   }
 }
