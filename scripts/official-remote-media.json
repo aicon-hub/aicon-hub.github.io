@@ -5481,5 +5481,12 @@
     "logo_width": 618,
     "logo_height": 220,
     "under_chip_only": true
+  },
+  "hackwithaditya-2026-aditya-university-48-hour-hackathon-5-lakh-guide": {
+    "logo_url": "https://hackathon.adityauniversity.in/apple-icon.png",
+    "source_page": "https://hackathon.adityauniversity.in/",
+    "logo_width": 180,
+    "logo_height": 180,
+    "under_chip_only": true
   }
 }
