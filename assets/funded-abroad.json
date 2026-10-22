@@ -234,10 +234,10 @@
       "type": "study",
       "status": "open",
       "deadline": null,
-      "deadlineLabel": "Each course sets its own deadline; for the 2027/28 intake most close between late August and mid-October 2026 - check the official EPOS course list",
+      "deadlineLabel": "Deadlines are course-specific: most for the 2027/28 intake closed between August and mid-October 2026. Some courses are still open - for example TropHEE at TU Darmstadt takes EPOS applications until 30 November 2026. Check each course's own page.",
       "funding": "German government funding via DAAD: 992 EUR per month for graduates (1,400 EUR for doctoral candidates from February 2026), health and liability insurance, and a travel allowance. Funding runs 12 to 42 months depending on the course.",
       "eligibility": "Graduates from developing and newly industrialised countries, including India, with at least two years of professional experience, applying to a listed development-related postgraduate course in Germany.",
-      "note": "Apply through the university that runs your chosen EPOS course, not directly to DAAD.",
+      "note": "Apply through the university that runs your chosen EPOS course, not directly to DAAD. Verified open course example on 22 October 2026: TropHEE (TU Darmstadt), EPOS applications until 30 November 2026.",
       "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50076777",
       "cta": "DAAD scholarship database (official)",
       "verified": "2026-10-22"
