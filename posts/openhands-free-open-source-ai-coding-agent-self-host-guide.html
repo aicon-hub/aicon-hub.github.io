@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261021dates1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>OpenHands: free, open-source AI coding agents you control | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/openhands-free-open-source-ai-coding-agent-self-host-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-22" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "OpenHands: free, open-source AI coding agents you control", "description": "OpenHands is an MIT-licensed platform for AI software-engineering agents - GUI, CLI and SDK, free to self-host; you bring and pay for your own LLM API key. Teams plan $499/month.", "datePublished": "2026-10-22", "inLanguage": "en-IN", "mainEntityOfPage": "https://aicon-hub.github.io/posts/openhands-free-open-source-ai-coding-agent-self-host-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261021dates1" rel="stylesheet"/><link href="../assets/article.css?v=20261021dates1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261021dates1" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/cinema.css?v=20261015smooth1"/><script defer src="../assets/cinema.js?v=20261015smooth1"></script>
+<meta name="description" content="OpenHands is an MIT-licensed platform for AI software-engineering agents - GUI, CLI and SDK, free to self-host; you bring and pay for your own LLM API key. Teams plan $499/month."/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="AiCoN"/>
+<meta property="og:title" content="OpenHands: free, open-source AI coding agents you control"/>
+<meta property="og:description" content="OpenHands is an MIT-licensed platform for AI software-engineering agents - GUI, CLI and SDK, free to self-host; you bring and pay for your own LLM API key. Teams plan $499/month."/>
+<meta property="og:url" content="https://aicon-hub.github.io/posts/openhands-free-open-source-ai-coding-agent-self-host-guide.html"/>
+<meta property="og:image" content="https://assets.openhands.dev/screenshot/automation-preview.png"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenHands: free, open-source AI coding agents you control"/>
+<meta name="twitter:description" content="OpenHands is an MIT-licensed platform for AI software-engineering agents - GUI, CLI and SDK, free to self-host; you bring and pay for your own LLM API key. Teams plan $499/month."/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / OpenHands</p>
+<article class="post">
+<span class="chip">AI</span>
+<h1>OpenHands: free, open-source AI coding agents you control</h1>
+<p class="meta">By AiCoN | Published 22 October 2026 | Sources checked 22 October 2026</p>
+<p class="lead">OpenHands is a free, open-source platform for AI software-engineering agents - give it a repo and a task, and an AI agent writes, runs and tests code like a junior developer. The software is free to self-host, but the AI model behind it is not: you bring your own API key and pay that provider for usage.</p>
+<img alt="OpenHands Agent Canvas automations view, official screenshot" class="cover" src="https://assets.openhands.dev/screenshot/automation-preview.png"/>
+<p><i>Image: official OpenHands Agent Canvas screenshot, from the project's assets.</i></p>
+<h2>Quick facts</h2><ul><li><b>What it is:</b> an open-source platform (MIT licence, 91,000+ GitHub stars at the time of checking) for running coding agents - with a GUI, a command-line tool, and an SDK. It can also drive other agents like Claude Code, Codex and Gemini CLI through the Agent-Client Protocol.</li><li><b>Price:</b> the Agent Canvas app is free to self-host. The AI side needs a capable model: connect a cloud provider API key (OpenAI, Anthropic and others, billed per use by that provider) or a local model server such as Ollama, LM Studio, vLLM or SGLang, per the official docs - which also note OpenHands requires a powerful model to work well. So model, provider or compute charges may apply depending on what you connect; local models shift the cost to your own hardware. Paid Teams ($499/month, about ₹47,000, up to 10 users, 30-day trial) and Enterprise plans target companies. A hosted OpenHands Cloud also exists.</li><li><b>Install:</b> via npm or Docker, on your laptop or a server. The docs' Quick Start walks through both.</li><li><b>Best for:</b> developers who want an AI agent to handle real tasks - fixing issues, writing tests, small features - inside their own setup instead of a locked-in service.</li></ul>
+<h2>What it is</h2><p>OpenHands (from All-Hands AI, originally the OpenDevin project) is one of the most-starred open-source AI agent projects on GitHub. Its Agent Canvas is a control center for coding agents: start a conversation, point the agent at your code, and it can read files, run commands, edit code and test its changes. It runs locally by default and can connect to remote or cloud backends when you want agents working while your laptop is shut. OpenHands itself runs where you choose. One privacy point to understand: when the agent uses a cloud model, your code and context are sent to that model provider - self-hosting the app does not keep prompts local unless you also run a local model server.</p>
+<img alt="OpenHands architecture diagram: Agent Canvas on a laptop driving agent servers on virtual machines and cloud, official diagram" class="cover" src="https://github.com/user-attachments/assets/cb6de6f5-ac30-4d04-a76a-b5c259f0c163"/>
+<p><i>Image: official OpenHands architecture diagram, from the project's GitHub README.</i></p>
+<h2>Is it free?</h2><p>The software: yes, MIT-licensed and free to self-host. The AI behind it: OpenHands connects to any LLM supported by LiteLLM - cloud APIs like OpenAI or Anthropic (billed per use by the provider) or a local model server like Ollama, LM Studio, vLLM or SGLang, per the official docs, which caution that OpenHands needs a powerful model to work well. Cloud API costs depend on model and usage, and long agent tasks on premium models can add up quickly, so set usage budgets; local models run on your own hardware. The official pricing page lists the self-hosted Agent Canvas as free, a Teams plan at $499/month (about ₹47,000; up to 10 users, with a 30-day trial) for companies needing multi-user controls, and custom Enterprise pricing. Dollar conversion uses the mid-market rate of about ₹94 per US dollar (rateswale.com, 22 October 2026) and is approximate. There is also a hosted OpenHands Cloud at app.all-hands.dev where you sign in with GitHub, GitLab or Bitbucket.</p>
+<h2>India</h2><ul><li>Self-hosting runs wherever your machine is; the docs cover laptop and server installs.</li><li>Students can start with free or low-cost model tiers, or experiment with a local model through Ollama on a capable machine, before spending seriously.</li><li>Running agents on a small home server or a cheap VPS is a practical way to keep long tasks going - a genuinely useful homelab project.</li></ul>
+<h2>Good to know</h2><ul><li>An agent that can run commands is powerful and risky: run it inside Docker (the default sandbox), use it on throwaway branches, and review its changes before merging.</li><li>API costs can grow on big tasks - set usage budgets with your model provider.</li><li>Agent Canvas can manage several agents and automate recurring chores like reports or issue triage.</li></ul>
+<div class="box good"><b>AiCoN check</b>Source-based verification on 22 October 2026: we read the official OpenHands site, pricing page, docs Quick Start and GitHub repository, and used the project's own screenshots and diagram above. MIT licence, 91k+ stars, free self-hosted Agent Canvas, Teams pricing and bring-your-own-key billing are from those pages; prices are the vendor's published figures, not something we purchased or tested. We did not run an agent task for this article.</div>
+<h2>Frequently asked questions</h2><h3>Is OpenHands free to use?</h3><p>The platform is free and open source. You pay your chosen AI model provider for API usage, which can be near zero with free or cheap models and much higher on premium models.</p><h3>Can it use Claude Code or Codex instead?</h3><p>Yes - Agent Canvas works with any ACP-compatible agent, including Claude Code, Codex, Gemini CLI and OpenCode.</p><h3>Is it safe to let an AI run commands?</h3><p>OpenHands sandboxes agents in Docker by default. Still run it on non-critical code, use version control, and review everything it does.</p>
+<p class="src">Sources: <a href="https://www.openhands.dev/">OpenHands</a>, <a href="https://www.openhands.dev/pricing">OpenHands pricing</a>, <a href="https://docs.openhands.dev/usage/installation">OpenHands docs</a>, <a href="https://github.com/OpenHands/OpenHands">GitHub</a>, <a href="https://rateswale.com/forex/usd-inr">USD-INR rate</a>. Checked 22 October 2026.</p></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer src="../assets/avatar-loader.js?v=20261016guide1"></script><script defer src="../assets/avatar-loader.js?v=20261021dates1"></script></body></html>
