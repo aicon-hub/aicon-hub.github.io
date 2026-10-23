@@ -16,6 +16,7 @@ def apply(out):
  records.get("epic-games-store-free-weekly-pc-game-claim-keep-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("evergreen-ai-free-beta-financial-planning-india-limits", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("flux-3-image-boxes-edits-costs-guide", {}).update(poster_url=None, under_chip_only=True)
+ records.get("fortinet-pause-free-scam-awareness-canada-india-guide", {}).update(logo_url="https://www.fortinet.com/content/dam/fortinet/images/favicon/apple-touch-icon.png", logo_width=180, logo_height=180)
  records.setdefault("musicbrainz-picard-free-music-tagger-organize-mp3-flac-guide", {}).update(logo_url="https://picard.musicbrainz.org/static/img/picard-icon-large.svg?v=dd59b67b", logo_width=154, logo_height=154, poster_url=None, under_chip_only=True, source_page="https://picard.musicbrainz.org/")
  records.get("digikam-free-photo-manager-organize-tag-search-photos-guide", {}).update(logo_url="https://www.digikam.org/img/digikam_oxygen.svg", logo_width=128, logo_height=128, poster_url=None, under_chip_only=True)
  records.setdefault("eartrumpet-free-volume-mixer-windows-microsoft-store-guide", {}).update(logo_url="https://raw.githubusercontent.com/File-New-Project/EarTrumpet/master/EarTrumpet/Assets/Icon-Light.ico", logo_width=256, logo_height=256, poster_url=None, under_chip_only=True)
