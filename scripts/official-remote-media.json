@@ -5536,5 +5536,6 @@
   },
   "windy-com-free-weather-maps-radar-india": {"logo_url": "https://img.windy.com/albums/icons/logo-full.png?w=180", "source_page": "https://www.windy.com/", "logo_width": 180, "logo_height": 180, "under_chip_only": true},
   "cloudconvert-free-file-converter-200-formats-guide": {"logo_url": "https://static.cloudconvert.com/build/assets/logo_without_border-BolpxNjG.svg", "source_page": "https://cloudconvert.com/", "logo_width": 1015, "logo_height": 668, "under_chip_only": true},
-  "pricehistory-app-free-price-history-tracker-amazon-flipkart-guide": {"logo_url": "https://pricehistory.app/assets/images/icons/icon-144x144.png", "source_page": "https://pricehistory.app/", "logo_width": 144, "logo_height": 144, "under_chip_only": true}
+  "pricehistory-app-free-price-history-tracker-amazon-flipkart-guide": {"logo_url": "https://pricehistory.app/assets/images/icons/icon-144x144.png", "source_page": "https://pricehistory.app/", "logo_width": 144, "logo_height": 144, "under_chip_only": true},
+  "aqicn-free-live-air-quality-index-india-cities-guide": {"logo_url": "https://waqi.info/images/logo.png", "source_page": "https://aqicn.org/", "logo_width": 100, "logo_height": 100, "under_chip_only": true}
 }
