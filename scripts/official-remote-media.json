@@ -574,12 +574,12 @@
     "width": 263
   },
   "buzz-open-source-offline-audio-video-transcription-translation-app-guide": {
-    "height": 460,
-    "logo_url": "https://avatars.githubusercontent.com/u/17879672?v=4",
+    "height": 1024,
+    "logo_url": "https://raw.githubusercontent.com/chidiwilliams/buzz/main/buzz/assets/buzz-icon-1024.png",
     "poster_url": "",
     "slug": "buzz-open-source-offline-audio-video-transcription-translation-app-guide",
     "source_page": "https://github.com/chidiwilliams/buzz",
-    "width": 460
+    "width": 1024
   },
   "byteask-c-cpp-agent-pricing-sandbox-review-guide": {
     "height": 630,
