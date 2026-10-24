@@ -7,6 +7,7 @@ def apply(out):
  registry=Path(__file__).with_name('official-remote-media.json')
  records=json.loads(registry.read_text()) if registry.exists() else {}
  # Source-checked asset repairs. Keep the registry's remaining records untouched.
+ records.get("jio-google-ai-pro-18-months-free-offer-eligibility-deadline-guide", {}).update(logo_url="https://myjiostatic.cdn.jio.com/jiocom/static/images/jio10-mobile.svg")
  records.get("drawio-diagrams-net-free-diagram-maker-no-signup-privacy-guide", {}).update(logo_url="https://www.drawio.com/img/logo.svg", logo_width=48, logo_height=48)
  records.get("syncthing-keep-folders-in-sync-between-your-devices-open-source-guide", {}).update(logo_url="https://syncthing.net/img/logo-horizontal.svg", logo_width=300, logo_height=82)
  records.get("antennapod-free-ad-free-podcast-player-android-guide", {}).update(logo_url="https://antennapod.org/assets/branding/logos/logo-icon.png", logo_width=512, logo_height=512)
@@ -139,7 +140,7 @@ def apply(out):
    credit='<p class="src media-credit">'+escape(notice).replace('{url}','<a href="'+escape(nurl,quote=True)+'">'+escape(nurl)+'</a>')+'</p>'
   else:
    credit='<p class="src media-credit">'+label+' hosted by its publisher. <a href="'+escape(source,quote=True)+'">Official source</a>. Independent guide, not affiliated or sponsored. Artwork and trademarks belong to their owners.</p>'
-  if slug in ["ikea-kreativ-ai-room-design-app-india-free-guide", "indus-by-sarvam-indian-language-ai-chat-app-free-plan-guide", "intrinsic-core-open-source-robotics-ros-setup-guide", "irfanview-free-windows-image-viewer-converter-home-use-only-guide", "irisgo-free-beta-ai-learns-tasks-by-watching-windows-mac-privacy-guide", "ishan-uday-scholarship-2026-27-nsp-ugc-guide", "ixigo-tara-ai-travel-assistant-guide", "jaam-m-context-engine-enterprise-guide", "jenni-ai-academic-writing-free-limits-guide", "jetbrains-air-ides-eap-agents-costs-guide", "jio-canva-pro-12-months-free-offer-recharge-eligibility-guide"]:
+  if slug in ["ikea-kreativ-ai-room-design-app-india-free-guide", "indus-by-sarvam-indian-language-ai-chat-app-free-plan-guide", "intrinsic-core-open-source-robotics-ros-setup-guide", "irfanview-free-windows-image-viewer-converter-home-use-only-guide", "irisgo-free-beta-ai-learns-tasks-by-watching-windows-mac-privacy-guide", "ishan-uday-scholarship-2026-27-nsp-ugc-guide", "ixigo-tara-ai-travel-assistant-guide", "jaam-m-context-engine-enterprise-guide", "jenni-ai-academic-writing-free-limits-guide", "jetbrains-air-ides-eap-agents-costs-guide", "jio-canva-pro-12-months-free-offer-recharge-eligibility-guide", "jio-google-ai-pro-18-months-free-offer-eligibility-deadline-guide", "julius-ai-free-spreadsheet-data-analysis-guide", "k-dense-byok-local-research-assistant-guide"]:
    credit=credit.replace('class="src media-credit"', 'class="media-credit" style="color:var(--muted);font-size:.95rem;line-height:1.6"')
   text=text.replace(img,img+credit,1)
   video=x.get('embed_url','');watch=x.get('video_url','')
