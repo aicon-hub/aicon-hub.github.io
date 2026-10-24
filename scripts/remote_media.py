@@ -62,6 +62,13 @@ def apply(out):
  records.get("voicestudio-free-open-source-local-voice-cloning-dubbing-app-guide", {}).update(poster_url="https://raw.githubusercontent.com/debpalash/VoiceStudio/main/docs/media/electron/voice-cloning.png", width=1440, height=960)
  records.get("super-productivity-free-open-source-todo-time-tracker-guide", {}).update(logo_url="https://raw.githubusercontent.com/super-productivity/super-productivity/master/src/assets/icons/icon-192x192.png", logo_width=192, logo_height=192)
  records.get("gcompris-free-educational-games-kids-2-to-10-windows-android-guide", {}).update(logo_url="https://gcompris.net/favicon.png", logo_width=32, logo_height=32)
+ # meta.com/favicon.ico loads as a zero-width image in browsers; drop the broken 32px logo (24 Oct 2026 recheck).
+ records.get("meta-ai-whatsapp-how-to-use-india", {}).update(logo_url="")
+ records.get("meta-enterprise-platform-muse-business-ai-launch", {}).update(logo_url="")
+ records.get("meta-muse-ai-glasses-access-pricing-privacy-guide", {}).update(logo_url="")
+ records.get("meta-horizon-create-studio-early-access-game-building-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
+ records.get("ray-ban-meta-audio-india-coming-soon-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
+ records.get("ray-ban-meta-gen-3-india-price-privacy-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("pinta-free-open-source-simple-image-editor-windows-mac-linux-guide", {}).update(logo_url="https://pinta-project.com/img/pinta-og.png", logo_width=1200, logo_height=1200)
  records.get("ventoy-free-multiboot-usb-drive-iso-files-windows-linux-guide", {}).update(logo_url="https://www.ventoy.net/static/img/ventoy.png", logo_width=72, logo_height=72)
  records.get("freefilesync-free-folder-backup-sync-software-personal-use-guide", {}).update(logo_url="https://freefilesync.org/images/FreeFileSync.png", logo_width=256, logo_height=256)
