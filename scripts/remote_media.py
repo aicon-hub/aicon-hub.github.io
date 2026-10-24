@@ -139,13 +139,14 @@ def apply(out):
    credit='<p class="src media-credit">'+escape(notice).replace('{url}','<a href="'+escape(nurl,quote=True)+'">'+escape(nurl)+'</a>')+'</p>'
   else:
    credit='<p class="src media-credit">'+label+' hosted by its publisher. <a href="'+escape(source,quote=True)+'">Official source</a>. Independent guide, not affiliated or sponsored. Artwork and trademarks belong to their owners.</p>'
-  if slug in ["ikea-kreativ-ai-room-design-app-india-free-guide", "indus-by-sarvam-indian-language-ai-chat-app-free-plan-guide", "intrinsic-core-open-source-robotics-ros-setup-guide", "irfanview-free-windows-image-viewer-converter-home-use-only-guide", "irisgo-free-beta-ai-learns-tasks-by-watching-windows-mac-privacy-guide", "ishan-uday-scholarship-2026-27-nsp-ugc-guide", "ixigo-tara-ai-travel-assistant-guide", "jaam-m-context-engine-enterprise-guide"]:
+  if slug in ["ikea-kreativ-ai-room-design-app-india-free-guide", "indus-by-sarvam-indian-language-ai-chat-app-free-plan-guide", "intrinsic-core-open-source-robotics-ros-setup-guide", "irfanview-free-windows-image-viewer-converter-home-use-only-guide", "irisgo-free-beta-ai-learns-tasks-by-watching-windows-mac-privacy-guide", "ishan-uday-scholarship-2026-27-nsp-ugc-guide", "ixigo-tara-ai-travel-assistant-guide", "jaam-m-context-engine-enterprise-guide", "jenni-ai-academic-writing-free-limits-guide", "jetbrains-air-ides-eap-agents-costs-guide", "jio-canva-pro-12-months-free-offer-recharge-eligibility-guide"]:
    credit=credit.replace('class="src media-credit"', 'class="media-credit" style="color:var(--muted);font-size:.95rem;line-height:1.6"')
   text=text.replace(img,img+credit,1)
   video=x.get('embed_url','');watch=x.get('video_url','')
   if video.startswith('https://www.youtube.com/embed/') and watch.startswith('https://'):
    title=x.get('video_title','Official publisher video');video=video.replace('www.youtube.com/embed/','www.youtube-nocookie.com/embed/')
    panel='<figure class="official-video" style="margin:24px 0"><iframe src="'+escape(video,quote=True)+'" title="'+escape(title,quote=True)+'" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px"></iframe><figcaption class="src">Official publisher video: '+escape(title)+'. <a href="'+escape(watch,quote=True)+'">Watch on YouTube</a>. Published by <a href="'+escape(x.get('video_channel_url',''),quote=True)+'">'+escape(x.get('video_channel','publisher'))+'</a>. Independent guide, not sponsored.</figcaption></figure>'
+   if slug=="jenni-ai-academic-writing-free-limits-guide":panel=panel.replace('class="src"', 'class="video-credit" style="color:var(--muted);font-size:.95rem;line-height:1.6"')
    text=text.replace(credit,credit+panel,1)
 
   # Do not label a generic homepage asset as a picture of the feature discussed.
