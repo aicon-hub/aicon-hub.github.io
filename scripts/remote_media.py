@@ -93,6 +93,7 @@ def apply(out):
  records.get("jio-canva-pro-12-months-free-offer-recharge-eligibility-guide", {}).update(logo_url="https://myjiostatic.cdn.jio.com/jiocom/static/images/jio10-mobile.svg")
  records.get("kerala-edistrict-certificates-online", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kernelai-free-offline-ai-phone-app-android-ios-no-account-guide", {}).update(poster_url=None, under_chip_only=True)
+ records.get("kickbacks-ai-ads-in-claude-code-codex-what-to-know-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.setdefault("kerala-whatsapp-services-reported-aicon-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.setdefault("kerala-waqf-board-loan-scholarship-2026-rs-5000-monthly-professional-students-apply-by-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-psc-130-150-2026-october7-deadline-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
