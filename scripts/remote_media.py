@@ -63,6 +63,8 @@ def apply(out):
  records.get("super-productivity-free-open-source-todo-time-tracker-guide", {}).update(logo_url="https://raw.githubusercontent.com/super-productivity/super-productivity/master/src/assets/icons/icon-192x192.png", logo_width=192, logo_height=192)
  records.get("gcompris-free-educational-games-kids-2-to-10-windows-android-guide", {}).update(logo_url="https://gcompris.net/favicon.png", logo_width=32, logo_height=32)
  # meta.com/favicon.ico loads as a zero-width image in browsers; drop the broken 32px logo (24 Oct 2026 recheck).
+ # appinventor.mit.edu/favicon.ico renders as a broken image; no verified official logo asset, so no logo (24 Oct 2026 recheck).
+ records.get("mit-app-inventor-free-build-android-apps-blocks-browser-guide", {}).update(logo_url="")
  records.get("meta-ai-whatsapp-how-to-use-india", {}).update(logo_url="")
  records.get("meta-enterprise-platform-muse-business-ai-launch", {}).update(logo_url="")
  records.get("meta-muse-ai-glasses-access-pricing-privacy-guide", {}).update(logo_url="")
