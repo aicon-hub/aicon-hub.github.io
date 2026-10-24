@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><style>article.post a,article.post code{overflow-wrap:anywhere}article.post figure img{border-radius:16px}</style><script src="../assets/theme.js?v=20261020float1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Metrolist: ad-free YouTube Music for Android, with privacy caveats | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/metrolist-youtube-music-client.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Metrolist: ad-free YouTube Music for Android, with privacy caveats", "description": "Free open-source Android music client. Salman likes its UI and recommendations; source review explains maintenance mode, session-cookie backups and service-terms risk.", "datePublished": "2026-10-24", "dateModified": "2026-10-24", "inLanguage": "en-IN", "mainEntityOfPage": "https://aicon-hub.github.io/posts/metrolist-youtube-music-client.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261020float1" rel="stylesheet"/><link href="../assets/article.css?v=20261020float1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261020float1" rel="stylesheet"/><link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script>
+<meta content="Free open-source Android music client. Salman likes its UI and recommendations; source review explains maintenance mode, session-cookie backups and service-terms risk." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Metrolist: ad-free YouTube Music for Android, with privacy caveats" property="og:title"/>
+<meta content="Free open-source Android music client. Salman likes its UI and recommendations; source review explains maintenance mode, session-cookie backups and service-terms risk." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/metrolist-youtube-music-client.html" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Metrolist: ad-free YouTube Music for Android, with privacy caveats" name="twitter:title"/>
+<meta content="Free open-source Android music client. Salman likes its UI and recommendations; source review explains maintenance mode, session-cookie backups and service-terms risk." name="twitter:description"/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs">Home / Posts / Metrolist</p>
+<article class="post"><span class="chip">OPEN SOURCE APP</span><h1>Metrolist: ad-free YouTube Music for Android, with privacy caveats</h1><p class="meta">By AiCoN | Published 24 October 2026 | Sources checked 24 October 2026</p><p class="lead">Metrolist is a free, open-source Android client for YouTube Music. Salman uses this project and likes its interface and recommendations. The source review below is separate from his experience: maintenance mode, login-session storage, backups and YouTube's terms all matter before you install.</p><img alt="Official Metrolist Home screen screenshot from the v13.7.0 repository" class="cover" height="1598" src="https://raw.githubusercontent.com/MetrolistGroup/Metrolist/v13.7.0/fastlane/metadata/android/en-US/images/screenshots/screenshot_1.png" style="object-fit:contain;max-height:540px;width:100%;height:auto" width="719"/><p class="src">Official repository screenshot, not Salman's phone or an AiCoN test session. <a href="https://github.com/MetrolistGroup/Metrolist/tree/v13.7.0/fastlane/metadata/android/en-US/images/screenshots">Publisher source</a>.</p><figure style="margin:24px auto;max-width:340px"><img alt="Official Metrolist artist page screenshot" height="1598" src="https://raw.githubusercontent.com/MetrolistGroup/Metrolist/v13.7.0/fastlane/metadata/android/en-US/images/screenshots/screenshot_2.png" style="width:100%;height:auto" width="719"/><figcaption class="src">Official artist-page screenshot from the same release-tag media. Illustrates the interface, not playback or account testing by AiCoN.</figcaption></figure><h2>What is Metrolist?</h2>
+<p>Metrolist streams from YouTube Music's own library and wraps it in a fast, clean, customizable player. The public project dates to 2023 and has its own website, Discord and Telegram communities.</p>
+<ul>
+<li><strong>Free and open source</strong> (GPLv3). Full source code is public on GitHub.</li>
+<li><strong>No ads, no subscription.</strong> Works with or without a Google account.</li>
+<li>Latest stable release v13.7.0 (7 September 2026), with nightly builds continuing.</li>
+</ul>
+<p><strong>One honest caveat up front:</strong> the project is in <strong>maintenance mode</strong>. The developers say the app is not dead, but they are only fixing bugs and making minor improvements while work on a rewrite continues. That statement is about the developers' maintenance plan, not a guarantee that every feature works on every phone.</p>
+<h2>Main features listed by the developers</h2>
+<ul>
+<li>Developer-listed song and video playback from YouTube Music, in the background, with offline downloads and caching.</li>
+<li>Live synced lyrics, with optional AI-powered lyrics translation (you supply your own API key for OpenAI/Claude/OpenRouter and similar).</li>
+<li>Personalized quick picks and full search across songs, albums, artists, videos and playlists.</li>
+<li>Full library management: local playlists, playlist import, queue and playlist reordering.</li>
+<li>Optional YouTube Music account login to sync your songs, artists, albums and playlists.</li>
+<li>Equalizer, crossfade, audio normalization, tempo and pitch control, skip silence, sleep timer.</li>
+<li>Listen together with friends in real time; Last.fm scrobbling; optional Discord Rich Presence.</li>
+<li>Recognize music (Shazam-style), home-screen widget, light/dark/black/dynamic themes.</li>
+<li>Audio quality setting: Auto, Low or High. <strong>There is no lossless mode</strong> - all audio is YouTube Music's own stream, and Metrolist does not pretend otherwise.</li>
+</ul>
+<h2>What our own use says</h2>
+<p>Salman, who runs AiCoN, uses Metrolist himself and says it works, and that he likes its interface and recommendations. That is one person's experience on his phone, not a promise about every device. Separately from his experience, everything in the privacy, quality and install sections below comes from our own source-code review at the v13.7.0 release - it is not a hands-on security test of the app.</p>
+<h2>Sign-in and privacy: what we found in the code</h2>
+<ul>
+<li><strong>Sign-in is optional.</strong> The developers describe anonymous use; syncing a YouTube Music library needs an account. We did not test which features are available in every signed-out session.</li>
+<li>Google sign-in opens the real accounts.google.com page in an Android WebView (<code>LoginScreen.kt</code>), so your password and 2FA are entered on Google's page. The app reads the resulting YouTube Music cookie and its API calls go to music.youtube.com (<code>InnerTube.kt</code>).</li>
+<li><strong>The session cookie has no app-level encryption.</strong> Metrolist stores it as plain text in its private app storage (<code>PreferenceKeys.kt</code>, key <code>innerTubeCookie</code>) with no app-level encryption of its own. Whatever protection it has comes from the phone's own storage encryption, where that is enabled, and from how Google handles backups. We checked two paths: the app's Android backup settings (AndroidManifest.xml <code>allowBackup="true"</code>, and its backup rules exclude only downloaded media, not settings), and its own Backup/Restore feature, which exports the settings file including this cookie (<code>BackupRestoreViewModel.kt</code>). So the cookie is eligible to be included in Android cloud backup and device transfer where those are turned on, and the app's Backup feature includes the settings file that holds it, when a session is present - treat that file as sensitive. Our recommendation: use Metrolist <strong>without signing in</strong> unless you need library sync, or use a secondary Google account.</li>
+<li>The app also offers a manual "paste your cookie" login option. Never paste session cookies copied with help from random guides or tools; a stolen cookie is a stolen session.</li>
+<li>With features switched on, the app also contacts other services, each with its own privacy policy: lyrics providers (LRCLIB, KuGou and others), Last.fm, Discord, Shazam for song recognition, GitHub for update checks, and your chosen AI provider if you set up lyrics translation. The reviewed YouTube Music client uses the Google cookie. This source review is not an exhaustive data-flow or security audit.</li>
+<li>We inspected the public repository at the exact v13.7.0 release code. The APKs are built and signed by the project's CI (keystore held in GitHub secrets), but we did not find a published checksum or certificate fingerprint in the checked release listing, and we could not independently verify that the released APK matches this source byte-for-byte. Public source makes inspection possible, but it does not prove the distributed binary is safe.</li>
+</ul>
+<h2>Is it allowed? What YouTube's Terms say</h2>
+<p>YouTube's Terms of Service say you are not allowed to "access, reproduce, download... any part of the Service or any Content except (a) as expressly authorized by the Service; or (b) with prior written permission from YouTube" (<a href="https://youtube.com/t/terms">youtube.com/t/terms</a>, "Permissions and Restrictions"). Third-party clients like Metrolist are not expressly authorized, and the same document says violations can lead to Google terminating your account or access. We do not give a legal verdict. Anonymous use avoids handing the app a Google-account session, but does not remove service-terms or availability risks.</p>
+<h2>How to install (Android)</h2>
+<ol>
+<li>Official releases page: <a href="https://github.com/MetrolistGroup/Metrolist/releases">github.com/MetrolistGroup/Metrolist/releases</a> - download <code>Metrolist.apk</code> (standard). Variants: <code>Metrolist-with-Google-Cast.apk</code> adds Chromecast support; <code>Metrolist-izzy.apk</code> is the IzzyOnDroid build.</li>
+<li>Or install from the <strong>IzzyOnDroid F-Droid repository</strong> (package com.metrolist.music), which handles updates for you.</li>
+<li>Android may require permission to install from that source. Verify the project and release first, grant only the needed permission, and turn it off afterward. Do not dismiss a Play Protect or other security warning as harmless; stop and investigate it.</li>
+<li>Metrolist is not on the Play Store. Avoid copies from random APK sites.</li>
+<li>The developers say YouTube Music must be available in your region. Our source review did not test regional playback; Salman's experience on his own phone is not a region-wide guarantee.</li>
+</ol>
+<h2>Limits to know</h2>
+<ul>
+<li>Maintenance mode: bug fixes only, no new features for now (notice present in the README at the 7 September 2026 v13.7.0 release and still on the project's main README as of 24 October 2026; nightly bug-fix builds continued as of 21 October 2026).</li>
+<li>Third-party client: could break if YouTube changes its internals.</li>
+<li>Downloading does not grant permission to reuse or redistribute music.</li>
+<li>Session cookie stored without app-level encryption; phone-level protections are separate (see privacy section).</li>
+</ul>
+<h2>FAQ</h2>
+<p><strong>Is Metrolist free?</strong> Yes. Free, open source, no ads. The developers accept donations.</p>
+<p><strong>Do I need a Google account?</strong> The developers offer anonymous use. YouTube Music library sync needs sign-in; we did not test every feature without an account.</p>
+<p><strong>Does it play lossless audio?</strong> No. It streams YouTube Music's standard audio (Auto/Low/High quality settings) and makes no lossless claim.</p>
+<p><strong>Is it safe?</strong> Public code and a Google-hosted sign-in page do not prove an APK is safe. The reviewed login cookie has no app-level encryption on the device, so prefer anonymous use. Install only from the official GitHub or IzzyOnDroid pages.</p>
+<p><strong>What about legal and account risk?</strong> Open-source licensing is not permission from YouTube to access or download its content. The app is independent of Google; read the service-terms caveat above. We give no legal clearance.</p>
+<h2>Sources (checked 24 October 2026)</h2>
+<ul>
+<li>Official repo: <a href="https://github.com/MetrolistGroup/Metrolist">github.com/MetrolistGroup/Metrolist</a></li>
+<li>Latest stable release v13.7.0 (7 September 2026): <a href="https://github.com/MetrolistGroup/Metrolist/releases">github.com/MetrolistGroup/Metrolist/releases</a></li>
+<li>Official website: <a href="https://metrolist.cc">metrolist.cc</a></li>
+<li>IzzyOnDroid listing: <a href="https://apt.izzysoft.de/fdroid/index/apk/com.metrolist.music">apt.izzysoft.de/fdroid/index/apk/com.metrolist.music</a></li>
+<li>YouTube Terms of Service: <a href="https://youtube.com/t/terms">youtube.com/t/terms</a></li>
+</ul>
+<h2>Verification appendix (code evidence, v13.7.0 release commit 7c5ba3ad22cb562d337897f82163a2b7fce665f3)</h2>
+<p>All links pinned to the exact v13.7.0 release commit:</p>
+<ul>
+<li>Google sign-in via WebView to real accounts.google.com / music.youtube.com: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/ui/screens/LoginScreen.kt#L124">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/ui/screens/LoginScreen.kt#L124</a> (cookie read), L336-L357 (page filter + login URL)</li>
+<li>Cookie stored unencrypted in Preferences DataStore: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/constants/PreferenceKeys.kt#L520">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/constants/PreferenceKeys.kt#L520</a> (no EncryptedSharedPreferences anywhere in the repo)</li>
+<li>Android backup config: manifest <code>allowBackup="true"</code> with both rule files attached - <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/AndroidManifest.xml#L32-L37">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/AndroidManifest.xml#L32-L37</a> - and both rule files exclude only media cache/downloads, not settings: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/res/xml/backup_rules.xml">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/res/xml/backup_rules.xml</a> and <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/res/xml/data_extraction_rules.xml">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/res/xml/data_extraction_rules.xml</a></li>
+<li>Runtime backup code: the app's own Backup/Restore exports files/datastore/settings.preferences_pb (the file holding the cookie) into the backup zip: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/viewmodels/BackupRestoreViewModel.kt#L81-L90">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/viewmodels/BackupRestoreViewModel.kt#L81-L90</a></li>
+<li>API-host code: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/innertube/src/main/kotlin/com/metrolist/innertube/InnerTube.kt">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/innertube/src/main/kotlin/com/metrolist/innertube/InnerTube.kt</a></li>
+<li>Audio quality AUTO/LOW/HIGH, no lossless: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/constants/PreferenceKeys.kt#L107-L113">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/constants/PreferenceKeys.kt#L107-L113</a></li>
+<li>CI-signed releases (ilharp/sign-android-release, keystore in repo secrets): <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/.github/workflows/release.yml#L135-L144">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/.github/workflows/release.yml#L135-L144</a></li>
+<li>Manual cookie-paste login option: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/ui/screens/settings/AccountSettings.kt">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/app/src/main/kotlin/com/metrolist/music/ui/screens/settings/AccountSettings.kt</a></li>
+<li>Maintenance mode notice: <a href="https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/README.md#L33-L36">https://github.com/MetrolistGroup/Metrolist/blob/7c5ba3ad22cb562d337897f82163a2b7fce665f3/README.md#L33-L36</a> (present at the v13.7.0 release commit; still shown on the main-branch README as of 24 Oct 2026)</li>
+</ul><p class="src">Source-based review on 24 October 2026. Release code pinned to v13.7.0 (7 September 2026); current README and release listing checked separately. No APK execution, sign-in, payment or independent security audit. Official screenshots are publisher examples.</p><div class="share"><a href="https://github.com/MetrolistGroup/Metrolist/releases">Official releases</a><a class="alt" href="index.html">More posts</a></div></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+</body></html>
