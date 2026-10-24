@@ -132,7 +132,7 @@ def apply(out):
    credit='<p class="src media-credit">'+escape(notice).replace('{url}','<a href="'+escape(nurl,quote=True)+'">'+escape(nurl)+'</a>')+'</p>'
   else:
    credit='<p class="src media-credit">'+label+' hosted by its publisher. <a href="'+escape(source,quote=True)+'">Official source</a>. Independent guide, not affiliated or sponsored. Artwork and trademarks belong to their owners.</p>'
-  if slug == "ikea-kreativ-ai-room-design-app-india-free-guide":
+  if slug in ["ikea-kreativ-ai-room-design-app-india-free-guide", "indus-by-sarvam-indian-language-ai-chat-app-free-plan-guide", "intrinsic-core-open-source-robotics-ros-setup-guide"]:
    credit=credit.replace('class="src media-credit"', 'class="media-credit" style="color:var(--muted);font-size:.95rem;line-height:1.6"')
   text=text.replace(img,img+credit,1)
   video=x.get('embed_url','');watch=x.get('video_url','')
