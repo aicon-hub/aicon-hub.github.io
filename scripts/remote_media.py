@@ -95,7 +95,7 @@ def apply(out):
  records.get("kernelai-free-offline-ai-phone-app-android-ios-no-account-guide", {}).update(poster_url=None, under_chip_only=True)
  records.setdefault("kerala-whatsapp-services-reported-aicon-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.setdefault("kerala-waqf-board-loan-scholarship-2026-rs-5000-monthly-professional-students-apply-by-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
- records.get("kerala-psc-130-150-2026-october7-deadline-guide", "kerala-waqf-board-loan-scholarship-2026-rs-5000-monthly-professional-students-apply-by-31-october-guide", "kerala-whatsapp-services-reported-aicon-test-guide", "kernelai-free-offline-ai-phone-app-android-ios-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
+ records.get("kerala-psc-130-150-2026-october7-deadline-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-oec-post-matric-scholarship-outside-state", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-minority-itc-fee-reimbursement-2026-27-rs-10000-20000-apply-by-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-margadeepam-scholarship-2026-27-class-1-8-minority-rs-1500-apply-by-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
