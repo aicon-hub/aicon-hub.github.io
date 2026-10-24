@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-metrolist-youtube-music-client-2026-10-24",
   "article_url": "https://aicon-hub.github.io/posts/metrolist-youtube-music-client.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40046705060",
-  "message_ids": []
+  "message_ids": [
+    460
+  ]
 }
