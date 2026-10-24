@@ -82,6 +82,7 @@ def apply(out):
  records.get("cua-spaces-ai-desktop-sandbox-guide", {}).update(poster_url="https://cua.ai/_spaces/img/og/spaces-card.jpg", source_page="https://cua.ai/pricing", width=1200, height=630)
  records.pop('cyber-safe-yuva-reel-contest-2026-i4c-mha-goodies-ends-15-november-guide', None) # Owner excludes national-emblem media.
  records.pop('cyber-security-awareness-quiz-2026-dsci-mygov-4000-winners-guide', None) # Owner excludes national-emblem media.
+ records.pop('common-fellowships-portal-phd-postdoc-fellowships-eligibility-calculator-guide', None) # MST logo carries the national emblem; text fallback.
  records.get("dazzle-photo-ai-assistant-india-privacy-guide", {}).update(poster_url="https://dazzle.ai/wp-content/uploads/2026/09/dazzle-feature-get-it-done.webp", source_page="https://dazzle.ai/dazzle/", width=883, height=1690)
  records.get("deepseek-harness-plugins-preview-safety-cost-guide", {}).update(poster_url="https://www.deepseek.com/harness/images/feat-plugins-en.webp", source_page="https://www.deepseek.com/en/harness/", width=2590, height=1619)
  records.get("descript-ai-video-audio-editing-guide", {}).update(poster_url="https://mintcdn.com/descript-5bf56f3f/3j47b3XLm5VXH3bx/images/external/descript-39190246200077-fb3318cc6b.jpg?fit=max&auto=format&n=3j47b3XLm5VXH3bx&q=85&s=ca56cbc2369a91e853794a18dbd6ff94", source_page="https://help.descript.com/getting-started/get-started-with-descript", width=2000, height=1164)
