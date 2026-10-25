@@ -173,7 +173,7 @@ def seo_pass():
  t=t.replace('<a href="#posts">Latest guides</a><a href="#checks">How we check</a>','<a href="#posts">Latest guides</a><a href="#checks">How we check</a><a href="posts/about-aicon.html">About</a><a href="#contact">Contact</a>',1)
  page.write_text(t)
  # sitemap: every built page
- urls=[base,base+'posts/',base+'funded/']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html']
+ urls=[base,base+'posts/',base+'funded/']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html' and 'http-equiv="refresh"' not in f.read_text()]
  today=date.today().isoformat()
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
 
