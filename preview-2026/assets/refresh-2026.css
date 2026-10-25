@@ -134,3 +134,23 @@ main.wrap>section.hero h1{letter-spacing:-.035em}
 .home-redesign .eyebrow{border:0!important;background:transparent!important;color:var(--brand-orange)!important;padding:0}
 [data-theme=light] .home-redesign .eyebrow{color:var(--brand-link)!important}
 .home-redesign .hero-section h1 .dot{color:var(--brand-orange)}
+
+/* Sticky header on home too: beat theme.css .home-redesign scoping, and keep it compact on phones */
+.home-redesign .site-header{position:sticky;top:0;z-index:60;background:var(--page, var(--bg));border-bottom:1px solid color-mix(in srgb, var(--line, var(--mute)) 70%, transparent)}
+@media(max-width:640px){
+  .home-redesign .site-header nav,header.top nav{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;width:100%;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .home-redesign .site-header nav::-webkit-scrollbar,header.top nav::-webkit-scrollbar{display:none}
+}
+/* Official preview media on cards */
+.home-redesign .guide-card .preview-link{display:block;margin:-4px 0 14px}
+.home-redesign .guide-card .guide-preview{border-radius:12px}
+#postlist li .archive-preview{border-radius:8px}
+/* Compact mobile header: publisher grid keeps brand+toggle on row 1, nav becomes one scrollable row on row 2 */
+@media(max-width:640px){
+  .home-redesign .header-row nav{display:flex;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;grid-column:1/5;grid-row:2;width:100%;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .home-redesign .header-row nav::-webkit-scrollbar{display:none}
+  .home-redesign .header-row nav a{white-space:nowrap}
+}
+@media(max-width:640px){
+  .home-redesign .header-row #theme-toggle{position:absolute;top:14px;right:20px;margin:0;min-height:0;padding:8px 12px}
+}
