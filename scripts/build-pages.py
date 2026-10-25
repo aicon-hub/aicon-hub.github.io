@@ -211,10 +211,14 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
+ # Preview-only redesign: decode .png.b64 under preview-2026 (noindex, not in sitemap).
+ import base64 as _b64
+ for _f in (OUT/'preview-2026').rglob('*.png.b64'):
+  _f.with_suffix('').write_bytes(_b64.b64decode(_f.read_text()));_f.unlink()
  for draft in ['_template.html','article-template.html']:
   (OUT/'posts'/draft).unlink(missing_ok=True)
  # Standalone AGPL avatar guide: decode corresponding source, load independent host.
@@ -256,4 +260,3 @@ def main():
  preserve_search_console_verification()
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
-
