@@ -1,0 +1,1 @@
+/* Event cards are rendered during the build. No duplicate archive fetch. */
