@@ -29,3 +29,46 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+
+/* Explicit full-library access: open the collapsed archive details into a visible button + search. */
+(function(){
+ function open(){
+  var d=document.querySelector('details.archive');
+  if(!d)return;
+  var label=(d.querySelector('summary')||{}).textContent||'Browse all guides';
+  var form=d.querySelector('form');
+  var box=document.createElement('div');box.className='archive-open';
+  var a=document.createElement('a');a.className='button outline browse-all';a.href='posts/index.html';
+  a.textContent=label.replace(/\s+/g,' ').trim()+' \u2192';
+  box.appendChild(a);
+  if(form){form.classList.add('archive-search');box.appendChild(form);}
+  d.parentNode.replaceChild(box,d);
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',open);else open();
+})();
+
+/* Motion layer: header elevation + transform-only scroll reveals (text opacity never gated). */
+(function(){
+ function init(){
+  var h=document.querySelector('.site-header,header.top');
+  if(h){
+   var tick=false;
+   var onscroll=function(){
+    if(tick)return;tick=true;
+    requestAnimationFrame(function(){h.classList.toggle('r26-scrolled',window.scrollY>12);tick=false;});
+   };
+   window.addEventListener('scroll',onscroll,{passive:true});onscroll();
+  }
+  if(!('IntersectionObserver' in window))return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var els=document.querySelectorAll('.home-redesign .guide-card,.home-redesign .card.tile,.home-redesign .event-guide,.home-redesign .checks-grid>div,.home-redesign .deadline');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){
+   entries.forEach(function(en){
+    if(en.isIntersecting){en.target.classList.add('r26-in');io.unobserve(en.target);}
+   });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.05});
+  els.forEach(function(el,i){el.setAttribute('data-r26','');el.style.transitionDelay=Math.min(i%6*40,200)+'ms';io.observe(el);});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
