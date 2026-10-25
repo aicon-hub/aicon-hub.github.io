@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>BitChord: a free YouTube Music client for Android, with lyrics | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/bitchord-free-open-source-youtube-music-client-android-lyrics-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-25" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "BitChord: a free YouTube Music client for Android, with lyrics", "description": "BitChord is a free, open-source Android client for YouTube Music with word-synced lyrics and optional Google sign-in. Lossless needs a separate source. Sources checked 25 October 2026.", "datePublished": "2026-10-25", "mainEntityOfPage": "https://aicon-hub.github.io/posts/bitchord-free-open-source-youtube-music-client-android-lyrics-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="BitChord is a free, open-source Android client for YouTube Music with word-synced lyrics and optional Google sign-in. Lossless needs a separate source. Sources checked 25 October 2026." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="BitChord: a free YouTube Music client for Android, with lyrics" property="og:title"/>
+<meta content="BitChord is a free, open-source Android client for YouTube Music with word-synced lyrics and optional Google sign-in. Lossless needs a separate source. Sources checked 25 October 2026." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/bitchord-free-open-source-youtube-music-client-android-lyrics-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/bitchord-free-open-source-youtube-music-client-android-lyrics-guide-banner.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/bitchord-free-open-source-youtube-music-client-android-lyrics-guide-banner.png" name="twitter:image"/>
+<meta content="BitChord: a free YouTube Music client for Android, with lyrics" name="twitter:title"/>
+<meta content="BitChord is a free, open-source Android client for YouTube Music with word-synced lyrics and optional Google sign-in. Lossless needs a separate source. Sources checked 25 October 2026." name="twitter:description"/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / BitChord</p>
+<article class="post"><span class="chip">FREE APP</span><figure><img alt="BitChord app icon" height="180" src="../assets/howto/bitchord-free-open-source-youtube-music-client-android-lyrics-guide-logo.png" width="180"/><figcaption>BitChord app icon, from the project repository.</figcaption></figure><h1>BitChord: a free YouTube Music client for Android, with lyrics</h1><p class="meta">By AiCoN | Published 25 October 2026 | Sources checked 25 October 2026</p><p class="lead">BitChord is a free, open-source music player for Android that plays YouTube Music with an Apple Music-style look and word-by-word synced lyrics. AiCoN tried basic playback and synced lyrics. Sign-in and advanced features were not independently verified. This guide reports what BitChord's own repository says, and one claim on its feature list that needs reading carefully: "lossless".</p><h2>Quick facts</h2>
+<ul>
+<li>BitChord is free and open source under the GPL-3.0 licence. It is built by an independent developer and is not affiliated with Google or YouTube Music, per its README disclaimer.</li>
+<li>It is not on Google Play. The README says to download the signed APK from the GitHub Releases page. On 25 October 2026 the latest release was v1.8.1, published 19 October 2026.</li>
+<li>Google sign-in is an option. Per the README it is "for personalized content", and BitChord's source shows the login happens on accounts.google.com inside the app. We did not test sign-in ourselves.</li>
+<li>"Hi-Res lossless audio" on the README means FLAC/ALAC "from a configured module source, with YouTube Music as fallback". Normal YouTube Music playback in BitChord is not lossless, and we found no module source shipped by default.</li>
+<li>Word-synced lyrics come from several providers listed in the README, so coverage depends on the song.</li>
+<li>BitChord is not a Google product, and YouTube's terms restrict using the service through unapproved means. Whether an unofficial client is a risk for your account is your call. See "Before you install".</li>
+<li>Android only for the phone app (minimum Android 8.0, API 26). The project also lists a TV app and desktop builds.</li>
+</ul>
+<h2>Why use it over the YouTube Music app</h2>
+<p>Three things stand out on the feature list. In our basic trial, playback and synced lyrics worked and the interface looked as described. The interface follows Apple Music, with artwork-driven colours and a frosted-glass bar. Lyrics highlight word by word. The settings go further than the stock app, with separate quality limits for Wi-Fi and mobile data, crossfade from 0 to 12 seconds, a sleep timer, playback speed and a "stats for nerds" panel showing codec and sample rate.</p>
+<figure><img alt="BitChord banner showing synced lyrics on a phone" height="720" src="../assets/howto/bitchord-free-open-source-youtube-music-client-android-lyrics-guide-banner.png" width="1280"/><figcaption>BitChord's own banner, from its repository. Not a screenshot from our test.</figcaption></figure>
+<p>An Android Police review published 15 October 2026 describes the same app as usable "with or without a Google account", and the reviewer moved over from YouTube Music for the ad-free interface. That is the reviewer's experience. BitChord's README itself does not promise ad blocking and says it "does not guarantee permanent bypasses".</p>
+<h2>What "lossless" means here</h2>
+<p>This is the part to read twice. YouTube Music does not stream lossless audio, and BitChord does not change that. The README's wording is that lossless is "FLAC/ALAC from a configured module source, with YouTube Music as fallback". A module source is a server you add yourself in settings. BitChord's code seeds YouTube as the only built-in source; a JioSaavn source is built in but switched off by default, and the code comment says matches there can pick the wrong recording.</p>
+<p>So installing BitChord and signing in gives you YouTube Music audio. Lossless is possible only if you add a source that serves it, and that source is outside BitChord's control. We did not test any module source. If you do add one, check that it is legal where you live.</p>
+<h2>Sign-in and your data</h2>
+<p>Per BitChord's source code, the Google login is a page loaded inside the app, and the resulting session is kept on the phone. The code stores it in Android's encrypted preferences, and falls back to a plain-text preferences file on devices where the Android Keystore cannot be used. The app's backup rules exclude both files from Android cloud backup and device transfer. This is what the code says. We did not audit the released APK, and we could not confirm that the APK matches the published source.</p>
+<p>Two practical points. Signing out in BitChord also disconnects its Discord and Spotify links, per the v1.8.1 notes. And because it is an unofficial client, you may prefer a secondary Google account.</p>
+<h2>Before you install</h2>
+<ul>
+<li>Download only from the official Releases page linked below. Sideloading means Android asks you to allow "Install unknown apps" for the browser or file manager you use.</li>
+<li>Pick the APK for your phone. Most recent phones use the arm64-v8a build (about 68 MB for v1.8.1). The universal APK is about 171 MB.</li>
+<li>The README disclaimer puts responsibility for following YouTube's terms on you. YouTube's terms (effective 15 December 2023) bar accessing the service by automated means without written permission, and BitChord's disclaimer says it is for "personal research, educational, and fair-use purposes".</li>
+<li>Open-source code can be read by anyone, but that does not prove any one APK is safe. We did not scan or run-test the release file.</li>
+</ul>
+<h2>What we did not do</h2>
+<p>This is mainly a source-and-documents guide. Our trial covered basic playback and synced lyrics only. We did not independently test sign-in, playlist or liked-song access, offline downloads, audio quality or any lossless source, and we did not measure battery use. Distribution: BitChord is offered as a direct download from its GitHub Releases page. We make no claim about availability beyond that.</p>
+<p>Sources checked 25 October 2026: the BitChord repository (README, source code, release notes), YouTube's terms, and Android Police.</p>
+<ul>
+<li><a href="https://github.com/kushagrasinghx/BitChord" rel="noopener" target="_blank">BitChord on GitHub (README and source)</a></li>
+<li><a href="https://github.com/kushagrasinghx/BitChord/releases" rel="noopener" target="_blank">BitChord releases (official download)</a></li>
+<li><a href="https://www.androidpolice.com/open-source-youtube-music-alternative-bitchord-features-comparison/" rel="noopener" target="_blank">Android Police review, 15 October 2026</a></li>
+<li><a href="https://www.youtube.com/t/terms" rel="noopener" target="_blank">YouTube Terms of Service</a></li>
+<li><a href="metrolist-youtube-music-client.html">Related on AiCoN: Metrolist, another YouTube Music client</a></li>
+</ul>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
