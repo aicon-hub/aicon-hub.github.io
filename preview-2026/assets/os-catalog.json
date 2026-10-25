@@ -1,0 +1,1104 @@
+[
+  {
+    "name": "Ubuntu",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Debian",
+    "status": "official",
+    "summary": "The most popular desktop Linux. Big community, easy to find help.",
+    "specs": [
+      "GNOME desktop",
+      "Snap app store, plus deb packages",
+      "LTS release every 2 years, 5 years of updates"
+    ],
+    "advantages": [
+      "Very beginner friendly installer",
+      "Huge software and driver support",
+      "Most guides online assume Ubuntu"
+    ],
+    "disadvantages": [
+      "Snap apps can feel slow to start",
+      "Heavier than lightweight distros",
+      "Some dislike Canonical's choices"
+    ],
+    "requirements": [
+      "2 GHz dual-core processor or better",
+      "6 GB RAM",
+      "25 GB disk space"
+    ],
+    "source": "https://ubuntu.com/download/desktop"
+  },
+  {
+    "name": "Linux Mint",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu / Debian",
+    "status": "official",
+    "summary": "Familiar Windows-like desktop. Calm, stable and polished.",
+    "specs": [
+      "Cinnamon desktop (also MATE, Xfce)",
+      "Based on Ubuntu LTS",
+      "Update manager with snapshots"
+    ],
+    "advantages": [
+      "Traditional menu layout, easy for Windows users",
+      "No Snap store forced on you",
+      "Very stable release cycle"
+    ],
+    "disadvantages": [
+      "New features arrive slowly",
+      "Cinnamon uses more RAM than Xfce",
+      "Smaller team than Ubuntu"
+    ],
+    "requirements": [
+      "2 GB RAM (4 GB recommended)",
+      "20 GB disk (100 GB recommended)",
+      "64-bit processor"
+    ],
+    "source": "https://linuxmint.com/download.php"
+  },
+  {
+    "name": "Zorin OS",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu",
+    "status": "official",
+    "summary": "Made for people leaving Windows. Clean design, runs on old PCs.",
+    "specs": [
+      "Custom GNOME desktop",
+      "Windows-like, macOS-like layouts",
+      "Pro layout pack paid, core is free"
+    ],
+    "advantages": [
+      "Very low hardware needs for the Lite edition",
+      "Simple installer with NVIDIA driver option",
+      "Polished look out of the box"
+    ],
+    "disadvantages": [
+      "Based on older Ubuntu LTS",
+      "Some layouts locked behind paid Pro",
+      "Upgrades between versions can be slow to arrive"
+    ],
+    "requirements": [
+      "1 GHz dual-core processor",
+      "2 GB RAM",
+      "15 GB disk (Core edition)"
+    ],
+    "source": "https://zorin.com/os/"
+  },
+  {
+    "name": "elementary OS",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu",
+    "status": "official",
+    "summary": "Beautiful, simple desktop inspired by macOS. Opinionated and tidy.",
+    "specs": [
+      "Pantheon desktop",
+      "Curated AppCenter apps",
+      "Based on Ubuntu LTS"
+    ],
+    "advantages": [
+      "Consistent, distraction-free design",
+      "Good parental controls",
+      "Curated apps reviewed for quality"
+    ],
+    "disadvantages": [
+      "Fewer apps in AppCenter",
+      "Less customisable than KDE or Cinnamon",
+      "Pay-what-you-want model can confuse downloads"
+    ],
+    "requirements": [
+      "Recent Intel i3 or comparable dual-core 64-bit CPU",
+      "4 GB RAM",
+      "Solid state drive with 15 GB free"
+    ],
+    "source": "https://elementary.io/"
+  },
+  {
+    "name": "Pop!_OS",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu",
+    "status": "official",
+    "summary": "Developer and gaming friendly, from computer maker System76.",
+    "specs": [
+      "COSMIC desktop project from System76; older releases use GNOME",
+      "Auto-tiling window option",
+      "Separate NVIDIA driver image"
+    ],
+    "advantages": [
+      "Excellent NVIDIA support out of the box",
+      "Great for gaming and ML work",
+      "Fast, keyboard friendly workflow"
+    ],
+    "disadvantages": [
+      "Desktop and features depend on the release you choose",
+      "Tied to System76's release pace",
+      "Fewer default apps than Mint"
+    ],
+    "requirements": [
+      "64-bit processor",
+      "4 GB RAM recommended",
+      "16 GB storage"
+    ],
+    "source": "https://pop.system76.com/"
+  },
+  {
+    "name": "Kubuntu",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu",
+    "status": "official",
+    "summary": "Ubuntu with the KDE Plasma desktop. Pretty and very customisable.",
+    "specs": [
+      "KDE Plasma desktop",
+      "Qt/KDE apps by default",
+      "Same Ubuntu base and repos"
+    ],
+    "advantages": [
+      "Familiar start-menu style",
+      "Extremely customisable",
+      "Full Ubuntu software support"
+    ],
+    "disadvantages": [
+      "Settings can overwhelm new users",
+      "KDE apps look different from GNOME ones",
+      "Slightly heavier than Xfce flavours"
+    ],
+    "requirements": [
+      "2 GHz dual-core processor",
+      "4 GB RAM recommended",
+      "25 GB disk space"
+    ],
+    "source": "https://kubuntu.org/getkubuntu/"
+  },
+  {
+    "name": "Xubuntu",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu",
+    "status": "official",
+    "summary": "Ubuntu with the light Xfce desktop. Good balance of looks and speed.",
+    "specs": [
+      "Xfce desktop",
+      "Traditional panel and menu",
+      "Ubuntu LTS base"
+    ],
+    "advantages": [
+      "Lighter than GNOME and KDE",
+      "Stable, rarely changes in surprising ways",
+      "Full Ubuntu software support"
+    ],
+    "disadvantages": [
+      "Looks a little dated by default",
+      "Fewer touch and gesture features",
+      "Smaller flavour team"
+    ],
+    "requirements": [
+      "1.5 GHz dual-core or better",
+      "2 GB RAM (4 GB recommended)",
+      "20 GB disk space"
+    ],
+    "source": "https://xubuntu.org/download/"
+  },
+  {
+    "name": "Lubuntu",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu",
+    "status": "official",
+    "summary": "The light Ubuntu flavour, using LXQt. Built for older hardware.",
+    "specs": [
+      "LXQt desktop",
+      "Minimal default apps",
+      "Ubuntu base and repos"
+    ],
+    "advantages": [
+      "Runs well on old, low-RAM PCs",
+      "Fast boot and snappy feel",
+      "Easy access to all Ubuntu software"
+    ],
+    "disadvantages": [
+      "Plain default look",
+      "Fewer built-in conveniences",
+      "LXQt has fewer themes than KDE"
+    ],
+    "requirements": [
+      "1 GHz processor or better",
+      "1 GB RAM (2 GB recommended)",
+      "10 GB disk space"
+    ],
+    "source": "https://lubuntu.me/downloads/"
+  },
+  {
+    "name": "Linux Lite",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Ubuntu LTS",
+    "status": "official",
+    "summary": "Aimed squarely at Windows switchers with older PCs.",
+    "specs": [
+      "Xfce desktop",
+      "Windows-style layout and naming",
+      "Built-in welcome and tweak tools"
+    ],
+    "advantages": [
+      "Very light on resources",
+      "Names things in Windows terms",
+      "Friendly manual and support forum"
+    ],
+    "disadvantages": [
+      "Small development team",
+      "Based on LTS, so apps age",
+      "Fewer visual effects"
+    ],
+    "requirements": [
+      "1.5 GHz processor",
+      "1 GB RAM (2 GB recommended)",
+      "20 GB disk space"
+    ],
+    "source": "https://www.linuxliteos.com/download.php"
+  },
+  {
+    "name": "MX Linux",
+    "type": "linux",
+    "level": "beginner",
+    "category": null,
+    "family": "Debian Stable",
+    "status": "official",
+    "summary": "Popular, practical Debian-based desktop with handy MX tools.",
+    "specs": [
+      "Xfce default (KDE, Fluxbox options)",
+      "MX Tools control panels",
+      "systemd present but not required"
+    ],
+    "advantages": [
+      "Very stable Debian base",
+      "Excellent live USB with persistence",
+      "Good middle ground of light and pretty"
+    ],
+    "disadvantages": [
+      "Package versions can be old",
+      "Less polish than Mint or Zorin",
+      "Smaller documentation in Indian languages"
+    ],
+    "requirements": [
+      "1 GHz processor or better",
+      "2 GB RAM recommended",
+      "20 GB disk space"
+    ],
+    "source": "https://mxlinux.org/download-links/"
+  },
+  {
+    "name": "Fedora Workstation",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "Fedora / Red Hat",
+    "status": "official",
+    "summary": "Fresh, near-latest software on a clean GNOME desktop.",
+    "specs": [
+      "GNOME desktop, close to upstream",
+      "New release about every 6 months",
+      "Flatpak-first app model"
+    ],
+    "advantages": [
+      "New kernels and drivers early",
+      "Very clean GNOME experience",
+      "Strong security defaults (SELinux)"
+    ],
+    "disadvantages": [
+      "Needs a system upgrade about every year",
+      "Some media codecs need extra setup",
+      "Not as beginner-handholding as Mint"
+    ],
+    "requirements": [
+      "2 GHz dual-core processor or better",
+      "2 GB RAM plus memory for your apps",
+      "20 GB disk space recommended"
+    ],
+    "source": "https://fedoraproject.org/workstation/download"
+  },
+  {
+    "name": "Debian",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "Independent (Debian)",
+    "status": "official",
+    "summary": "The rock-solid base of Ubuntu and many others. Slow, steady, free.",
+    "specs": [
+      "Choice of GNOME, KDE, Xfce and more",
+      "Stable release about every 2 years",
+      "Huge package archive"
+    ],
+    "advantages": [
+      "Legendary stability",
+      "Runs on many CPU architectures",
+      "Strict free-software principles"
+    ],
+    "disadvantages": [
+      "Installer plainer than Mint or Ubuntu",
+      "Stable means older apps",
+      "Check firmware and hardware support before installing"
+    ],
+    "requirements": [
+      "1 GHz Pentium 4 or better",
+      "1 GB RAM (2 GB recommended) with desktop",
+      "10 GB disk space"
+    ],
+    "source": "https://www.debian.org/distrib/"
+  },
+  {
+    "name": "openSUSE Tumbleweed",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "SUSE",
+    "status": "official",
+    "summary": "Tested rolling release. Always current, rarely breaks.",
+    "specs": [
+      "Rolling release with openQA testing",
+      "KDE Plasma or GNOME",
+      "YaST control centre, Snapper rollbacks"
+    ],
+    "advantages": [
+      "Fresh packages with automated testing",
+      "Easy rollback after bad updates",
+      "Excellent system administration tools"
+    ],
+    "disadvantages": [
+      "Big, frequent downloads",
+      "YaST can feel unusual to Ubuntu users",
+      "Smaller community than Fedora"
+    ],
+    "requirements": [
+      "2 GHz dual-core processor",
+      "2 GB RAM (4 GB recommended)",
+      "40 GB disk with snapshots recommended"
+    ],
+    "source": "https://get.opensuse.org/tumbleweed/"
+  },
+  {
+    "name": "Manjaro",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "Arch",
+    "status": "official",
+    "summary": "Arch Linux made easier, with a friendly installer and tools.",
+    "specs": [
+      "KDE, GNOME or Xfce editions",
+      "Rolling release, delayed-testing repos",
+      "Easy access to the AUR"
+    ],
+    "advantages": [
+      "Arch software freshness without the manual install",
+      "Good hardware detection",
+      "One-click kernels and drivers"
+    ],
+    "disadvantages": [
+      "Holds packages back, so not pure Arch",
+      "AUR can still break things",
+      "Check release notes before major updates"
+    ],
+    "requirements": [
+      "2 GHz dual-core processor",
+      "2 GB RAM (4 GB recommended)",
+      "30 GB disk space"
+    ],
+    "source": "https://manjaro.org/download/"
+  },
+  {
+    "name": "EndeavourOS",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "Arch",
+    "status": "official",
+    "summary": "A friendly on-ramp to real Arch. Terminal-first but welcoming.",
+    "specs": [
+      "Calamares installer",
+      "Many desktop choices at install time",
+      "Very close to upstream Arch"
+    ],
+    "advantages": [
+      "Near-pure Arch experience",
+      "Helpful community forum",
+      "You learn how your system works"
+    ],
+    "disadvantages": [
+      "Expect occasional manual fixes",
+      "Terminal use is normal here",
+      "Not ideal as a very first distro"
+    ],
+    "requirements": [
+      "64-bit processor",
+      "2 GB RAM (4 GB recommended)",
+      "20 GB disk space"
+    ],
+    "source": "https://endeavouros.com/"
+  },
+  {
+    "name": "KDE neon",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "Ubuntu LTS + KDE",
+    "status": "official",
+    "summary": "Latest KDE Plasma on a stable Ubuntu LTS base.",
+    "specs": [
+      "Newest KDE Plasma and apps",
+      "Ubuntu LTS underneath",
+      "KDE's own showcase distro"
+    ],
+    "advantages": [
+      "First access to new KDE features",
+      "Stable base, fresh desktop",
+      "Clean, minimal default install"
+    ],
+    "disadvantages": [
+      "Only for KDE fans",
+      "Non-KDE apps come from older LTS repos",
+      "Some rough edges in early KDE releases"
+    ],
+    "requirements": [
+      "2 GHz dual-core processor",
+      "4 GB RAM recommended",
+      "25 GB disk space"
+    ],
+    "source": "https://neon.kde.org/download"
+  },
+  {
+    "name": "Garuda Linux",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "Arch",
+    "status": "official",
+    "summary": "Gaming-focused Arch with snapshots, Zen kernel and bold themes.",
+    "specs": [
+      "KDE Plasma with heavy theming",
+      "Btrfs with automatic Snapper snapshots",
+      "ZEN kernel and gaming tools preinstalled"
+    ],
+    "advantages": [
+      "Gaming stack ready out of the box",
+      "Rollback if an update breaks",
+      "Very active development"
+    ],
+    "disadvantages": [
+      "Flashy look not for everyone",
+      "Heavier RAM use than plain Arch",
+      "Rolling release maintenance needed"
+    ],
+    "requirements": [
+      "64-bit processor",
+      "4 GB RAM recommended",
+      "30 GB disk space (Btrfs snapshots)"
+    ],
+    "source": "https://garudalinux.org/downloads"
+  },
+  {
+    "name": "Solus",
+    "type": "linux",
+    "level": "intermediate",
+    "category": null,
+    "family": "Independent",
+    "status": "official",
+    "summary": "Independent, curated rolling desktop. Simple and self-contained.",
+    "specs": [
+      "Budgie desktop (also KDE, GNOME, Xfce)",
+      "Curated rolling release",
+      "Own eopkg package manager"
+    ],
+    "advantages": [
+      "Cohesive, desktop-focused design",
+      "One curated repo, less hunting",
+      "Calm and predictable updates"
+    ],
+    "disadvantages": [
+      "Smaller package library",
+      "Independent, so less third-party help",
+      "Small project: check current release and support information"
+    ],
+    "requirements": [
+      "2 GHz dual-core processor",
+      "4 GB RAM recommended",
+      "20 GB disk space"
+    ],
+    "source": "https://getsol.us/download/"
+  },
+  {
+    "name": "Arch Linux",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Independent (Arch)",
+    "status": "official",
+    "summary": "Build-it-yourself rolling distro. You choose every piece.",
+    "specs": [
+      "Rolling release, always current",
+      "pacman package manager",
+      "Arch Wiki and AUR ecosystem"
+    ],
+    "advantages": [
+      "Total control over your system",
+      "Best documentation in Linux (Arch Wiki)",
+      "Newest software first"
+    ],
+    "disadvantages": [
+      "Manual install and maintenance",
+      "Things can break if you skip the news",
+      "Time cost to set up well"
+    ],
+    "requirements": [
+      "64-bit processor",
+      "512 MB RAM minimum (2 GB+ realistic)",
+      "2 GB disk minimum, 20 GB+ for desktop use"
+    ],
+    "source": "https://archlinux.org/download/"
+  },
+  {
+    "name": "Gentoo",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Independent",
+    "status": "official",
+    "summary": "Source-based distro compiled for your exact machine.",
+    "specs": [
+      "Portage package manager (source builds)",
+      "USE flags tune features system-wide",
+      "OpenRC or systemd, your choice"
+    ],
+    "advantages": [
+      "Fine control over build options and system features",
+      "Learn Linux deeply by building it",
+      "Extremely flexible"
+    ],
+    "disadvantages": [
+      "Compiling takes hours",
+      "Steep learning curve",
+      "Easy to misconfigure"
+    ],
+    "requirements": [
+      "64-bit or 32-bit x86 and more",
+      "1 GB RAM minimum (more for compiling)",
+      "10 GB+ disk space"
+    ],
+    "source": "https://www.gentoo.org/downloads/"
+  },
+  {
+    "name": "Void Linux",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Independent",
+    "status": "official",
+    "summary": "Independent, fast, systemd-free. Uses runit and xbps.",
+    "specs": [
+      "runit init system",
+      "xbps package manager",
+      "glibc or musl libc variants"
+    ],
+    "advantages": [
+      "Very fast boot and low overhead",
+      "Clean, simple design",
+      "Rolling but stable in practice"
+    ],
+    "disadvantages": [
+      "Smaller repos than Arch or Debian",
+      "musl variant breaks some proprietary apps",
+      "Small team and community"
+    ],
+    "requirements": [
+      "64-bit or 32-bit x86, ARM",
+      "512 MB RAM minimum",
+      "2 GB disk minimum, more for a desktop"
+    ],
+    "source": "https://voidlinux.org/download/"
+  },
+  {
+    "name": "NixOS",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Independent",
+    "status": "official",
+    "summary": "Declarative Linux: your whole system defined in one config file.",
+    "specs": [
+      "Nix package manager",
+      "Reproducible, atomic upgrades",
+      "Instant rollbacks by design"
+    ],
+    "advantages": [
+      "System config as code",
+      "Broken update? Boot the previous one",
+      "Great for replicating setups"
+    ],
+    "disadvantages": [
+      "New language and concepts to learn",
+      "Some software needs extra packaging work",
+      "Docs are improving but uneven"
+    ],
+    "requirements": [
+      "64-bit processor",
+      "2 GB RAM (4 GB recommended)",
+      "30 GB disk recommended (generations add up)"
+    ],
+    "source": "https://nixos.org/download/"
+  },
+  {
+    "name": "Slackware",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Independent",
+    "status": "official",
+    "summary": "The oldest surviving distro. Unix-like, minimal magic.",
+    "specs": [
+      "BSD-style init scripts",
+      "No dependency resolution by default",
+      "Releases only when ready"
+    ],
+    "advantages": [
+      "Extremely stable and simple under the hood",
+      "Teaches classic Unix skills",
+      "Changes very little over time"
+    ],
+    "disadvantages": [
+      "Manual dependency handling",
+      "Sparse release cadence",
+      "Dated installer and tools"
+    ],
+    "requirements": [
+      "486 processor or better (x86)",
+      "512 MB RAM (2 GB for desktop)",
+      "10 GB disk space"
+    ],
+    "source": "http://www.slackware.com/getslack/"
+  },
+  {
+    "name": "Alpine Linux",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Independent",
+    "status": "official",
+    "summary": "Tiny, security-focused distro built on musl and busybox.",
+    "specs": [
+      "musl libc and busybox core",
+      "apk package manager",
+      "Minimal install around 130 MB"
+    ],
+    "advantages": [
+      "Extremely small and fast",
+      "Popular for containers and servers",
+      "Reduced attack surface"
+    ],
+    "disadvantages": [
+      "musl breaks some glibc-only software",
+      "Desktop use needs effort",
+      "Aimed at experienced users"
+    ],
+    "requirements": [
+      "x86, ARM and more",
+      "128 MB RAM for base, more for desktop",
+      "Around 130 MB disk for minimal install"
+    ],
+    "source": "https://alpinelinux.org/downloads/"
+  },
+  {
+    "name": "antiX",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Debian Stable",
+    "status": "official",
+    "summary": "systemd-free Debian for very old or very small hardware.",
+    "specs": [
+      "IceWM and other light window managers",
+      "No systemd (runit or sysvinit)",
+      "Runs live from USB with persistence"
+    ],
+    "advantages": [
+      "Breathes life into ancient PCs",
+      "Full Debian package access",
+      "Fast even on 20-year-old hardware"
+    ],
+    "disadvantages": [
+      "Utilitarian look",
+      "Window managers, not full desktops",
+      "Assumes comfort with light config"
+    ],
+    "requirements": [
+      "PIII-class processor or better",
+      "256 MB RAM minimum",
+      "5 GB disk space"
+    ],
+    "source": "https://antixlinux.com/download/"
+  },
+  {
+    "name": "Qubes OS",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Fedora / Xen",
+    "status": "official",
+    "summary": "Security by isolation: every app runs in its own virtual machine.",
+    "specs": [
+      "Xen hypervisor compartments",
+      "Fedora, Debian and Whonix templates",
+      "Colour-coded security domains"
+    ],
+    "advantages": [
+      "Strong compartment-based isolation",
+      "Separate qubes help limit the effect of a compromised app",
+      "Respected by security researchers"
+    ],
+    "disadvantages": [
+      "Needs strong hardware with VT-x/VT-d",
+      "Everyday tasks take more steps",
+      "Gaming and GPU work basically no"
+    ],
+    "requirements": [
+      "64-bit Intel/AMD with VT-x + EPT or AMD-V + RVI",
+      "16 GB RAM recommended (8 GB minimum)",
+      "128 GB SSD recommended"
+    ],
+    "source": "https://www.qubes-os.org/downloads/"
+  },
+  {
+    "name": "Kali Linux",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Debian",
+    "status": "official",
+    "summary": "The standard penetration-testing toolkit. Not a daily driver.",
+    "specs": [
+      "600+ security tools preinstalled",
+      "Debian testing base",
+      "Live, installed and cloud images"
+    ],
+    "advantages": [
+      "Industry-standard for security work",
+      "Documented and widely taught",
+      "Runs from USB for assessments"
+    ],
+    "disadvantages": [
+      "Not meant as a main desktop OS",
+      "Tools are dangerous if misused",
+      "Root-first habits are bad for daily use"
+    ],
+    "requirements": [
+      "64-bit processor",
+      "2 GB RAM (4 GB recommended)",
+      "20 GB disk space"
+    ],
+    "source": "https://www.kali.org/get-kali/"
+  },
+  {
+    "name": "Tails",
+    "type": "linux",
+    "level": "advanced",
+    "category": null,
+    "family": "Debian",
+    "status": "official",
+    "summary": "Live OS designed for privacy, with Tor networking and optional encrypted storage.",
+    "specs": [
+      "Runs live from USB",
+      "All traffic forced through Tor",
+      "Persistent encrypted storage option"
+    ],
+    "advantages": [
+      "Tor networking and privacy-focused defaults",
+      "Amnesic design, with optional persistent storage",
+      "Trusted by journalists and activists"
+    ],
+    "disadvantages": [
+      "Slow due to Tor routing",
+      "Some sites block Tor exits",
+      "Not for everyday computing"
+    ],
+    "requirements": [
+      "64-bit processor",
+      "2 GB RAM (4 GB recommended)",
+      "8 GB USB stick"
+    ],
+    "source": "https://tails.net/install/"
+  },
+  {
+    "name": "Windows 11 Enterprise LTSC / IoT LTSC",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Official",
+    "family": "Windows 11 (Microsoft)",
+    "status": "official",
+    "summary": "Microsoft's own minimal Windows: fewer apps, long support, no yearly feature churn.",
+    "specs": [
+      "No preinstalled consumer apps or Store games",
+      "10 years of security updates (IoT edition)",
+      "New features only via the next LTSC release"
+    ],
+    "advantages": [
+      "Official and fully supported by Microsoft",
+      "Much less built-in clutter",
+      "Very stable for kiosks and work PCs"
+    ],
+    "disadvantages": [
+      "Sold through volume/IoT licensing, not retail",
+      "Microsoft Store not included by default",
+      "Stays on its feature set for years"
+    ],
+    "requirements": [
+      "Same as Windows 11: TPM 2.0, Secure Boot capable",
+      "4 GB RAM, 64 GB storage",
+      "Compatible 64-bit CPU"
+    ],
+    "source": "https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-enterprise"
+  },
+  {
+    "name": "Windows 11 SE",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Official",
+    "family": "Windows 11 (Microsoft)",
+    "status": "official",
+    "summary": "Microsoft's locked-down, cloud-first edition for school laptops.",
+    "specs": [
+      "Only IT-approved apps can install",
+      "Cloud-first: files live in OneDrive",
+      "Ships on low-cost education devices"
+    ],
+    "advantages": [
+      "Official and supported",
+      "Very hard to mess up",
+      "Runs fine on weak hardware"
+    ],
+    "disadvantages": [
+      "Education channel only, not retail",
+      "Cannot install your own apps",
+      "Being retired: support ends October 2026"
+    ],
+    "requirements": [
+      "Specific education laptops only",
+      "4 GB RAM, 64 GB storage class devices",
+      "Managed by a school IT account"
+    ],
+    "source": "https://www.microsoft.com/en-us/education/products/windows-11-se"
+  },
+  {
+    "name": "Windows S mode (10 / 11)",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Official",
+    "family": "Windows (Microsoft)",
+    "status": "official",
+    "summary": "Normal Windows restricted to Microsoft Store apps and Edge. A switch, not a separate ISO.",
+    "specs": [
+      "Store-only app installs",
+      "Edge and Bing locked as defaults",
+      "One-way switch out of S mode, free"
+    ],
+    "advantages": [
+      "Official, no install needed",
+      "Safer for non-technical users",
+      "Better battery and performance on cheap PCs"
+    ],
+    "disadvantages": [
+      "No Chrome, Steam or classic desktop apps in S mode",
+      "Leaving S mode is permanent",
+      "Driver support can be limited"
+    ],
+    "requirements": [
+      "Any PC that ships with S mode",
+      "Same base requirements as Windows 10/11",
+      "Microsoft account recommended"
+    ],
+    "source": "https://support.microsoft.com/windows/windows-10-and-windows-11-in-s-mode-faq-851057d6-1ee9-b9e5-c30b-93baebeebc85"
+  },
+  {
+    "name": "tiny11 / tiny11builder",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Minimal",
+    "family": "Windows 11 (NTDev project)",
+    "status": "unofficial",
+    "summary": "Open script that strips a Windows 11 ISO you already own. No prebuilt ISO, no activation tricks.",
+    "specs": [
+      "PowerShell script (tiny11maker) on GitHub",
+      "tiny11 Core: ultra-small, for testing VMs",
+      "Uses Microsoft's own tools (DISM) on your ISO"
+    ],
+    "advantages": [
+      "You build it from your own licensed ISO",
+      "Removes TPM and hardware checks for VMs",
+      "Builder output stays updateable; Core does not"
+    ],
+    "disadvantages": [
+      "Unofficial: not supported by Microsoft",
+      "tiny11 Core cannot add languages, updates or features",
+      "Removing components can break apps later"
+    ],
+    "requirements": [
+      "A genuine Windows 11 ISO and licence",
+      "PowerShell and a Windows PC to build",
+      "Resulting install needs ~8 GB RAM realistically"
+    ],
+    "source": "https://github.com/ntdevlabs/tiny11builder"
+  },
+  {
+    "name": "AtlasOS",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Modified",
+    "family": "Windows 10 / 11 (playbook)",
+    "status": "unofficial",
+    "summary": "Open-source playbook that tunes a stock Windows install for gaming. No ISO download involved.",
+    "specs": [
+      "AME Wizard playbook applied to stock Windows",
+      "Removes telemetry and background load",
+      "Documents every security trade-off"
+    ],
+    "advantages": [
+      "Noticeably lower background processes",
+      "Transparent about what it disables",
+      "You start from your own clean Windows install"
+    ],
+    "disadvantages": [
+      "Security settings vary by version and the choices made during setup",
+      "Some Windows features and apps stop working",
+      "Unofficial: Microsoft support will not help"
+    ],
+    "requirements": [
+      "A genuine, activated Windows 10/11 install",
+      "Fresh install strongly recommended",
+      "Comfort following a multi-step guide"
+    ],
+    "source": "https://atlasos.net/"
+  },
+  {
+    "name": "ReviOS",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Modified",
+    "family": "Windows 10 / 11 (playbook)",
+    "status": "unofficial",
+    "summary": "Privacy and performance playbook, applied to your own clean Windows install.",
+    "specs": [
+      "AME Wizard playbook on stock Windows",
+      "Keeps more features working than hardcore builds",
+      "Active releases following Windows updates"
+    ],
+    "advantages": [
+      "Balance of speed and everyday usability",
+      "Less telemetry and bloat",
+      "Applied to your own licensed install"
+    ],
+    "disadvantages": [
+      "Unofficial: unsupported by Microsoft",
+      "Some security defaults are relaxed",
+      "Future Windows updates can conflict"
+    ],
+    "requirements": [
+      "Genuine Windows 10/11 install media",
+      "AME Wizard from the official site",
+      "Willingness to reinstall if something breaks"
+    ],
+    "source": "https://revi.cc/"
+  },
+  {
+    "name": "Ghost Spectre Superlite",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Unofficial ISOs",
+    "family": "Windows 10 / 11 (repack)",
+    "status": "unofficial",
+    "summary": "Third-party modified Windows images. For awareness, not recommendation. Piracy depends on redistribution and activation rights.",
+    "specs": [
+      "Third-party Windows modifications",
+      "Removed components and security settings vary by build",
+      "Publisher claims do not establish trust or a valid licence"
+    ],
+    "advantages": [
+      "May use fewer background resources; results vary and were not tested"
+    ],
+    "disadvantages": [
+      "Not a Microsoft Windows edition",
+      "Cannot verify the contents or licence of any offered image here",
+      "Unknown modifications can create security, update and compatibility risks",
+      "Unauthorized redistribution or activation would be piracy"
+    ],
+    "requirements": [
+      "No download or activation links are provided",
+      "Use Microsoft installation media and a valid licence instead"
+    ],
+    "source": "https://www.microsoft.com/howtotell"
+  },
+  {
+    "name": "Nexus LiteOS",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Unofficial ISOs",
+    "family": "Windows 10 / 11 (repack)",
+    "status": "unofficial",
+    "summary": "Third-party modified Windows images. For awareness, not recommendation. Piracy depends on redistribution and activation rights.",
+    "specs": [
+      "Third-party Windows modifications",
+      "Removed components and security settings vary by build",
+      "Publisher claims do not establish trust or a valid licence"
+    ],
+    "advantages": [
+      "May use fewer background resources; results vary and were not tested"
+    ],
+    "disadvantages": [
+      "Not a Microsoft Windows edition",
+      "Cannot verify the contents or licence of any offered image here",
+      "Unknown modifications can create security, update and compatibility risks",
+      "Unauthorized redistribution or activation would be piracy"
+    ],
+    "requirements": [
+      "No download or activation links are provided",
+      "Use Microsoft installation media and a valid licence instead"
+    ],
+    "source": "https://www.microsoft.com/howtotell"
+  },
+  {
+    "name": "Pre-activated 'Lite' repack ISOs (generic)",
+    "type": "windows",
+    "level": "n/a",
+    "category": "Unofficial ISOs",
+    "family": "Windows (warez repacks)",
+    "status": "pirated",
+    "summary": "Unauthorized pre-activated Windows repacks. For awareness, not recommendation.",
+    "specs": [
+      "Third-party altered Windows images",
+      "This entry covers repacks distributed or activated without permission"
+    ],
+    "advantages": [
+      "No recommendation: lower resource claims are not a reason to trust an unknown image"
+    ],
+    "disadvantages": [
+      "Unauthorized redistribution or activation violates licence terms",
+      "Modified installers can contain malware; this is a risk, not a claim about every build",
+      "Removed security components and updates can leave the system exposed"
+    ],
+    "requirements": [
+      "No download or activation links are provided",
+      "Use genuine Microsoft media and a valid licence"
+    ],
+    "source": "https://www.microsoft.com/howtotell"
+  }
+]
