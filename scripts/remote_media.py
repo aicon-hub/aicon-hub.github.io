@@ -98,6 +98,7 @@ def apply(out):
  records.setdefault("vidyadhan-mathura-women-stem-scholarship-2026-27-apply-by-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://vidyadhan.org/apply")
  records.setdefault("ffe-scholarship-2026-27-engineering-mbbs-law-first-year-applications-open-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ffe.org/scholarships/")
  records.setdefault("entebhoomi-kerala-land-tax-records-transfer-ebtr-one-login-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://entebhoomi.kerala.gov.in/")
+ records.setdefault("kerala-obc-overseas-scholarship-2026-27-egrantz-up-to-10-lakh-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://egrantz.kerala.gov.in/")
  records.setdefault("infocepts-innovate-for-impact-scholarship-2026-27-apply-by-30-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.infocepts.ai/blog/step-by-step-guide-to-apply-for-the-infocepts-innovate-for-impact-scholarship-2026-27/")
  records.setdefault("bitchord-free-open-source-youtube-music-client-android-lyrics-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/kushagrasinghx/BitChord")
  records.get("industrial-rd-viksit-bharat-2047-quiz-mygov-e-certificate-ends-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
