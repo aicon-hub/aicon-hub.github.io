@@ -95,6 +95,7 @@ def apply(out):
  records.setdefault("hyv-invite-only-ai-assistant-features-access-limits-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://hyv.me/")
  records.setdefault("dr-br-ambedkar-quiz-competition-2026-mygov-e-certificate-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://quiz.mygov.in/quiz/dr-b-r-ambedkars-life-and-contributions-quiz-competition-2026/")
  records.setdefault("national-renewable-energy-fellowship-2026-27-how-it-works-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://hrd.mnre.gov.in/")
+ records.setdefault("vidyadhan-mathura-women-stem-scholarship-2026-27-apply-by-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://vidyadhan.org/apply")
  records.setdefault("infocepts-innovate-for-impact-scholarship-2026-27-apply-by-30-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.infocepts.ai/blog/step-by-step-guide-to-apply-for-the-infocepts-innovate-for-impact-scholarship-2026-27/")
  records.setdefault("bitchord-free-open-source-youtube-music-client-android-lyrics-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/kushagrasinghx/BitChord")
  records.get("industrial-rd-viksit-bharat-2047-quiz-mygov-e-certificate-ends-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
