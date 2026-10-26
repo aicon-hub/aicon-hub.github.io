@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-26",
   "programs": [
     {
       "id": "jet-2027-alt",
@@ -15,7 +15,7 @@
       "url": "https://jetprogramme.org/en/",
       "cta": "Official JET site (CLAIR)",
       "guide": "posts/jet-programme-2027-alt-teach-english-japan-india-guide.html",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "commonwealth-masters-2027",
@@ -30,7 +30,7 @@
       "note": "For master's study starting September/October 2027. Nominators may set earlier internal cut-offs.",
       "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
       "cta": "Commonwealth Scholarship Commission",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "france-ela-2027",
@@ -45,7 +45,7 @@
       "note": "The closest programme to Japan's JET for Indians: teach English in France, no teaching degree needed.",
       "url": "https://www.institutfrancaisindia.in/assistant-danglais/",
       "cta": "Institut Français India - apply",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "erasmus-mundus-2027",
@@ -60,7 +60,7 @@
       "note": "Apply directly to each master's through the official Erasmus Mundus catalogue; there is no single central form.",
       "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters-scholarships",
       "cta": "Erasmus+ official page and catalogue",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "swiss-eskas-2027",
@@ -75,7 +75,7 @@
       "note": "Check the India country page on the FCS/SERI site for the exact Indian deadline and the embassy contact.",
       "url": "https://www.sbfi.admin.ch/en/swiss-government-excellence-scholarships",
       "cta": "SERI / FCS official page",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "stipendium-hungaricum-2027",
@@ -87,10 +87,10 @@
       "deadlineLabel": "2027/28 call not yet published; expected around November 2026 to mid-January 2027 (last cycle closed 15 January)",
       "funding": "All tuition fees covered and accommodation costs supported, plus a monthly stipend.",
       "eligibility": "Indian applicants are eligible (India is a partner country). Applications go through the official online system with nomination by the Indian sending partner.",
-      "note": "Hungarian embassies confirm the 2027/28 call is not out yet. Treat any earlier date from third-party sites as unconfirmed. The official site was down for maintenance on 22 October 2026, so this entry was last verified on 20 October 2026. The 2027/28 call is expected around mid-November 2026.",
+      "note": "Hungarian embassies confirm the 2027/28 call is not out yet. Treat any earlier date from third-party sites as unconfirmed. The 2027/28 call is expected around mid-November 2026.",
       "url": "https://stipendiumhungaricum.hu/",
       "cta": "Stipendium Hungaricum official site",
-      "verified": "2026-10-20"
+      "verified": "2026-10-26"
     },
     {
       "id": "turkiye-burslari-2027",
@@ -105,7 +105,7 @@
       "note": "Applications are received in one period each year on the official portal only.",
       "url": "https://www.turkiyeburslari.gov.tr/",
       "cta": "Türkiye Scholarships official portal",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "csc-china-2027",
@@ -114,10 +114,10 @@
       "type": "study",
       "status": "expected",
       "deadline": null,
-      "deadlineLabel": "2027/28 call not yet published; the 2026/27 call closed on 1 February 2026 (next expected around November 2026)",
+      "deadlineLabel": "2027/28 calls began rolling out at Chinese embassies on 23 October 2026; India's call is not out yet (last cycle it came in November)",
       "funding": "Full funding for study in China: tuition, accommodation and a living stipend, by degree level.",
       "eligibility": "Apply online via campuschina.org under the Chinese Embassy in India (agency number 3561). From the 2026/27 year, undergraduate applicants must also take the CSCA test.",
-      "note": "CSC never uses paid agents or intermediaries; apply only through the official system. The official site could not be reached on 22 October 2026 (access block), so this entry was last verified on 20 October 2026.",
+      "note": "CSC never uses paid agents or intermediaries; apply only through the official system. campuschina.org could not be reached on 26 October 2026 (access block), so the campuschina entry was last directly verified on 20 October 2026; the 2027/28 rollout was confirmed via official Chinese embassy notices.",
       "url": "https://www.campuschina.org/",
       "cta": "campuschina.org (official)",
       "verified": "2026-10-20"
@@ -135,7 +135,7 @@
       "note": "Never send documents directly to MEXT in Japan; the embassy route is the only one for India.",
       "url": "https://www.studyinjapan.go.jp/en/smap-stopj-applications-research.html",
       "cta": "Study in Japan (official)",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "fulbright-nehru-2028",
@@ -150,7 +150,7 @@
       "note": "USIEF (United States-India Educational Foundation) is the only official channel in India.",
       "url": "https://www.usief.org.in/",
       "cta": "USIEF official site",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "spain-auxiliares-2027",
@@ -165,7 +165,7 @@
       "note": "Run by Spain's Ministry of Education, which charges no fee. Any payment request means it is not the official programme.",
       "url": "https://www.educacionfpydeportes.gob.es/india/en/convocatorias-programas/auxiliares-en-espana0.html",
       "cta": "Ministerio de Educación - India page",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "gks-2027",
@@ -180,7 +180,7 @@
       "note": "Embassy track applications are filed on the Study in Korea portal inside the announced window only.",
       "url": "https://www.studyinkorea.go.kr/en/main.do",
       "cta": "Study in Korea (official)",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "goi-ies-2027",
@@ -195,7 +195,7 @@
       "note": "Managed by Ireland's Higher Education Authority; one application per candidate per cycle.",
       "url": "https://hea.ie/policy/internationalisation/goi-ies/",
       "cta": "HEA official page",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "bdgs-2027",
@@ -210,7 +210,7 @@
       "note": "Watch the official MFA page for the 2027/28 announcement; expected around mid-December 2026.",
       "url": "https://www.mfa.gov.bn/Pages/online-bdgs.aspx",
       "cta": "Brunei MFA - BDGS",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "chevening-2028",
@@ -225,7 +225,7 @@
       "note": "Applications open every August and close around early October. Mark August 2027.",
       "url": "https://www.chevening.org/scholarships/",
       "cta": "Chevening official site",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "daad-epos-2027",
@@ -240,7 +240,7 @@
       "note": "Apply through the university that runs your chosen EPOS course, not directly to DAAD. Verified open course example on 22 October 2026: TropHEE (TU Darmstadt), EPOS applications until 30 November 2026.",
       "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50076777",
       "cta": "DAAD scholarship database (official)",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "banach-nawa-2027",
@@ -255,7 +255,7 @@
       "note": "Run by NAWA under the Polish Ministry of Foreign Affairs development cooperation programme.",
       "url": "https://nawa.gov.pl/en/students/foreign-students/the-banach-scholarship-programme/landing",
       "cta": "NAWA Banach Programme (official)",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "mtcp-2027",
@@ -270,7 +270,7 @@
       "note": "Apply only through the official MTCP portal; the application is free.",
       "url": "https://mtcp.kln.gov.my/",
       "cta": "MTCP official portal",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "knb-2027",
@@ -285,7 +285,7 @@
       "note": "The only application channel is the official KNB portal; using paid agents is prohibited.",
       "url": "https://knb.kemdiktisaintek.go.id/",
       "cta": "KNB official portal",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "romania-mfa-2027",
@@ -300,7 +300,7 @@
       "note": "Applications only via the official scholarships platform; no fee is charged.",
       "url": "https://studyinromania.gov.ro/",
       "cta": "Study in Romania (official)",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     },
     {
       "id": "maeci-2027",
@@ -315,7 +315,7 @@
       "note": "Applications only through the official Study in Italy portal.",
       "url": "https://studyinitaly.esteri.it/",
       "cta": "Study in Italy (official MAECI portal)",
-      "verified": "2026-10-22"
+      "verified": "2026-10-26"
     }
   ],
   "notEligible": [
