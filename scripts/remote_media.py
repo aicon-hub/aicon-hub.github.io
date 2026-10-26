@@ -115,7 +115,6 @@ def apply(out):
  records.get("kernelai-free-offline-ai-phone-app-android-ios-no-account-guide", {}).update(poster_url=None, under_chip_only=True)
  records.get("kickbacks-ai-ads-in-claude-code-codex-what-to-know-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.setdefault("kerala-whatsapp-services-reported-aicon-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
- records.setdefault("kerala-school-sasthrolsavam-2026-27-science-maths-social-science-work-experience-it-fairs-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://mela.kite.kerala.gov.in/2026/index.php/Home")
  records.setdefault("kerala-waqf-board-loan-scholarship-2026-rs-5000-monthly-professional-students-apply-by-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-psc-130-150-2026-october7-deadline-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-oec-post-matric-scholarship-outside-state", {}).update(logo_url="", poster_url=None, under_chip_only=True)
