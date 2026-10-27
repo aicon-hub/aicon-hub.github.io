@@ -31,28 +31,28 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cat > reader.pem <<'CERT'
           -----BEGIN CERTIFICATE-----
-          MIIECTCCAnGgAwIBAgIUNpvUc5ov5j8M7hu1nIeXRPLogsgwDQYJKoZIhvcNAQEL
-          BQAwFDESMBAGA1UEAwwJdGctcmVhZGVyMB4XDTI2MTAyNjEwMzE1M1oXDTM2MTAy
-          MzEwMzE1M1owFDESMBAGA1UEAwwJdGctcmVhZGVyMIIBojANBgkqhkiG9w0BAQEF
-          AAOCAY8AMIIBigKCAYEAtB2dT0vO153z+JwCMNzGrW95B+g5RTxcjoyFmEFh9vNx
-          WFOB4ZMKwvb/qRFSXN+NBn34KtmLSotAX8RYqanN/YEXVuG+l+pGQ4mxl8Mt4IBR
-          ojdnyADJWpnEmUbQrZNhs211DO+IGcQGf9GMgP1Xa76Hwoqrz8ZlxOr38Bg5RySQ
-          bpZB2nfi6QuMt1dZYjauNpyQvynFkW5tZXDwuPcRwgugmnE9qCOIgLdKTNeiqA5s
-          JY1n7/j3jxy+LBc2hYIyv9yEbZkLEolJ/0Ul5u+G6Uut2jERLrzfhEWwSj/SHkzh
-          jguCvG5OqNnAa8kKLWW9S0Vhj37iqWMrYHopUVU80jbq+YRKD6OYnx4EB5K8WTFv
-          +lzi1CjGsvlFgUlCLls4vw3PISlhybtdOyF7R5BH+PbymrLutdh+mWvdhJk4j4Gl
-          bubZ/Ymy+fLVGgHXN8zGX24teKTEdgDKdl/9gHo8PFmpJarC/dWU2EWKj7ETseuS
-          BEt8GSAsDwyMbK8t6EYPAgMBAAGjUzBRMB0GA1UdDgQWBBRPqZdd5CE6kwqZBEr2
-          2usA6aToGzAfBgNVHSMEGDAWgBRPqZdd5CE6kwqZBEr22usA6aToGzAPBgNVHRMB
-          Af8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBgQAyWf3QXxVbJwUpjcov3uZAM950
-          q49ypigQbt8FocsmuRKsKsfevu0tLb6SCAzLN/IqzmvivExVn4I/o0s9mpp+emUZ
-          zuhSnbjCq4coVCtNVi0AcJdZDs1TZIVfrAkktu7W1tCZ26R0njojXRhySkeQLyfo
-          RP7wGsO7R2QpbHj+8oHyJLaMZSa5ieGRi8NsTCP8W6wh4IYReHoMvvdmLiKr2YJC
-          S4bIo+6ROw9XKmJPkIFGxx9e1mhhSswAJ5/LlOE2nxYUibw3plqsiMH5jOgxy4ED
-          iCdWOtWNi7EysgTcrz0peat52TZZtDFIIg4jbsV1yMSqRo4b8T8Ai3+qpfnZ7dXJ
-          tdSw3+h9gCjySxXXg8E76OT155LLtN1GxE/jU2naEP7M2hKgR3NzAvqVGES0pE98
-          oj1nQBuGSj8gLtoWQaA2A+jsxIVplF92zdisdv5LQDh2D8+ic5DVxNToXVayES0Y
-          KaIqdMeTE876e3r9nfW7+thSxD5PEXwp7722yJY=
+          MIIECTCCAnGgAwIBAgIUU1NrW+EdO5IhHxrQTqi2HyKQqTswDQYJKoZIhvcNAQEL
+          BQAwFDESMBAGA1UEAwwJdGctcmVhZGVyMB4XDTI2MTAyNzEwNTk1NloXDTM2MTAy
+          NDEwNTk1NlowFDESMBAGA1UEAwwJdGctcmVhZGVyMIIBojANBgkqhkiG9w0BAQEF
+          AAOCAY8AMIIBigKCAYEAu7MU7294mxHCYtmLZ+80Dxnw7EZheYglKKrKawvfUsOu
+          K6UMlaqQfa+jd1lwkxygKTWwT68FOJZGrZQGqpwMNcvO/5V+wsQtenByztYeQDKN
+          WEPLACFzvDxNYahtnnpLgO0dujv3T9+naXdBLvoQHVHI3vYkraRzvplcqI+BlOO/
+          LM+cD+QfrHyrrnyQ1vko5J9Fjt0rMUykfb3m6+ioVXTwmghsA6H8ZwFmAedqWlNU
+          y/HRs2KW/CYxnm1RHt5Fflao7W0IMUzHzhdtHJZBTtO4egxOMWhoCPXTH/jZHRJl
+          CGJLjN9RnxDu9CbH8ebI1Ux5g2oq3JxXOx4W9LzJJDmLK3+iXLfRYyaBIAJUPlRA
+          THxesU2BAaB/5cFmuBPpP3GO4bsH5zulmjyHY9sAtRSDaME/X5ZVl0Jnd1PLWv/L
+          4W4s3geOSURWLoaBHAswuEyRj/dyFz25vLMJ8WZ7qkEp7CQrqKY/F4nG6cRxSHv9
+          vPrCh3uVt54Q4WnyaIafAgMBAAGjUzBRMB0GA1UdDgQWBBS7Y6GAhfkwh+2gq1Ax
+          Lap9PRi5/jAfBgNVHSMEGDAWgBS7Y6GAhfkwh+2gq1AxLap9PRi5/jAPBgNVHRMB
+          Af8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBgQCGkjnEOzetDrLylGf6c2fTP9kA
+          cFZucAkpJ0r7FB+LYODAMKXLwEj86IF8gthfY4w5MmaR/Pv/hbJ3Fu8OPUv6gR2e
+          XiqzHXlL4Rgo9OlYoZWjhkH6TRhcrzun0SVHVZE2js3CSN9RupvRUqeR0XerlrxM
+          XzXZ5A34w9Q5dDzTLmBEwAMcQ2BahvOgxgrObUaGLz2XONcYYfXThrXG70uKbEcn
+          tc6ub0qB4HXS01yN4PH5f90qO+m8BuzLeH7d1EUK/V/Dl3yl+3k4Sw6gNGMqXb+7
+          8UJX1XpXjj6qfDbrODZ/dR6+Q4SJFHnCjKej28BDFZXNeGtFov4RGzIRvypiQ92n
+          twekS+r7kLDLUyU2sK9KMe+zxsf0jshuS5RkXeQ4qhX7FDnvlM2DfGz8ZJ1X9sc3
+          GlfxolkDik74JEHXmZW5A1jPE86cAJDSe3rQ1idTvDN6VHUGAJ6p/hwaGe5yPKRf
+          QlaDhnajhoyPIgv2TKppB1gGQDfUeAvF0SJACyk=
           -----END CERTIFICATE-----
           CERT
           cat > reader.py <<'PYCODE'
