@@ -101,6 +101,7 @@ def apply(out):
  records.setdefault("kerala-obc-overseas-scholarship-2026-27-egrantz-up-to-10-lakh-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://egrantz.kerala.gov.in/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
+ records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
  records.setdefault("infocepts-innovate-for-impact-scholarship-2026-27-apply-by-30-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.infocepts.ai/blog/step-by-step-guide-to-apply-for-the-infocepts-innovate-for-impact-scholarship-2026-27/")
  records.setdefault("bitchord-free-open-source-youtube-music-client-android-lyrics-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/kushagrasinghx/BitChord")
  records.get("industrial-rd-viksit-bharat-2047-quiz-mygov-e-certificate-ends-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
