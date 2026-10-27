@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-google-colab-gemini-write-run-python-data-analysis-sample-test-guide-2026-10-27",
   "article_url": "https://aicon-hub.github.io/posts/google-colab-gemini-write-run-python-data-analysis-sample-test-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40505838035",
-  "message_ids": []
+  "message_ids": [
+    493
+  ]
 }
