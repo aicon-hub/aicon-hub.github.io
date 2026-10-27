@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Sentence Transformers: search your notes by meaning with Python | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/sentence-transformers-search-notes-by-meaning-python-test-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-27" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Sentence Transformers: search your notes by meaning with Python", "description": "Sentence Transformers is a free Python library. Our small test: eight made-up notes, four questions, and where the match was weak.", "datePublished": "2026-10-27", "mainEntityOfPage": "https://aicon-hub.github.io/posts/sentence-transformers-search-notes-by-meaning-python-test-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Sentence Transformers is a free Python library. Our small test: eight made-up notes, four questions, and where the match was weak." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Sentence Transformers: search your notes by meaning with Python" property="og:title"/>
+<meta content="Sentence Transformers is a free Python library. Our small test: eight made-up notes, four questions, and where the match was weak." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/sentence-transformers-search-notes-by-meaning-python-test-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/sentence-transformers-search-notes-by-meaning-python-test-guide-logo.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/sentence-transformers-search-notes-by-meaning-python-test-guide-logo.png" name="twitter:image"/>
+<meta content="Sentence Transformers: search your notes by meaning with Python" name="twitter:title"/>
+<meta content="Sentence Transformers is a free Python library. Our small test: eight made-up notes, four questions, and where the match was weak." name="twitter:description"/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Sentence Transformers</p>
+<article class="post"><span class="chip">AI FOR STUDENTS</span><figure><img alt="SBERT.net Sentence Transformers logo" height="233" src="../assets/howto/sentence-transformers-search-notes-by-meaning-python-test-guide-logo.png" width="466"/><figcaption>Sentence Transformers logo, the file in the project's GitHub repository (checked 27 October 2026).</figcaption></figure><h1>Sentence Transformers: search your notes by meaning with Python</h1><p class="meta">By AiCoN | Published 27 October 2026 | Sources checked 27 October 2026</p>
+<p class="lead">Sentence Transformers is a free Python library that turns sentences into lists of numbers, so you can compare them by meaning instead of by exact words. That lets a short script find the note that answers a question even when the note uses different words. It needs a little Python, so it suits students and hobbyists who can run a script. On 27 October 2026 we ran it on eight made-up student notes and four questions. Three matches were clear and one was weak, and this guide shows all four.</p>
+<h2>Quick facts</h2>
+<ul>
+<li>What it is: an open-source Python library, originally created by the UKP Lab at TU Darmstadt and now maintained by Hugging Face, with documentation at sbert.net.</li>
+<li>Licence: the library's GitHub repository lists the Apache License 2.0. The model we used, all-MiniLM-L6-v2, lists apache-2.0 on its Hugging Face model card. Other models have their own licences.</li>
+<li>Python: the PyPI metadata for version 6.2.0 lists Python 3.10 or newer.</li>
+<li>Language: the model card for all-MiniLM-L6-v2 lists English. We did not test Hindi, Malayalam or any other language.</li>
+<li>Cost: the library is free to download. No payment or card was involved in our test. Other models and hosted services were not checked.</li>
+<li>Privacy: the first run downloaded the model (about 90 MB), so it needs internet once. After that, our run worked with the network switched off. That is one observation on our setup, not an audit.</li>
+<li>India: we did not find an India-specific statement in the sources we read, and did not check for one further.</li>
+</ul>
+<h2>Why use it</h2>
+<p>Exact-keyword search can miss a note that uses different words. This library compares meaning, so a question like "when do I need to settle my accommodation charges?" can point to a note that says "hostel fee". You keep your own notes in a plain list or file and the search runs on your own computer, so no note needs to be uploaded to a chat service. The trade-off is that you run Python code yourself.</p>
+<h2>What we tested</h2>
+<p>We used a clean Python 3.10 environment on a small Linux machine (about 1 GB of memory, 2 CPU cores, no GPU) with sentence-transformers 6.2.0 and the all-MiniLM-L6-v2 model. The notes below are made up. The four questions were worded differently from the notes they matched. We ran the same code once more in a Google Colab notebook, which gave the same results; we are not offering that notebook as a download.</p>
+<h3>The code we ran</h3>
+<pre><code>from sentence_transformers import SentenceTransformer, util
+
+notes = [
+    &quot;Pay the hostel fee at the accounts office before 5 November.&quot;,
+    &quot;Chemistry lab report is due next Friday, include the titration table.&quot;,
+    &quot;Bus to the college leaves at 7:40 from the main gate.&quot;,
+    &quot;Library closes for maintenance on 3 November, return books early.&quot;,
+    &quot;Ask Priya for the data structures lecture notes from Monday.&quot;,
+    &quot;Scholarship form needs a bank passbook copy and income certificate.&quot;,
+    &quot;Practice sorting algorithms: bubble sort, merge sort, quicksort.&quot;,
+    &quot;Mess menu changes from Monday, dinner is now at 8 PM.&quot;,
+]
+queries = [
+    &quot;when do I need to settle my accommodation charges?&quot;,
+    &quot;which documents do I need for financial aid?&quot;,
+    &quot;how do I get to campus in the morning?&quot;,
+    &quot;what should I revise for programming exam?&quot;,
+]
+
+model = SentenceTransformer(&quot;sentence-transformers/all-MiniLM-L6-v2&quot;)
+note_vectors = model.encode(notes, convert_to_tensor=True)
+for q in queries:
+    scores = util.cos_sim(model.encode(q, convert_to_tensor=True), note_vectors)[0]
+    best = int(scores.argmax())
+    print(f&quot;Q: {q}\n   top note: {notes[best]}  (cosine {float(scores[best]):.2f})&quot;)
+</code></pre>
+<h3>The output we got</h3>
+<pre><code>Q: when do I need to settle my accommodation charges?
+   top note: Pay the hostel fee at the accounts office before 5 November.  (cosine 0.54)
+Q: which documents do I need for financial aid?
+   top note: Scholarship form needs a bank passbook copy and income certificate.  (cosine 0.61)
+Q: how do I get to campus in the morning?
+   top note: Bus to the college leaves at 7:40 from the main gate.  (cosine 0.52)
+Q: what should I revise for programming exam?
+   top note: Practice sorting algorithms: bubble sort, merge sort, quicksort.  (cosine 0.27)
+</code></pre>
+<p>Reading the results: for the hostel fee, the financial aid and the bus questions, the top note was the one we would pick by hand. The fourth question, about what to revise for a programming exam, returned the sorting-algorithms note with a cosine score of 0.27. That note is a reasonable answer, but "Ask Priya for the data structures lecture notes" could also fit. A cosine score is a similarity number between two texts. It is not a confidence level, and we did not measure accuracy. Treat the top result as a suggestion and read the next few as well.</p>
+<h2>Limits of our test</h2>
+<ul>
+<li>Eight short notes and four questions. We did not test large note collections, speed on large data, PDFs or handwriting.</li>
+<li>English only, with one model. We did not test other models, other languages, or vector databases.</li>
+<li>We did not take a screenshot of the run, so the code and output above are the copied text of what we ran.</li>
+</ul>
+<h2>Try it yourself</h2>
+<ol>
+<li>Install Python 3.10 or newer, then run: pip install sentence-transformers</li>
+<li>Save the code above as a file, replace the notes with your own text, and run it. The first run downloads the model, so stay online for it.</li>
+<li>Read the model card at huggingface.co/sentence-transformers/all-MiniLM-L6-v2 for its licence and language before using it for anything beyond practice.</li>
+</ol>
+<p>Sources checked 27 October 2026.</p>
+<ul>
+<li><a href="https://github.com/huggingface/sentence-transformers" rel="noopener" target="_blank">Sentence Transformers repository and licence (GitHub)</a></li>
+<li><a href="https://www.sbert.net" rel="noopener" target="_blank">Sentence Transformers documentation (SBERT.net)</a></li>
+<li><a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2" rel="noopener" target="_blank">all-MiniLM-L6-v2 model card (Hugging Face)</a></li>
+<li><a href="https://pypi.org/project/sentence-transformers/" rel="noopener" target="_blank">sentence-transformers on PyPI</a></li>
+</ul>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
