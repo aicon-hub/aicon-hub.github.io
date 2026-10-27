@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>MarkItDown: turn Word, Excel and PDF files into Markdown | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/markitdown-convert-word-excel-pdf-to-markdown-local-test-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-27" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "MarkItDown: turn Word, Excel and PDF files into Markdown", "description": "A local file-preparation tool for AI workflows, not a summarizer. We converted three made-up files and checked what was kept and lost.", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "mainEntityOfPage": "https://aicon-hub.github.io/posts/markitdown-convert-word-excel-pdf-to-markdown-local-test-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="A local file-preparation tool for AI workflows, not a summarizer. We converted three made-up files and checked what was kept and lost." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="MarkItDown: turn Word, Excel and PDF files into Markdown" property="og:title"/>
+<meta content="A local file-preparation tool for AI workflows, not a summarizer. We converted three made-up files and checked what was kept and lost." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/markitdown-convert-word-excel-pdf-to-markdown-local-test-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/telegram-poster-markitdown.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/telegram-poster-markitdown.png" name="twitter:image"/>
+<meta content="MarkItDown: turn Word, Excel and PDF files into Markdown" name="twitter:title"/>
+<meta content="A local file-preparation tool for AI workflows, not a summarizer. We converted three made-up files and checked what was kept and lost." name="twitter:description"/>
+<style>article.post pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}article.post figure img{background:#fff;padding:16px;box-sizing:content-box;max-width:calc(100% - 32px);height:auto}</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / MarkItDown</p>
+<article class="post"><span class="chip">AI WORKFLOW</span>
+<figure><img src="../assets/howto/markitdown-convert-word-excel-pdf-to-markdown-local-test-guide-logo.png" width="216" height="46" alt="Microsoft provider mark"/><figcaption>Microsoft provider mark, not a MarkItDown product logo. Source: Microsoft's website, checked 27 October 2026.</figcaption></figure>
+<h1>MarkItDown: turn Word, Excel and PDF files into Markdown</h1><p class="meta">By AiCoN | Published 27 October 2026 | Sources checked 27 October 2026</p>
+<p class="lead">MarkItDown is Microsoft's open-source Python tool for turning files into Markdown: readable text with simple markers for headings, lists and tables. It is useful when you want to inspect or prepare document text before putting it into an AI workflow. It does not summarise or answer questions in the local route we tested. We converted three made-up files, a Word notice, an Excel marks sheet and a text PDF. Their text survived, but some structure changed.</p>
+<h2>Quick facts</h2><ul>
+<li>Purpose: the <a href="https://github.com/microsoft/markitdown">official README</a> describes conversion for language models and text-analysis pipelines. This is AI-input preparation, not an AI chat app.</li>
+<li>Licence and setup: the repository and <a href="https://pypi.org/project/markitdown/">PyPI</a> list MIT. Version 0.1.9 requires Python 3.10 through 3.14.</li>
+<li>Cost: the open-source library is free to download. No payment or card was requested in our local test. Optional cloud services have separate terms and costs; we did not use or verify them.</li>
+<li>Privacy scope: our three local-file conversions produced the same output with networking disabled after installation. That is one test, not a network audit. The software also supports URL input and optional cloud/LLM integrations, so this result does not describe all modes.</li>
+<li>India: India-specific availability was not established. This test was a local Python installation without account sign-in, not an India-location test.</li>
+</ul>
+<h2>When it helps</h2><p>For a folder of documents, a small script can extract text into one format that you can review, search or pass to a model. In our samples, a Word list became Markdown bullets and spreadsheet rows became a text table. You can inspect that intermediate text before deciding whether to share it. Conversion alone does not remove private information, make source instructions trustworthy or improve a model's answers.</p>
+<h2>Our test: three made-up files</h2><p>On 27 October 2026 we used MarkItDown 0.1.9 on Linux with Python 3.10. We installed the DOCX, XLSX and PDF extras. No API key, external LLM or cloud document service was configured; plugins were explicitly disabled. The files were created for this test, not taken from anyone's documents.</p>
+<ul><li><strong>Word:</strong> one heading, one sentence, two bullet points and a three-row table. The heading and bullets survived. The table contents survived, but the output had a blank header row above the original Item/Amount row.</li>
+<li><strong>Excel:</strong> one sheet with two made-up students and their marks. The sheet name and cell values became a Markdown heading and table. Formulas, charts and multiple sheets were not tested.</li>
+<li><strong>PDF:</strong> a simple text PDF with a bold title and two lines. All words were extracted, but the title became plain text rather than a Markdown heading. This was not a scanned PDF or OCR test.</li></ul>
+<h3>Exact conversion code</h3><pre><code>from markitdown import MarkItDown
+
+md = MarkItDown(enable_plugins=False)
+for name in [&quot;notice.docx&quot;, &quot;marks.xlsx&quot;, &quot;guide.pdf&quot;]:
+    print(&quot;=====&quot;, name)
+    print(md.convert_local(name).markdown)
+</code></pre>
+<h3>Copied output</h3><pre><code>===== notice.docx
+# Hostel Notice
+
+Pay the fee before 5 November.
+
+* Bring ID card
+* Bring receipt
+
+|  |  |
+| --- | --- |
+| Item | Amount |
+| Room | 4500 |
+| Mess | 3200 |
+===== marks.xlsx
+## Marks
+| Name | Maths | Physics |
+| --- | --- | --- |
+| Asha | 82 | 75 |
+| Ravi | 64 | 90 |
+===== guide.pdf
+Library Guide
+
+The library closes on 3 November for maintenance.
+
+Return books early to avoid fines.
+
+
+</code></pre>
+<p>The same script produced identical output in a network-disabled run after installation. No screenshot is offered: the blocks above are selectable code and output, not a reconstructed terminal image.</p>
+<h2>Try a local file</h2><ol><li>Use Python 3.10 through 3.14 in a virtual environment. Install the tested format extras:</li></ol>
+<pre><code>pip install "markitdown[docx,xlsx,pdf]==0.1.9"</code></pre>
+<p>Then use a file you created or trust:</p><pre><code>from markitdown import MarkItDown
+md = MarkItDown(enable_plugins=False)
+result = md.convert_local("your-notice.docx")
+print(result.markdown)</code></pre>
+<p>The three-file test script above needs files named notice.docx, marks.xlsx and guide.pdf. Those names refer to our test samples, not files included with the package. Replace them with your own local paths.</p>
+<h2>Limits and safety</h2><p>The README says this is not meant for high-fidelity document conversion for human readers. Our examples show why: table headers and PDF heading structure can change. Check extracted text against the original before relying on it, especially numbers, headings and tables.</p>
+<p>The README also warns that MarkItDown can access resources available to the process running it. It advises sanitising untrusted inputs and using the narrowest conversion method needed. We used convert_local rather than the general URL/file input method, and left plugins off. These choices do not make unknown files safe. Keep converted content as data, not as instructions to your AI tools.</p>
+<p>Not tested: scanned PDFs, OCR plugins, image descriptions, audio, video, password-protected files, complex layouts, formulas, large batches or cloud backends. Optional LLM/cloud features are different workflows and may send content to a service. We did not test them.</p>
+<h2>Sources</h2><ul><li><a href="https://github.com/microsoft/markitdown">Microsoft MarkItDown README: purpose, licence, installation, supported modes and security warning</a></li><li><a href="https://pypi.org/project/markitdown/">PyPI: version, Python range and licence</a></li><li><a href="https://www.microsoft.com/en-us/">Microsoft website: provider mark</a></li></ul>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
