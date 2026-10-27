@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Google Teachable Machine: train a photo classifier in your browser | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/google-teachable-machine-train-image-classifier-in-browser-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-27" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Google Teachable Machine: train a photo classifier in your browser", "description": "Teachable Machine lets you train an image classifier in a browser tab and view export options. Our small test: 7/10, then 9/10 on a reused check set. No payment or card requested in our test; limits unverified. 27 October 2026.", "datePublished": "2026-10-27", "mainEntityOfPage": "https://aicon-hub.github.io/posts/google-teachable-machine-train-image-classifier-in-browser-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Teachable Machine lets you train an image classifier in a browser tab and view export options. Our small test: 7/10, then 9/10 on a reused check set. No payment or card requested in our test; limits unverified. 27 October 2026." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Google Teachable Machine: train a photo classifier in your browser" property="og:title"/>
+<meta content="Teachable Machine lets you train an image classifier in a browser tab and view export options. Our small test: 7/10, then 9/10 on a reused check set. No payment or card requested in our test; limits unverified. 27 October 2026." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/google-teachable-machine-train-image-classifier-in-browser-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/google-teachable-machine-train-image-classifier-in-browser-guide-test.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/google-teachable-machine-train-image-classifier-in-browser-guide-test.png" name="twitter:image"/>
+<meta content="Google Teachable Machine: train a photo classifier in your browser" name="twitter:title"/>
+<meta content="Teachable Machine lets you train an image classifier in a browser tab and view export options. Our small test: 7/10, then 9/10 on a reused check set. No payment or card requested in our test; limits unverified. 27 October 2026." name="twitter:description"/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Teachable Machine</p>
+<article class="post"><span class="chip">AI LEARNING TOOL</span><figure><img alt="Teachable Machine icon" height="180" src="../assets/howto/google-teachable-machine-train-image-classifier-in-browser-guide-logo.png" width="180"/><figcaption>Teachable Machine icon, the official favicon file from teachablemachine.withgoogle.com (checked 27 October 2026). The site header is plain text and we found no larger logo file.</figcaption></figure><h1>Google Teachable Machine: train a photo classifier in your browser</h1><p class="meta">By AiCoN | Published 27 October 2026 | Sources checked and tested 27 October 2026</p>
+<p class="lead">Teachable Machine is a Google web tool where you add example photos to classes, train a model in the browser tab, and try it on new images. It is a quick way for a student or maker to see how an image classifier behaves before writing any code. We ran one small demo on 27 October 2026: Arduino Uno photos against Raspberry Pi 4 photos. It got 7 of 10 check images right at first and 9 of 10 after we added more Pi photos, but that is one tiny, iterative demo and not a measure of accuracy. No payment or card was requested in our test. We did not verify usage limits.</p>
+<h2>Quick facts</h2>
+<ul>
+<li>Google's Teachable Machine site describes it as a way to "train a computer to recognize your own images, sounds, &amp; poses" with "no expertise or coding required". We tested only the Image project.</li>
+<li>Privacy, as stated in Google's Teachable Machine FAQ: "Your samples aren't sent to any servers, unless you save your project to Google Drive" and training happens "in your browser tab without sending anything to any servers". This is Google's published statement. We did not audit network traffic.</li>
+<li>The Export Model window offers TensorFlow.js, TensorFlow and TensorFlow Lite tabs. For TensorFlow Lite we saw Floating point, Quantized and EdgeTPU types and Android and Coral code snippets. We looked at these options on screen only: we did not download a model, run one on a board, or use the shareable-link upload.</li>
+<li>The Android snippet text on that page notes that its example app only supports models with 3 or more classes, so our 2-class demos would not fit it as written.</li>
+<li>The export page says the TensorFlow Lite conversion happens in the cloud, and that "your training data is not being uploaded, only your trained model".</li>
+<li>In our test we used no account and were not asked for a card or any payment. We did not verify usage limits or any future pricing, so we do not state any.</li>
+<li>We tested only the Image project, with photos uploaded from files. Webcam, Audio and Pose projects, Google Drive saving and the Advanced settings were not tested.</li>
+</ul>
+<h2>Why use it instead of a chatbot</h2>
+<p>A chatbot can explain what a classifier is. Teachable Machine lets you build a small one yourself from your own photos and see, image by image, which class it picks and how confident it is. For a student learning how training examples change a model's output, that hands-on loop is the point. The export options also show the route toward Arduino-class and phone projects (TensorFlow Lite with Coral and Android snippets), though we did not test that part.</p>
+<h2>Our test</h2>
+<p>On 27 October 2026 we opened teachablemachine.withgoogle.com in a desktop browser and chose an Image Project. We used no sign-in. The Arduino and Raspberry Pi photos were test inputs only, taken from Wikimedia Commons (Arduino Uno and Raspberry Pi 4 Model B categories). They are not shown or republished in this article.</p>
+<ul>
+<li><strong>Quick check with shapes:</strong> 10 circle drawings and 10 square drawings (one class each) trained in about 20 seconds. One unseen circle and one unseen square were each labelled correctly at 100%. This is an easy case and says little about real photos.</li>
+<li><strong>Round 1, Arduino Uno vs Raspberry Pi 4:</strong> 10 photos per class, default settings. On 10 check photos (5 Uno, 5 Pi) the Uno photos were all correct (5 of 5) and the Pi photos were 2 of 5 correct, so 7 of 10 overall. The three misses were Pi photos with unusual lights, a close-up of the memory chip and a fan add-on.</li>
+<li><strong>Round 2:</strong> we added 8 more Pi photos (10 Uno, 18 Pi) and retrained. The same 10 check photos then scored 9 of 10: Uno 4 of 5, Pi 5 of 5. One Uno photo was wrongly labelled Pi at 98%.</li>
+<li><strong>What this does and does not show:</strong> the check photos were reused after we had looked at the round 1 mistakes, so they are a development set and not an independent test. The class sizes changed too. Treat 7/10 then 9/10 as one small iterative demo. It does not measure general accuracy, and it does not show that more varied photos alone caused the change.</li>
+<li><strong>Practical gotcha:</strong> after retraining, the Preview Input went back to Webcam and showed a webcam error message. We used File input for every test above and did not test webcam input. If the output bars look stuck, check the Input setting.</li>
+<li><strong>Not tested:</strong> webcam, audio and pose projects, saving to Drive, downloading a model, running it on any board, the shareable link and Advanced settings. We posted nothing.</li>
+</ul>
+<figure><img alt="Teachable Machine project with circle and square samples, a trained model and an uploaded circle classified as Class 1 at 100 percent" height="1080" src="../assets/howto/google-teachable-machine-train-image-classifier-in-browser-guide-test.png" width="1920"/><figcaption>Our test, 27 October 2026: a separate quick circles-and-squares project (10 drawings per class) after training, with an unseen circle uploaded in Preview and scored Class 1 at 100%. This is the easy shapes case, not the Arduino and Raspberry Pi photo demo, and the photos from that demo are not shown.</figcaption></figure>
+<figure><img alt="Teachable Machine Export your model window showing the TensorFlow Lite tab and Android snippet text" height="1080" src="../assets/howto/google-teachable-machine-train-image-classifier-in-browser-guide-export.png" width="1920"/><figcaption>Our test, 27 October 2026: the Export Model window, TensorFlow Lite tab, with Floating point, Quantized and EdgeTPU conversion types and the Android snippet text. We read this on screen only: we did not download a model or follow the snippet steps.</figcaption></figure>
+<figure><img alt="Teachable Machine FAQ answer to who can access my samples" height="1080" src="../assets/howto/google-teachable-machine-train-image-classifier-in-browser-guide-faq.png" width="1920"/><figcaption>Google's Teachable Machine FAQ, "Who can access my samples?", as seen on 27 October 2026. This is Google's statement, not an audit by us.</figcaption></figure>
+<h2>How to try it</h2>
+<ol>
+<li>Go to teachablemachine.withgoogle.com and choose Get Started, then an Image Project.</li>
+<li>Name two classes and add example photos to each (Upload for files, Webcam if you have one).</li>
+<li>Press Train Model and wait for it to finish.</li>
+<li>In Preview, set Input to File and upload a photo the model has not seen.</li>
+<li>Keep some photos aside as a real check set and do not tweak the model after looking at them, or your score will be flattering.</li>
+<li>Open Export Model to see the TensorFlow.js, TensorFlow and TensorFlow Lite options.</li>
+</ol>
+<p>Availability: we found no country statement on the Teachable Machine pages we read, and we did not check this from India. Our test does not show how the tool behaves from your location.</p>
+<p>Sources checked 27 October 2026:</p>
+<ul>
+<li><a href="https://teachablemachine.withgoogle.com/" rel="noopener" target="_blank">Teachable Machine (Google, home page and tool, tested)</a></li>
+<li><a href="https://teachablemachine.withgoogle.com/faq" rel="noopener" target="_blank">Teachable Machine FAQ (Google)</a></li>
+<li><a href="https://commons.wikimedia.org/" rel="noopener" target="_blank">Wikimedia Commons (source of test photos, not republished)</a></li>
+</ul>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
