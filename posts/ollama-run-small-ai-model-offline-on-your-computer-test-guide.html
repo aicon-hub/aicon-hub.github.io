@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Ollama: run a small AI model on your own computer | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/ollama-run-small-ai-model-offline-on-your-computer-test-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-27" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Ollama: run a small AI model on your own computer", "description": "Ollama is a free-to-download app that runs AI models on your computer. Our test: one 0.4 GB model, two runs, one offline, and one summary that missed a detail.", "datePublished": "2026-10-27", "mainEntityOfPage": "https://aicon-hub.github.io/posts/ollama-run-small-ai-model-offline-on-your-computer-test-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Ollama is a free-to-download app that runs AI models on your computer. Our test: one 0.4 GB model, two runs, one offline, and one summary that missed a detail." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Ollama: run a small AI model on your own computer" property="og:title"/>
+<meta content="Ollama is a free-to-download app that runs AI models on your computer. Our test: one 0.4 GB model, two runs, one offline, and one summary that missed a detail." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/ollama-run-small-ai-model-offline-on-your-computer-test-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/telegram-poster-ollama-local-ai.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/telegram-poster-ollama-local-ai.png" name="twitter:image"/>
+<meta content="Ollama: run a small AI model on your own computer" name="twitter:title"/>
+<meta content="Ollama is a free-to-download app that runs AI models on your computer. Our test: one 0.4 GB model, two runs, one offline, and one summary that missed a detail." name="twitter:description"/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Ollama local AI</p>
+<article class="post"><span class="chip">AI OPEN SOURCE</span><figure><img alt="Ollama logo" style="background:#fff;border-radius:12px;padding:10px" height="256" src="../assets/howto/ollama-run-small-ai-model-offline-on-your-computer-test-guide-logo.png" width="181"/><figcaption>Ollama logo, the file on ollama.com (checked 27 October 2026).</figcaption></figure><h1>Ollama: run a small AI model on your own computer</h1><p class="meta">By AiCoN | Published 27 October 2026 | Sources checked 27 October 2026</p>
+<p class="lead">Ollama is a program that downloads open AI models and runs them on your own computer, with a command line and a local web address other apps can use. You type a question and a model on your machine answers it. On 27 October 2026 we installed the Linux build on a small machine with no graphics card, downloaded a 0.4 GB model, and asked it to summarise a short made-up notice. It answered in about four seconds, also with the network switched off. The small model's answers varied, and one of them left out a detail, so treat small models as a drafting aid and check the result.</p>
+<h2>Quick facts</h2>
+<ul>
+<li>What it is: an open-source tool for running AI models locally. The GitHub repository lists the MIT License and has download instructions for macOS, Windows and Linux.</li>
+<li>Models have their own licences: the model we used, qwen2.5:0.5b, is listed on its Ollama page under Apache 2.0 (the page says the 3B and 72B sizes use the Qwen licence instead). Check the page of any other model you pull.</li>
+<li>Privacy: Ollama's FAQ says it runs locally and that the company does not see your prompts or data when you run locally. It also offers cloud-hosted models and web search, which work differently; the FAQ says they can be turned off with a setting. We did not use any cloud features or an account.</li>
+<li>Cost: the software is free to download and no payment or card was involved in our test. Ollama's cloud features and any plans were not checked.</li>
+<li>Download size: the model we used is 398 MB per its Ollama page. The Linux package we unpacked for the test was about 1.5 GB to download, including graphics-card libraries we did not use.</li>
+<li>India: we did not find an India-specific availability statement in the sources we read, and did not check further.</li>
+</ul>
+<h2>Why use it</h2>
+<p>If you want to try an AI model on text that you would rather not paste into a website, such as your own notes, a draft or a school notice, Ollama lets the model run on your computer. It also lets you try different open models and call them from your own scripts. The trade-off is quality and speed: the model is limited by your computer, and a very small model gives rougher answers than the large online assistants.</p>
+<h2>What we tested</h2>
+<p>We used a Linux machine with about 2 GB of memory, 2 CPU cores and no GPU, running Ollama 0.40.11 and the qwen2.5:0.5b model (about 494 million parameters). The model download took about seven seconds on our connection. The notice we summarised is made up.</p>
+<h3>The commands we ran</h3>
+<pre><code># 1. Start the server and download a small model (needs internet once)
+ollama serve
+ollama pull qwen2.5:0.5b
+
+# 2. Ask it something
+ollama run qwen2.5:0.5b &quot;Summarise in one sentence: The village library will close on 3 November for maintenance. Members should return all books before that date to avoid fines. The library will reopen on 10 November with extended evening hours.&quot;
+</code></pre>
+<h3>The answers we got</h3>
+<pre><code>Run 1 (online machine, right after the download):
+The village library will close on November 3 for maintenance and reopen on November 10 with extended evening hours.
+
+Run 2 (same model and prompt, network switched off):
+The village library is scheduled to close on November 3rd for maintenance and members will be required to return their books before the date.
+</code></pre>
+<p>Reading the results: the first answer matches the notice. The second, produced with the network switched off, is shorter and leaves out the reopening date, which was in the notice. The two runs used the same prompt and model, so small-model answers can differ between runs. That second run took about four seconds in total. We ran each prompt once or twice, so this shows that the offline run works, not how good the model is.</p>
+<h2>Limits of our test</h2>
+<ul>
+<li>One tiny model and one short English prompt. We did not test larger models, Hindi or Malayalam, long documents, speed with a graphics card, the Windows or Mac apps, or the desktop chat window.</li>
+<li>Offline here means the network was switched off after the model was downloaded. Installing and pulling a model needs internet.</li>
+<li>We did not test the cloud features, so we make no claim about them beyond what Ollama's FAQ says.</li>
+<li>We did not take a screenshot of the run, so the commands and answers above are the copied text.</li>
+</ul>
+<h2>Try it yourself</h2>
+<ol>
+<li>Install Ollama from ollama.com for your system, then open a terminal.</li>
+<li>Run: ollama pull qwen2.5:0.5b (a small download, good for a first try).</li>
+<li>Run: ollama run qwen2.5:0.5b followed by your question in quotes, using made-up text first.</li>
+<li>Read the answer carefully, and compare it with the original before relying on it.</li>
+</ol>
+<p>Sources checked 27 October 2026.</p>
+<ul>
+<li><a href="https://github.com/ollama/ollama" rel="noopener" target="_blank">Ollama repository, licence and downloads (GitHub)</a></li>
+<li><a href="https://docs.ollama.com/faq" rel="noopener" target="_blank">Ollama FAQ, privacy and local-only setting</a></li>
+<li><a href="https://ollama.com/library/qwen2.5" rel="noopener" target="_blank">qwen2.5 model page on Ollama</a></li>
+</ul>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
