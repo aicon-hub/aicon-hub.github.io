@@ -109,6 +109,7 @@ def apply(out):
  records.setdefault("google-fact-check-explorer-search-fact-checks-deepfake-claims-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://toolbox.google.com/factcheck/explorer")
  records.setdefault("baidu-unlimited-ocr-2-open-ocr-model-multi-page-demo-limits-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/baidu/Unlimited-OCR")
  records.setdefault("google-colab-gemini-write-run-python-data-analysis-sample-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://research.google.com/colaboratory/faq.html")
+ records.setdefault("kerala-gruhasree-2026-housing-subsidy-apply-by-21-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://kshb.kerala.gov.in/en/home-2/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
