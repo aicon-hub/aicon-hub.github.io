@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Google Colab with Gemini: write and run Python from a prompt | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/google-colab-gemini-write-run-python-data-analysis-sample-test-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-27" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Google Colab with Gemini: write and run Python from a prompt", "description": "Colab has a built-in Gemini panel that writes Python and runs it in a notebook. What Google says about access and privacy, plus one sample-data test on 27 October 2026.", "datePublished": "2026-10-27", "mainEntityOfPage": "https://aicon-hub.github.io/posts/google-colab-gemini-write-run-python-data-analysis-sample-test-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Colab has a built-in Gemini panel that writes Python and runs it in a notebook. What Google says about access and privacy, plus one sample-data test on 27 October 2026." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Google Colab with Gemini: write and run Python from a prompt" property="og:title"/>
+<meta content="Colab has a built-in Gemini panel that writes Python and runs it in a notebook. What Google says about access and privacy, plus one sample-data test on 27 October 2026." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/google-colab-gemini-write-run-python-data-analysis-sample-test-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/google-colab-gemini-write-run-python-data-analysis-sample-test-guide-test.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/google-colab-gemini-write-run-python-data-analysis-sample-test-guide-test.png" name="twitter:image"/>
+<meta content="Google Colab with Gemini: write and run Python from a prompt" name="twitter:title"/>
+<meta content="Colab has a built-in Gemini panel that writes Python and runs it in a notebook. What Google says about access and privacy, plus one sample-data test on 27 October 2026." name="twitter:description"/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Google Colab</p>
+<article class="post"><span class="chip">AI FOR STUDENTS</span><figure><img alt="Google Colab logo" height="512" src="../assets/howto/google-colab-gemini-write-run-python-data-analysis-sample-test-guide-logo.png" width="512" style="width:180px;height:180px;background:#fff;border-radius:14px;max-width:100%"/><figcaption>Colab</figcaption></figure><h1>Google Colab with Gemini: write and run Python from a prompt</h1><p class="meta">By AiCoN | Published 27 October 2026 | Sources checked 27 October 2026</p>
+<p class="lead">Google Colab is a notebook that runs Python in your browser, and it has a Gemini panel built in. You describe what you want, Gemini writes the code in a notebook cell, and you can run it on the spot. On 27 October 2026 we tried one small job with made-up numbers: build an expenses table and total it by category. The code was written and run in about a minute. This is one test with sample data. We did not try GPUs, real files, or longer projects.</p>
+<h2>Quick facts</h2>
+<ul>
+<li>What it is: Colab is a hosted notebook service from Google. Google's FAQ says it needs no setup, and that AI features are on by default for eligible users, starting from the Gemini spark icon in the notebook footer.</li>
+<li>Requirements per Google's FAQ: you must be 18 or older, and you must be in a supported locale. The FAQ does not list the locales on that page.</li>
+<li>India: we found no India-specific statement in the Colab pages we read, and we did not verify availability for India.</li>
+<li>Cost: Google says Colab gives free access to computing resources, but the limits are not guaranteed, are not published and change over time. Paid Google AI plans add more compute. We did not verify the Gemini usage limits for free accounts. In our test no payment or card was requested.</li>
+<li>Privacy per Google's Colab notice, which you accept before first use: Google collects prompts, code and output; human reviewers may read them; Google asks you not to include confidential or personal information; stored data is kept up to 18 months and cannot be deleted on request.</li>
+<li>Accuracy: Colab's own notice warns generative features can be wrong, so check the code and results.</li>
+</ul>
+<h2>What makes this useful</h2>
+<p>In Colab the code lands in a real notebook cell and can run right there, with the result shown under it, so you can see whether it works and edit it. That suits students learning Python or anyone who wants to try a small data job without installing anything.</p>
+<h2>What we tested</h2>
+<p>On 27 October 2026 we opened a new notebook in a desktop browser, signed in to a Google account. We opened the Gemini panel, accepted the Colab privacy notice and typed: "Make a small made-up table of 12 student expenses (category and amount in rupees) with pandas, then draw a bar chart of the total per category and tell me which category is biggest."</p>
+<ul>
+<li><strong>Writing:</strong> Gemini put a Python cell in the notebook that builds the table, totals each category, finds the largest and draws a bar chart. It offered Accept and Run, Accept or Cancel. We chose Accept and Run.</li>
+<li><strong>Running:</strong> Colab connected to a runtime and ran the cell. The Gemini panel then listed the totals: Food 650, Books 950, Transport 180, Rent 5,000 and Entertainment 900 rupees, and said Rent was biggest. We added the 12 amounts in the code by hand and the totals match. We looked at the table output but did not inspect the chart closely.</li>
+<li><strong>Saving:</strong> the notebook was saved by Colab as "Untitled0.ipynb" with a saving indicator, and Google's FAQ says notebooks connect to Google Drive.</li>
+<li><strong>Not tested:</strong> uploading real files, GPU or TPU runtimes, long sessions, other models, the Data Science Agent, paid plans, the mobile browser, and what happens when a free account reaches its limit. A small usage meter showed 5 percent after our request; we do not know what it counts.</li>
+</ul>
+<figure><img alt="Colab notebook with Gemini-written Python code and a summary of results in the Gemini panel" height="1080" src="../assets/howto/google-colab-gemini-write-run-python-data-analysis-sample-test-guide-test.png" width="1920"/><figcaption>Our test, 27 October 2026: the code Gemini wrote in a Colab notebook, with the result summary in the Gemini panel on the right. The numbers are made up.</figcaption></figure>
+<h2>Try it yourself</h2>
+<ol>
+<li>Go to colab.research.google.com and start a new notebook (Google account, 18 or older).</li>
+<li>Click the Gemini spark icon at the bottom of the page and accept the privacy notice if you agree.</li>
+<li>Ask for a small job using made-up data, such as the one above.</li>
+<li>Read the code before choosing Accept and Run.</li>
+<li>Do not put private or confidential data in prompts: Google says human reviewers may read them.</li>
+</ol>
+<p>Sources checked 27 October 2026. Usage limits are Google's and may change.</p>
+<ul>
+<li><a href="https://research.google.com/colaboratory/faq.html" rel="noopener" target="_blank">Colab FAQ (Google Research)</a></li>
+<li><a href="https://colab.google/" rel="noopener" target="_blank">Colab (Google for Developers)</a></li>
+</ul>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
