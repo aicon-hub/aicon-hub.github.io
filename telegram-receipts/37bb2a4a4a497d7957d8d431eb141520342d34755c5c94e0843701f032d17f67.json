@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-markitdown-20261027",
   "article_url": "https://aicon-hub.github.io/posts/markitdown-convert-word-excel-pdf-to-markdown-local-test-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40553865325",
-  "message_ids": []
+  "message_ids": [
+    501
+  ]
 }
