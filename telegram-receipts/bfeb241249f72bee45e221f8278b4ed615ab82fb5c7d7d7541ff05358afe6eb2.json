@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-rembg-20261028",
   "article_url": "https://aicon-hub.github.io/posts/rembg-remove-image-background-locally-python-synthetic-test-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40603889501",
-  "message_ids": []
+  "message_ids": [
+    503
+  ]
 }
