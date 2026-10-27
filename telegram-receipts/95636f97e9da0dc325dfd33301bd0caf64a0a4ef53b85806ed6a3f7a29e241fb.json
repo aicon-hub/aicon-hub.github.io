@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-piper-offline-text-to-speech-2026-10-27",
   "article_url": "https://aicon-hub.github.io/posts/piper-offline-text-to-speech-hindi-malayalam-voices-licences-test-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40518023074",
-  "message_ids": []
+  "message_ids": [
+    495
+  ]
 }
