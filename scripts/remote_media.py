@@ -100,6 +100,7 @@ def apply(out):
  records.setdefault("entebhoomi-kerala-land-tax-records-transfer-ebtr-one-login-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://entebhoomi.kerala.gov.in/")
  records.setdefault("kerala-obc-overseas-scholarship-2026-27-egrantz-up-to-10-lakh-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://egrantz.kerala.gov.in/")
  records.setdefault("kerala-eep-coaching-aid-2026-27-obc-exam-coaching-egrantz-apply-by-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://egrantz.kerala.gov.in/")
+ records.setdefault("google-teachable-machine-train-image-classifier-in-browser-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://teachablemachine.withgoogle.com/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
