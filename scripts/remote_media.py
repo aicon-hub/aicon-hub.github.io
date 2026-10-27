@@ -115,6 +115,7 @@ def apply(out):
  records.setdefault("entire-ai-git-forge-india-hosting", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://entire.com/news/entire-launches-an-independent-git-forge-for-agent-human-collaboration")
  records.setdefault("presidio-hide-personal-details-in-text-python-pan-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://presidio.dataprivacystack.org/")
  records.setdefault("isro-iirs-geocomputation-geo-web-services-free-course-apply-by-8-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://isrolms.iirs.gov.in/edusatregistration/coursecalender")
+ records.setdefault("ollama-run-small-ai-model-offline-on-your-computer-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/ollama/ollama")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
