@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-sentence-transformers-notes-search-2026-10-27",
   "article_url": "https://aicon-hub.github.io/posts/sentence-transformers-search-notes-by-meaning-python-test-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40524283861",
-  "message_ids": []
+  "message_ids": [
+    496
+  ]
 }
