@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-shap-20261028",
   "article_url": "https://aicon-hub.github.io/posts/shap-treeexplainer-prediction-contributions-local-python-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40673677981",
-  "message_ids": []
+  "message_ids": [
+    518
+  ]
 }
