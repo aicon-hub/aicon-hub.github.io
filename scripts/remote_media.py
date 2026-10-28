@@ -131,6 +131,7 @@ def apply(out):
  records.setdefault("mlflow-log-compare-local-training-runs-sqlite-python-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://mlflow.org/")
  records.setdefault("optuna-search-model-parameters-cv-holdout-python-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://optuna.org/")
  records.setdefault("ugc-net-december-2026-last-date-extended-to-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ugcnet.nta.nic.in/")
+ records.setdefault("fairlearn-metricframe-group-accuracy-synthetic-python-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://fairlearn.org/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
