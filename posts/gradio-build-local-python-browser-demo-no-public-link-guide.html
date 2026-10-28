@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Gradio: give a Python function a browser interface | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/gradio-build-local-python-browser-demo-no-public-link-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-28" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Gradio: give a Python function a browser interface", "description": "Build a local demo with text input, a Submit button and output. We tested a counter, not an AI model, with public sharing turned off.", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": "https://aicon-hub.github.io/posts/gradio-build-local-python-browser-demo-no-public-link-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Build a local demo with text input, a Submit button and output. We tested a counter, not an AI model, with public sharing turned off." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Gradio: give a Python function a browser interface" property="og:title"/>
+<meta content="Build a local demo with text input, a Submit button and output. We tested a counter, not an AI model, with public sharing turned off." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/gradio-build-local-python-browser-demo-no-public-link-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/gradio-build-local-python-browser-demo-no-public-link-guide-poster.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/gradio-build-local-python-browser-demo-no-public-link-guide-poster.png" name="twitter:image"/>
+<meta content="Gradio: give a Python function a browser interface" name="twitter:title"/>
+<meta content="Build a local demo with text input, a Submit button and output. We tested a counter, not an AI model, with public sharing turned off." name="twitter:description"/>
+<style>article.post pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}article.post figure img{background:#fff;padding:16px;box-sizing:content-box;max-width:calc(100% - 32px);height:auto}</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Gradio</p>
+<article class="post"><span class="chip">AI DEMO BUILDING</span><figure><img src="../assets/howto/gradio-build-local-python-browser-demo-no-public-link-guide-logo.png" width="440" alt="Official Gradio logo"/><figcaption>Official Gradio logo from its project repository. Checked 28 October 2026.</figcaption></figure><h1>Gradio: give a Python function a browser interface</h1><p class="meta">By AiCoN | Published 28 October 2026 | Sources checked 28 October 2026</p><p class="lead">Gradio turns a Python function into a small browser interface with inputs, a Submit button and outputs. That is useful when you have a script or model and want to try it through a form instead of a terminal. We tested the interface plumbing with a deliberately simple text counter. No AI model was connected, and no public sharing link was created.</p>
+<h2>Quick facts</h2><ul><li>What it is: an open-source Python package for interfaces around machine-learning models, APIs or ordinary Python functions.</li><li>Tested: Gradio 6.31.0, Python 3.10.12/Linux, local Chrome browser, three inputs.</li><li>Cost: the <a href="https://github.com/gradio-app/gradio">code repository</a> lists Apache 2.0. No account, paid hosting, API key, card or payment was used in this local route. Other hosting routes were not evaluated.</li><li>Sharing: our server bound only to 127.0.0.1, with share=False and analytics_enabled=False. The official guide says share=True creates a public link. Do not enable that casually for private work.</li><li>Privacy: synthetic text only. We did not audit network traffic or prove offline operation. A real model/API can introduce separate data flows.</li><li>India: no India-specific availability was established. This was a local installation, not an India-location access test.</li></ul>
+<h2>Why use it beside a chatbot?</h2><p>A chatbot can help write a function. Gradio supplies a reusable form that calls your actual function when someone presses Submit. For a real model demo, the model still needs to be loaded and connected separately. Gradio does not make a counter intelligent, validate a model or turn a prototype into a safe production service.</p>
+<h2>What we tested</h2><p>On 28 October 2026 we installed Gradio 6.31.0 and launched a local interface. We typed each sample into its text box and pressed Submit in a real browser. "AI tools need careful tests." returned 5, an empty string returned 0, and "one-two three" returned 2. This measures whitespace-separated pieces, not linguistic words or AI tokenizer tokens. We then restored the five-word example for the screenshot and shut down the server after the test.</p><figure><img src="../assets/howto/gradio-build-local-python-browser-demo-no-public-link-guide-test.png" width="1920" height="1080" alt="Actual local Gradio counter interface after Submit, showing output 5"/><figcaption>Actual browser screenshot, 28 October 2026. A custom Gradio interface with a counter function, not an AI-model result. Native 1920x1080 capture.</figcaption></figure>
+<h2>Exact tested app</h2><p>Save this as app.py in a Python 3.10 virtual environment. The tested package metadata requires Python 3.10 or higher. Install the pinned release, then run the app:</p><pre><code>pip install "gradio==6.31.0"
+python app.py</code></pre><pre><code>import gradio as gr
+
+def count_words(text):
+    return len(text.split())
+
+demo = gr.Interface(
+    fn=count_words,
+    inputs=gr.Textbox(label=&#x27;Text to count&#x27;),
+    outputs=gr.Number(label=&#x27;Whitespace-separated tokens&#x27;),
+    title=&#x27;Local text counter&#x27;,
+    description=&#x27;A Gradio interface test. No AI model is connected.&#x27;,
+    analytics_enabled=False,
+)
+if __name__ == &#x27;__main__&#x27;:
+    demo.launch(server_name=&#x27;127.0.0.1&#x27;, server_port=7860,
+                share=False, inbrowser=False)
+</code></pre><p>Open the local address printed in the terminal, type text and press Submit. The explicit share=False avoids a public sharing tunnel. Keep server_name at 127.0.0.1 for this local exercise. Do not change it to expose the app to a network unless you understand the access implications.</p>
+<h2>Limits that matter</h2><ul><li>Only a simple text-to-number function was tested. No model inference, files, audio, images, GPU or external API.</li><li>No authentication, public hosting, tunnel, multi-user load or production deployment was tested. Local binding is not a security audit.</li><li>The whitespace rule counts a hyphenated expression as one piece. It is not a reliable word count for every language or a substitute for a model's tokenizer.</li><li>Wrapping a model does not establish its accuracy, rights, costs or privacy. Check those separately.</li></ul><h2>Sources</h2><ul><li><a href="https://www.gradio.app/guides/quickstart">Official quickstart: Interface and local launch</a></li><li><a href="https://www.gradio.app/guides/sharing-your-app">Official sharing guide: public links and access</a></li><li><a href="https://github.com/gradio-app/gradio">Official repository and licence</a></li><li><a href="https://pypi.org/project/gradio/6.31.0/">Tested release metadata</a></li></ul></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
