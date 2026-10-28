@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-mlflow-20261028",
   "article_url": "https://aicon-hub.github.io/posts/mlflow-log-compare-local-training-runs-sqlite-python-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40651800594",
-  "message_ids": []
+  "message_ids": [
+    513
+  ]
 }
