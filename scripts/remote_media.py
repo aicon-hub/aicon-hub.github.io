@@ -124,6 +124,7 @@ def apply(out):
  records.setdefault("scikit-learn-train-tiny-text-classifier-python-failure-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://scikit-learn.org/stable/")
  records.setdefault("fasttext-identify-text-language-local-hindi-malayalam-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://fasttext.cc/")
  records.setdefault("ksheerasree-dairy-schemes-2026-apply-by-7-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ksheerasree.kerala.gov.in/")
+ records.setdefault("gan-lab-visual-gan-training-browser-learning-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://poloclub.github.io/ganlab/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
