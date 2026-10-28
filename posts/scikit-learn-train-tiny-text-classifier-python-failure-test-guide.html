@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>scikit-learn: train a tiny text classifier and see its limits | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/scikit-learn-train-tiny-text-classifier-python-failure-test-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-28" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "scikit-learn: train a tiny text classifier and see its limits", "description": "Twelve made-up examples, three labels and an unrelated sentence that still gets a category. A local machine-learning lesson, not a production classifier.", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": "https://aicon-hub.github.io/posts/scikit-learn-train-tiny-text-classifier-python-failure-test-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Twelve made-up examples, three labels and an unrelated sentence that still gets a category. A local machine-learning lesson, not a production classifier." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="scikit-learn: train a tiny text classifier and see its limits" property="og:title"/>
+<meta content="Twelve made-up examples, three labels and an unrelated sentence that still gets a category. A local machine-learning lesson, not a production classifier." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/scikit-learn-train-tiny-text-classifier-python-failure-test-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/telegram-poster-scikit.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/telegram-poster-scikit.png" name="twitter:image"/>
+<meta content="scikit-learn: train a tiny text classifier and see its limits" name="twitter:title"/>
+<meta content="Twelve made-up examples, three labels and an unrelated sentence that still gets a category. A local machine-learning lesson, not a production classifier." name="twitter:description"/>
+<style>article.post pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}article.post figure img{background:#fff;padding:16px;box-sizing:content-box;max-width:calc(100% - 32px);height:auto}</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / scikit-learn</p>
+<article class="post"><span class="chip">AI LEARNING</span><figure><img src="../assets/howto/scikit-learn-train-tiny-text-classifier-python-failure-test-guide-logo.png" width="292" height="181" style="background:#fff;border-radius:12px;padding:10px" alt="scikit-learn logo"/><figcaption>Official scikit-learn logo from its repository. Checked 28 October 2026.</figcaption></figure>
+<h1>scikit-learn: train a tiny text classifier and see its limits</h1><p class="meta">By AiCoN | Published 28 October 2026 | Sources checked 28 October 2026</p>
+<p class="lead">scikit-learn is an open-source machine-learning library for Python. You can give it labelled examples and train a model to assign a category to new text. Our tiny experiment used twelve made-up college messages and three categories: hostel, library and transport. It classified three clear examples as intended, but also assigned unrelated text to hostel. That is a useful lesson: getting a label is not proof that the input belongs in any of the available categories.</p>
+<h2>Quick facts</h2><ul><li>What it is: the <a href="https://scikit-learn.org/stable/">official site</a> documents tools for classification, regression, clustering and other machine-learning tasks. This example is supervised text classification, not a chat model.</li><li>Licence: <a href="https://github.com/scikit-learn/scikit-learn">scikit-learn</a> uses the BSD-3-Clause licence.</li><li>Tested version: scikit-learn 1.7.2 with Python 3.10. The <a href="https://pypi.org/project/scikit-learn/1.7.2/">1.7.2 package metadata</a> lists Python 3.10 or newer. We pinned that version for this example; it is not a claim that it is the newest release.</li><li>Cost: free open-source library. No API key, account, payment or card was requested.</li><li>Privacy scope: after installation, this script trained and predicted with networking disabled and produced identical output. No external model or dataset download was used. This is one test, not a network audit.</li><li>India: India-specific availability was not established. This was a local software test, not an India-location test.</li></ul>
+<h2>Why try this?</h2><p>It is a small, inspectable way to learn how training examples, labels and predictions fit together. You write the categories and examples yourself, then see what happens on new text. It can be the start of a classroom project about sorting messages, but this tiny dataset is not suitable for routing real student requests or making decisions about people.</p>
+<h2>Our local experiment</h2><p>On 28 October 2026 we ran scikit-learn 1.7.2 on Linux/Python 3.10. A pipeline combined TF-IDF text features with a Multinomial Naive Bayes classifier, following the pattern described in the <a href="https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html">official text tutorial</a>. All training and test strings below are made up. No inbox, personal notes or private messages were used.</p><h3>Exact code</h3><pre><code>from sklearn.pipeline import make_pipeline
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+train = [
+    &quot;Pay hostel rent and room fee&quot;, &quot;Hostel room repair request&quot;,
+    &quot;Room allocation and hostel rules&quot;, &quot;Mess food and hostel dining&quot;,
+    &quot;Library book loan and return&quot;, &quot;Renew borrowed library books&quot;,
+    &quot;Library opening hours and reading room&quot;, &quot;Book reservation at the library&quot;,
+    &quot;Bus route and college transport&quot;, &quot;Bus timetable morning departure&quot;,
+    &quot;Transport pass renewal for bus&quot;, &quot;College bus stop and ticket&quot;,
+]
+labels = [&quot;hostel&quot;] * 4 + [&quot;library&quot;] * 4 + [&quot;transport&quot;] * 4
+model = make_pipeline(TfidfVectorizer(), MultinomialNB())
+model.fit(train, labels)
+tests = [&quot;hostel room fee&quot;, &quot;renew library books&quot;, &quot;morning bus timetable&quot;,
+         &quot;rent and library book&quot;, &quot;quantum banana telescope&quot;]
+for text, label in zip(tests, model.predict(tests)):
+    print(repr(text), &quot;-&gt;&quot;, label)
+</code></pre><h3>Copied output</h3><pre><code>&#x27;hostel room fee&#x27; -&gt; hostel
+&#x27;renew library books&#x27; -&gt; library
+&#x27;morning bus timetable&#x27; -&gt; transport
+&#x27;rent and library book&#x27; -&gt; library
+&#x27;quantum banana telescope&#x27; -&gt; hostel
+</code></pre>
+<h2>The failure matters</h2><p>The clear hostel, library and bus examples returned their intended categories. The mixed message "rent and library book" was assigned library, even though it contains two topics. The unrelated "quantum banana telescope" was assigned hostel. With this setup, predict chooses one of the trained labels; there is no "unknown" label or rejection rule.</p><p>For this exact training vocabulary, none of the unrelated sentence's words appears in training. The vectorizer therefore gives that input no matching word features. Do not interpret its label as evidence that the sentence concerns hostel life. We did not measure accuracy, and five hand-chosen test strings are not a validation benchmark.</p>
+<h2>Try it</h2><pre><code>pip install "scikit-learn==1.7.2"</code></pre><p>Use Python 3.10 or newer in a virtual environment, then run the code above. Change one training example at a time and inspect the effect. Keep the test examples separate from training. For a real project you would need representative labelled data, independent evaluation and a design for ambiguous or out-of-scope inputs, rather than treating every prediction as reliable.</p>
+<h2>Limits</h2><ul><li>Twelve short English training strings and five hand-picked test strings. No large dataset, Hindi, Malayalam, spelling mistakes, long text or real message routing tested.</li><li>This is a statistical text classifier, not semantic search, keyword extraction or a generative assistant. It does not explain whether the category is appropriate.</li><li>No production deployment, confidence calibration, fairness study or model-quality benchmark. A label is not an assurance of relevance.</li><li>Code and output are selectable text, not a reconstructed terminal screenshot. No pretrained model or sample files need downloading beyond package installation.</li></ul>
+<h2>Sources</h2><ul><li><a href="https://scikit-learn.org/stable/">Official scikit-learn site: purpose and tools</a></li><li><a href="https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html">Official working-with-text tutorial: features, classifiers and pipelines</a></li><li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html">TF-IDF vectorizer reference</a></li><li><a href="https://pypi.org/project/scikit-learn/1.7.2/">Tested version's PyPI metadata</a></li><li><a href="https://github.com/scikit-learn/scikit-learn">Official repository and licence</a></li></ul>
+</article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
