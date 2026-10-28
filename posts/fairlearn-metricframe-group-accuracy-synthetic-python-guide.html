@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Fairlearn: look past a single accuracy score | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/fairlearn-metricframe-group-accuracy-synthetic-python-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-28" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Fairlearn: look past a single accuracy score", "description": "Eight fictional rows show how one overall metric can hide group differences. A local MetricFrame lesson, not a fairness or compliance verdict.", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": "https://aicon-hub.github.io/posts/fairlearn-metricframe-group-accuracy-synthetic-python-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Eight fictional rows show how one overall metric can hide group differences. A local MetricFrame lesson, not a fairness or compliance verdict." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Fairlearn: look past a single accuracy score" property="og:title"/>
+<meta content="Eight fictional rows show how one overall metric can hide group differences. A local MetricFrame lesson, not a fairness or compliance verdict." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/fairlearn-metricframe-group-accuracy-synthetic-python-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/fairlearn-metricframe-group-accuracy-synthetic-python-guide-poster.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/fairlearn-metricframe-group-accuracy-synthetic-python-guide-poster.png" name="twitter:image"/>
+<meta content="Fairlearn: look past a single accuracy score" name="twitter:title"/>
+<meta content="Eight fictional rows show how one overall metric can hide group differences. A local MetricFrame lesson, not a fairness or compliance verdict." name="twitter:description"/>
+<style>article.post pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}article.post figure img{background:#fff;padding:16px;box-sizing:content-box;max-width:calc(100% - 32px);height:auto}</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Fairlearn</p>
+<article class="post"><span class="chip">AI MODEL ASSESSMENT</span><figure><img src="../assets/howto/fairlearn-metricframe-group-accuracy-synthetic-python-guide-logo.png" width="440" alt="Official Fairlearn logo"/><figcaption>Official Fairlearn logo from its repository. Checked 28 October 2026.</figcaption></figure><h1>Fairlearn: look past a single accuracy score</h1><p class="meta">By AiCoN | Published 28 October 2026 | Sources checked 28 October 2026</p><p class="lead">An overall accuracy score does not tell you how errors are distributed. Fairlearn's MetricFrame calculates metrics for the full dataset and for groups you supply. In our eight-row fictional example, overall accuracy was 75%, while group A had 100% and group B had 50%. That is a prompt to investigate the slices, not a fairness verdict about any real model or population.</p>
+<h2>Quick facts</h2><ul><li>Purpose: disaggregated model assessment. MetricFrame computes metrics overall and by the supplied group feature.</li><li>Tested: Fairlearn 0.14.0, Python 3.10.12/Linux, eight invented outcomes and predictions. No model was trained.</li><li>Version scope: we pinned 0.14.0 for the Python 3.10 environment. The current 0.15.0 package requires Python 3.11 or later and was not tested.</li><li>Cost and licence: the <a href="https://github.com/fairlearn/fairlearn">official code repository</a> lists MIT. No account, API key, card, payment or cloud service was used.</li><li>Privacy scope: invented rows only. The script returned identical output with networking disabled after installation. Not a security audit.</li><li>India: no India-specific availability established. This was a local package test, not a legal-compliance assessment.</li></ul>
+<h2>Why use it beside a chatbot?</h2><p>A chatbot can explain why averages can mislead. MetricFrame calculates the slices from actual arrays and keeps the overall and group metrics together. You choose which groups and metrics matter. The software does not decide whether the data is representative, the groups are appropriate or a system is fair.</p>
+<h2>Our eight-row test</h2><p>On 28 October 2026 we supplied two fictional groups, A and B, with four rows each. Both groups had two positive outcomes and two negative outcomes. The predictions matched every A row but predicted zero for every B row. These are intentionally chosen arrays, not demographic data or a real deployment.</p><h3>Exact tested code</h3><pre><code>import fairlearn
+from fairlearn.metrics import MetricFrame, count, selection_rate
+from sklearn.metrics import accuracy_score
+# Invented outcomes and predictions. A/B are fictional group labels.
+y_true = [1, 1, 0, 0, 1, 1, 0, 0]
+y_pred = [1, 1, 0, 0, 0, 0, 0, 0]
+groups = [&#x27;A&#x27;] * 4 + [&#x27;B&#x27;] * 4
+frame = MetricFrame(
+    metrics={&#x27;accuracy&#x27;: accuracy_score,
+             &#x27;selection_rate&#x27;: selection_rate, &#x27;count&#x27;: count},
+    y_true=y_true, y_pred=y_pred, sensitive_features=groups)
+print(&#x27;Fairlearn&#x27;, fairlearn.__version__)
+print(&#x27;overall:&#x27;, frame.overall.to_dict())
+print(&#x27;by group:&#x27;)
+print(frame.by_group.to_string())
+print(&#x27;accuracy max-min:&#x27;, frame.difference()[&#x27;accuracy&#x27;])
+</code></pre><h3>Copied output</h3><pre><code>Fairlearn 0.14.0
+overall: {&#x27;accuracy&#x27;: 0.75, &#x27;selection_rate&#x27;: 0.25, &#x27;count&#x27;: 8.0}
+by group:
+                     accuracy  selection_rate  count
+sensitive_feature_0                                 
+A                         1.0             0.5    4.0
+B                         0.5             0.0    4.0
+accuracy max-min: 0.5
+</code></pre><p>Accuracy was 0.75 overall, 1.0 for A and 0.5 for B. The max-minus-min accuracy difference was 0.5, or 50 percentage points. Selection rate here means the fraction predicted as label 1: 0.5 for A and 0.0 for B. It is not an acceptance decision in a real service. Counts are included so the tiny sample sizes stay visible.</p><p>We repeated the full script in a process with networking disabled after installation and compared output byte-for-byte. It matched. No model or dataset download was needed for these arrays.</p>
+<h2>Try the pinned route</h2><p>Use an isolated Python 3.10 environment, install the tested version, save the code as demo.py and run:</p><pre><code>pip install "fairlearn==0.14.0"
+python demo.py</code></pre><p>Keep sample order aligned across y_true, y_pred and groups. A group label at the wrong index produces a different assessment. Do not infer sensitive attributes from people's names or submit private demographic data just to try this lesson.</p>
+<h2>What this does not establish</h2><ul><li>Eight made-up rows are too small and artificial for a real-world conclusion. No statistical uncertainty or confidence intervals were evaluated.</li><li>A metric gap is not, by itself, proof of discrimination. Equal metrics would not prove fairness either.</li><li>No mitigation algorithm, trained model, dashboard, intersectional assessment or legal standard was tested.</li><li>Group choice, data quality, context and possible harms need review with the people affected. A number is not a certificate.</li></ul><h2>Sources</h2><ul><li><a href="https://fairlearn.org/v0.14/user_guide/assessment/perform_fairness_assessment.html">Version 0.14 assessment guide and MetricFrame usage</a></li><li><a href="https://fairlearn.org/main/user_guide/assessment/perform_fairness_assessment.html">Current official assessment guide</a></li><li><a href="https://github.com/fairlearn/fairlearn">Official code repository and licence</a></li><li><a href="https://pypi.org/project/fairlearn/0.14.0/">Tested 0.14.0 package</a></li></ul></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
