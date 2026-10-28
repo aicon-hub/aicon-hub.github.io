@@ -132,6 +132,7 @@ def apply(out):
  records.setdefault("ugc-net-december-2026-last-date-extended-to-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ugcnet.nta.nic.in/")
  records.setdefault("kerala-sevana-welfare-pension-2000-how-to-apply-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://welfarepension.lsgkerala.gov.in/")
  records.setdefault("rawgraphs-no-code-spreadsheet-charts-editable-svg-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.rawgraphs.io/")
+ records.setdefault("kerala-rti-online-file-application-rtiportal-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://rtiportal.kerala.gov.in/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
