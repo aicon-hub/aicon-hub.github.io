@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-scikit-20261028",
   "article_url": "https://aicon-hub.github.io/posts/scikit-learn-train-tiny-text-classifier-python-failure-test-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40622012314",
-  "message_ids": []
+  "message_ids": [
+    506
+  ]
 }
