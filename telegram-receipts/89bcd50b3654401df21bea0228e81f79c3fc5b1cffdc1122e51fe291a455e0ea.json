@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-optuna-20261028",
   "article_url": "https://aicon-hub.github.io/posts/optuna-search-model-parameters-cv-holdout-python-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40658098826",
-  "message_ids": []
+  "message_ids": [
+    514
+  ]
 }
