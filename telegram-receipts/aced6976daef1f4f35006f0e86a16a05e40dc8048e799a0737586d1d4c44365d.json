@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-diffchecker-20261028",
   "article_url": "https://aicon-hub.github.io/posts/diffchecker-free-text-compare-notice-changes-browser-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40698698999",
-  "message_ids": []
+  "message_ids": [
+    522
+  ]
 }
