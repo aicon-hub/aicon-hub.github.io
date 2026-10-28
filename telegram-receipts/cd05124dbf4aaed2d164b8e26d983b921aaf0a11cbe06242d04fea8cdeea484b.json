@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-gradio-20261028",
   "article_url": "https://aicon-hub.github.io/posts/gradio-build-local-python-browser-demo-no-public-link-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40645094695",
-  "message_ids": []
+  "message_ids": [
+    511
+  ]
 }
