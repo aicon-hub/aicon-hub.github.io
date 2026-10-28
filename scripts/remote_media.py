@@ -120,6 +120,7 @@ def apply(out):
  records.setdefault("keybert-extract-keyphrases-notes-local-python-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://maartengr.github.io/KeyBERT/")
  records.setdefault("rembg-remove-image-background-locally-python-synthetic-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/danielgatis/rembg")
  records.setdefault("tiktoken-count-ai-tokens-english-hindi-malayalam-python-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/openai/tiktoken")
+ records.setdefault("silero-vad-find-speech-segments-audio-local-python-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/snakers4/silero-vad")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
