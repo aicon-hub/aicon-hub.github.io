@@ -134,6 +134,7 @@ def apply(out):
  records.setdefault("fairlearn-metricframe-group-accuracy-synthetic-python-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://fairlearn.org/")
  records.setdefault("kerala-sevana-welfare-pension-2000-how-to-apply-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://welfarepension.lsgkerala.gov.in/")
  records.setdefault("shap-treeexplainer-prediction-contributions-local-python-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://shap.readthedocs.io/")
+ records.setdefault("rapidfuzz-product-name-shortlist-review-python-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://rapidfuzz.github.io/RapidFuzz/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
