@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-fairlearn-20261028",
   "article_url": "https://aicon-hub.github.io/posts/fairlearn-metricframe-group-accuracy-synthetic-python-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40665921226",
-  "message_ids": []
+  "message_ids": [
+    516
+  ]
 }
