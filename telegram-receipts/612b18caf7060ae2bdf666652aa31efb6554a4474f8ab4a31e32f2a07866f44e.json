@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-spacy-20261028",
   "article_url": "https://aicon-hub.github.io/posts/spacy-entityruler-extract-product-order-id-rules-python-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40639129162",
-  "message_ids": []
+  "message_ids": [
+    510
+  ]
 }
