@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>MLflow: keep training runs in a local experiment log | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/mlflow-log-compare-local-training-runs-sqlite-python-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-28" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "MLflow: keep training runs in a local experiment log", "description": "A verified Python and SQLite test recorded two training runs, their parameters and holdout scores. UI access was not verified.", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": "https://aicon-hub.github.io/posts/mlflow-log-compare-local-training-runs-sqlite-python-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="A verified Python and SQLite test recorded two training runs, their parameters and holdout scores. UI access was not verified." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="MLflow: keep training runs in a local experiment log" property="og:title"/>
+<meta content="A verified Python and SQLite test recorded two training runs, their parameters and holdout scores. UI access was not verified." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/mlflow-log-compare-local-training-runs-sqlite-python-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/mlflow-log-compare-local-training-runs-sqlite-python-guide-poster.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/mlflow-log-compare-local-training-runs-sqlite-python-guide-poster.png" name="twitter:image"/>
+<meta content="MLflow: keep training runs in a local experiment log" name="twitter:title"/>
+<meta content="A verified Python and SQLite test recorded two training runs, their parameters and holdout scores. UI access was not verified." name="twitter:description"/>
+<style>article.post pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}article.post figure img{background:#fff;padding:16px;box-sizing:content-box;max-width:calc(100% - 32px);height:auto}</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / MLflow</p>
+<article class="post"><span class="chip">AI EXPERIMENT TRACKING</span><figure><img src="../assets/howto/mlflow-log-compare-local-training-runs-sqlite-python-guide-logo.png" width="440" alt="Official MLflow logo"/><figcaption>Official MLflow logo from its project repository. Checked 28 October 2026.</figcaption></figure><h1>MLflow: keep training runs in a local experiment log</h1><p class="meta">By AiCoN | Published 28 October 2026 | Sources checked 28 October 2026</p><p class="lead">When you train several model versions, a score in a terminal is easy to lose. MLflow records runs with parameters and metrics so you can find and compare them later. We tested its local Python logging and search APIs with two decision-tree runs and a SQLite database. We did not complete a working UI check, so this guide covers the verified code workflow only.</p>
+<h2>Quick facts</h2><ul><li>Purpose: record experiment runs, parameters and metrics. The official quickstart also covers models, which we did not test logging.</li><li>Tested: MLflow 3.17.2, scikit-learn 1.7.2, Python 3.10.12/Linux, explicit SQLite tracking URI.</li><li>Cost and licence: the <a href="https://github.com/mlflow/mlflow">code repository</a> lists Apache 2.0. No account, card, payment or managed cloud service was used in our local test.</li><li>Privacy scope: only the bundled Iris dataset and experiment metadata were used. We did not inspect network traffic or prove offline operation. Local storage is not a privacy audit.</li><li>India: no India-specific availability was established. This was a local package workflow.</li></ul>
+<h2>Why use it beside a chatbot?</h2><p>A chat explanation can help choose a parameter, but it is not your experiment record. MLflow gives each training run a place to store the parameter value and resulting score. You can query those records without manually copying a table into a conversation. It does not decide whether a metric or test split is appropriate.</p>
+<h2>What we actually tested</h2><p>On 28 October 2026 we split the bundled Iris data once using a fixed random seed and stratification. We trained decision trees with maximum depths 1 and 3 on the same training rows and evaluated both on the same 45 held-out rows. Each run logged max_depth, test_rows and holdout_accuracy. A search of the stored runs returned depth 3 above depth 1 when sorted by that metric.</p><h3>Exact tested code</h3><pre><code>import mlflow
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+mlflow.set_tracking_uri(&#x27;sqlite:///runs.db&#x27;)
+mlflow.set_experiment(&#x27;iris-depth-comparison&#x27;)
+X, y = load_iris(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42, stratify=y)
+for depth in [1, 3]:
+    with mlflow.start_run(run_name=f&#x27;depth-{depth}&#x27;):
+        model = DecisionTreeClassifier(max_depth=depth, random_state=42)
+        model.fit(X_train, y_train)
+        score = accuracy_score(y_test, model.predict(X_test))
+        mlflow.log_param(&#x27;max_depth&#x27;, depth)
+        mlflow.log_param(&#x27;test_rows&#x27;, len(y_test))
+        mlflow.log_metric(&#x27;holdout_accuracy&#x27;, score)
+        print(f&#x27;depth={depth} accuracy={score:.6f} test_rows={len(y_test)}&#x27;)
+runs = mlflow.search_runs(order_by=[&#x27;metrics.holdout_accuracy DESC&#x27;])
+print(runs[[&#x27;params.max_depth&#x27;, &#x27;metrics.holdout_accuracy&#x27;]].to_string(index=False))
+</code></pre><h3>Copied result lines</h3><pre><code>depth=1 accuracy=0.666667 test_rows=45
+depth=3 accuracy=0.977778 test_rows=45
+params.max_depth  metrics.holdout_accuracy
+               3                  0.977778
+               1                  0.666667</code></pre><p>The results are about this single small split, not proof that depth 3 is generally better. No cross-validation, tuning search, statistical comparison or production model evaluation was performed. We also checked that the local SQLite file contained the recorded parameter and metric rows.</p>
+<h2>Run the verified Python route</h2><p>Use an isolated Python 3.10 environment. The tested MLflow release requires Python 3.10 or later. Install these versions, save the code as demo.py, and run it from an empty working folder:</p><pre><code>pip install "mlflow==3.17.2" "scikit-learn==1.7.2"
+python demo.py</code></pre><p>The relative URI sqlite:///runs.db creates or uses runs.db in the current folder. Keep that file if you want the experiment record. Rerunning the script adds two more runs to the same experiment; it does not replace the old ones. Review what you log before pointing tracking at a shared or remote server.</p>
+<h2>What remains unverified</h2><ul><li>The local web server served page assets, but browser UI testing stalled. We are not publishing a working-dashboard screenshot or claiming UI success.</li><li>No model artifacts, registry, deployment, remote server, LLM tracing, team access or managed service was tested.</li><li>Only two runs and one dataset split. The scores are not a benchmark of MLflow, which recorded values computed by scikit-learn.</li><li>We did not test telemetry controls, offline operation, security configuration or retention policies. Avoid logging secrets or private datasets without reviewing the setup.</li></ul><h2>Sources</h2><ul><li><a href="https://mlflow.org/docs/latest/ml/tracking/quickstart/">Official tracking quickstart</a></li><li><a href="https://mlflow.org/docs/latest/ml/tracking/tutorials/local-database/">Official local SQLite tracking tutorial</a></li><li><a href="https://github.com/mlflow/mlflow">Official repository and licence</a></li><li><a href="https://pypi.org/project/mlflow/3.17.2/">Tested release metadata</a></li></ul></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
