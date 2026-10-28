@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Optuna: search model settings without reusing the test set | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/optuna-search-model-parameters-cv-holdout-python-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-28" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Optuna: search model settings without reusing the test set", "description": "Twelve local trials searched two decision-tree settings using cross-validation. A separate holdout was scored only after the search.", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": "https://aicon-hub.github.io/posts/optuna-search-model-parameters-cv-holdout-python-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../assets/style.css?v=20261015smooth1" rel="stylesheet"/><link href="../assets/article.css?v=20261015smooth1" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="../assets/theme.css?v=20261015smooth1" rel="stylesheet"/>
+<link href="../assets/cinema.css?v=20261015smooth1" rel="stylesheet"/><script defer="" src="../assets/cinema.js?v=20261015smooth1"></script><meta content="Twelve local trials searched two decision-tree settings using cross-validation. A separate holdout was scored only after the search." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="AiCoN" property="og:site_name"/>
+<meta content="Optuna: search model settings without reusing the test set" property="og:title"/>
+<meta content="Twelve local trials searched two decision-tree settings using cross-validation. A separate holdout was scored only after the search." property="og:description"/>
+<meta content="https://aicon-hub.github.io/posts/optuna-search-model-parameters-cv-holdout-python-guide.html" property="og:url"/>
+<meta content="https://aicon-hub.github.io/assets/howto/optuna-search-model-parameters-cv-holdout-python-guide-poster.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://aicon-hub.github.io/assets/howto/optuna-search-model-parameters-cv-holdout-python-guide-poster.png" name="twitter:image"/>
+<meta content="Optuna: search model settings without reusing the test set" name="twitter:title"/>
+<meta content="Twelve local trials searched two decision-tree settings using cross-validation. A separate holdout was scored only after the search." name="twitter:description"/>
+<style>article.post pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}article.post figure img{background:#fff;padding:16px;box-sizing:content-box;max-width:calc(100% - 32px);height:auto}</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Optuna</p>
+<article class="post"><span class="chip">AI MODEL TUNING</span><figure><img src="../assets/howto/optuna-search-model-parameters-cv-holdout-python-guide-logo.png" width="440" alt="Official Optuna logo"/><figcaption>Official Optuna logo from its repository. Checked 28 October 2026.</figcaption></figure><h1>Optuna: search model settings without reusing the test set</h1><p class="meta">By AiCoN | Published 28 October 2026 | Sources checked 28 October 2026</p><p class="lead">Optuna runs a search over model settings and records the score returned by each trial. That can replace a hand-written loop when you want to try several settings. We tested a small local search over decision-tree depth and minimum leaf size, using cross-validation inside the training data. We kept a separate holdout out of the search. This is a lesson in setting up a search, not evidence that tuning always improves a model.</p>
+<h2>Quick facts</h2><ul><li>Purpose: a Python hyperparameter-optimization framework. You define an objective, suggest parameter ranges and set a trial budget.</li><li>Tested: Optuna 5.0.0, scikit-learn 1.7.2, Python 3.10.12/Linux. Twelve sequential trials, two integer parameters, seeded TPE sampler.</li><li>Cost and licence: the <a href="https://github.com/optuna/optuna">official repository</a> lists MIT. No account, API key, payment, card or paid compute was used. Real searches still consume your own compute or a provider's paid resources.</li><li>Privacy scope: bundled Wine data only. After installation, the full script returned identical output with networking disabled. Not a security audit.</li><li>India: no India-specific access claim established. This was a local package test, not an India-network availability check.</li></ul>
+<h2>Why use it beside a chatbot?</h2><p>A chatbot can suggest parameter ranges, but Optuna actually calls your objective repeatedly and tracks trial results. Unlike a tracking-only tool, it also selects candidate settings through a sampler. It cannot fix a misleading objective, data leakage or a poor validation design. Those decisions still need review.</p>
+<h2>Our bounded test</h2><p>On 28 October 2026, we split the bundled Wine dataset into 133 training rows and 45 held-out rows using a fixed seed and stratification. Each trial evaluated a decision tree with three-fold cross-validation on the training rows only. The search maximized mean CV accuracy over 12 trials. Only afterward did we fit the selected settings on all training rows and score the held-out set once.</p><h3>Exact tested code</h3><pre><code>import optuna
+import sklearn
+from sklearn.datasets import load_wine
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.tree import DecisionTreeClassifier
+optuna.logging.set_verbosity(optuna.logging.WARNING)
+X, y = load_wine(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25, random_state=42, stratify=y)
+def objective(trial):
+    depth = trial.suggest_int(&#x27;max_depth&#x27;, 1, 8)
+    leaf = trial.suggest_int(&#x27;min_samples_leaf&#x27;, 1, 6)
+    model = DecisionTreeClassifier(max_depth=depth,
+                                   min_samples_leaf=leaf, random_state=42)
+    return cross_val_score(model, X_train, y_train, cv=3,
+                           scoring=&#x27;accuracy&#x27;).mean()
+study = optuna.create_study(direction=&#x27;maximize&#x27;,
+    sampler=optuna.samplers.TPESampler(seed=42))
+study.optimize(objective, n_trials=12)
+best = DecisionTreeClassifier(**study.best_params, random_state=42)
+best.fit(X_train, y_train)
+print(&#x27;Optuna&#x27;, optuna.__version__, &#x27;| scikit-learn&#x27;, sklearn.__version__)
+print(&#x27;trials:&#x27;, len(study.trials), &#x27;| training rows:&#x27;, len(y_train),
+      &#x27;| untouched holdout rows:&#x27;, len(y_test))
+print(&#x27;best parameters:&#x27;, study.best_params)
+print(&#x27;best 3-fold CV accuracy:&#x27;, round(study.best_value, 6))
+print(&#x27;final holdout accuracy:&#x27;, round(best.score(X_test, y_test), 6))
+print(&#x27;first 3 trial scores:&#x27;, [round(t.value, 6) for t in study.trials[:3]])
+</code></pre><h3>Copied output</h3><pre><code>Optuna 5.0.0 | scikit-learn 1.7.2
+trials: 12 | training rows: 133 | untouched holdout rows: 45
+best parameters: {&#x27;max_depth&#x27;: 8, &#x27;min_samples_leaf&#x27;: 1}
+best 3-fold CV accuracy: 0.849495
+final holdout accuracy: 0.955556
+first 3 trial scores: [0.811448, 0.781481, 0.773737]
+</code></pre><p>The selected settings were max_depth=8 and min_samples_leaf=1. The mean CV score was 0.849495 and the final holdout score was 0.955556. These evaluate different row sets; a higher holdout score is not proof of improvement over the CV score. We did not compare a baseline, other samplers or a larger trial budget.</p><p>The script was repeated with networking disabled after package installation; output matched byte-for-byte. No model download was needed for the bundled dataset and decision tree.</p>
+<h2>Run this exact route</h2><p>Use an isolated Python 3.10 environment, install the tested versions, save the code as demo.py and run it:</p><pre><code>pip install "optuna==5.0.0" "scikit-learn==1.7.2"
+python demo.py</code></pre><p>The tested release metadata lists Python 3.9 or later; the current project homepage recommends Python 3.10 or newer. We tested Python 3.10.12, not Python 3.9. This study lives in memory; its trial history is not saved to disk by this code. A fixed seed helps reproduce this sequential example in the same environment, not every parallel run or future dependency version.</p>
+<h2>Before adapting it</h2><ul><li>Set a trial or time budget. Every trial can retrain a model and cost time or money.</li><li>Keep test data out of the objective. Repeatedly choosing settings based on the holdout makes that holdout less useful as a final check.</li><li>This small dataset is not a production benchmark. No generalization guarantee, statistical significance, fair comparison or universal best setting is claimed.</li><li>No pruning, parallel search, dashboard, persistent storage, LLM tuning or remote compute was tested.</li><li>The objective determines what is optimized. A good trial score does not establish safety, fairness or usefulness.</li></ul><h2>Sources</h2><ul><li><a href="https://optuna.org/">Official overview and installation</a></li><li><a href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/001_first.html">Official objective, study and trial tutorial</a></li><li><a href="https://optuna.readthedocs.io/en/stable/reference/generated/optuna.samplers.TPESampler.html">Official TPE sampler reference</a></li><li><a href="https://github.com/optuna/optuna">Official code repository and licence</a></li><li><a href="https://pypi.org/project/optuna/5.0.0/">Tested release metadata</a></li></ul></article></main>
+<footer><div class="wrap">© 2026 AiCoN | Your Trusted Tech Companion<br/>Every guide shows what we checked.<br/><a href="https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c">WhatsApp</a> · <a href="https://t.me/AiCoN4tech">Telegram</a> · <a href="https://icon4tech.blogspot.com">Blog</a> · <a href="mailto:aicon4tech@proton.me">aicon4tech@proton.me</a> · <a href="mailto:aicon4tech@gmail.com">aicon4tech@gmail.com</a></div></footer>
+<script defer="" src="../assets/avatar-loader.js?v=20261016guide1"></script></body></html>
