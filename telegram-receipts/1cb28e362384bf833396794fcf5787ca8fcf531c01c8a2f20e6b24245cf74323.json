@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-mockaroo-20261029",
   "article_url": "https://aicon-hub.github.io/posts/mockaroo-synthetic-test-data-csv-field-constraints-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40866902382",
-  "message_ids": []
+  "message_ids": [
+    541
+  ]
 }
