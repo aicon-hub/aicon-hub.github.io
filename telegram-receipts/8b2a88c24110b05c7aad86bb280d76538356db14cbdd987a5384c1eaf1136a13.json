@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-sqlbolt-20261029",
   "article_url": "https://aicon-hub.github.io/posts/sqlbolt-interactive-sql-select-practice-query-results-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40866973521",
-  "message_ids": []
+  "message_ids": [
+    542
+  ]
 }
