@@ -146,6 +146,7 @@ def apply(out):
  records.setdefault("jsoncrack-nested-json-graph-png-export-invalid-input-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://jsoncrack.com/")
  records.setdefault("sankeymatic-flow-diagram-counts-totals-png-svg-export-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://sankeymatic.com/build/")
  records.setdefault("mockaroo-synthetic-test-data-csv-field-constraints-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.mockaroo.com/")
+ records.setdefault("sqlbolt-interactive-sql-select-practice-query-results-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://sqlbolt.com/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
