@@ -139,6 +139,7 @@ def apply(out):
  records.setdefault("digipin-india-post-digital-address-code-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://dac.indiapost.gov.in/mydigipin")
  records.setdefault("pairdrop-free-browser-file-transfer-no-signup-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://pairdrop.net/")
  records.setdefault("kerala-ksrtc-bus-tickets-online-booking-neo-oprs-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://onlineksrtcswift.com/")
+ records.setdefault("webaim-contrast-checker-text-colors-wcag-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://webaim.org/resources/contrastchecker/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
