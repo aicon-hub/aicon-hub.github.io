@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-webaim-20261029",
   "article_url": "https://aicon-hub.github.io/posts/webaim-contrast-checker-text-colors-wcag-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "40825434440",
-  "message_ids": []
+  "message_ids": [
+    535
+  ]
 }
