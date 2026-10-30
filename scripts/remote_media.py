@@ -145,6 +145,7 @@ def apply(out):
  records.setdefault("pharma-sahi-daam-nppa-medicine-price-pack-date-check-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://nppaipdms.gov.in/NPPA/PharmaSahiDaam/searchMedicine")
  records.setdefault("kseb-quick-pay-electricity-bill-online-consumer-number-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://wss.kseb.in/selfservices/quickpay")
  records.setdefault("beamer-one-mouse-keyboard-mac-windows-linux-free-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://beamerapp.co.uk/")
+ records.setdefault("kerala-water-authority-water-bill-online-quick-pay-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://epay.kwa.kerala.gov.in/quickpay")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
