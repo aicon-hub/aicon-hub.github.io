@@ -137,6 +137,7 @@ def apply(out):
  records.setdefault("vb-g-ram-g-125-days-guarantee-kerala-wage-rs-401-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://vbgramg.dord.gov.in/")
  records.setdefault("kerala-ration-card-online-eservices-citizen-portal-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://civilsupplieskerala.gov.in/")
  records.setdefault("akshaya-official-centre-directory-kerala-contact-before-visit-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://akshaya.kerala.gov.in/centers")
+ records.setdefault("kerala-ehealth-online-opd-appointment-uhid-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ehealth.kerala.gov.in/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
