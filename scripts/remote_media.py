@@ -140,6 +140,7 @@ def apply(out):
  records.setdefault("kerala-ehealth-online-opd-appointment-uhid-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ehealth.kerala.gov.in/")
  records.setdefault("eraktkosh-blood-stock-search-kerala-confirm-before-travel-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://eraktkosh.mohfw.gov.in/BLDAHIMS/bloodbank/stockAvailability.cnt")
  records.setdefault("kerala-police-thuna-online-services-fir-download-no-offence-certificate-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://thuna.keralapolice.gov.in/")
+ records.setdefault("imd-kerala-district-weather-warning-nowcast-check-date-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://mausam.imd.gov.in/thiruvananthapuram/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
