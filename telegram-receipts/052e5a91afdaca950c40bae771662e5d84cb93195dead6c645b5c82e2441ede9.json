@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-kerala-ehealth-opd-20261030",
   "article_url": "https://aicon-hub.github.io/posts/kerala-ehealth-online-opd-appointment-uhid-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "41001735390",
-  "message_ids": []
+  "message_ids": [
+    546
+  ]
 }
