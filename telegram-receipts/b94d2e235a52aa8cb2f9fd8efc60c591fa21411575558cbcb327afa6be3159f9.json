@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-kseb-quick-pay-20261030",
   "article_url": "https://aicon-hub.github.io/posts/kseb-quick-pay-electricity-bill-online-consumer-number-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "41061154845",
-  "message_ids": []
+  "message_ids": [
+    552
+  ]
 }
