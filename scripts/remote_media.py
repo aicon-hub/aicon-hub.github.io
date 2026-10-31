@@ -152,6 +152,7 @@ def apply(out):
  records.setdefault("norka-roots-id-card-pravasi-returnee-nrk-apply-online-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://id.norkaroots.kerala.gov.in/")
  records.setdefault("kerala-employment-exchange-special-renewal-cancelled-registration-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.eemployment.kerala.gov.in/")
  records.setdefault("kerala-fair-value-of-land-check-online-registration-department-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://igr.kerala.gov.in/")
+ records.setdefault("kerala-free-legal-aid-kelsa-who-is-eligible-helpline-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://kerala.nalsa.gov.in/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
