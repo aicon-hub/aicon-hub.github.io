@@ -149,6 +149,7 @@ def apply(out):
  records.setdefault("kerala-ecostat-district-retail-food-prices-date-unit-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.ecostat.kerala.gov.in/price-bulletin")
  records.setdefault("kerala-learner-licence-online-sarathi-parivahan-apply-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do")
  records.setdefault("kerala-traffic-challan-check-pay-echallan-parivahan-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://echallan.parivahan.gov.in/index/accused-challan")
+ records.setdefault("norka-roots-id-card-pravasi-returnee-nrk-apply-online-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://id.norkaroots.kerala.gov.in/")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
