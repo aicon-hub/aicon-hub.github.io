@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en-IN"><head><script src="../assets/theme.js?v=20261015smooth1"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y0GM7VRQNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0GM7VRQNW');
+</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Elephant-Goldfish Model (EGM): free Google plugin for design-first AI coding | AiCoN</title>
+<link href="https://aicon-hub.github.io/posts/egm-elephant-goldfish-model-google-open-source-spec-driven-development-plugin-guide.html" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="2026-10-31" property="article:published_time"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Elephant-Goldfish Model (EGM): the free Google plugin that makes AI coding agents design first", "description": "EGM is a free, open source (Apache 2.0) plugin from Google for Antigravity, Claude Code and Codex: draft a spec, have fresh zero-context reviewers stress-test it, then build. Checked 31 October 2026.", "datePublished": "2026-10-31", "mainEntityOfPage": "https://aicon-hub.github.io/posts/egm-elephant-goldfish-model-google-open-source-spec-driven-development-plugin-guide.html", "author": {"@type": "Organization", "name": "AiCoN"}, "publisher": {"@type": "Organization", "name": "AiCoN"}}</script>
+<meta content="Elephant-Goldfish Model (EGM): the free Google plugin that makes AI coding agents design first" property="og:title"/>
+<meta content="Free, open source (Apache 2.0). Draft a spec with an agent that knows your project, then have fresh zero-context reviewers attack it. Checked 31 October 2026." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://aicon-hub.github.io/posts/egm-elephant-goldfish-model-google-open-source-spec-driven-development-plugin-guide.html" property="og:url"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,700;9..144,900&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css?v=20251006" rel="stylesheet"/>
+<style>article.post figure img{max-width:100%;height:auto}article.post figure{max-width:100%;margin-left:0;margin-right:0}</style>
+<meta content="https://aicon-hub.github.io/assets/howto/egm-elephant-goldfish-model-google-open-source-spec-driven-development-plugin-guide-poster.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Ai<span>CoN</span></a><nav><a href="index.html">Posts</a><a href="../index.html#contact">Contact</a><a href="about-aicon.html">About AiCoN</a></nav></div></header>
+<main class="wrap">
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Posts</a> / Elephant-Goldfish Model</p>
+<article class="post"><span class="chip">FREE TOOL</span><h1>Elephant-Goldfish Model (EGM): the free Google plugin that makes AI coding agents design first</h1><p class="meta">By AiCoN | Published 31 October 2026 | Sources checked 31 October 2026</p>
+<p class="lead">EGM is an open source plugin, released by Google engineers in the last two weeks, for AI coding agents. Instead of letting the agent start writing code, it makes you write and test a design document first. We read the official site, the GitHub project and Google's announcement on 31 October 2026. We did not install or run it, so how well it works is not tested by AiCoN.</p>
+<h2>The idea in one line</h2>
+<p>"Design with an elephant. Review with a goldfish." That is the project's own tagline. The Elephant is a long, context-rich AI session that knows your project and drafts the specification. The Goldfish is a fresh AI session with no memory of that conversation, so it reads only the document and the code and points out gaps the Elephant cannot see. You decide the trade-offs and approve the design before anything is built.</p>
+<figure><img src="../assets/howto/egm-site-hero.png" alt="egm.dev on 31 October 2026: Elephant-Goldfish Model, Design with an elephant. Review with a goldfish." width="1920" height="1080" loading="lazy"/><figcaption>The official site, egm.dev, on 31 October 2026.</figcaption></figure>
+<h2>What it is, who made it, and what it costs</h2>
+<ul>
+<li><strong>What:</strong> a plugin made of skills (slash commands) and reviewer personas that run inside your coding agent.</li>
+<li><strong>Who:</strong> it is in the github.com/google organisation, and Google's Open Source Blog introduced it on 22 October 2026 (authors Brian Suchy and Dave Rensin). Google says thousands of its engineers use it daily. The README also says: "This is not an officially supported Google product."</li>
+<li><strong>Price:</strong> free. The code is under the Apache 2.0 licence, so you can use and change it. The plugin runs inside a coding agent such as Antigravity, Claude Code or Codex, and those tools and their AI models have their own plans and limits. We did not check what they cost.</li>
+<li><strong>When:</strong> the first public commit is dated 21 October 2026. The only release we saw was EGM v0.1.0, so it is early.</li>
+</ul>
+<h2>The workflow</h2>
+<ol>
+<li><strong>Brainstorm</strong> (<code>/egm-brainstorm</code>): talk the idea through with the agent. Fresh reviewers challenge it, and the agreed direction is saved as a concept brief.</li>
+<li><strong>Draft</strong> (<code>/egm-draft</code>): the agent turns the brief into a design document, pausing after each section for your feedback.</li>
+<li><strong>Review</strong> (<code>/egm-review</code>): fresh Goldfish reviewers check the design. Google's announcement describes three steps: a comprehension check (a Goldfish must explain the plan back), an antagonistic review by several sceptical Goldfish, and an implementation readiness check (are file paths, data structures and functions all spelled out).</li>
+<li><strong>You approve</strong> the design, then ask your coding agent to build it.</li>
+</ol>
+<p>The README lists seven skills you can use on their own: Brainstorm, Draft, Resolve (work through review findings), Bootstrap (write documentation for an existing codebase), Review, Review loop, and Drift report (compare the design documents with the current code). The README says to use it when a feature needs design decisions, and to use your normal workflow for a small, clear bug fix.</p>
+<h2>Which coding tools it works with</h2>
+<ul>
+<li><strong>Antigravity, Claude Code and Codex:</strong> the project says these three pass its automated installation, reviewer isolation and end-to-end workflow tests. The install commands from the README, as listed: <code>agy plugin install https://github.com/google/elephant-goldfish-model</code> for Antigravity; <code>claude plugin marketplace add google/elephant-goldfish-model</code> then <code>claude plugin install egm@egm</code> for Claude Code; <code>codex plugin marketplace add google/elephant-goldfish-model</code> then <code>codex plugin add egm@egm</code> for Codex. Start a new session afterwards.</li>
+<li><strong>Others:</strong> its docs list working install paths for Claude Cowork, ChatGPT Work and omp, with open verification gaps for Cowork and ChatGPT Work. Standalone Antigravity IDE is listed as not supported.</li>
+<li><strong>The catch:</strong> the review steps need a tool that can start fresh sub-agents. If yours cannot, EGM stops the review rather than run it in the same session.</li>
+</ul>
+<h2>The limits, in its own words</h2>
+<ul>
+<li>"A review does not replace tests or human judgment."</li>
+<li>It is aimed at design-heavy work. For small fixes the project says to skip it.</li>
+<li>Install the whole plugin. Copying only the skills folder breaks it, per the docs.</li>
+</ul>
+<figure><img src="../assets/howto/egm-github-repo.png" alt="The google/elephant-goldfish-model GitHub repository on 31 October 2026: 7.2k stars, 436 forks, Apache-2.0 license, release EGM v0.1.0" width="1240" height="975" loading="lazy"/><figcaption>The GitHub repository on 31 October 2026, cropped to the repository panel (browser toolbar removed) and colour-reduced to keep the file small: public, Apache-2.0 licence, about 7.2k stars and 436 forks, one release (v0.1.0), 119 commits.</figcaption></figure>
+<h2>India</h2>
+<ul>
+<li>We saw no country restriction on the pages we read. We did not test installing or running it from India.</li>
+</ul>
+<div class="box good"><b>AiCoN check</b>On 31 October 2026 we opened egm.dev, the GitHub README, the harness (supported tools) guide, the LICENSE and Google's Open Source Blog post. We did not install the plugin, run any command or review a design with it. How it behaves, and whether it improves the code you get, is not tested by AiCoN. Feature claims are the project's own.</div>
+<h2>Frequently asked questions</h2>
+<h3>Is EGM free?</h3><p>The plugin is free and open source under Apache 2.0. The coding agent you run it in has its own pricing, which we did not check.</p>
+<h3>Is it an official Google product?</h3><p>It is published by Google engineers under github.com/google, but the README says it is not an officially supported Google product.</p>
+<h3>Do I need Antigravity?</h3><p>No. The project lists Antigravity, Claude Code and Codex as tested, and other tools with working install paths.</p>
+<h3>Does it write the code?</h3><p>Its job is the design: brainstorm, draft and review a specification. You then ask your coding agent to implement the approved design.</p>
+<p class="src">Sources: <a href="https://egm.dev/" rel="noopener" target="_blank">egm.dev</a>, <a href="https://github.com/google/elephant-goldfish-model" rel="noopener" target="_blank">google/elephant-goldfish-model on GitHub</a> (README, harness guide, LICENSE), <a href="https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html" rel="noopener" target="_blank">Google Open Source Blog, 22 October 2026</a>. Checked 31 October 2026.</p>
+<p class="src">Independent guide by AiCoN - not affiliated with or endorsed by Google. Features and limits are the project's claims; check egm.dev before relying on them.</p>
+<div class="share"><a href="https://egm.dev/">Open egm.dev</a><a class="alt" href="index.html">More posts</a></div></article></main>
