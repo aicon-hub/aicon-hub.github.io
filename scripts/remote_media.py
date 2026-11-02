@@ -161,6 +161,7 @@ def apply(out):
  records.setdefault("kerala-ksrtc-student-concession-card-online-registration-renewal-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://concessionksrtc.com/")
  records.setdefault("e-jagriti-file-consumer-complaint-online-register-steps-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://e-jagriti.gov.in/")
  records.setdefault("driving-licence-renewal-online-sarathi-parivahan-expired-licence-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://sarathi.parivahan.gov.in/")
+ records.setdefault("vehicle-ownership-transfer-online-vahan-form-29-30-sell-buy-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://parivahan.gov.in/en/content/ownership-transfer")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
