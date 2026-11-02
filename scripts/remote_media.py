@@ -154,6 +154,7 @@ def apply(out):
  records.setdefault("kerala-fair-value-of-land-check-online-registration-department-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://igr.kerala.gov.in/")
  records.setdefault("kerala-free-legal-aid-kelsa-who-is-eligible-helpline-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://kerala.nalsa.gov.in/")
  records.setdefault("egm-elephant-goldfish-model-google-open-source-spec-driven-development-plugin-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://egm.dev/")
+ records.setdefault("kerala-psc-162-173-2026-december-2-deadline-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.keralapsc.gov.in/extra-ordinary-gazette-date-30102026")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
