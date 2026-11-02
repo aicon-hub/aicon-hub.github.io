@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-article-kerala-voter-list-ssr-20261102",
   "article_url": "https://aicon-hub.github.io/posts/kerala-voter-list-special-summary-revision-2027-draft-roll-12-november-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "41392640497",
-  "message_ids": []
+  "message_ids": [
+    563
+  ]
 }
