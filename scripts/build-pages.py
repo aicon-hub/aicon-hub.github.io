@@ -173,7 +173,7 @@ def seo_pass():
  t=t.replace('<a href="#posts">Latest guides</a><a href="#checks">How we check</a>','<a href="#posts">Latest guides</a><a href="#checks">How we check</a><a href="posts/about-aicon.html">About</a><a href="#contact">Contact</a>',1)
  page.write_text(t)
  # sitemap: every built page
- urls=[base,base+'posts/',base+'funded/']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html' and 'http-equiv="refresh"' not in f.read_text()]
+ urls=[base,base+'posts/',base+'funded/']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html' and 'http-equiv="refresh"' not in f.read_text()]+[base+'ml/posts/'+f.name for f in sorted((OUT/'ml/posts').glob('*.html'))]
  today=date.today().isoformat()
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
 
@@ -211,7 +211,7 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
