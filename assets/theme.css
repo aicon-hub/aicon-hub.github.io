@@ -120,3 +120,6 @@ html[data-theme="light"] header .brand,html[data-theme="light"] header .logo,htm
  header.top #theme-toggle{grid-column:4/7;grid-row:1;justify-self:end}
  header.top nav a{grid-column:span 2;padding-inline:2px;font-size:12px;text-align:center}
 }
+
+/* 2026-11-03: centre article media */
+article.post figure{text-align:center}article.post figure img,article.post figure video,article.post figure iframe,article.post>img.hero,article.post video{display:block;margin-left:auto;margin-right:auto;max-width:100%}article.post figcaption{text-align:center}article.post iframe[src*="youtube"],article.post iframe[src*="youtu.be"]{display:block;margin-left:auto;margin-right:auto;max-width:100%}
