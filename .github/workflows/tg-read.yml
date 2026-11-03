@@ -89,7 +89,7 @@ jobs:
           n = 0
           os.makedirs('inbox', exist_ok=True)
           if not os.path.exists('inbox/active.txt'): open('inbox/active.txt','w').write(str(int(time.time())))
-          while time.time() - START < 285:
+          while time.time() - START < 150:
               args = dict(limit=100, timeout=25, allowed_updates=['message', 'edited_message', 'my_chat_member'])
               if off: args['offset'] = off
               try:
