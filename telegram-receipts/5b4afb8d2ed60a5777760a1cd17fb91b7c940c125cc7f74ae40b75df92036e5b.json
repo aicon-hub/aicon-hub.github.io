@@ -1,7 +1,9 @@
 {
   "post_id": "573",
   "article_url": "none",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "41561299433",
-  "message_ids": []
+  "message_ids": [
+    573
+  ]
 }
