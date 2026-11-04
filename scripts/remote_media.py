@@ -163,6 +163,7 @@ def apply(out):
  records.setdefault("driving-licence-renewal-online-sarathi-parivahan-expired-licence-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://sarathi.parivahan.gov.in/")
  records.setdefault("vehicle-ownership-transfer-online-vahan-form-29-30-sell-buy-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://parivahan.gov.in/en/content/ownership-transfer")
  records.setdefault("filee-free-offline-file-converter-vert-converseen-handbrake-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://filee.sh/")
+ records.setdefault("rrb-station-master-cen-08-2026-1265-posts-graduates-apply-by-25-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2329071&lang=1&reg=3")
  records.setdefault("ensu-ente-free-offline-ai-chat-app-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ente.com/ensu/")
  records.setdefault("google-stitch-free-ai-app-ui-design-tool-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://stitch.withgoogle.com/")
  records.setdefault("google-pomelli-ai-social-posts-from-business-website-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://labs.google.com/pomelli/")
