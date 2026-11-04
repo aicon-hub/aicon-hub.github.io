@@ -10,3 +10,4 @@
 .lang-go[hidden]{display:none}
 html[lang="ml"] article.post,html[data-ui-lang="ml"] header nav{line-height:1.8}
 .site-header nav{flex-wrap:wrap}@media(max-width:700px){.lang-toggle{margin-left:0}.lang-toggle span{padding:6px 9px}}
+html[data-ui-lang="ml"] .site-header nav{gap:6px 14px}html[data-ui-lang="ml"] .site-header nav a{font-size:13px;white-space:nowrap}html[data-ui-lang="ml"] .site-header .logo{flex:none}
