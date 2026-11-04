@@ -9,4 +9,4 @@
 .lang-go{font:inherit;font-weight:700;font-size:14px;cursor:pointer;padding:8px 16px;border-radius:999px;border:0;background:var(--brand-orange,#ff682f);color:#16100c}
 .lang-go[hidden]{display:none}
 html[lang="ml"] article.post,html[data-ui-lang="ml"] header nav{line-height:1.8}
-@media(max-width:700px){.lang-toggle{margin-left:0}.lang-toggle span{padding:6px 9px}}
+.site-header nav{flex-wrap:wrap}@media(max-width:700px){.lang-toggle{margin-left:0}.lang-toggle span{padding:6px 9px}}
