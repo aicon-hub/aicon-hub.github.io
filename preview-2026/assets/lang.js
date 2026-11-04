@@ -79,7 +79,8 @@
     uiNodes.length||collectUI();setUI('ml');paintBtn('ml');root.setAttribute('data-ui-lang','ml');
     if(pageLang==='ml'){note.textContent=MSG.rev;return;}
     note.textContent=MSG.ui;
-    if(art){go.hidden=false;if(!window.Translator){go.hidden=true;note.textContent=MSG.ui+' '+MSG.none;}}
+    if(art){go.hidden=true;var ok=false;try{ok=!!window.Translator&&(await window.Translator.availability({sourceLanguage:'en',targetLanguage:'ml'}))!=='unavailable';}catch(_){}
+      if(ok)go.hidden=false;else note.textContent=MSG.ui+' '+MSG.none;}
   }
   function toEnglish(){
     try{localStorage.setItem(KEY,'en');}catch(_){}
