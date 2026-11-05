@@ -143,7 +143,7 @@ def refresh_home():
    desc=unescape(re.sub('<[^>]+>','',pm[1])).strip() if pm else ''
    dlm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
   href='posts/'+fname;row=dict(title=title,href=href,tag=tag,date=date,description=desc);rows.append(row)
-  if re.search('hackathon|contest|challenge|events',tag,re.I):events.append(row)
+  if re.search('hackathon|contest|challenge|events|fest',tag,re.I):events.append(row)
   guide=OUT/'posts'/fname
   gm=re.search(r'<script\b[^>]*id=["\x27]aicon-deadlines["\x27][^>]*>(.*?)</script>',guide.read_text(),re.S) if guide.exists() else None
   if gm or dlm:
