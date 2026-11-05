@@ -1,0 +1,8 @@
+[{
+ "relation": ["delegate_permission/common.handle_all_urls"],
+ "target": {
+  "namespace": "android_app",
+  "package_name": "io.github.aiconhub",
+  "sha256_cert_fingerprints": ["C3:84:E5:B4:68:58:36:81:E1:A4:CC:0E:BD:C8:DE:67:C5:D1:C8:86:85:78:9A:09:F9:DC:83:E1:B9:45:C9:04"]
+ }
+}]
