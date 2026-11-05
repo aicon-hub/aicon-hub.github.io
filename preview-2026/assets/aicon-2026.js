@@ -40,3 +40,4 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)upda
 var track=document.querySelector('.ticker-track');
 if(track&&!reduced){track.innerHTML+=track.innerHTML;}
 })();
+;document.addEventListener('click',function(e){var t=e.target.closest('[data-to-top]');if(t){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}});
