@@ -142,5 +142,5 @@
   else bar.hidden=true;
   var _t=bar;new MutationObserver(function(){var h=!note.textContent&&go.hidden;if(_t.hidden!==h)_t.hidden=h;}).observe(bar,{childList:true,subtree:true,attributes:true});
   }
-  if(document.body)boot();else document.addEventListener('DOMContentLoaded',boot);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
