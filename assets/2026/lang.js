@@ -3,6 +3,7 @@
    (3) otherwise the reader can translate the article ON THEIR OWN DEVICE (browser Translator API) with dates, amounts and
    numbers locked: any text block whose numbers changed is left in English. English pages stay canonical. */
 (function(){
+  if(window.AICON_ML===false)return; /* Malayalam dormant since 5 Nov 2026: code kept, UI off */
   if(window.__aiconLang)return; window.__aiconLang=true;
   function boot(){
   var KEY='aicon-lang', root=document.documentElement;
