@@ -11,11 +11,23 @@ window.AiCoNUpdate = (function(){
 /* AiCoN app mode: tab bar, round search, back button, For-you picks (on-device only),
    persisted app prefs. Runs only in the installed app/PWA or ?preview-app=1. */
 (function(){
-  var STANDALONE = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || (navigator.standalone === true);
-  var PREVIEW = /[?&]preview-app=1/.test(location.search);
-  var NATIVE = window.AiCoNNative === true; /* set by the Android wrapper */
-  if (!STANDALONE && !PREVIEW && !NATIVE) return;
-  if (PREVIEW || NATIVE) document.body.classList.add('app-preview');
+  function isApp(){
+    return ((window.matchMedia && matchMedia('(display-mode: standalone)').matches) || (navigator.standalone === true)
+      || /[?&]preview-app=1/.test(location.search) || window.AiCoNNative === true
+      || !!(window.AiCoNNativeBridge && window.AiCoNNativeBridge.getVersion));
+  }
+  if (!isApp()) {
+    /* the Android wrapper may inject its flag after DOMContentLoaded - retry once */
+    var booted = false;
+    document.addEventListener('aicon-native-ready', function(){
+      if (booted) return; booted = true;
+      var k = 'aicon-app-reloaded';
+      try { if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k,'1'); } catch(e){ return; }
+      if (isApp()) { document.body.classList.add('app-preview'); location.reload(); }
+    });
+    return;
+  }
+  document.body.classList.add('app-preview');
   var B = document.body;
   var path = location.pathname;
   var LS = { get: function(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
