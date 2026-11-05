@@ -42,11 +42,11 @@
    '☀ Light mode':'☀ Light mode','☾ Dark mode':'☾ Dark mode'};
   for(var ek in EXTRA){ if(!UI.hasOwnProperty(ek)) UI[ek]=EXTRA[ek]; }
   var MSG={
-   ui:'മെനു ഇപ്പോൾ മലയാളത്തിലാണ്. ഈ post-ിന്റെ Malayalam version ഉണ്ടെങ്കിൽ അത് തുറക്കും. Date, fees, തുക പോലുള്ള കാര്യങ്ങൾക്ക് English page-ഉം official site-ഉമാണ് final.',
+   ui:'മെനു ഇപ്പോൾ മലയാളത്തിലാണ്. ഈ post മലയാളത്തിൽ ഉണ്ടെങ്കിൽ അത് തുറക്കും. Date, fees, തുക പോലുള്ള കാര്യങ്ങൾക്ക് English page-ഉം official site-ഉമാണ് final.',
    btn:'ഈ post മലയാളത്തിലാക്കൂ (machine translation)',
    busy:'നിങ്ങളുടെ phone-ൽ തന്നെ translate ചെയ്യുന്നു...',
    done:'Machine translation (നിങ്ങളുടെ browser-ൽ മാത്രം). Date, fees, തുക പോലുള്ളവ English-ൽ തന്നെ ഉണ്ട്. Official കാര്യങ്ങൾക്ക് English page നോക്കൂ.',
-   none:'ഈ browser-ൽ translation ഇല്ല; ഈ post-ിന്റെ reviewed Malayalam version-ഉം ഇതുവരെ ഇല്ല. Original English തന്നെ കാണിക്കുന്നു.',
+   none:'ഈ browser-ൽ translation ഇല്ല; ഈ post മലയാളത്തിൽ ഇതുവരെ വന്നിട്ടില്ല. Original English തന്നെ കാണിക്കുന്നു.',
    rev:'ഇത് ഞങ്ങൾ review ചെയ്ത Malayalam version ആണ്. Date, fees പോലുള്ള കാര്യങ്ങൾക്ക് English page-ഉം official site-ഉം നോക്കൂ.'};
   var pageLang=(root.lang||'en').slice(0,2)==='ml'?'ml':'en';
   var alt={};document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){alt[l.hreflang.slice(0,2)]=l.href;});

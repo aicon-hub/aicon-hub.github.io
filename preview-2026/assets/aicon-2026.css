@@ -72,7 +72,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
 .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);border-radius:2px}
 .hero-section h1{font-size:clamp(38px,5.4vw,64px);font-weight:700;letter-spacing:-.03em;max-width:15ch}
-.hero-section h1 .grad{background:linear-gradient(100deg,var(--orange),var(--orange-2),var(--orange));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad-shift 7s ease-in-out infinite alternate}
+.hero-section h1 .grad{background:linear-gradient(100deg,var(--orange),var(--orange-2),var(--orange));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad-shift 7s ease-in-out infinite alternate;padding:.08em .14em;margin:-.08em -.14em}
 @keyframes grad-shift{from{background-position:0% 0}to{background-position:100% 0}}
 .hero-section .intro{font-size:clamp(16px,1.6vw,19px);color:var(--mute);max-width:56ch;margin:20px 0 30px}
 .hero-search{display:flex;gap:10px;max-width:620px;background:var(--surface);border:1px solid var(--border-strong);border-radius:99px;padding:7px 7px 7px 22px;transition:border-color .2s ease,box-shadow .2s ease}
