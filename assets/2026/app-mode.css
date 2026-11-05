@@ -1,0 +1,50 @@
+/* AiCoN app mode: applies only inside the installed app / PWA (display-mode: standalone),
+   or on any page with ?preview-app=1 for previews. Orange brand, liquid-glass shell. */
+#app-tabbar { display: none; }
+
+@media (display-mode: standalone) { body { --app: 1; } }
+body.app-preview { --app: 1; }
+
+@supports (color: color-mix(in srgb, red 50%, blue)) {
+  /* Frosted translucent top bar */
+  :root { --appbar: color-mix(in srgb, var(--bg) 68%, transparent); }
+  body:is(.app-preview) #site-header-x { }
+  @media (display-mode: standalone) {
+    .site-header { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); background: var(--appbar); border-bottom: 1px solid color-mix(in srgb, #FF6B2C 22%, transparent); }
+    #get-app, .nav-cta { display: none !important; }
+    body { padding-bottom: 92px; }
+    #app-tabbar { display: flex; }
+  }
+  body.app-preview .site-header { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); background: var(--appbar); border-bottom: 1px solid color-mix(in srgb, #FF6B2C 22%, transparent); }
+  body.app-preview #get-app, body.app-preview .nav-cta { display: none !important; }
+  body.app-preview { padding-bottom: 92px; }
+  body.app-preview #app-tabbar { display: flex; }
+
+  /* Mesh-gradient backdrop behind app content */
+  @media (display-mode: standalone) {
+    body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(38rem 30rem at 110% -10%, color-mix(in srgb, #FF6B2C 16%, transparent), transparent 60%),
+        radial-gradient(30rem 26rem at -20% 30%, color-mix(in srgb, #FF6B2C 10%, transparent), transparent 60%),
+        radial-gradient(26rem 24rem at 60% 115%, color-mix(in srgb, #FF6B2C 12%, transparent), transparent 60%);
+    }
+  }
+
+  /* Floating liquid-glass pill bottom bar */
+  #app-tabbar { position: fixed; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 70;
+    justify-content: space-around; align-items: stretch; gap: 2px; padding: 6px;
+    border-radius: 30px;
+    background: color-mix(in srgb, var(--bg) 58%, transparent);
+    backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid color-mix(in srgb, #FFFFFF 14%, transparent);
+    box-shadow: 0 12px 32px color-mix(in srgb, #000000 30%, transparent), inset 0 1px 0 color-mix(in srgb, #FFFFFF 12%, transparent);
+  }
+  #app-tabbar a { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    flex: 1 1 0; padding: 8px 4px 7px; border-radius: 24px; text-decoration: none; color: var(--ink); font-size: 10px; font-weight: 600; letter-spacing: .01em; opacity: .66;
+    transition: transform .45s cubic-bezier(.34,1.56,.64,1), opacity .2s ease, background .25s ease, color .25s ease;
+  }
+  #app-tabbar a:active { transform: scale(.92); }
+  #app-tabbar a.active { opacity: 1; color: #FF6B2C; background: color-mix(in srgb, #FF6B2C 14%, transparent); }
+  #app-tabbar a.active svg { transform: translateY(-1px) scale(1.06); }
+  #app-tabbar svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .45s cubic-bezier(.34,1.56,.64,1); }
+}
