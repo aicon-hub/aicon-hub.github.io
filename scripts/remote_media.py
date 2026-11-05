@@ -163,6 +163,7 @@ def apply(out):
  records.setdefault("driving-licence-renewal-online-sarathi-parivahan-expired-licence-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://sarathi.parivahan.gov.in/")
  records.setdefault("vehicle-ownership-transfer-online-vahan-form-29-30-sell-buy-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://parivahan.gov.in/en/content/ownership-transfer")
  records.setdefault("filee-free-offline-file-converter-vert-converseen-handbrake-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://filee.sh/")
+ records.setdefault("rrb-ntpc-graduate-cen-06-2026-3548-posts-apply-by-6-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://www.pib.gov.in/")
  records.setdefault("hackertube-free-youtube-talks-hacker-news-recommends-no-account-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://hackertube.org/")
  records.setdefault("rgcb-phd-admission-january-2027-thiruvananthapuram-apply-by-8-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://rgcb.res.in/")
  records.setdefault("kerala-minority-overseas-scholarship-2026-27-pg-phd-abroad-up-to-10-lakh-apply-by-30-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://mwdscholarship.kerala.gov.in/")
