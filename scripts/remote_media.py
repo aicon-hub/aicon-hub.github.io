@@ -8,6 +8,14 @@ def apply(out):
  records=json.loads(registry.read_text()) if registry.exists() else {}
  # Source-checked asset repairs. Keep the registry's remaining records untouched.
  records.get("jio-google-ai-pro-18-months-free-offer-eligibility-deadline-guide", {}).update(logo_url="https://myjiostatic.cdn.jio.com/jiocom/static/images/jio10-mobile.svg")
+ records.setdefault("kernelai-free-offline-ai-phone-app-android-ios-no-account-guide", {}).update(poster_url="https://kernelai.app/og-image.jpg", width=1200, height=630, source_page="https://kernelai.app/")
+ records.setdefault("losslesscut-free-lossless-video-trimmer-cut-without-quality-loss-guide", {}).update(poster_url="https://static.mifi.no/media/MbXWWcu1zsMAinf4/1000.jpg", width=1200, height=630, source_page="https://losslesscut.app/")
+ records.setdefault("musicca-free-music-theory-exercises-instruments-guide", {}).update(poster_url="https://www.musicca.com/images/facebook-image.png", width=1200, height=630, source_page="https://www.musicca.com/")
+ records.setdefault("tensorflow-playground-neural-network-learn-browser-free-guide", {}).update(poster_url="https://www.tensorflow.org/static/images/tf_logo_social.png", width=1200, height=675, source_page="https://www.tensorflow.org/")
+ records.setdefault("translucenttb-free-transparent-windows-taskbar-guide", {}).update(poster_url="https://repository-images.githubusercontent.com/78483432/3725fe80-454c-11eb-8afb-7224ae9f721d", width=1280, height=640, source_page="https://github.com/TranslucentTB/TranslucentTB")
+ records.setdefault("ted-ed-free-animated-lessons-teachers-students-accounts-age-guide", {}).update(poster_url="https://ed.ted.com/teded-logo-1200-670.png", width=1200, height=670, source_page="https://ed.ted.com/")
+ records.setdefault("kickbacks-ai-ads-in-claude-code-codex-what-to-know-guide", {}).update(poster_url="https://kickbacks.ai/og-card.png", width=1200, height=630, source_page="https://kickbacks.ai/")
+ records.setdefault("knowt-free-ai-flashcards-india", {}).update(poster_url="https://assets.knowt.com/images/SEO/main.png", width=2400, height=1260, source_page="https://knowt.com/")
  records.get("drawio-diagrams-net-free-diagram-maker-no-signup-privacy-guide", {}).update(logo_url="https://www.drawio.com/img/logo.svg", logo_width=48, logo_height=48)
  records.get("syncthing-keep-folders-in-sync-between-your-devices-open-source-guide", {}).update(logo_url="https://syncthing.net/img/logo-horizontal.svg", logo_width=300, logo_height=82)
  records.get("antennapod-free-ad-free-podcast-player-android-guide", {}).update(logo_url="https://antennapod.org/assets/branding/logos/logo-icon.png", logo_width=512, logo_height=512)
