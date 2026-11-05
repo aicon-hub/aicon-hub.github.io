@@ -10,7 +10,7 @@
   var EXTRA={
    'Guides':'Guides','Topics':'വിഷയങ്ങൾ','Deadlines':'അവസാന തീയതികൾ','Find a guide':'ഗൈഡ് തിരയൂ',
    'Your trusted tech companion':'നിങ്ങളുടെ Tech കൂട്ടുകാരൻ',
-   'Tech, AI and government help,':'Tech, AI, Govt help,','checked before you click':'ക്ലിക്ക് ചെയ്യും മുൻപ് check ചെയ്തത്.',
+   'Tech, AI and government help,':'Tech, AI, Govt help,','checked before you click':'ക്ലിക്ക് ചെയ്യും മുൻപ് check ചെയ്തത്',
    'Plain-language guides for AI tools, apps, scholarships and government services in India and Kerala. Every guide lists what was checked and what could not be confirmed.':'AI tools, apps, scholarships, govt services - എല്ലാം ലളിതമായ ഭാഷയിൽ. എന്ത് check ചെയ്തു, എന്ത് confirm ചെയ്യാൻ കഴിഞ്ഞില്ല എന്ന് ഓരോ guide-ലും എഴുതിയിട്ടുണ്ട്.',
    'Act now':'ഇപ്പോൾ apply ചെയ്യൂ','Closing soon':'Last date അടുത്തു',
    'Deadlines from our guides, counted down live. Always check the official notice before applying.':'Guides-ലിലെ last date-കൾ, live countdown. Apply ചെയ്യും മുൻപ് official notice ഒന്ന് നോക്കൂ.',
