@@ -46,7 +46,10 @@
   var row = document.getElementById('row-update');
   var status = document.getElementById('update-status');
   if (row && status && window.AiCoNUpdate) {
-    status.textContent = 'You have version ' + window.AiCoNUpdate.CURRENT;
+    var cv = window.AiCoNUpdate.current ? window.AiCoNUpdate.current() : window.AiCoNUpdate.CURRENT;
+    status.textContent = 'You have version ' + cv;
+    var vs=document.getElementById('version-static'); if(vs) vs.textContent=cv;
+    var vf=document.getElementById('version-foot'); if(vf) vf.textContent=cv;
     row.addEventListener('click', function(e){
       e.preventDefault();
       status.textContent = 'Checking…';
@@ -61,7 +64,7 @@
             }
           };
         } else {
-          status.textContent = 'You are up to date (' + window.AiCoNUpdate.CURRENT + ')';
+          status.textContent = 'You are up to date (' + cv + ')';
         }
       }).catch(function(){ status.textContent = 'Could not check right now'; });
     });
