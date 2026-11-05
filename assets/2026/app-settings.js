@@ -6,7 +6,7 @@
   var root = document.documentElement;
   var mq = window.matchMedia('(prefers-color-scheme: dark)');
   var themeBtn = document.getElementById('theme-toggle');
-  function paintBtn(t){ if(themeBtn){ themeBtn.textContent = t==='dark' ? '☀ Light mode' : '☾ Dark mode'; } }
+  function paintBtn(t){ if(themeBtn){ themeBtn.textContent = t==='dark' ? 'Light mode' : 'Dark mode'; } }
   function applyTheme(t){ root.dataset.theme = t; root.style.colorScheme = t; paintBtn(t); }
   function sys(){ applyTheme(mq.matches ? 'dark' : 'light'); }
   function currentTheme(){ var s = LS.get('aicon-theme'); return (s==='dark'||s==='light') ? s : 'system'; }
