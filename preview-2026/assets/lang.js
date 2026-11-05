@@ -6,40 +6,40 @@
   if(window.__aiconLang)return; window.__aiconLang=true;
   function boot(){
   var KEY='aicon-lang', root=document.documentElement;
-  var UI={'Posts':'പോസ്റ്റുകൾ','Contact':'ബന്ധപ്പെടാം','About AiCoN':'AiCoN-നെ കുറിച്ച്','About':'കുറിച്ച്','Explore':'കാണാം','Latest guides':'പുതിയ ഗൈഡുകൾ','How we check':'ഞങ്ങൾ എങ്ങനെ ചെക്ക് ചെയ്യുന്നു','Home':'ഹോം','More posts':'കൂടുതൽ പോസ്റ്റുകൾ','Share this post':'ഈ പോസ്റ്റ് ഷെയർ ചെയ്യൂ','WhatsApp':'വാട്സ്ആപ്പ്','Telegram':'ടെലിഗ്രാം','Blog':'ബ്ലോഗ്','Dark mode':'ഡാർക്ക് മോഡ്','Light mode':'ലൈറ്റ് മോഡ്','Top':'മുകളിലേക്ക്','© 2026 AiCoN | Your Trusted Tech Companion':'© 2026 AiCoN | നിങ്ങളുടെ വിശ്വസ്ത ടെക് കൂട്ടുകാരൻ','Every guide shows what we checked.':'ഓരോ ഗൈഡിലും ഞങ്ങൾ എന്തൊക്കെ ചെക്ക് ചെയ്തു എന്ന് കാണിക്കുന്നു.','Join WhatsApp':'വാട്സ്ആപ്പിൽ ചേരൂ','YOUR TRUSTED TECH COMPANION':'നിങ്ങളുടെ വിശ്വസ്ത ടെക് കൂട്ടുകാരൻ','Useful tech. Clear answers':'ഉപകാരപ്രദമായ ടെക്ക് വ്യക്തമായ ഉത്തരങ്ങൾ','Find a guide':'ഒരു ഗൈഡ് കണ്ടെത്തൂ','Search':'സെർച്ച്','Join the WhatsApp channel':'വാട്സ്ആപ്പ് ചാനലിൽ ചേരൂ','Browse the latest guides':'പുതിയ ഗൈഡുകൾ കാണാം','Also on':'ഇവിടെയും:','Dates from our guides':'ഗൈഡുകളിലെ പ്രധാന തീയതികൾ','Check the official notice before applying':'അപേക്ഷിക്കുന്നതിന് മുൻപ് ഔദ്യോഗിക നോട്ടിഫിക്കേഷൻ ഒന്നുകൂടി നോക്കുക','See all scholarship guides →':'എല്ലാ സ്കോളർഷിപ്പ് ഗൈഡുകളും →','How AiCoN checks a guide':'AiCoN ഒരു ഗൈഡ് എങ്ങനെ ചെക്ക് ചെയ്യുന്നു','Each guide lists the checks completed. When something could not be confirmed, the guide says so.':'ഓരോ ഗൈഡിലും ചെയ്ത ചെക്കുകൾ പറയും. എന്തെങ്കിലും ഉറപ്പിക്കാൻ പറ്റിയില്ലെങ്കിൽ അതും തുറന്നു പറയും.','Source checked':'സോഴ്സ് ചെക്ക് ചെയ്തു','We read the official page or notice itself, not only a summary.':'സംഗ്രഹം മാത്രമല്ല, ഔദ്യോഗിക പേജോ നോട്ടിഫിക്കേഷനോ തന്നെ ഞങ്ങൾ വായിക്കും.','Link tested':'ലിങ്ക് ടെസ്റ്റ് ചെയ്തു','We check that the source link reaches the intended page.':'സോഴ്സ് ലിങ്ക് ശരിയായ പേജിലേക്ക് തന്നെയാണോ പോകുന്നത് എന്ന് നോക്കും.','Costs and limits':'ചെലവും പരിധികളും','Prices, caps and trial terms include the date checked.':'വില, പരിധി, ട്രയൽ നിബന്ധനകൾ എന്നിവയ്ക്കൊപ്പം ചെക്ക് ചെയ്ത തീയതിയും ഉണ്ടാകും.','India availability':'ഇന്ത്യയിൽ ലഭ്യമാണോ','India and Kerala availability are checked where relevant.':'ആവശ്യമുള്ളിടത്ത് ഇന്ത്യയിലും കേരളത്തിലും ലഭ്യമാണോ എന്ന് നോക്കും.','Privacy and safety':'പ്രൈവസിയും സുരക്ഷയും','Guides explain data access and what could go wrong.':'ഏതൊക്കെ ഡാറ്റ ആക്സസ് ചെയ്യും, എന്തൊക്കെ പ്രശ്നം വരാം എന്ന് ഗൈഡിൽ വിശദീകരിക്കും.','Limits disclosed':'പരിമിതികൾ തുറന്നു പറയും','Anything not confirmed is stated plainly in the guide.':'ഉറപ്പിക്കാത്ത കാര്യങ്ങൾ ഗൈഡിൽ വ്യക്തമായി പറയും.','Read the verification approach →':'ചെക്ക് ചെയ്യുന്ന രീതി വായിക്കാം →','What we cover':'എന്തൊക്കെ ഉൾപ്പെടുന്നു','Compare systems. Open details when you need them.':'സിസ്റ്റങ്ങൾ താരതമ്യം ചെയ്യാം. വേണ്ട വിവരങ്ങൾ തുറന്നു നോക്കാം.','PC tools &amp; software':'PC ടൂളുകളും സോഫ്റ്റ്‌വെയറും','PC tools & software':'PC ടൂളുകളും സോഫ്റ്റ്‌വെയറും','Useful software for your computer':'കമ്പ്യൂട്ടറിന് ഉപകാരപ്പെടുന്ന സോഫ്റ്റ്‌വെയർ','AI tools':'AI ടൂളുകൾ','New tools, checked before they reach you':'പുതിയ ടൂളുകൾ, നിങ്ങളിലെത്തും മുൻപ് ചെക്ക് ചെയ്തത്','Apps':'ആപ്പുകൾ','Android apps we try first':'ഞങ്ങൾ ആദ്യം പരീക്ഷിക്കുന്ന ആൻഡ്രോയിഡ് ആപ്പുകൾ','Digital safety':'ഡിജിറ്റൽ സേഫ്റ്റി','Scams, privacy and safe habits':'തട്ടിപ്പുകൾ, പ്രൈവസി, സുരക്ഷിതമായ ശീലങ്ങൾ','Scholarships':'സ്കോളർഷിപ്പുകൾ','Deadlines and eligibility':'അവസാന തീയതികളും യോഗ്യതയും','Fully Funded Abroad':'വിദേശത്ത് ഫുള്ളി ഫണ്ടഡ്','Government services & schemes':'സർക്കാർ സേവനങ്ങളും പദ്ധതികളും','Government services &amp; schemes':'സർക്കാർ സേവനങ്ങളും പദ്ധതികളും','OS Explorer':'OS എക്സ്പ്ലോറർ','Plain-language guides for AI tools, apps, scholarships and government services in India and Kerala. Each guide explains what was checked and what could not be confirmed.':'AI ടൂളുകൾ, ആപ്പുകൾ, സ്കോളർഷിപ്പുകൾ, ഇന്ത്യയിലെയും കേരളത്തിലെയും സർക്കാർ സേവനങ്ങൾ എന്നിവയ്ക്കുള്ള ലളിതമായ ഗൈഡുകൾ. എന്തൊക്കെ ചെക്ക് ചെയ്തു, എന്തൊക്കെ ഉറപ്പിക്കാൻ പറ്റിയില്ല എന്നും ഓരോ ഗൈഡിലും പറയും.'};
+  var UI={'Posts':'Posts','Contact':'ബന്ധപ്പെടാം','About AiCoN':'AiCoN-നെ കുറിച്ച്','About':'കുറിച്ച്','Explore':'കാണാം','Latest guides':'പുതിയ guides','How we check':'എങ്ങനെ check ചെയ്യുന്നു','Home':'Home','More posts':'കൂടുതൽ posts','Share this post':'ഈ post share ചെയ്യൂ','WhatsApp':'വാട്സ്ആപ്പ്','Telegram':'ടെലിഗ്രാം','Blog':'ബ്ലോഗ്','Dark mode':'ഡാർക്ക് മോഡ്','Light mode':'ലൈറ്റ് മോഡ്','Top':'മുകളിലേക്ക്','© 2026 AiCoN | Your Trusted Tech Companion':'© 2026 AiCoN | നിങ്ങളുടെ Tech കൂട്ടുകാരൻ','Every guide shows what we checked.':'ഓരോ guide-ലും ഞങ്ങൾ check ചെയ്തത് കാണിക്കുന്നു.','Join WhatsApp':'WhatsApp-ൽ ചേരൂ','YOUR TRUSTED TECH COMPANION':'നിങ്ങളുടെ TECH കൂട്ടുകാരൻ','Useful tech. Clear answers':'ഉപകാരപ്പെടുന്ന Tech. വ്യക്തമായ ഉത്തരങ്ങൾ','Find a guide':'Guide തിരയൂ','Search':'Search','Join the WhatsApp channel':'WhatsApp channel-ൽ ചേരൂ','Browse the latest guides':'പുതിയ guides കാണൂ','Also on':'ഇവിടെയും:','Dates from our guides':'Guides-ലിലെ പ്രധാന തീയതികൾ','Check the official notice before applying':'Apply ചെയ്യും മുൻപ് official notification ഒന്നുകൂടി നോക്കൂ','See all scholarship guides →':'എല്ലാ scholarship guides-ഉം →','How AiCoN checks a guide':'AiCoN ഒരു guide എങ്ങനെ check ചെയ്യുന്നു','Each guide lists the checks completed. When something could not be confirmed, the guide says so.':'ഓരോ guide-ലും ചെയ്ത checks പറയും. Confirm ചെയ്യാൻ പറ്റിയില്ലെങ്കിൽ അതും തുറന്നുപറയും.','Source checked':'Source check ചെയ്തു','We read the official page or notice itself, not only a summary.':'Summary മാത്രമല്ല, official page-o notification-o തന്നെ വായിക്കും.','Link tested':'Link test ചെയ്തു','We check that the source link reaches the intended page.':'Source link ശരിയായ page-ലേക്ക് പോകുന്നുണ്ടോ എന്ന് നോക്കും.','Costs and limits':'ചെലവും limits-ഉം','Prices, caps and trial terms include the date checked.':'വില, cap, trial conditions - check ചെയ്ത തീയതിയോടെ.','India availability':'India-യിൽ ലഭ്യമാണോ','India and Kerala availability are checked where relevant.':'ആവശ്യമുള്ളിടത്ത് India-യിലും Kerala-ത്തിലും ലഭ്യമാണോ എന്ന് നോക്കും.','Privacy and safety':'Privacy-യും safety-യും','Guides explain data access and what could go wrong.':'ഏതൊക്കെ data access ചെയ്യും, എന്ത് പ്രശ്നം വരാം എന്ന് guide-ൽ പറയും.','Limits disclosed':'പരിമിതികൾ തുറന്നുപറയും','Anything not confirmed is stated plainly in the guide.':'Confirm ചെയ്യാത്ത കാര്യങ്ങൾ guide-ൽ വ്യക്തമായി പറയും.','Read the verification approach →':'എങ്ങനെ check ചെയ്യുന്നുവെന്ന് നോക്കൂ →','What we cover':'എന്തൊക്കെ ഉണ്ട്','Compare systems. Open details when you need them.':'System-കൾ compare ചെയ്യാം. വേണ്ട details തുറന്നുനോക്കാം.','PC tools &amp; software':'PC tools & software','PC tools & software':'PC tools & software','Useful software for your computer':'കമ്പ്യൂട്ടറിന് ഉപകാരപ്പെടുന്ന software','AI tools':'AI tools','New tools, checked before they reach you':'പുതിയ tools, നിങ്ങളിലെത്തും മുൻപ് check ചെയ്തത്','Apps':'Apps','Android apps we try first':'ഞങ്ങൾ ആദ്യം try ചെയ്യുന്ന Android apps','Digital safety':'Digital safety','Scams, privacy and safe habits':'Scam-കൾ, privacy, സുരക്ഷിതമായ ശീലങ്ങൾ','Scholarships':'Scholarships','Deadlines and eligibility':'Last date-കളും യോഗ്യതയും','Fully Funded Abroad':'വിദേശത്ത് Fully Funded','Government services & schemes':'Govt services & schemes','Government services &amp; schemes':'Govt services & schemes','OS Explorer':'OS Explorer','Plain-language guides for AI tools, apps, scholarships and government services in India and Kerala. Each guide explains what was checked and what could not be confirmed.':'AI tools, apps, scholarships, India-ലെയും Kerala-ത്തിലെയും govt services - എല്ലാം ലളിതമായ ഭാഷയിൽ. എന്ത് check ചെയ്തു, എന്ത് confirm ചെയ്യാൻ പറ്റിയില്ല എന്ന് ഓരോ guide-ലും പറയും.'};
   var EXTRA={
-   'Guides':'ഗൈഡുകൾ','Topics':'വിഷയങ്ങൾ','Deadlines':'അവസാന തീയതികൾ','Find a guide':'ഗൈഡ് തിരയൂ',
-   'Your trusted tech companion':'നിങ്ങളുടെ ടെക് കൂട്ടുകാരൻ',
-   'Tech, AI and government help,':'ടെക്, AI, സർക്കാർ സഹായം,','checked before you click':'ക്ലിക്ക് ചെയ്യും മുൻപ് ചെക്ക് ചെയ്തത്.',
-   'Plain-language guides for AI tools, apps, scholarships and government services in India and Kerala. Every guide lists what was checked and what could not be confirmed.':'AI ടൂളുകൾ, ആപ്പുകൾ, സ്കോളർഷിപ്പുകൾ, സർക്കാർ സേവനങ്ങൾ - എല്ലാം ലളിതമായ ഭാഷയിൽ. എന്ത് ചെക്ക് ചെയ്തു, എന്ത് ഉറപ്പാക്കാൻ കഴിഞ്ഞില്ല എന്ന് ഓരോ ഗൈഡിലും എഴുതിയിട്ടുണ്ട്.',
-   'Act now':'ഇപ്പോൾ അപേക്ഷിക്കൂ','Closing soon':'ലാസ്റ്റ് ഡേറ്റ് അടുത്തു',
-   'Deadlines from our guides, counted down live. Always check the official notice before applying.':'ഗൈഡുകളിലെ ലാസ്റ്റ് ഡേറ്റുകൾ, ലൈവ് കൗണ്ട്ഡൗൺ. അപേക്ഷിക്കും മുൻപ് ഔദ്യോഗിക നോട്ടീസ് ഒന്ന് നോക്കുക.',
-   'All scholarship guides':'എല്ലാ സ്കോളർഷിപ്പ് ഗൈഡുകളും',
-   'Explore':'കാണാം','Latest guides':'പുതിയ ഗൈഡുകൾ','Events':'ഇവന്റുകൾ',
-   'Events and hackathons':'ഇവന്റുകളും ഹാക്കത്തോണുകളും','Browse event guides':'ഇവന്റ് ഗൈഡുകൾ കാണാം',
-   'View all':'എല്ലാം കാണാം','guides':'ഗൈഡുകൾ',
-   'New to AiCoN?':'AiCoN പുതുമുഖമാണോ?','Our verification approach':'ഞങ്ങൾ എങ്ങനെ ചെക്ക് ചെയ്യുന്നു',
+   'Guides':'Guides','Topics':'വിഷയങ്ങൾ','Deadlines':'അവസാന തീയതികൾ','Find a guide':'ഗൈഡ് തിരയൂ',
+   'Your trusted tech companion':'നിങ്ങളുടെ Tech കൂട്ടുകാരൻ',
+   'Tech, AI and government help,':'Tech, AI, Govt help,','checked before you click':'ക്ലിക്ക് ചെയ്യും മുൻപ് check ചെയ്തത്.',
+   'Plain-language guides for AI tools, apps, scholarships and government services in India and Kerala. Every guide lists what was checked and what could not be confirmed.':'AI tools, apps, scholarships, govt services - എല്ലാം ലളിതമായ ഭാഷയിൽ. എന്ത് check ചെയ്തു, എന്ത് confirm ചെയ്യാൻ കഴിഞ്ഞില്ല എന്ന് ഓരോ guide-ലും എഴുതിയിട്ടുണ്ട്.',
+   'Act now':'ഇപ്പോൾ apply ചെയ്യൂ','Closing soon':'Last date അടുത്തു',
+   'Deadlines from our guides, counted down live. Always check the official notice before applying.':'Guides-ലിലെ last date-കൾ, live countdown. Apply ചെയ്യും മുൻപ് official notice ഒന്ന് നോക്കൂ.',
+   'All scholarship guides':'എല്ലാ scholarship guides-ഉം',
+   'Explore':'കാണാം','Latest guides':'പുതിയ ഗൈഡുകൾ','Events':'Events',
+   'Events and hackathons':'Events-ഉം hackathons-ഉം','Browse event guides':'Event guides കാണൂ',
+   'View all':'എല്ലാം കാണൂ','guides':'guides',
+   'New to AiCoN?':'AiCoN-ൽ പുതിയതാണോ?','Our verification approach':'ഞങ്ങൾ എങ്ങനെ check ചെയ്യുന്നു',
    'Read the verification approach →':'എങ്ങനെ ചെക്ക് ചെയ്യുന്നുവെന്ന് നോക്കൂ →',
-   'Follow':'ഫോളോ ചെയ്യൂ','WhatsApp channel':'വാട്സ്ആപ്പ് ചാനൽ','Blog (older posts)':'ബ്ലോഗ് (പഴയ പോസ്റ്റുകൾ)',
-   'All guides':'എല്ലാ ഗൈഡുകളും','Filter by topic':'വിഷയം തിരഞ്ഞെടുക്കൂ','Search guides':'ഗൈഡുകൾ തിരയൂ',
-   'Newest first':'പുതിയത് ആദ്യം','No guides match.':'ഗൈഡ് ഒന്നും കിട്ടിയില്ല.',
-   'On this page':'ഈ പേജിൽ','Sources':'ഉറവിടങ്ങൾ','Share this post':'ഈ പോസ്റ്റ് ഷെയർ ചെയ്യൂ',
-   'The library':'ലൈബ്രറി','Every guide, in one place.':'എല്ലാ ഗൈഡുകളും, ഒരിടത്ത്.',
-   'Search by tool, topic or scheme. Filter by category. Newest first.':'ടൂൾ, വിഷയം, സ്കീം - എന്തും തിരയൂ. വിഭാഗം തിരഞ്ഞെടുക്കൂ. പുതിയത് ആദ്യം.',
-   'Search posts':'പോസ്റ്റ് തിരയൂ','All':'എല്ലാം','PC tools':'PC ടൂളുകൾ','Linux':'ലിനക്സ്',
-   'Government':'സർക്കാർ','Offers':'ഓഫറുകൾ','Learning':'പഠനം','More':'കൂടുതൽ',
-   'No posts match. Try another word, or check the':'പോസ്റ്റ് ഒന്നും കിട്ടിയില്ല. വേറെ വാക്ക് ശ്രമിക്കൂ, അല്ലെങ്കിൽ','older blog':'പഴയ ബ്ലോഗ് നോക്കൂ',
-   'Read guide':'ഗൈഡ് വായിക്കൂ','Copy title, description & link':'തലക്കെട്ടും വിവരണവും ലിങ്കും കോപ്പി ചെയ്യൂ','Copy link':'ലിങ്ക് കോപ്പി ചെയ്യൂ','Email':'ഇമെയിൽ',
-   'Your Trusted Tech Companion.':'നിങ്ങളുടെ ടെക് കൂട്ടുകാരൻ.','Every guide shows what we checked, and what we could not confirm.':'ഓരോ ഗൈഡിലും ഞങ്ങൾ എന്ത് ചെക്ക് ചെയ്തു, എന്ത് ഉറപ്പാക്കാൻ കഴിഞ്ഞില്ല എന്ന് എഴുതിയിട്ടുണ്ട്.',
-   'Show avatar guide':'അവതാർ ഗൈഡ് കാണിക്കൂ',
-   'verified guides':'ചെക്ക് ചെയ്ത ഗൈഡുകൾ','topics to explore':'വിഷയങ്ങൾ','Updated':'അപ്ഡേറ്റ്','daily':'ദിവസവും',
-   'Linux Distro':'ലിനക്സ് ഡിസ്ട്രോ','Pick a distribution that fits you':'നിങ്ങൾക്ക് ചേരുന്ന ഡിസ്ട്രോ തിരഞ്ഞെടുക്കൂ',
-   'Government services':'സർക്കാർ സേവനങ്ങൾ','Schemes and services from trusted authorities':'ഔദ്യോഗിക സ്കീമുകളും സേവനങ്ങളും',
-   'Verified offers':'ചെക്ക് ചെയ്ത ഓഫറുകൾ','Free deals that are real':'ശരിക്കും ഫ്രീ ആയ ഓഫറുകൾ',
-   'Events & Hackathons':'ഇവന്റുകളും ഹാക്കത്തോണുകളും','Contests, challenges and coding events':'മത്സരങ്ങളും ചലഞ്ചുകളും കോഡിംഗ് ഇവന്റുകളും',
-   'Compare systems, open details on tap':'സിസ്റ്റങ്ങൾ താരതമ്യം ചെയ്യൂ; ടാപ്പ് ചെയ്താൽ വിശദാംശങ്ങൾ','Official embassy and government programmes':'ഔദ്യോഗിക എംബസിയും സർക്കാർ പരിപാടികളും',
+   'Follow':'Follow ചെയ്യൂ','WhatsApp channel':'വാട്സ്ആപ്പ് ചാനൽ','Blog (older posts)':'Blog (പഴയ posts)',
+   'All guides':'എല്ലാ guides-ഉം','Filter by topic':'Topic തിരഞ്ഞെടുക്കൂ','Search guides':'Guides തിരയൂ',
+   'Newest first':'പുതിയത് ആദ്യം','No guides match.':'Guide ഒന്നും കിട്ടിയില്ല.',
+   'On this page':'ഈ page-ൽ','Sources':'Sources','Share this post':'ഈ പോസ്റ്റ് ഷെയർ ചെയ്യൂ',
+   'The library':'Library','Every guide, in one place.':'എല്ലാ guides-ഉം, ഒരിടത്ത്.',
+   'Search by tool, topic or scheme. Filter by category. Newest first.':'Tool, topic, scheme - എന്തും തിരയൂ. Category തിരഞ്ഞെടുക്കൂ. പുതിയത് ആദ്യം.',
+   'Search posts':'Posts തിരയൂ','All':'എല്ലാം','PC tools':'PC tools','Linux':'ലിനക്സ്',
+   'Government':'Govt','Offers':'Offers','Learning':'പഠനം','More':'കൂടുതൽ',
+   'No posts match. Try another word, or check the':'Post ഒന്നും കിട്ടിയില്ല. വേറെ വാക്ക് ശ്രമിക്കൂ, അല്ലെങ്കിൽ','older blog':'പഴയ blog നോക്കൂ',
+   'Read guide':'Guide വായിക്കൂ','Copy title, description & link':'Title, description, link copy ചെയ്യൂ','Copy link':'Link copy ചെയ്യൂ','Email':'ഇമെയിൽ',
+   'Your Trusted Tech Companion.':'നിങ്ങളുടെ Tech കൂട്ടുകാരൻ.','Every guide shows what we checked, and what we could not confirm.':'ഓരോ guide-ലും ഞങ്ങൾ എന്ത് check ചെയ്തു, എന്ത് confirm ചെയ്യാൻ കഴിഞ്ഞില്ല എന്ന് എഴുതിയിട്ടുണ്ട്.',
+   'Show avatar guide':'Avatar guide കാണിക്കൂ',
+   'verified guides':'Check ചെയ്ത guides','topics to explore':'topics','Updated':'Updated','daily':'ദിവസവും',
+   'Linux Distro':'Linux Distro','Pick a distribution that fits you':'നിങ്ങൾക്ക് ചേരുന്ന distro തിരഞ്ഞെടുക്കൂ',
+   'Government services':'Govt services','Schemes and services from trusted authorities':'Official scheme-കളും services-ഉം',
+   'Verified offers':'Check ചെയ്ത offers','Free deals that are real':'ശരിക്കും free ആയ offers',
+   'Events & Hackathons':'Events & Hackathons','Contests, challenges and coding events':'മത്സരങ്ങളും challenges-ഉം coding events-ഉം',
+   'Compare systems, open details on tap':'System-കൾ compare ചെയ്യൂ; tap ചെയ്താൽ details','Official embassy and government programmes':'Official embassy-yും govt programme-കളും',
    'Subscribe':'സബ്സ്ക്രൈബ്','Skip to content':'ഉള്ളടക്കത്തിലേക്ക് പോകൂ','Preview':'പ്രിവ്യൂ',
-   '☀ Light mode':'☀ ലൈറ്റ് മോഡ്','☾ Dark mode':'☾ ഡാർക്ക് മോഡ്'};
+   '☀ Light mode':'☀ Light mode','☾ Dark mode':'☾ Dark mode'};
   for(var ek in EXTRA){ if(!UI.hasOwnProperty(ek)) UI[ek]=EXTRA[ek]; }
   var MSG={
    ui:'മെനു ഇപ്പോൾ മലയാളത്തിലാണ്. ലേഖനത്തിന്റെ മലയാളം പതിപ്പ് ഉണ്ടെങ്കിൽ അത് തുറക്കും. തീയതി, ഫീസ്, തുക പോലുള്ള കാര്യങ്ങൾക്ക് ഇംഗ്ലീഷ് പേജും ഔദ്യോഗിക സൈറ്റുമാണ് അന്തിമം.',
@@ -64,7 +64,7 @@
     var f=document.querySelector('footer .wrap');
     if(f)f.childNodes.forEach(function(n){if(n.nodeType===3){var t=n.nodeValue.trim();if(UI[t]&&uiNodes.indexOf(n)<0)uiNodes.push(n);}});
   }
-  var h1=document.querySelector('h1'),h1en=null,H1ML='ഉപകാരപ്രദമായ ടെക്ക് വ്യക്തമായ ഉത്തരങ്ങൾ';
+  var h1=document.querySelector('h1'),h1en=null,H1ML='ഉപകാരപ്പെടുന്ന Tech. വ്യക്തമായ ഉത്തരങ്ങൾ';
   function setUI(l){
     if(h1&&/^Useful tech\./.test(h1.textContent)&&!h1.closest('article')){if(h1en===null)h1en=h1.innerHTML;h1.innerHTML=l==='ml'?H1ML:h1en;}
     uiNodes.forEach(function(n){
