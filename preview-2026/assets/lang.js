@@ -23,6 +23,21 @@
    'All guides':'എല്ലാ ഗൈഡുകളും','Filter by topic':'വിഷയം തിരഞ്ഞെടുക്കൂ','Search guides':'ഗൈഡുകൾ തിരയൂ',
    'Newest first':'പുതിയത് ആദ്യം','No guides match.':'യോജിക്കുന്ന ഗൈഡുകളില്ല.',
    'On this page':'ഈ പേജിൽ','Sources':'ഉറവിടങ്ങൾ','Share this post':'ഈ പോസ്റ്റ് ഷെയർ ചെയ്യൂ',
+   'The library':'ലൈബ്രറി','Every guide, in one place.':'എല്ലാ ഗൈഡുകളും, ഒരിടത്ത്.',
+   'Search by tool, topic or scheme. Filter by category. Newest first.':'ടൂൾ, വിഷയം, സ്കീം എന്നിവയാൽ തിരയൂ. വിഭാഗം അനുസരിച്ച് ഫിൽറ്റർ ചെയ്യൂ. ഏറ്റവും പുതിയത് ആദ്യം.',
+   'Search posts':'പോസ്റ്റുകൾ തിരയൂ','All':'എല്ലാം','PC tools':'PC ടൂളുകൾ','Linux':'ലിനക്സ്',
+   'Government':'സർക്കാർ','Offers':'ഓഫറുകൾ','Learning':'പഠനം','More':'കൂടുതൽ',
+   'No posts match. Try another word, or check the':'യോജിക്കുന്ന പോസ്റ്റുകളില്ല. മറ്റൊരു വാക്ക് ശ്രമിക്കൂ, അല്ലെങ്കിൽ','older blog':'പഴയ ബ്ലോഗ് കാണൂ',
+   'Read guide':'ഗൈഡ് വായിക്കൂ','Copy title, description & link':'തലക്കെട്ട്, വിവരണം, ലിങ്ക് കോപ്പി ചെയ്യൂ','Copy link':'ലിങ്ക് കോപ്പി ചെയ്യൂ','Email':'ഇമെയിൽ',
+   'Your Trusted Tech Companion.':'നിങ്ങളുടെ വിശ്വസ്ത ടെക് കൂട്ടുകാരൻ.','Every guide shows what we checked, and what we could not confirm.':'ഓരോ ഗൈഡിലും ഞങ്ങൾ എന്ത് ചെക്ക് ചെയ്തു, എന്ത് സ്ഥിരീകരിക്കാൻ കഴിഞ്ഞില്ല എന്ന് കാണിക്കുന്നു.',
+   'Show avatar guide':'അവതാർ ഗൈഡ് കാണിക്കൂ',
+   'verified guides':'പരിശോധിച്ച ഗൈഡുകൾ','topics to explore':'പര്യവേക്ഷണം ചെയ്യാനുള്ള വിഷയങ്ങൾ','Updated':'അപ്ഡേറ്റ് ചെയ്തത്','daily':'ദിവസേന',
+   'Linux Distro':'Linux ഡിസ്ട്രോ','Pick a distribution that fits you':'നിങ്ങൾക്ക് യോജിച്ച ഡിസ്ട്രിബ്യൂഷൻ തിരഞ്ഞെടുക്കൂ',
+   'Government services':'സർക്കാർ സേവനങ്ങൾ','Schemes and services from trusted authorities':'വിശ്വസ്ത അധികാരികളിൽ നിന്നുള്ള സ്കീമുകളും സേവനങ്ങളും',
+   'Verified offers':'പരിശോധിച്ച ഓഫറുകൾ','Free deals that are real':'യഥാർത്ഥ സൗജന്യ ഓഫറുകൾ',
+   'Events & Hackathons':'ഇവന്റുകളും ഹാക്കത്തോണുകളും','Contests, challenges and coding events':'മത്സരങ്ങളും ചെലഞ്ചുകളും കോഡിംഗ് ഇവന്റുകളും',
+   'Compare systems, open details on tap':'സിസ്റ്റങ്ങൾ താരതമ്യം ചെയ്യൂ, ടാപ്പ് ചെയ്താൽ വിശദാംശങ്ങൾ','Official embassy and government programmes':'ഔദ്യോഗിക എംബസി, സർക്കാർ പരിപാടികൾ',
+   'Subscribe':'സബ്സ്ക്രൈബ്','Skip to content':'ഉള്ളടക്കത്തിലേക്ക് പോകൂ','Preview':'പ്രിവ്യൂ',
    'More posts':'കൂടുതൽ പോസ്റ്റുകൾ','Back to all guides':'എല്ലാ ഗൈഡുകളിലേക്കും മടങ്ങൂ'};
   for(var ek in EXTRA){ if(!UI.hasOwnProperty(ek)) UI[ek]=EXTRA[ek]; }
   var MSG={
