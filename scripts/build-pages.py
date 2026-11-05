@@ -245,7 +245,7 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js','.well-known']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js','.well-known','settings','version.json']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
@@ -322,7 +322,7 @@ def main():
   page.write_text(text)
 
  # Short tab titles for non-article pages.
- for rel,ttl in [('posts/index.html','Guides | AiCoN'),('posts/about-aicon.html','About | AiCoN'),('funded/index.html','Funded Abroad | AiCoN'),('authors/index.html','Authors | AiCoN'),('write/index.html','Write | AiCoN')]:
+ for rel,ttl in [('posts/index.html','Guides | AiCoN'),('posts/about-aicon.html','About | AiCoN'),('funded/index.html','Funded Abroad | AiCoN'),('authors/index.html','Authors | AiCoN'),('write/index.html','Write | AiCoN'),('settings/index.html','Settings | AiCoN')]:
   p=OUT/rel
   if not p.exists():continue
   text=p.read_text()
