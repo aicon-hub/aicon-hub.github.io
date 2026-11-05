@@ -142,7 +142,10 @@ def refresh_home():
    pm=re.search(r'</h3>\s*<p[^>]*>(.*?)</p>',li,re.S)
    desc=unescape(re.sub('<[^>]+>','',pm[1])).strip() if pm else ''
    dlm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
-  href='posts/'+fname;row=dict(title=title,href=href,tag=tag,date=date,description=desc);rows.append(row)
+  med=re.search(r'<a\b[^>]*class="guide-media[^"]*"[^>]*>.*?</a>',li,re.S) if fmt=='card' else None
+  media=''
+  if med:media=med[0].replace('href="../posts/','href="posts/').replace('src="../assets/','src="assets/')
+  href='posts/'+fname;row=dict(title=title,href=href,tag=tag,date=date,description=desc,media=media);rows.append(row)
   if re.search('hackathon|contest|challenge|events|fest',tag,re.I):events.append(row)
   guide=OUT/'posts'/fname
   gm=re.search(r'<script\b[^>]*id=["\x27]aicon-deadlines["\x27][^>]*>(.*?)</script>',guide.read_text(),re.S) if guide.exists() else None
@@ -155,7 +158,7 @@ def refresh_home():
  dates.sort(key=lambda x:(x['date'],x['title']));dates=dates[:6]
  home=(OUT/'index.html').read_text()
  if 'assets/2026/' in home:
-  cards=''.join('<article class="guide-card"><div class="guide-body"><div class="guide-meta"><span class="tag">'+esc(x['tag'])+'</span><small>'+esc(x['date'])+'</small></div><h3><a href="'+esc(x['href'])+'">'+esc(x['title'])+'</a></h3><p>'+esc(x['description'])+'</p><a class="read-link" href="'+esc(x['href'])+'">Read guide</a></div></article>' for x in rows[:6])
+  cards=''.join('<article class="guide-card">'+x.get('media','')+'<div class="guide-body"><div class="guide-meta"><span class="tag">'+esc(x['tag'])+'</span><small>'+esc(x['date'])+'</small></div><h3><a href="'+esc(x['href'])+'">'+esc(x['title'])+'</a></h3><p>'+esc(x['description'])+'</p><a class="read-link" href="'+esc(x['href'])+'">Read guide</a></div></article>' for x in rows[:6])
   home=replace_inner(home,'<div class="guide-grid"',cards)
   home=re.sub(r'View all \d+ guides','View all '+str(len(rows))+' guides',home)
   deadlines=''
