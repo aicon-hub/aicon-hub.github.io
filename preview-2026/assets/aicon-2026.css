@@ -20,8 +20,8 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;transition:background-color .25s ease,color .25s ease}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.65;overflow-x:clip;transition:background-color .25s ease,color .25s ease}
 h1,h2,h3,h4{font-family:Poppins,Inter,sans-serif;line-height:1.18;letter-spacing:-.015em;margin:0}
 p{margin:0}
 a{color:var(--link);text-decoration:none}
@@ -109,6 +109,7 @@ section.block{padding:64px 0}
 .section-head .text-link{flex:none;font-size:14.5px}
 
 /* Deadline cards */
+.dl-card,.guide-card,.cat-card,.event-card,.check-card{min-width:0}
 .dl-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .dl-card{display:flex;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:transform .16s ease,border-color .16s ease,box-shadow .2s ease;color:var(--ink)}
 .dl-card:hover{transform:translateY(-3px);border-color:rgba(255,107,44,.5);box-shadow:var(--shadow);text-decoration:none}
