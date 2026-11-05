@@ -205,7 +205,7 @@ def seo_pass():
  t=t.replace('<a href="#posts">Latest guides</a><a href="#checks">How we check</a>','<a href="#posts">Latest guides</a><a href="#checks">How we check</a><a href="posts/about-aicon.html">About</a><a href="#contact">Contact</a>',1)
  page.write_text(t)
  # sitemap: every built page
- urls=[base,base+'posts/',base+'funded/']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html' and 'http-equiv="refresh"' not in f.read_text()]+[base+'ml/posts/'+f.name for f in sorted((OUT/'ml/posts').glob('*.html'))]
+ urls=[base,base+'posts/',base+'funded/',base+'authors/',base+'write/']+[base+'authors/'+f.name for f in sorted((OUT/'authors').glob('*.html')) if f.name!='index.html']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html' and 'http-equiv="refresh"' not in f.read_text()]+[base+'ml/posts/'+f.name for f in sorted((OUT/'ml/posts').glob('*.html'))]
  today=date.today().isoformat()
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
 
@@ -243,7 +243,7 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
@@ -288,6 +288,32 @@ def main():
  apply(OUT)
  from media import prepare
  prepare(OUT)
+
+ # Author byline: link the default AiCoN byline to the editor profile.
+ for page in (OUT/'posts').glob('*.html'):
+  text=page.read_text()
+  if '<p class="meta">By AiCoN' not in text:continue
+  text=text.replace('<p class="meta">By AiCoN','<p class="meta">By <a class="byline-link" href="../authors/muhammed-salman.html">Muhammed Salman</a>',1)
+  if 'authors.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="../assets/2026/authors.css?v=20261105authors1"/></head>',1)
+  page.write_text(text)
+ # Footer: authors + contribute links on every page.
+ for page in OUT.rglob('*.html'):
+  rel=str(page.relative_to(OUT))
+  if rel.startswith(('ml/','preview-2026/')):continue
+  text=page.read_text()
+  cand=['<li><a href="mailto:aicon4tech@gmail.com">Contact</a></li>','<li data-categories="other"><a href="mailto:aicon4tech@gmail.com">Contact</a></li>']
+  old_li=next((c for c in cand if c in text),None)
+  if not old_li or 'Write for AiCoN' in text:continue
+  pre='' if page.parent==OUT else '../'
+  text=text.replace(old_li,old_li+'<li><a href="'+pre+'authors/">Authors</a></li><li><a href="'+pre+'write/">Write for AiCoN</a></li>',1)
+  page.write_text(text)
+ # Compact article footers: add Authors + Write links after the Blog link.
+ for page in (OUT/'posts').glob('*.html'):
+  text=page.read_text()
+  blog='<a href="https://icon4tech.blogspot.com">Blog</a>'
+  if blog not in text or 'Write for AiCoN' in text:continue
+  text=text.replace(blog,blog+' &middot; <a href="../authors/">Authors</a> &middot; <a href="../write/">Write for AiCoN</a>',1)
+  page.write_text(text)
  seo_pass()
  write_llms()
  preserve_search_console_verification()
