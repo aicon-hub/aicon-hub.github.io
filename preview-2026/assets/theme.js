@@ -2,7 +2,8 @@
  var root=document.documentElement,key='aicon-theme',saved=null;
  try{saved=localStorage.getItem(key);}catch(e){}
  var media=window.matchMedia('(prefers-color-scheme: dark)');
- function apply(theme){root.dataset.theme=theme;root.style.colorScheme=theme;var b=document.getElementById('theme-toggle');if(b){b.textContent=theme==='dark'?'☀ Light mode':'☾ Dark mode';b.setAttribute('aria-label',theme==='dark'?'Switch to light theme':'Switch to dark theme');b.setAttribute('aria-pressed',theme==='dark'?'true':'false');}}
+ window.addEventListener('aicon:uilang',function(){var b=document.getElementById('theme-toggle');if(b)apply(root.dataset.theme||'dark');});
+ function apply(theme){root.dataset.theme=theme;root.style.colorScheme=theme;var b=document.getElementById('theme-toggle');if(b){var ml=root.getAttribute('data-ui-lang')==='ml';b.textContent=theme==='dark'?(ml?'☀ ലൈറ്റ് മോഡ്':'☀ Light mode'):(ml?'☾ ഡാർക്ക് മോഡ്':'☾ Dark mode');b.setAttribute('aria-label',theme==='dark'?'Switch to light theme':'Switch to dark theme');b.setAttribute('aria-pressed',theme==='dark'?'true':'false');}}
  apply(saved==='dark'||saved==='light'?saved:'dark');
  function enrich(){
  var header=document.querySelector('header'),nav=header&&header.querySelector('nav'),brand=header&&header.querySelector('.logo,.brand');
@@ -74,4 +75,4 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  window.addEventListener('scroll',function(){if(!pending){pending=true;requestAnimationFrame(update);}},{passive:true});window.addEventListener('resize',update);update();}
 }if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
 
-;(function(){var c=document.currentScript;var b=c&&c.src?c.src.replace(/theme\.js.*$/,''):'/preview-2026/assets/';var l=document.createElement('link');l.rel='stylesheet';l.href=b+'lang.css?v=4';document.head.appendChild(l);var j=document.createElement('script');j.defer=true;j.async=false;j.src=b+'lang.js?v=9';document.head.appendChild(j);})();
+;(function(){var c=document.currentScript;var b=c&&c.src?c.src.replace(/theme\.js.*$/,''):'/preview-2026/assets/';var l=document.createElement('link');l.rel='stylesheet';l.href=b+'lang.css?v=4';document.head.appendChild(l);var j=document.createElement('script');j.defer=true;j.async=false;j.src=b+'lang.js?v=10';document.head.appendChild(j);})();

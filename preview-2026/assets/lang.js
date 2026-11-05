@@ -38,7 +38,8 @@
    'Verified offers':'ചെക്ക് ചെയ്ത ഓഫറുകൾ','Free deals that are real':'ശരിക്കും ഫ്രീ ആയ ഓഫറുകൾ',
    'Events & Hackathons':'ഇവന്റുകളും ഹാക്കത്തോണുകളും','Contests, challenges and coding events':'മത്സരങ്ങളും ചലഞ്ചുകളും കോഡിംഗ് ഇവന്റുകളും',
    'Compare systems, open details on tap':'സിസ്റ്റങ്ങൾ താരതമ്യം ചെയ്യൂ; ടാപ്പ് ചെയ്താൽ വിശദാംശങ്ങൾ','Official embassy and government programmes':'ഔദ്യോഗിക എംബസിയും സർക്കാർ പരിപാടികളും',
-   'Subscribe':'സബ്സ്ക്രൈബ്','Skip to content':'ഉള്ളടക്കത്തിലേക്ക് പോകൂ','Preview':'പ്രിവ്യൂ'};
+   'Subscribe':'സബ്സ്ക്രൈബ്','Skip to content':'ഉള്ളടക്കത്തിലേക്ക് പോകൂ','Preview':'പ്രിവ്യൂ',
+   '☀ Light mode':'☀ ലൈറ്റ് മോഡ്','☾ Dark mode':'☾ ഡാർക്ക് മോഡ്'};
   for(var ek in EXTRA){ if(!UI.hasOwnProperty(ek)) UI[ek]=EXTRA[ek]; }
   var MSG={
    ui:'മെനു ഇപ്പോൾ മലയാളത്തിലാണ്. ലേഖനത്തിന്റെ മലയാളം പതിപ്പ് ഉണ്ടെങ്കിൽ അത് തുറക്കും. തീയതി, ഫീസ്, തുക പോലുള്ള കാര്യങ്ങൾക്ക് ഇംഗ്ലീഷ് പേജും ഔദ്യോഗിക സൈറ്റുമാണ് അന്തിമം.',
@@ -71,6 +72,7 @@
       var k=n.__en.trim();
       n.nodeValue=l==='ml'?n.__en.replace(k,UI[k]):n.__en;
     });
+    window.dispatchEvent(new Event('aicon:uilang'));
   }
   // header button
   var btn=document.createElement('button');btn.type='button';btn.id='lang-toggle';btn.className='lang-toggle';
