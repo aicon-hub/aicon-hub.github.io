@@ -3,7 +3,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from html import escape,unescape
-import shutil,re,json,sys
+import shutil,re,json,sys,base64
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'_site'
 class Page(HTMLParser):
  def __init__(self):super().__init__(convert_charrefs=True);self.meta={};self.links={};self.in_h=False;self.h=[];self.in_p=False;self.ps=[];self.cur=[];self.article=False;self.image=''
@@ -245,7 +245,7 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
@@ -331,5 +331,34 @@ def main():
  seo_pass()
  write_llms()
  preserve_search_console_verification()
+
+ # PWA: app icons ship as base64 text (binary web uploads are unreliable); decode at build.
+ for icon in ['app-icon-192.png','app-icon-512.png','app-icon-maskable-512.png']:
+  b64=ROOT/'assets/2026'/(icon+'.b64')
+  if b64.exists():
+   (OUT/'assets/2026'/icon).write_bytes(base64.b64decode(b64.read_text()))
+ # PWA: manifest link, theme color and service worker registration on every page.
+ for page in OUT.rglob('*.html'):
+  rel=str(page.relative_to(OUT))
+  if rel.startswith(('ml/','preview-2026/')):continue
+  text=page.read_text()
+  if 'rel="manifest"' not in text:text=text.replace('</head>','<link rel="manifest" href="/manifest.webmanifest"/></head>',1)
+  if 'name="theme-color"' not in text:text=text.replace('</head>','<meta name="theme-color" content="#FF6B2C"/></head>',1)
+  if "/sw.js" not in text:text=text.replace('</body>','<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")})}</script></body>',1)
+  page.write_text(text)
+ # Footer: Get the app link on main-style footers and compact article footers.
+ for page in OUT.rglob('*.html'):
+  rel=str(page.relative_to(OUT))
+  if rel.startswith(('ml/','preview-2026/')):continue
+  text=page.read_text()
+  if 'releases">Get the app' in text or '>App</a>' in text:continue
+  done=False
+  for cand in ['<li><a href="mailto:aicon4tech@gmail.com">Contact</a></li>','<li data-categories="other"><a href="mailto:aicon4tech@gmail.com">Contact</a></li>']:
+   if cand in text:
+    text=text.replace(cand,cand+'<li><a href="https://github.com/aicon-hub/aicon-hub.github.io/releases">Get the app</a></li>',1);done=True;break
+  if not done:
+   blog='<a href="https://icon4tech.blogspot.com">Blog</a>'
+   if blog in text:text=text.replace(blog,blog+' &middot; <a href="https://github.com/aicon-hub/aicon-hub.github.io/releases">App</a>',1)
+  page.write_text(text)
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
