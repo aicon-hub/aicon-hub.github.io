@@ -1,9 +1,11 @@
 {
   "post_id": "aicon-edit-vidyadhan-mathura-deadline-20261105",
   "article_url": "none",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "41980208966",
-  "message_ids": [],
+  "message_ids": [
+    475
+  ],
   "mode": "edit",
   "target_message_id": 475,
   "payload_sha256": "4a80a72ff01efb61e11824d065e6f83352dcbb036bcacdace723c28a8e603885"
