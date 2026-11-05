@@ -208,7 +208,7 @@ section.block{padding:64px 0}
 .posts-hero{padding:56px 0 10px}
 .posts-hero h1{font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.03em}
 .posts-hero .sub{color:var(--mute);margin-top:12px;font-size:16px}
-.filter-bar{position:sticky;top:66px;z-index:90;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:14px 0;border-bottom:1px solid var(--border);margin-bottom:28px};transition:transform .25s ease
+.filter-bar{position:sticky;top:66px;z-index:90;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:14px 0;border-bottom:1px solid var(--border);margin-bottom:28px;transition:transform .25s ease}
 .filter-bar.tucked{transform:translateY(-110%)}
 .filter-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .filter-search{flex:1;min-width:220px;display:flex;align-items:center;background:var(--surface);border:1px solid var(--border-strong);border-radius:99px;padding:4px 6px 4px 18px;transition:border-color .2s ease,box-shadow .2s ease}
