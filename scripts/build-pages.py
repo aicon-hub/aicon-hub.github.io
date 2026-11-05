@@ -40,8 +40,8 @@ def transform(text,path):
  for n,v in [('description',desc),('og:type','article'),('og:site_name','AiCoN'),('og:title',title),('og:description',desc),('og:url',url),('twitter:card','summary_large_image' if image else 'summary'),('twitter:title',title),('twitter:description',desc)]:text=setmeta(text,n,v)
  if image:
   for n in ['og:image','twitter:image']:text=setmeta(text,n,image)
- if 'assets/theme.js' not in text:text=text.replace('</head>','<script defer src="../assets/theme.js?v=20261008share1"></script></head>',1)
- if 'assets/theme.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="../assets/theme.css?v=20261008share1"/></head>',1)
+ if 'assets/2026/' not in text and 'assets/theme.js' not in text:text=text.replace('</head>','<script defer src="../assets/theme.js?v=20261008share1"></script></head>',1)
+ if 'assets/2026/' not in text and 'assets/theme.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="../assets/theme.css?v=20261008share1"/></head>',1)
  return text,dict(path=path,title=title,description=desc,url=url,image=image)
 def replace_inner(text, marker, inner):
  start=text.index(marker);a=text.index('>',start)+1;depth=1
@@ -117,45 +117,74 @@ def refresh_home():
  from html import escape as esc
  today=datetime.now(ZoneInfo('Asia/Kolkata')).date().isoformat()
  index=(OUT/'posts/index.html').read_text();rows=[];dates=[];events=[]
- for li in re.findall(r'<li\b[^>]*>.*?</li>',index,re.S):
-  am=re.search(r'<a\b[^>]*href=["\x27]([^"\x27]+)["\x27][^>]*>(.*?)</a>',li,re.S)
-  if not am:continue
-  title=unescape(re.sub('<[^>]+>','',am[2]));href='posts/'+am[1]
-  tagm=re.search(r'<small[^>]*class=["\x27]tag["\x27][^>]*>(.*?)</small>',li,re.S)
-  tag=unescape(re.sub('<[^>]+>','',tagm[1])) if tagm else 'GUIDE'
-  smalls=re.findall(r'<small\b[^>]*>(.*?)</small>',li,re.S);summary=unescape(re.sub('<[^>]+>','',smalls[-1])) if smalls else ''
-  date,_,desc=summary.partition(' | ');row=dict(title=title,href=href,tag=tag,date=date,description=desc);rows.append(row)
+ _ul=re.search(r'<ul\b[^>]*class=["\x27]posts["\x27][^>]*>(.*?)</ul>',index,re.S)
+ items=re.findall(r'<li\b[^>]*>.*?</li>',_ul[1],re.S) if _ul else []
+ fmt='li'
+ if not items:items,fmt=re.findall(r'<article\b[^>]*class="guide-card"[^>]*>.*?</article>',index,re.S),'card'
+ for li in items:
+  if fmt=='li':
+   am=re.search(r'<a\b[^>]*href=["\x27]([^"\x27]+)["\x27][^>]*>(.*?)</a>',li,re.S)
+   if not am:continue
+   title=unescape(re.sub('<[^>]+>','',am[2]));fname=am[1]
+   tagm=re.search(r'<small[^>]*class=["\x27]tag["\x27][^>]*>(.*?)</small>',li,re.S)
+   tag=unescape(re.sub('<[^>]+>','',tagm[1])) if tagm else 'GUIDE'
+   smalls=re.findall(r'<small\b[^>]*>(.*?)</small>',li,re.S);summary=unescape(re.sub('<[^>]+>','',smalls[-1])) if smalls else ''
+   date,_,desc=summary.partition(' | ')
+   dlm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
+  else:
+   am=re.search(r'<h3><a\b[^>]*href=["\x27]([^"\x27]+)["\x27][^>]*>(.*?)</a>',li,re.S)
+   if not am:continue
+   title=unescape(re.sub('<[^>]+>','',am[2]));fname=am[1].split('/')[-1]
+   tagm=re.search(r'<span[^>]*class=["\x27]tag["\x27][^>]*>(.*?)</span>',li,re.S)
+   tag=unescape(re.sub('<[^>]+>','',tagm[1])) if tagm else 'GUIDE'
+   dtm=re.search(r'<small[^>]*>([^<]+)</small>',li,re.S)
+   date=unescape(dtm[1]).strip() if dtm else ''
+   pm=re.search(r'</h3>\s*<p[^>]*>(.*?)</p>',li,re.S)
+   desc=unescape(re.sub('<[^>]+>','',pm[1])).strip() if pm else ''
+   dlm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
+  href='posts/'+fname;row=dict(title=title,href=href,tag=tag,date=date,description=desc);rows.append(row)
   if re.search('hackathon|contest|challenge|events',tag,re.I):events.append(row)
-  guide=OUT/'posts'/am[1]
+  guide=OUT/'posts'/fname
   gm=re.search(r'<script\b[^>]*id=["\x27]aicon-deadlines["\x27][^>]*>(.*?)</script>',guide.read_text(),re.S) if guide.exists() else None
-  dm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
-  if gm or dm:
+  if gm or dlm:
    try:
-    for dt in json.loads(gm[1] if gm else unescape(dm[2])):
+    for dt in json.loads(gm[1] if gm else unescape(dlm[2])):
      label=dt.get('label','Listed deadline').replace('closes23:45IST','closes 23:45 IST').replace('SFIC institution submission','Seva First institution submission')
      if dt.get('date','')>=today:dates.append(dict(date=dt['date'],label=label,title=title,href=href))
    except (ValueError,KeyError):pass
  dates.sort(key=lambda x:(x['date'],x['title']));dates=dates[:6]
  home=(OUT/'index.html').read_text()
- cards=''.join('<article class="guide-card"><div class="guide-meta"><span>'+esc(x['tag'])+'</span><small>'+esc(x['date'])+'</small></div><h3><a href="'+esc(x['href'])+'">'+esc(x['title'])+'</a></h3><p>'+esc(x['description'])+'</p><a class="read-link" href="'+esc(x['href'])+'">Read guide →</a></article>' for x in rows[:6])
- home=replace_inner(home,'<div class="latest-grid"',cards)
- home=re.sub(r'Browse all \d+ guides on this page','Browse all '+str(len(rows))+' guides',home)
- # Full archive belongs on its own page, not duplicated behind a disclosure.
- home=re.sub(r'(<details class="archive">.*?)<ul class="posts">.*?</ul>',lambda m:m[1]+'<p><a href="posts/index.html">Open the full guide library →</a></p>',home,flags=re.S)
- deadlines=''
- for x in dates:
-  day=x['date'][8:];month=datetime.fromisoformat(x['date']).strftime('%b').upper()
-  days=(datetime.fromisoformat(x['date']).date()-datetime.fromisoformat(today).date()).days
-  badge='Closes today' if days==0 else ('1 day left' if days==1 else str(days)+' days left')
-  urgency=' days-left--today' if days==0 else (' days-left--soon' if days<=2 else '')
-  deadlines+='<a class="deadline" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="date-box"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span class="deadline-info"><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small><span class="deadline-tags"><b class="days-left'+urgency+'">'+badge+'</b><span class="deadline-action">How to apply →</span></span></span></a>'
- home=re.sub(r'<a class="deadline"[^>]*>.*?</a>','',home,flags=re.S)
- home=home.replace('<a class="panel-end"',deadlines+'<a class="panel-end"',1)
- eventcards=''.join('<a class="event-guide" href="'+esc(x['href'])+'"><span class="event-tag">'+esc(x['tag'])+'</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['date']+' | '+x['description'])+'</p></a>' for x in events[:4])
- home=replace_inner(home,'<div class="events-grid" id="events-list"',eventcards)
+ if 'assets/2026/' in home:
+  cards=''.join('<article class="guide-card"><div class="guide-body"><div class="guide-meta"><span class="tag">'+esc(x['tag'])+'</span><small>'+esc(x['date'])+'</small></div><h3><a href="'+esc(x['href'])+'">'+esc(x['title'])+'</a></h3><p>'+esc(x['description'])+'</p><a class="read-link" href="'+esc(x['href'])+'">Read guide</a></div></article>' for x in rows[:6])
+  home=replace_inner(home,'<div class="guide-grid"',cards)
+  home=re.sub(r'View all \d+ guides','View all '+str(len(rows))+' guides',home)
+  deadlines=''
+  for x in dates:
+   day=x['date'][8:];month=datetime.fromisoformat(x['date']).strftime('%b').upper()
+   deadlines+='<a class="dl-card" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="dl-date"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span class="dl-info"><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small><span class="dl-badge"></span></span></a>'
+  home=re.sub(r'<a class="dl-card"[^>]*>.*?</a>','',home,flags=re.S)
+  home=home.replace('<div class="dl-row">','<div class="dl-row">'+deadlines,1)
+  eventcards=''.join('<a class="event-card" href="'+esc(x['href'])+'"><span class="tag">'+esc(x['tag'])+'</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['date']+' | '+x['description'])+'</p></a>' for x in events[:4])
+  home=replace_inner(home,'<div class="events-grid"',eventcards)
+  (OUT/'assets/2026/deadlines-data.json').write_text(json.dumps(dates,ensure_ascii=False))
+ else:
+  cards=''.join('<article class="guide-card"><div class="guide-meta"><span>'+esc(x['tag'])+'</span><small>'+esc(x['date'])+'</small></div><h3><a href="'+esc(x['href'])+'">'+esc(x['title'])+'</a></h3><p>'+esc(x['description'])+'</p><a class="read-link" href="'+esc(x['href'])+'">Read guide →</a></article>' for x in rows[:6])
+  home=replace_inner(home,'<div class="latest-grid"',cards)
+  home=re.sub(r'Browse all \d+ guides on this page','Browse all '+str(len(rows))+' guides',home)
+  home=re.sub(r'(<details class="archive">.*?)<ul class="posts">.*?</ul>',lambda m:m[1]+'<p><a href="posts/index.html">Open the full guide library →</a></p>',home,flags=re.S)
+  deadlines=''
+  for x in dates:
+   day=x['date'][8:];month=datetime.fromisoformat(x['date']).strftime('%b').upper()
+   days=(datetime.fromisoformat(x['date']).date()-datetime.fromisoformat(today).date()).days
+   badge='Closes today' if days==0 else ('1 day left' if days==1 else str(days)+' days left')
+   urgency=' days-left--today' if days==0 else (' days-left--soon' if days<=2 else '')
+   deadlines+='<a class="deadline" data-date="'+x['date']+'" href="'+esc(x['href'])+'"><span class="date-box"><b>'+str(int(day))+'</b><small>'+month+'</small></span><span class="deadline-info"><strong>'+esc(x['title'])+'</strong><small>'+esc(x['label'])+': '+day+' '+month+' '+x['date'][:4]+'</small><span class="deadline-tags"><b class="days-left'+urgency+'">'+badge+'</b><span class="deadline-action">How to apply →</span></span></span></a>'
+  home=re.sub(r'<a class="deadline"[^>]*>.*?</a>','',home,flags=re.S)
+  home=home.replace('<a class="panel-end"',deadlines+'<a class="panel-end"',1)
+  eventcards=''.join('<a class="event-guide" href="'+esc(x['href'])+'"><span class="event-tag">'+esc(x['tag'])+'</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['date']+' | '+x['description'])+'</p></a>' for x in events[:4])
+  home=replace_inner(home,'<div class="events-grid" id="events-list"',eventcards)
  (OUT/'index.html').write_text(home)
  (OUT/'assets/deadlines-data.json').write_text(json.dumps(dates,ensure_ascii=False))
-
 
 def seo_pass():
  import json,re
@@ -228,6 +257,7 @@ def main():
  # Apply theme before paint and version shared assets on every generated page.
  for page in [OUT/'index.html',OUT/'funded/index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
+  if 'assets/2026/' in text:continue
   text=re.sub(r'(assets/(?:theme|style|article|home)\.(?:css|js))(?:\?[^\"\'<>\s]*)?',r'\1?v=20261021dates1',text)
   text=re.sub(r'<script\b[^>]*src=[\"\'][^\"\']*assets/theme.js[^\"\']*[\"\'][^>]*></script>', '', text, flags=re.I)
   prefix='assets/' if page.parent==OUT else '../assets/'
