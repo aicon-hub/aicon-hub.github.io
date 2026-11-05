@@ -245,7 +245,7 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js','.well-known','settings','version.json']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js','.well-known','settings','version.json','dl']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
