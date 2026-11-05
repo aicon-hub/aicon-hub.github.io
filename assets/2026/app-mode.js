@@ -1,10 +1,11 @@
 /* AiCoN app update check (same-origin /version.json; no third-party calls). */
 window.AiCoNUpdate = (function(){
-  var CURRENT = '1.0.0';
+  var FALLBACK = '1.0.0'; /* TWA v1.0.0 has no bridge; native app reports its own version */
+  function current(){ try{ if (window.AiCoNNativeBridge && window.AiCoNNativeBridge.getVersion) { var v = String(window.AiCoNNativeBridge.getVersion()); if (v) return v; } }catch(e){} return FALLBACK; }
   function cmp(a,b){ var x=String(a).split('.').map(Number), y=String(b).split('.').map(Number); for (var i=0;i<3;i++){ if ((x[i]||0)!==(y[i]||0)) return (x[i]||0)>(y[i]||0)?1:-1; } return 0; }
-  return { CURRENT: CURRENT,
+  return { CURRENT: FALLBACK, current: current,
     check: function(){
-      return fetch('/version.json', {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(v){ v.newer = cmp(v.version, CURRENT) > 0; return v; });
+      return fetch('/version.json', {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(v){ v.newer = cmp(v.version, current()) > 0; return v; });
     } };
 })();
 /* AiCoN app mode: tab bar, round search, back button, For-you picks (on-device only),
