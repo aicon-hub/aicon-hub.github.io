@@ -373,7 +373,21 @@ article.post section.official-media h2{border:0;padding:0;margin:0 0 14px;font-s
 .to-top:hover{color:var(--orange);border-color:var(--orange);transform:translateY(-2px)}
 @media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px;padding:40px 0 28px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}}
 /* Hairline Terrain hero figure (self-hosted, MIT). Palette strictly from AiCoN brand vars. */
-#terrain-hero{max-width:440px;margin:36px auto 0;border:1px solid var(--border);border-radius:24px;background:var(--surface);overflow:hidden;--hairline-plate:var(--surface);--hairline-hi:var(--orange);--hairline-edge:var(--faint);--hairline-mid:color-mix(in srgb,var(--faint) 42%,var(--surface));--hairline-lo:color-mix(in srgb,var(--faint) 16%,var(--surface))}
+#terrain-hero{max-width:440px;margin:36px auto 0;border:1px solid var(--border);border-radius:24px;background:var(--surface);overflow:hidden;--hairline-plate:var(--surface);--hairline-hi:var(--orange);--hairline-edge:color-mix(in srgb,var(--orange) 38%,var(--faint));--hairline-mid:color-mix(in srgb,var(--orange) 20%,var(--surface));--hairline-lo:color-mix(in srgb,var(--orange) 9%,var(--surface))}
 #terrain-hero .terrain-read{display:block;padding:0 16px 12px;font-size:11.5px;color:var(--mute);text-align:center;min-height:1.2em}
 @media(max-width:640px){#terrain-hero{max-width:340px;margin-top:26px}}
 @media(prefers-reduced-motion:reduce){#terrain-hero *{transition:none!important;animation:none!important}}
+
+/* Malayalam strings run longer: keep the header on one row by tightening it, and collapse to the menu earlier. */
+@media(min-width:1101px){
+  html[data-ui-lang=ml] .site-header nav a, html[lang=ml] .site-header nav a{padding:9px 9px;font-size:13.5px}
+  html[data-ui-lang=ml] .nav-cta, html[lang=ml] .nav-cta{padding-left:14px;padding-right:14px;font-size:13px}
+}
+@media(max-width:1100px){
+  html[data-ui-lang=ml] .site-header nav, html[lang=ml] .site-header nav{position:fixed;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);border-bottom:1px solid var(--border);padding:14px 18px 20px;gap:6px;display:none;box-shadow:var(--shadow)}
+  html[data-ui-lang=ml] .site-header nav.open, html[lang=ml] .site-header nav.open{display:flex}
+  html[data-ui-lang=ml] .site-header nav a, html[lang=ml] .site-header nav a{padding:12px 14px;font-size:15px}
+  html[data-ui-lang=ml] #nav-toggle, html[lang=ml] #nav-toggle{display:inline-flex}
+  html[data-ui-lang=ml] #theme-toggle, html[lang=ml] #theme-toggle{margin:6px 0 0}
+  html[data-ui-lang=ml] .nav-cta, html[lang=ml] .nav-cta{margin:6px 0 0;justify-content:center}
+}
