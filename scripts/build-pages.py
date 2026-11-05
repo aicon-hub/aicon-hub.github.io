@@ -37,6 +37,8 @@ def transform(text,path):
  if not image and p.image:
   from urllib.parse import urljoin
   image=urljoin(url,p.image)
+ t2=re.sub(r'\s*[|\u2013\u2014-]\s*AiCoN.*$','',title).strip()
+ text=re.sub(r'<title>.*?</title>','<title>'+t2+' | AiCoN</title>',text,count=1,flags=re.S)
  for n,v in [('description',desc),('og:type','article'),('og:site_name','AiCoN'),('og:title',title),('og:description',desc),('og:url',url),('twitter:card','summary_large_image' if image else 'summary'),('twitter:title',title),('twitter:description',desc)]:text=setmeta(text,n,v)
  if image:
   for n in ['og:image','twitter:image']:text=setmeta(text,n,image)
@@ -193,7 +195,7 @@ def seo_pass():
  import json,re
  from datetime import date
  base='https://aicon-hub.github.io/'
- title='AiCoN | Verified Tech, AI, Scholarship and Govt Service Guides for India'
+ title='AiCoN'
  desc='Plain-language, source-checked guides to AI tools, apps, digital safety, scholarships, government services and student events for readers in Kerala and across India.'
  ld=json.dumps([{"@context":"https://schema.org","@type":"Organization","name":"AiCoN","url":base,"logo":base+"assets/aicon-icon.svg","sameAs":["https://whatsapp.com/channel/0029VawGIGTD38CRJde0fl1c","https://t.me/AiCoN4tech"],"email":"aicon4tech@gmail.com"},{"@context":"https://schema.org","@type":"WebSite","name":"AiCoN","url":base,"inLanguage":"en-IN","potentialAction":{"@type":"SearchAction","target":base+"posts/index.html?q={search_term_string}","query-input":"required name=search_term_string"}}],ensure_ascii=False)
  page=OUT/'index.html';t=page.read_text()
@@ -318,6 +320,14 @@ def main():
   if blog not in text or 'Write for AiCoN' in text:continue
   text=text.replace(blog,blog+' &middot; <a href="../authors/">Authors</a> &middot; <a href="../write/">Write for AiCoN</a>',1)
   page.write_text(text)
+
+ # Short tab titles for non-article pages.
+ for rel,ttl in [('posts/index.html','Guides | AiCoN'),('posts/about-aicon.html','About | AiCoN'),('funded/index.html','Funded Abroad | AiCoN'),('authors/index.html','Authors | AiCoN'),('write/index.html','Write | AiCoN')]:
+  p=OUT/rel
+  if not p.exists():continue
+  text=p.read_text()
+  text=re.sub(r'<title>.*?</title>','<title>'+ttl+'</title>',text,count=1,flags=re.S)
+  p.write_text(text)
  seo_pass()
  write_llms()
  preserve_search_console_verification()
