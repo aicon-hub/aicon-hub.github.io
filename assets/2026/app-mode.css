@@ -1,27 +1,23 @@
-/* AiCoN app mode: applies only inside the installed app / PWA (display-mode: standalone),
-   or on any page with ?preview-app=1 for previews. Orange brand, liquid-glass shell. */
-#app-tabbar { display: none; }
+/* AiCoN app mode v2: only inside the installed app / PWA (display-mode: standalone),
+   or on any page with ?preview-app=1 (preview). Orange brand; liquid-glass shell;
+   Material 3 variant via body.app-style-m3. No third-party anything. */
+#app-tabbar, #app-searchbtn, #app-backbtn, #app-minibar, #app-foryou, #app-pblur-veil { display: none; }
 
 @media (display-mode: standalone) { body { --app: 1; } }
 body.app-preview { --app: 1; }
 
 @supports (color: color-mix(in srgb, red 50%, blue)) {
-  /* Frosted translucent top bar */
+
+  /* ---------- shared tokens ---------- */
   :root { --appbar: color-mix(in srgb, var(--bg) 68%, transparent); }
-  body:is(.app-preview) #site-header-x { }
+
+  /* ---------- apply to both standalone and preview ---------- */
+  /* frosted top bar */
   @media (display-mode: standalone) {
     .site-header { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); background: var(--appbar); border-bottom: 1px solid color-mix(in srgb, #FF6B2C 22%, transparent); }
-    #get-app, .nav-cta { display: none !important; }
-    body { padding-bottom: 92px; }
-    #app-tabbar { display: flex; }
-  }
-  body.app-preview .site-header { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); background: var(--appbar); border-bottom: 1px solid color-mix(in srgb, #FF6B2C 22%, transparent); }
-  body.app-preview #get-app, body.app-preview .nav-cta { display: none !important; }
-  body.app-preview { padding-bottom: 92px; }
-  body.app-preview #app-tabbar { display: flex; }
-
-  /* Mesh-gradient backdrop behind app content */
-  @media (display-mode: standalone) {
+    #get-app, .nav-cta, #theme-toggle, #aicon-avatar-frame { display: none !important; }
+    body { padding-bottom: 96px; }
+    #app-tabbar, #app-searchbtn { display: flex; }
     body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background:
         radial-gradient(38rem 30rem at 110% -10%, color-mix(in srgb, #FF6B2C 16%, transparent), transparent 60%),
@@ -29,22 +25,141 @@ body.app-preview { --app: 1; }
         radial-gradient(26rem 24rem at 60% 115%, color-mix(in srgb, #FF6B2C 12%, transparent), transparent 60%);
     }
   }
+  body.app-preview .site-header { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); background: var(--appbar); border-bottom: 1px solid color-mix(in srgb, #FF6B2C 22%, transparent); }
+  body.app-preview #get-app, body.app-preview .nav-cta, body.app-preview #theme-toggle, body.app-preview #aicon-avatar-frame { display: none !important; }
+  body.app-preview { padding-bottom: 96px; }
+  body.app-preview #app-tabbar, body.app-preview #app-searchbtn { display: flex; }
 
-  /* Floating liquid-glass pill bottom bar */
-  #app-tabbar { position: fixed; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 70;
+  /* ---------- floating liquid-glass pill tab bar + round search ---------- */
+  #app-tabbar { position: fixed; left: 16px; right: 84px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 70;
     justify-content: space-around; align-items: stretch; gap: 2px; padding: 6px;
     border-radius: 30px;
-    background: color-mix(in srgb, var(--bg) 58%, transparent);
-    backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: color-mix(in srgb, var(--bg) 55%, transparent);
+    backdrop-filter: blur(26px) saturate(180%); -webkit-backdrop-filter: blur(26px) saturate(180%);
     border: 1px solid color-mix(in srgb, #FFFFFF 14%, transparent);
     box-shadow: 0 12px 32px color-mix(in srgb, #000000 30%, transparent), inset 0 1px 0 color-mix(in srgb, #FFFFFF 12%, transparent);
   }
   #app-tabbar a { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
-    flex: 1 1 0; padding: 8px 4px 7px; border-radius: 24px; text-decoration: none; color: var(--ink); font-size: 10px; font-weight: 600; letter-spacing: .01em; opacity: .66;
+    flex: 1 1 0; padding: 8px 2px 7px; border-radius: 24px; text-decoration: none; color: var(--ink); font-size: 10px; font-weight: 600; opacity: .66;
     transition: transform .45s cubic-bezier(.34,1.56,.64,1), opacity .2s ease, background .25s ease, color .25s ease;
   }
   #app-tabbar a:active { transform: scale(.92); }
   #app-tabbar a.active { opacity: 1; color: #FF6B2C; background: color-mix(in srgb, #FF6B2C 14%, transparent); }
-  #app-tabbar a.active svg { transform: translateY(-1px) scale(1.06); }
   #app-tabbar svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .45s cubic-bezier(.34,1.56,.64,1); }
+  #app-tabbar a.active svg { transform: translateY(-1px) scale(1.06); }
+
+  #app-searchbtn { position: fixed; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 70;
+    width: 60px; height: 60px; border-radius: 50%; align-items: center; justify-content: center;
+    background: color-mix(in srgb, #FF6B2C 78%, transparent);
+    backdrop-filter: blur(26px) saturate(180%); -webkit-backdrop-filter: blur(26px) saturate(180%);
+    border: 1px solid color-mix(in srgb, #FFFFFF 22%, transparent);
+    box-shadow: 0 12px 28px color-mix(in srgb, #FF6B2C 38%, transparent), inset 0 1px 0 color-mix(in srgb, #FFFFFF 22%, transparent);
+    color: #fff; text-decoration: none;
+    transition: transform .45s cubic-bezier(.34,1.56,.64,1);
+  }
+  #app-searchbtn:active { transform: scale(.9); }
+  #app-searchbtn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+  /* ---------- round glass back button (sub pages) ---------- */
+  #app-backbtn { position: fixed; top: calc(10px + env(safe-area-inset-top, 0px)); left: 12px; z-index: 80;
+    width: 40px; height: 40px; border-radius: 50%; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--bg) 55%, transparent);
+    backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border: 1px solid color-mix(in srgb, #FFFFFF 16%, transparent);
+    box-shadow: 0 6px 18px color-mix(in srgb, #000 24%, transparent);
+    color: var(--ink); text-decoration: none; cursor: pointer;
+  }
+  #app-backbtn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  @media (display-mode: standalone) { body.app-sub #app-backbtn { display: flex; } body.app-sub .site-header .header-row { padding-left: 46px; } }
+  body.app-preview.app-sub #app-backbtn { display: flex; }
+  body.app-preview.app-sub .site-header .header-row { padding-left: 46px; }
+
+  /* ---------- mini "now reading" style glass bar (top pick) ---------- */
+  #app-minibar { position: fixed; left: 16px; right: 16px; bottom: calc(88px + env(safe-area-inset-bottom, 0px)); z-index: 69;
+    align-items: center; gap: 10px; padding: 8px 14px 8px 8px; border-radius: 22px;
+    background: color-mix(in srgb, var(--bg) 50%, transparent);
+    backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid color-mix(in srgb, #FFFFFF 14%, transparent);
+    box-shadow: 0 10px 26px color-mix(in srgb, #000 26%, transparent);
+    text-decoration: none; color: var(--ink);
+  }
+  @media (display-mode: standalone) { #app-minibar.has { display: flex; } }
+  body.app-preview #app-minibar.has { display: flex; }
+  #app-minibar img { width: 40px; height: 40px; border-radius: 14px; object-fit: cover; flex: none; }
+  #app-minibar .mb-txt { min-width: 0; flex: 1; }
+  #app-minibar .mb-k { display: block; font-size: 9px; font-weight: 800; letter-spacing: .08em; color: #FF6B2C; text-transform: uppercase; }
+  #app-minibar .mb-t { display: block; font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #app-minibar svg { width: 18px; height: 18px; fill: none; stroke: #FF6B2C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* ---------- progressive blur veil (optional toggle) ---------- */
+  body.app-pblur #app-pblur-veil { display: block; position: fixed; left: 0; right: 0; bottom: 0; height: 130px; z-index: 65; pointer-events: none;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    -webkit-mask-image: linear-gradient(to top, #000 20%, transparent); mask-image: linear-gradient(to top, #000 20%, transparent);
+  }
+
+  /* ---------- reduce dynamic blur: solid fills ---------- */
+  body.app-rblur .site-header, body.app-rblur #app-tabbar, body.app-rblur #app-searchbtn, body.app-rblur #app-backbtn, body.app-rblur #app-minibar { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: var(--card) !important; }
+  body.app-rblur #app-searchbtn { background: #FF6B2C !important; }
+  body.app-rblur #app-pblur-veil { display: none !important; }
+
+  /* ---------- reduce animation ---------- */
+  body.app-ranim #app-tabbar a, body.app-ranim #app-tabbar svg, body.app-ranim #app-searchbtn { transition: none !important; }
+
+  /* ---------- For you rail (on-device picks) ---------- */
+  @media (display-mode: standalone) { #app-foryou.has { display: block; } }
+  body.app-preview #app-foryou.has { display: block; }
+  #app-foryou { margin: 18px 0 4px; }
+  #app-foryou .fy-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 10px; }
+  #app-foryou .fy-head h2 { font-size: 20px; margin: 0; }
+  #app-foryou .fy-head small { color: var(--mute); font-size: 10px; }
+  #app-foryou .fy-rail { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: none; }
+  #app-foryou .fy-rail::-webkit-scrollbar { display: none; }
+  #app-foryou .fy-card { scroll-snap-align: start; flex: 0 0 150px; border-radius: 18px; overflow: hidden; text-decoration: none; color: var(--ink);
+    background: color-mix(in srgb, var(--card) 82%, transparent); border: 1px solid color-mix(in srgb, #FFF 10%, transparent); }
+  #app-foryou .fy-card img { width: 100%; height: 88px; object-fit: cover; display: block; }
+  #app-foryou .fy-card b { display: block; font-size: 11.5px; line-height: 1.35; padding: 8px 10px 10px; font-weight: 600; }
+  #app-foryou .fy-note { font-size: 10px; color: var(--mute); margin-top: 8px; }
+
+  /* ---------- Material 3 style option ---------- */
+  body.app-style-m3::before { content: none !important; }
+  body.app-style-m3 .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--bg); border-bottom: none; }
+  body.app-style-m3 #app-tabbar { backdrop-filter: none; -webkit-backdrop-filter: none; background: color-mix(in srgb, #FF6B2C 10%, var(--card)); border: none; border-radius: 28px; box-shadow: 0 2px 10px color-mix(in srgb, #000 22%, transparent); }
+  body.app-style-m3 #app-tabbar a { border-radius: 20px; }
+  body.app-style-m3 #app-tabbar a.active { background: none; color: var(--ink); }
+  body.app-style-m3 #app-tabbar a.active svg { background: color-mix(in srgb, #FF6B2C 26%, transparent); color: color-mix(in srgb, #FF6B2C 80%, var(--ink)); border-radius: 16px; padding: 3px 14px; width: 47px; height: 26px; }
+  body.app-style-m3 #app-searchbtn { backdrop-filter: none; -webkit-backdrop-filter: none; background: #FF6B2C; border: none; border-radius: 18px; width: 56px; height: 56px; box-shadow: 0 3px 10px color-mix(in srgb, #000 30%, transparent); }
+  body.app-style-m3 #app-minibar, body.app-style-m3 #app-backbtn { backdrop-filter: none; -webkit-backdrop-filter: none; background: color-mix(in srgb, #FF6B2C 8%, var(--card)); border: none; }
+  body.app-style-m3 #app-foryou .fy-card { border: none; background: color-mix(in srgb, #FF6B2C 6%, var(--card)); border-radius: 16px; }
+  body.app-style-m3 #app-pblur-veil { display: none !important; }
 }
+
+/* ---------- Settings page (works in any display mode; styled app-first) ---------- */
+.as-wrap { max-width: 640px; margin: 0 auto; padding: 8px 18px 120px; }
+.as-title { font-size: 34px; font-weight: 800; letter-spacing: -.02em; margin: 14px 0 18px; }
+.as-label { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--mute); margin: 22px 4px 8px; }
+.as-card { background: color-mix(in srgb, var(--card) 88%, transparent); border: 1px solid color-mix(in srgb, #FFF 8%, transparent); border-radius: 20px; overflow: hidden; }
+.as-row { display: flex; align-items: center; gap: 12px; padding: 13px 16px; text-decoration: none; color: var(--ink); }
+.as-row + .as-row, .as-block + .as-row, .as-row + .as-block { border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent); }
+.as-ic { width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, #FF6B2C 16%, transparent); color: #FF6B2C; flex: none; }
+.as-ic svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.as-main { flex: 1; min-width: 0; }
+.as-main b { display: block; font-size: 14px; font-weight: 600; }
+.as-main small { display: block; font-size: 11.5px; color: var(--mute); margin-top: 1px; line-height: 1.4; }
+.as-chev { color: var(--mute); flex: none; }
+.as-chev svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.as-block { padding: 13px 16px; }
+.as-seg { display: flex; background: color-mix(in srgb, var(--ink) 8%, transparent); border-radius: 12px; padding: 3px; gap: 3px; }
+.as-seg button { flex: 1; border: none; background: transparent; color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; padding: 8px 4px; border-radius: 9px; cursor: pointer; opacity: .7; transition: background .2s ease, opacity .2s ease; }
+.as-seg button.on { background: var(--bg); opacity: 1; box-shadow: 0 1px 4px color-mix(in srgb, #000 25%, transparent); color: #FF6B2C; }
+.as-switch { position: relative; width: 46px; height: 28px; flex: none; }
+.as-switch input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.as-switch i { position: absolute; inset: 0; border-radius: 999px; background: color-mix(in srgb, var(--ink) 18%, transparent); transition: background .2s ease; pointer-events: none; }
+.as-switch i::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.3); transition: transform .25s cubic-bezier(.34,1.56,.64,1); }
+.as-switch input:checked + i { background: #FF6B2C; }
+.as-switch input:checked + i::after { transform: translateX(18px); }
+.as-foot { text-align: center; color: var(--mute); font-size: 11px; margin-top: 26px; line-height: 1.7; }
+.as-foot a { color: var(--mute); }
+.as-privacy { display: flex; gap: 10px; align-items: flex-start; padding: 12px 16px; margin-top: 14px; border-radius: 16px; background: color-mix(in srgb, #FF6B2C 8%, transparent); font-size: 11.5px; color: var(--mute); line-height: 1.5; }
+.as-privacy svg { width: 15px; height: 15px; flex: none; fill: none; stroke: #FF6B2C; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-top: 1px; }
+body.app-style-m3 .as-card { border-radius: 16px; border: none; }
+body.app-style-m3 .as-seg button.on { background: color-mix(in srgb, #FF6B2C 22%, transparent); box-shadow: none; color: var(--ink); }
