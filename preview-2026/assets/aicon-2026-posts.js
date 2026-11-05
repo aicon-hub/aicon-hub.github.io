@@ -39,3 +39,20 @@ if(q0)input.value=q0;
 if(c0){active=c0;chips.forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.cat===c0));});}
 run();
 })();
+
+/* Hide the sticky filter bar while scrolling down; reveal on scroll up. */
+(function(){
+var bar=document.querySelector('.filter-bar');
+if(!bar)return;
+var lastY=window.pageYOffset,ticking=false;
+function update(){
+  var y=window.pageYOffset;
+  if(y<120){bar.classList.remove('tucked');}
+  else if(y-lastY>6){bar.classList.add('tucked');}
+  else if(lastY-y>6){bar.classList.remove('tucked');}
+  lastY=y;ticking=false;
+}
+window.addEventListener('scroll',function(){
+  if(!ticking){window.requestAnimationFrame(update);ticking=true;}
+},{passive:true});
+})();
