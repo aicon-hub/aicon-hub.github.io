@@ -1,0 +1,17 @@
+{
+  "name": "AiCoN",
+  "short_name": "AiCoN",
+  "description": "AiCoN: your safe space for tech and AI. Plain-language guides for AI tools, apps, scholarships and government services in India and Kerala.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0C0B0A",
+  "theme_color": "#FF6B2C",
+  "icons": [
+    { "src": "/assets/2026/app-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/2026/app-icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/2026/app-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
