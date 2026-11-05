@@ -257,6 +257,10 @@ def main():
  import base64
  (OUT/'assets/avatar-guide-source.tar.gz').write_bytes(base64.b64decode((ROOT/'assets/avatar-guide-source.tar.gz.b64').read_text()))
  (OUT/'assets/avatar-guide-source.tar.gz.b64').unlink(missing_ok=True)
+ # Author photos: decode base64-shipped images.
+ import base64 as _b64a
+ for _f in (OUT/'assets/authors').glob('*.b64'):
+  _f.with_suffix('').write_bytes(_b64a.b64decode(_f.read_text()));_f.unlink()
  # Apply theme before paint and version shared assets on every generated page.
  for page in [OUT/'index.html',OUT/'funded/index.html',*(OUT/'posts').glob('*.html')]:
   text=page.read_text()
