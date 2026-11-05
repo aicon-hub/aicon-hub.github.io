@@ -249,6 +249,7 @@ article.post section.official-media h2{border:0;padding:0;margin:0 0 14px;font-s
 .box{border-radius:16px;padding:18px 22px;margin:20px 0;font-size:15.5px}
 .box.good{background:var(--surface-2);border-left:4px solid #58B26A}
 .box.warn{background:var(--orange-soft);border-left:4px solid var(--orange)}
+.box b:first-child{display:block;margin-bottom:6px}
 .src{font-size:14px;color:var(--mute);background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px 22px;margin-top:30px;line-height:1.7}
 .share{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .share a{display:inline-flex;align-items:center;border-radius:99px;padding:13px 24px;font-weight:600;font-size:15px;text-decoration:none;background:linear-gradient(135deg,var(--orange),var(--orange-2));color:var(--on-orange);transition:transform .15s ease,box-shadow .2s ease}
