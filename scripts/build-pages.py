@@ -245,7 +245,7 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js','.well-known']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
@@ -342,6 +342,8 @@ def main():
   rel=str(page.relative_to(OUT))
   if rel.startswith(('ml/','preview-2026/')):continue
   text=page.read_text()
+  if 'app-mode.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/app-mode.css?v=20261105app1"/></head>',1)
+  if 'app-mode.js' not in text:text=text.replace('</body>','<script defer src="/assets/2026/app-mode.js?v=20261105app1"></script></body>',1)
   if 'rel="manifest"' not in text:text=text.replace('</head>','<link rel="manifest" href="/manifest.webmanifest"/></head>',1)
   if 'name="theme-color"' not in text:text=text.replace('</head>','<meta name="theme-color" content="#FF6B2C"/></head>',1)
   if "/sw.js" not in text:text=text.replace('</body>','<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")})}</script></body>',1)
