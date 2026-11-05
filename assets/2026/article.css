@@ -1,0 +1,49 @@
+/* article pages: loaded after style.css */
+.crumbs{font-size:.9rem;color:var(--mute);margin:18px 0 0}
+.crumbs a{color:var(--mute)}
+.chip{display:inline-block;background:var(--green);color:var(--black);font-weight:700;font-size:.78rem;letter-spacing:.06em;padding:5px 14px;border-radius:999px;margin:18px 0 6px}
+article.post h1{font-size:clamp(2rem,7vw,2.9rem);line-height:1.1;margin:6px 0 10px}
+article.post .lead{font-size:1.15rem;margin:0 0 18px}
+article.post .cover{width:100%;height:auto;border-radius:24px;display:block;margin:6px 0 20px}
+article.post h2{font-size:1.5rem;margin:34px 0 10px;letter-spacing:-.01em}
+article.post h3{font-size:1.15rem;margin:22px 0 6px}
+article.post p,article.post li{font-size:1.05rem}
+article.post ol,article.post ul{padding-left:1.3em}
+article.post li{margin-bottom:6px}
+.box{background:var(--card);border-radius:24px;padding:16px 20px;margin:18px 0}
+.box.good{background:rgba(144,206,161,.45)}
+.box.warn{background:var(--yellow)}
+.box b:first-child{display:block;margin-bottom:4px;color:var(--black)}
+.facts{width:100%;border-collapse:separate;border-spacing:0 8px;margin:10px 0}
+.facts th,.facts td{text-align:left;vertical-align:top;padding:12px 16px;background:var(--card)}
+.facts th{width:34%;border-radius:16px 0 0 16px;color:var(--black)}
+.facts td{border-radius:0 16px 16px 0}
+.src{font-size:.92rem;color:var(--mute)}
+.share{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.share a{display:inline-block;padding:12px 20px;border-radius:20px;background:var(--yellow);color:var(--black);text-decoration:none;font-weight:600}
+.share a.alt{background:var(--card)}
+ul.posts li small.tag{display:block;width:fit-content;background:var(--green);color:var(--black);font-weight:700;font-size:.7rem;letter-spacing:.06em;padding:2px 10px;border-radius:999px;margin-bottom:4px}
+.sr{position:absolute;left:-9999px}
+form.search{display:flex;gap:10px;margin:0 0 16px}
+form.search input{flex:1;min-width:0;font:inherit;font-size:1.02rem;color:var(--black);background:var(--card);border:2px solid transparent;border-radius:20px;padding:14px 18px;outline:none}
+form.search input:focus{border-color:var(--green)}
+form.search button{font:inherit;font-weight:600;color:var(--black);background:var(--yellow);border:0;border-radius:20px;padding:0 22px;cursor:pointer}
+
+/* Reading pages: moving bubbles + smooth transitions (requested Oct 2026). Reduced-motion users are covered by the global rule in style.css. */
+body:not(.home-redesign)::before{animation:drift1 9s ease-in-out infinite;opacity:.16}
+body:not(.home-redesign)::after{animation:drift2 11s ease-in-out infinite;opacity:.14}
+[data-theme=dark] body:not(.home-redesign)::before,[data-theme=dark] body:not(.home-redesign)::after{opacity:.24}
+@keyframes article-zoom{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+article.post .cover{animation:article-zoom .8s cubic-bezier(.2,.7,.2,1) .08s both}
+article.post h1{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+article.post .lead{animation:rise .7s cubic-bezier(.2,.7,.2,1) .06s both}
+article.post a{transition:color .2s ease}
+article.post .box{transition:transform .2s ease,box-shadow .2s ease}
+article.post .box:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(73,71,62,.08)}
+.share a{transition:transform .15s ease,box-shadow .15s ease}
+.share a:hover{transform:translateY(-2px)}
+.facts tr{transition:transform .15s ease}
+.post img{max-width:100%;height:auto}
+/* official product logo between category chip and heading (remote_media.apply) */
+.tool-logo{display:block;width:76px;height:76px;object-fit:contain;border-radius:16px;padding:5px;margin:12px 0 8px;background:#fff}
+@media (max-width:640px){.tool-logo{width:64px;height:64px}}

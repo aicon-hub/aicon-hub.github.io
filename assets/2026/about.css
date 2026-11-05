@@ -1,0 +1,85 @@
+/* About AiCoN page: brand-first layout, cards and follow band. Loaded after theme.css. */
+
+/* Hero */
+.about-page .about-hero{text-align:center;padding:28px 0 8px}
+.about-page .about-hero .crumbs{text-align:left;margin:0 0 26px}
+.about-logo{display:inline-block;width:min(248px,64vw);height:auto;margin:0 0 18px}
+.about-logo.for-light{display:none}
+html[data-theme="light"] .about-logo.for-dark{display:none}
+html[data-theme="light"] .about-logo.for-light{display:inline-block}
+article.about-page h1{font-family:Comfortaa,sans-serif!important;font-weight:500;font-size:clamp(2.1rem,7vw,3rem);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+.about-page .intro{font-size:1.15rem;line-height:1.65;max-width:34em;margin-left:auto;margin-right:auto;color:var(--ink)}
+
+/* Section headings on this page use the brand face */
+article.about-page h2{font-family:Comfortaa,sans-serif!important;font-weight:500;border-bottom:0;padding-bottom:0;margin:0 0 12px;font-size:1.4rem;line-height:1.3;letter-spacing:0}
+
+/* Share tools and page index sit inside the hero, centered and calm */
+.about-page .aicon-share-tools{margin:22px auto 0;max-width:560px;text-align:center}
+.about-page .aicon-share-choices{justify-content:center}
+.about-page .on-this-page{text-align:left;max-width:640px;margin:26px auto 0}
+.about-page .on-this-page h2{font-family:Poppins,sans-serif!important;font-size:1.15rem;margin-bottom:10px}
+
+/* What AiCoN covers */
+.about-covers{margin:34px 0 8px;text-align:center}
+.about-covers h2{font-size:1.55rem}
+.about-covers p{max-width:38em;margin:0 auto 18px}
+.cover-chips{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0;margin:0 0 8px}
+.cover-chips li{border:1px solid var(--brand-orange);color:var(--ink);border-radius:999px;padding:9px 18px;font-size:.95rem;font-weight:500;line-height:1.4;min-height:40px;display:inline-flex;align-items:center;background:transparent}
+
+/* Card grid */
+.about-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:26px 0}
+.about-card{background:var(--card);border:1px solid rgba(128,128,128,.16);border-radius:20px;padding:22px 22px 20px}
+.about-card p{margin:0 0 12px}
+.about-card p:last-child{margin-bottom:0}
+.about-card.mission{border-left:4px solid var(--brand-orange)}
+.about-card.mistake{margin:0 0 26px}
+
+/* Numbered steps */
+.about-steps{margin:0;padding:0;list-style:none;counter-reset:step}
+.about-steps li{counter-increment:step;position:relative;padding:12px 0 12px 52px;border-top:1px solid rgba(128,128,128,.16)}
+.about-steps li:first-child{border-top:0;padding-top:2px}
+.about-steps li::before{content:counter(step);position:absolute;left:0;top:10px;width:34px;height:34px;border-radius:50%;border:1px solid var(--brand-orange);color:var(--brand-link);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.about-steps li:first-child::before{top:0}
+
+/* Founder links (reserved; real URLs to be added) */
+.founder-links{margin-top:16px;padding-top:14px;border-top:1px dashed rgba(128,128,128,.3);display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.founder-links .fl-label{flex-basis:100%;font-size:.85rem;font-weight:600;color:var(--mute);letter-spacing:.04em;text-transform:uppercase}
+.founder-links .fl-pill{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 16px;border:1px solid rgba(128,128,128,.35);border-radius:999px;font-size:.92rem;font-weight:600;color:var(--mute)}
+.founder-links .fl-pill small{font-weight:400;font-size:.78rem}
+
+/* Follow band */
+.about-follow{background:var(--card);border:1px solid rgba(128,128,128,.16);border-radius:24px;padding:26px 24px;margin:6px 0 16px;text-align:center}
+.about-follow h2{font-size:1.55rem}
+.about-follow p{max-width:36em;margin:0 auto 14px}
+.follow-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:18px 0 14px!important}
+.follow-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:14px;border:1px solid var(--brand-link);color:var(--brand-link);text-decoration:none;font-weight:600;font-size:1rem}
+.follow-btn.primary{background:var(--brand-orange);border-color:var(--brand-orange);color:#16100c}
+.follow-btn:hover{text-decoration:none;transform:translateY(-2px)}
+.follow-btn:active{transform:scale(.98)}
+.follow-mail{font-size:.95rem;color:var(--mute);margin-bottom:0!important}
+
+/* Focus visibility */
+.about-page a:focus-visible,.follow-btn:focus-visible{outline:3px solid var(--brand-link);outline-offset:3px}
+
+/* Wider screens: two-column card grid */
+@media(min-width:720px){
+ .about-grid{grid-template-columns:1fr 1fr;gap:16px}
+ .about-card{padding:24px 24px 22px}
+}
+
+/* Small phones */
+@media(max-width:420px){
+ .about-page .about-hero{padding-top:20px}
+ article.about-page h1{font-size:2rem}
+ .about-page .intro{font-size:1.02rem}
+ .about-card{padding:18px 16px 16px}
+ .about-follow{padding:22px 16px}
+ .follow-btn{width:100%}
+ .cover-chips li{padding:8px 14px;font-size:.9rem}
+}
+
+@media(prefers-reduced-motion:reduce){.follow-btn{transition:none}}
+
+/* Founder pills that are real links */
+.founder-links a.fl-pill{text-decoration:none;color:var(--ink)}
+.founder-links a.fl-pill:hover{border-color:var(--brand-link);color:var(--brand-link)}

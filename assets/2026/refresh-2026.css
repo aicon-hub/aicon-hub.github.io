@@ -1,0 +1,229 @@
+/* AiCoN 2026 refresh: Hyv-inspired layout language, AiCoN colors unchanged.
+   Loaded last on every page. Only spacing, type scale, shape and motion change;
+   every color below is an existing site variable. */
+
+/* ---------- shared ---------- */
+html{scroll-padding-top:96px}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+/* Sticky, calm header on both page families */
+.site-header,header.top{position:sticky;top:0;z-index:60;background:var(--page, var(--bg));border-bottom:1px solid color-mix(in srgb, var(--line, var(--mute)) 70%, transparent)}
+header.top{background:var(--bg);border-bottom:1px solid color-mix(in srgb, var(--mute) 35%, transparent)}
+header nav a{border-radius:999px;padding:8px 14px;transition:background-color .18s ease,color .18s ease}
+header nav a:hover{background:color-mix(in srgb, var(--mute) 18%, transparent);text-decoration:none}
+#theme-toggle{border-radius:999px;transition:background-color .18s ease,border-color .18s ease}
+
+/* Pill buttons everywhere */
+.button,.btn,form.search button{border-radius:999px}
+.home-redesign .button{transition:transform .18s cubic-bezier(.2,.7,.2,1),box-shadow .18s ease,background-color .18s ease}
+@media(hover:hover){.home-redesign .button:hover{transform:translateY(-2px);text-decoration:none}}
+
+/* Section rhythm: roomy, Hyv-style */
+.home-redesign section{padding-top:88px;padding-bottom:88px}
+.home-redesign .hero-section{padding-top:96px;padding-bottom:104px}
+.home-redesign h2{font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.03em}
+.section-intro{font-size:16px}
+
+/* Eyebrow: quiet label, orange, no filled pill */
+.home-redesign .eyebrow{background:transparent;color:var(--brand-orange);padding:0;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+[data-theme=light] .home-redesign .eyebrow{color:var(--brand-link)}
+.home-redesign .eyebrow::before{content:"";display:inline-block;width:22px;height:2px;background:currentColor;vertical-align:middle;margin-right:10px;border-radius:2px}
+
+/* Hero: oversized tight headline, orange period */
+.home-redesign .hero-section h1{font-size:clamp(42px,6.2vw,80px);line-height:1.02;letter-spacing:-.045em;font-weight:700;margin:26px 0 24px}
+.home-redesign .intro{font-size:18px;max-width:560px}
+@media(min-width:900px){.home-redesign .hero-grid{grid-template-columns:1.15fr .85fr;gap:72px}}
+
+/* Deadline panel: cleaner card, clearer date tiles */
+.home-redesign .deadline-panel{border-radius:20px;box-shadow:none}
+.home-redesign .deadline-panel .panel-title{padding:18px 22px}
+.home-redesign .deadline{padding:16px 22px;transition:background-color .18s ease}
+.home-redesign .date-box{border-radius:14px;min-width:58px;min-height:58px}
+.home-redesign .deadline .days-left{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--brand-orange)}
+[data-theme=light] .home-redesign .deadline .days-left{color:var(--brand-link)}
+.home-redesign .panel-end{font-weight:700}
+
+/* Checks: numbered statement grid */
+.home-redesign .checks-grid>div{padding:30px 26px}
+.home-redesign .checks-grid .number{width:auto;height:auto;background:transparent!important;border:0;border-radius:0;color:var(--brand-orange);font-size:30px;font-weight:700;letter-spacing:-.02em;font-family:Poppins,sans-serif}
+[data-theme=light] .home-redesign .checks-grid .number{color:var(--brand-link)}
+.home-redesign .checks-grid h3{font-size:18px;margin:12px 0 6px}
+.checks-section{background:var(--surface)}
+
+/* Category tiles: larger tap targets, arrow slide */
+.home-redesign .category-grid .card{border-radius:18px;padding:26px;min-height:132px}
+.home-redesign .card b{font-size:19px;letter-spacing:-.01em}
+.home-redesign .category-grid .card::after{transition:transform .18s ease,color .18s ease}
+
+/* Latest guides: carousel */
+.carousel-wrap{position:relative}
+.latest-grid.carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px}
+.latest-grid.carousel::-webkit-scrollbar{display:none}
+.latest-grid.carousel .guide-card{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start}
+.carousel-nav{display:flex;align-items:center;gap:10px;margin-top:22px}
+.carousel-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:19px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:border-color .18s ease,transform .18s ease,background-color .18s ease}
+.carousel-btn:hover{border-color:var(--brand-orange);transform:translateY(-1px)}
+.carousel-btn:disabled{opacity:.35;cursor:default;transform:none}
+.carousel-dots{display:flex;gap:7px;margin-left:6px}
+.carousel-dots i{width:7px;height:7px;border-radius:50%;background:color-mix(in srgb, var(--secondary) 45%, transparent);transition:background-color .18s ease,width .18s ease}
+.carousel-dots i.on{background:var(--brand-orange);width:18px;border-radius:4px}
+@media(max-width:900px){.latest-grid.carousel .guide-card{flex-basis:calc((100% - 18px)/2)}}
+@media(max-width:640px){.latest-grid.carousel .guide-card{flex-basis:82%}}
+
+/* Cards: calmer shadow, orange hover border kept */
+.home-redesign .category-grid .card,.home-redesign .guide-card,.event-guide{box-shadow:none;transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .22s ease,box-shadow .22s ease,background-color .18s ease}
+@media(hover:hover){.home-redesign .category-grid .card:hover,.home-redesign .guide-card:hover,.event-guide:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.10)}}
+
+/* Guide cards: preview image row stays, meta chip quieter */
+.guide-card{border-radius:18px}
+.home-redesign .guide-meta span{border-radius:999px}
+
+/* Events */
+.event-guide{border-radius:18px}
+
+/* CTA band: one confident orange moment */
+.home-redesign .cta-band{background:var(--brand-orange);color:#16100c;border:0;padding:72px 0}
+.home-redesign .cta-band h2{color:#16100c}
+.home-redesign .cta-band p{color:rgba(22,16,12,.75)}
+.home-redesign .cta-band .button{background:#16100c;color:#fff8e1!important;border-radius:999px}
+.home-redesign .cta-band .button.outline{background:transparent;color:#16100c!important;border-color:rgba(22,16,12,.55)}
+
+/* Footer */
+footer{border-top:1px solid var(--line)}
+
+/* ---------- reading pages ---------- */
+article.post h1{font-size:clamp(2.1rem,5vw,3.1rem);letter-spacing:-.035em;line-height:1.08}
+article.post .lead{font-size:1.18rem;line-height:1.6}
+article.post .chip{border-radius:999px;letter-spacing:.1em}
+article.post .cover{border-radius:18px}
+article.post .box{border-radius:18px}
+article.post .facts th,article.post .facts td{padding:14px 18px}
+article.post .facts th{border-radius:14px 0 0 14px}
+article.post .facts td{border-radius:0 14px 14px 0}
+article.post h2{font-size:1.7rem;letter-spacing:-.02em;margin-top:44px}
+article.post h3{font-size:1.25rem}
+.on-this-page{border-radius:18px}
+.share a{border-radius:999px}
+ul.posts li{border-radius:16px;padding:16px 20px;transition:transform .18s ease,border-color .18s ease}
+ul.posts li small.tag{border-radius:999px}
+form.search input{border-radius:999px}
+form.search button{border-radius:999px}
+#postlist li{border-radius:16px}
+.tool-logo{border-radius:14px}
+.aicon-back-top{border-radius:999px}
+
+/* Posts index hero */
+main.wrap>section.hero h1{letter-spacing:-.035em}
+
+/* ---------- responsive ---------- */
+@media(max-width:640px){
+ html{scroll-padding-top:120px}
+ .home-redesign section{padding-top:52px;padding-bottom:52px}
+ .home-redesign .hero-section{padding-top:40px;padding-bottom:56px}
+ .home-redesign .hero-section h1{font-size:clamp(38px,11vw,46px)}
+ .home-redesign h2{font-size:28px}
+ .home-redesign .checks-grid>div{padding:20px}
+ .home-redesign .checks-grid .number{font-size:24px}
+ .home-redesign .cta-band{padding:52px 0}
+ article.post h2{margin-top:36px}
+}
+@media(prefers-reduced-motion:reduce){.latest-grid.carousel{scroll-behavior:auto}}
+@media(max-width:640px){.home-redesign .card b{font-size:16px}}
+
+/* fixes after publisher cinema.css landed on the homepage */
+.home-redesign .eyebrow{border:0!important;background:transparent!important;color:var(--brand-orange)!important;padding:0}
+[data-theme=light] .home-redesign .eyebrow{color:var(--brand-link)!important}
+.home-redesign .hero-section h1 .dot{color:var(--brand-orange)}
+
+/* Sticky header on home too: beat theme.css .home-redesign scoping, and keep it compact on phones */
+.home-redesign .site-header{position:sticky;top:0;z-index:60;background:var(--page, var(--bg));border-bottom:1px solid color-mix(in srgb, var(--line, var(--mute)) 70%, transparent)}
+@media(max-width:640px){
+  .home-redesign .site-header nav,header.top nav{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;width:100%;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .home-redesign .site-header nav::-webkit-scrollbar,header.top nav::-webkit-scrollbar{display:none}
+}
+/* Official preview media on cards */
+.home-redesign .guide-card .preview-link{display:block;margin:-4px 0 14px}
+.home-redesign .guide-card .guide-preview{border-radius:12px}
+#postlist li .archive-preview{border-radius:8px}
+/* Compact mobile header: publisher grid keeps brand+toggle on row 1, nav becomes one scrollable row on row 2 */
+@media(max-width:640px){
+  .home-redesign .header-row nav{display:flex;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;grid-column:1/5;grid-row:2;width:100%;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .home-redesign .header-row nav::-webkit-scrollbar{display:none}
+  .home-redesign .header-row nav a{white-space:nowrap}
+}
+@media(max-width:640px){
+  .home-redesign .header-row #theme-toggle{position:absolute;top:14px;right:20px;margin:0;min-height:0;padding:8px 12px}
+}
+/* Scroll affordance on the mobile nav row: edge fade over the nav row only (uses existing --page bg, no palette change) */
+@media(max-width:640px){
+  .home-redesign .site-header .header-row{position:relative}
+  .home-redesign .site-header .header-row::after{content:"";position:absolute;right:0;bottom:0;width:56px;height:48px;background:linear-gradient(to right,transparent,var(--page, var(--bg)) 85%);pointer-events:none;z-index:2}
+}
+
+/* Explicit visible full-library button (replaces collapsed details) */
+.archive-open{margin-top:22px;display:grid;gap:14px}
+.archive-open .browse-all{display:flex;align-items:center;justify-content:center;min-height:52px;font-size:16px;font-weight:600;border-radius:999px;text-decoration:none}
+.archive-open .archive-search{display:flex;gap:10px;margin:0}
+.archive-open .archive-search input{flex:1;min-width:0}
+@media(max-width:640px){.archive-open .archive-search{flex-wrap:wrap}.archive-open .archive-search input{flex:1 1 100%}}
+
+/* Library search matches polished hero/posts search: pill, full width, tappable */
+.archive-open .archive-search input[type="search"]{padding:13px 18px;min-height:50px;border:1px solid var(--line, var(--olive));border-radius:999px;background:var(--card, var(--bg));color:var(--ink, var(--text));font:inherit;font-size:16px}
+.archive-open .archive-search input[type="search"]::placeholder{color:var(--mute);opacity:1}
+.archive-open .archive-search button{min-height:50px;padding:12px 22px;border-radius:999px;font-size:15px}
+
+/* ===== 2026 motion + premium layer (user request 25 Oct: animation, premium feel) =====
+   Rules kept: transform/opacity only (compositor smooth), no blur/ghost layers,
+   no text hidden until scroll (reveals move containers, text stays fully opaque),
+   reduced-motion users get a static page. Palette untouched. */
+
+/* Hero entrance: plays once on load, above the fold, fast */
+@keyframes r26-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.home-redesign .hero-section .eyebrow,
+.home-redesign .hero-section h1,
+.home-redesign .hero-section .intro,
+.home-redesign .hero-section form,
+.home-redesign .hero-section .hero-cta,
+.home-redesign .hero-section .button{animation:r26-rise .55s cubic-bezier(.2,.7,.2,1) both}
+.home-redesign .hero-section h1{animation-delay:.07s}
+.home-redesign .hero-section .intro{animation-delay:.14s}
+.home-redesign .hero-section form{animation-delay:.2s}
+.home-redesign .hero-section .hero-cta,.home-redesign .hero-section .button{animation-delay:.26s}
+
+/* Scroll reveal: containers slide into place, text opacity never gated */
+[data-r26]{transform:translateY(12px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+[data-r26].r26-in{transform:none}
+
+/* Sticky header gains quiet elevation once scrolled */
+.site-header,header.top{transition:box-shadow .25s ease}
+.site-header.r26-scrolled,header.top.r26-scrolled{box-shadow:0 8px 28px rgba(0,0,0,.32)}
+[data-theme=light] .site-header.r26-scrolled,[data-theme=light] header.top.r26-scrolled{box-shadow:0 8px 24px rgba(73,71,62,.14)}
+
+/* Micro-interactions: premium, instant, never blocking */
+.home-redesign .guide-card,.home-redesign .card.tile,.event-guide,.checks-grid>div{transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .18s ease,box-shadow .22s ease}
+.home-redesign .guide-card:hover,.home-redesign .card.tile:hover,.event-guide:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.30)}
+[data-theme=light] .home-redesign .guide-card:hover,[data-theme=light] .home-redesign .card.tile:hover,[data-theme=light] .event-guide:hover{box-shadow:0 14px 30px rgba(73,71,62,.16)}
+.home-redesign .guide-card:active,.home-redesign .card.tile:active,.event-guide:active{transform:translateY(-1px) scale(.99)}
+.button,.home-redesign .button{transition:transform .16s cubic-bezier(.2,.7,.2,1),background-color .16s ease,border-color .16s ease}
+.button:active{transform:scale(.96)}
+.carousel-btn{transition:transform .18s cubic-bezier(.2,.7,.2,1),border-color .16s ease,opacity .18s ease}
+.carousel-btn:hover{transform:scale(1.08)}
+.carousel-btn:active{transform:scale(.94)}
+.carousel-dots i{transition:width .25s cubic-bezier(.2,.7,.2,1),background-color .25s ease}
+.guide-preview{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.home-redesign .guide-card:hover .guide-preview{transform:scale(1.02)}
+
+/* Nav links: quiet animated underline */
+.site-header nav a,header.top nav a{position:relative}
+.site-header nav a::after,header.top nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:var(--brand-orange);transform:scaleX(0);transform-origin:left;transition:transform .22s cubic-bezier(.2,.7,.2,1)}
+.site-header nav a:hover::after,header.top nav a:hover::after{transform:scaleX(1)}
+
+/* Smooth anchor scrolling where the OS allows motion */
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* Reduced motion: everything static */
+@media(prefers-reduced-motion:reduce){
+  .home-redesign .hero-section .eyebrow,.home-redesign .hero-section h1,.home-redesign .hero-section .intro,.home-redesign .hero-section form,.home-redesign .hero-section .hero-cta,.home-redesign .hero-section .button{animation:none}
+  [data-r26]{transform:none;transition:none}
+  *{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
