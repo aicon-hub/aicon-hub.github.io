@@ -342,12 +342,32 @@ def main():
   rel=str(page.relative_to(OUT))
   if rel.startswith(('ml/','preview-2026/')):continue
   text=page.read_text()
-  if 'app-mode.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/app-mode.css?v=20261106app6"/></head>',1)
-  if 'app-mode.js' not in text:text=text.replace('</body>','<script defer src="/assets/2026/app-mode.js?v=20261106app6"></script></body>',1)
+  if 'app-mode.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/app-mode.css?v=20261106app7"/></head>',1)
+  if 'app-mode.js' not in text:text=text.replace('</body>','<script defer src="/assets/2026/app-mode.js?v=20261106app7"></script></body>',1)
   if 'rel="manifest"' not in text:text=text.replace('</head>','<link rel="manifest" href="/manifest.webmanifest"/></head>',1)
   if 'name="theme-color"' not in text:text=text.replace('</head>','<meta name="theme-color" content="#FF6B2C"/></head>',1)
   if "/sw.js" not in text:text=text.replace('</body>','<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")})}</script></body>',1)
   page.write_text(text)
+ # App promo: dismissible Android-only banner (home) and slim card (library/articles).
+ # Hidden inside the installed app; static markup + inline gate, no layout shift, first-party only.
+ promo_css='<link rel="stylesheet" href="/assets/2026/app-promo.css?v=20261106promo1"/></head>'
+ promo_gate='<script>(function(){try{var q=location.search,ua=navigator.userAgent||"";var inApp=(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true||/[?&]preview-app=1/.test(q)||!!(window.AiCoNNativeBridge&&window.AiCoNNativeBridge.getVersion);var dis=false;try{dis=localStorage.getItem("aicon-app-promo-dismissed")==="1";}catch(e){}if(!inApp&&!dis&&(/Android/i.test(ua)||/[?&]promo=1/.test(q)))document.documentElement.classList.add("app-promo-on");}catch(e){}})();</script></head>'
+ promo_wire='<script>(function(){var p=document.getElementById("app-promo");if(!p)return;p.addEventListener("click",function(e){if(e.target.closest(".ap-x")){e.preventDefault();document.documentElement.classList.remove("app-promo-on");try{localStorage.setItem("aicon-app-promo-dismissed","1");}catch(_){}}});var a=document.getElementById("app-promo-link");if(a&&window.fetch){fetch("/version.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(v){if(v&&v.apk)a.href=v.apk;}).catch(function(){});}})();</script>'
+ promo_banner='<aside id="app-promo" class="ap-banner" aria-label="Get the AiCoN Android app"><img class="ap-icon" src="/assets/2026/app-icon-192.png" alt="" width="44" height="44"/><div class="ap-txt"><b>Get the AiCoN Android app</b><small>Guides, deadlines and settings in a proper app. Free, no ads.</small></div><a class="ap-btn" id="app-promo-link" href="/dl/AiCoN-1.2.7.apk">Download</a><button class="ap-x" type="button" aria-label="Dismiss">&times;</button></aside>'+promo_wire
+ promo_card='<aside id="app-promo" class="ap-card" aria-label="Get the AiCoN Android app"><img class="ap-icon" src="/assets/2026/app-icon-192.png" alt="" width="38" height="38"/><div class="ap-txt"><b>AiCoN has an Android app</b><small>Same guides, deadlines and settings - free, no ads.</small></div><a class="ap-btn" id="app-promo-link" href="/dl/AiCoN-1.2.7.apk">Get the app</a><button class="ap-x" type="button" aria-label="Dismiss">&times;</button></aside>'+promo_wire
+ for page in OUT.rglob('*.html'):
+  rel=str(page.relative_to(OUT))
+  if rel.startswith(('ml/','preview-2026/')):continue
+  if rel=='index.html':markup,anchor2=promo_banner,'<section class="block" id="closing">'
+  elif rel=='posts/index.html' or (rel.startswith('posts/') and rel.endswith('.html')):markup,anchor2=promo_card,'</main>'
+  else:continue
+  text=page.read_text()
+  if 'id="app-promo"' in text:continue
+  if 'app-promo.css' not in text:text=text.replace('</head>',promo_css,1)
+  if 'app-promo-on' not in text:text=text.replace('</head>',promo_gate,1)
+  if anchor2 in text:text=text.replace(anchor2,markup+anchor2,1)
+  page.write_text(text)
+
  # Footer: Get the app link on main-style footers and compact article footers.
  for page in OUT.rglob('*.html'):
   rel=str(page.relative_to(OUT))

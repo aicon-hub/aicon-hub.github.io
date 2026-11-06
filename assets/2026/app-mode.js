@@ -254,18 +254,47 @@ window.AiCoNUpdate = (function(){
   if (!home) return;
   var reads2 = [];
   try { reads2 = JSON.parse(LS.get('aicon-app-reads') || '[]'); } catch(e){}
-  var aff = {};
-  reads2.forEach(function(r){ (r.c||[]).forEach(function(c){ aff[c] = (aff[c]||0) + 1; }); });
+  var readSlugs = {};
+  reads2.forEach(function(r){ if (r && r.s) readSlugs[r.s] = r.t || 0; });
+  var hasReads = reads2.length > 0;
+  var DAY = 86400000;
+
+  function slugOf(href){
+    var m = /(?:^|\/)posts\/([^/]+)\.html$/.exec(href || '');
+    return m ? m[1] : '';
+  }
 
   function buildFromCards(cards){
     if (!cards.length) return;
-    var scored = cards.map(function(c, i){
-      var s = 0;
-      (c.cats||[]).forEach(function(ct){ s += (aff[ct]||0) * 3; });
-      s += Math.max(0, 1 - i/200); /* freshness */
-      return { c: c, s: s };
-    }).sort(function(a,b){ return b.s - a.s; });
-    var top = scored.slice(0,6).map(function(x){ return x.c; });
+    /* affinity comes only from posts the reader actually opened: use the library's own
+       card categories for opened slugs (title-regex cats are the fallback), and recent
+       reads weigh more (half-life 14 days). */
+    var cardCats = {};
+    cards.forEach(function(c){ var s = slugOf(c.href); if (s && (c.cats||[]).length) cardCats[s] = c.cats; });
+    var aff = {}, now = Date.now();
+    reads2.forEach(function(r){
+      if (!r || !r.s) return;
+      var cats = cardCats[r.s] || r.c || [];
+      var w = 3 * Math.pow(0.5, Math.max(0, (now - (r.t || now)) / DAY) / 14);
+      cats.forEach(function(c){ aff[c] = (aff[c] || 0) + w; });
+    });
+    var picked;
+    if (hasReads) {
+      /* strictly from what was read: matching category, never already-read posts,
+         no unrelated filler - if nothing matches, show nothing. */
+      picked = cards.map(function(c, i){
+        var s = 0;
+        (c.cats||[]).forEach(function(ct){ s += (aff[ct]||0); });
+        return { c: c, s: s, i: i };
+      }).filter(function(x){
+        return x.s > 0 && !readSlugs[slugOf(x.c.href)];
+      }).sort(function(a,b){ return b.s - a.s || a.i - b.i; }).slice(0,6).map(function(x){ return x.c; });
+    } else {
+      /* no reading history yet: fresh picks, clearly labelled */
+      picked = cards.filter(function(c){ return !readSlugs[slugOf(c.href)]; }).slice(0,6);
+    }
+    if (!picked.length) return;
+    var top = picked;
 
     /* minibar: the top pick */
     var mb = document.createElement('a');
@@ -299,9 +328,11 @@ window.AiCoNUpdate = (function(){
     return Array.prototype.slice.call(doc.querySelectorAll('.guide-card')).map(function(el){
       var a = el.querySelector('h3 a') || el.querySelector('a');
       var img = el.querySelector('img');
-      return { href: a ? a.getAttribute('href') : '#', title: a ? a.textContent.trim() : '',
+      var title = a ? a.textContent.trim() : '';
+      var dc = (el.getAttribute('data-categories') || '').split(/\s+/).filter(Boolean);
+      return { href: a ? a.getAttribute('href') : '#', title: title,
                img: img ? img.getAttribute('src') : '',
-               cats: (el.getAttribute('data-categories') || '').split(/\s+/) };
+               cats: dc.length ? dc : catsFor(title) };
     }).filter(function(c){ return c.title && c.href !== '#'; });
   }
 
