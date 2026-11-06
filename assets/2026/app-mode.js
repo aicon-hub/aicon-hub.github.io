@@ -199,12 +199,14 @@ window.AiCoNUpdate = (function(){
     }
     adFill();
     adSheet.classList.add('open');
+    document.body.classList.add('ad-open');
     if (location.hash !== '#deadlines') { try { history.pushState(null, '', '#deadlines'); } catch(e){} }
     setActiveTab('deadlines');
   }
   function closeDeadlines(){
     if (!adSheet || !adSheet.classList.contains('open')) return;
     adSheet.classList.remove('open');
+    document.body.classList.remove('ad-open');
     if (location.hash === '#deadlines') { try { history.pushState(null, '', location.pathname); } catch(e){} }
     setActiveTab(tabFromLocation());
   }

@@ -339,3 +339,6 @@ body.app-preview .aicon-back-top { bottom: calc(96px + env(safe-area-inset-botto
 #app-deadlines .urg-soon .ad-chip { background: rgba(255,107,44,.16); color: #FF6B2C; }
 #app-deadlines .urg-ok .ad-chip { background: var(--border-strong); color: var(--mute); }
 #app-deadlines .ad-empty { color: var(--mute); text-align: center; padding: 48px 0; }
+
+/* keep floating chrome off the Deadlines sheet */
+body.ad-open #app-minibar, body.ad-open #app-updatebar, body.ad-open #app-searchbtn, body.ad-open #app-backbtn { display: none !important; }
