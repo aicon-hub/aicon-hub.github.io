@@ -104,9 +104,30 @@ window.AiCoNUpdate = (function(){
     var reads = [];
     try { reads = JSON.parse(LS.get('aicon-app-reads') || '[]'); } catch(e){}
     reads = reads.filter(function(r){ return r && r.s !== SLUG; });
-    reads.push({ s: SLUG, t: Date.now(), c: catsFor(document.title) });
+    var cur = { s: SLUG, t: Date.now(), c: catsFor(document.title), d: 0, sc: 0 };
+    reads.push(cur);
     if (reads.length > 120) reads = reads.slice(-120);
-    LS.set('aicon-app-reads', JSON.stringify(reads));
+    var saveReads = function(){ LS.set('aicon-app-reads', JSON.stringify(reads)); };
+    saveReads();
+    /* dwell + scroll depth, on-device only */
+    var t0 = Date.now(), maxSc = 0, rafPending = false;
+    var onScroll = function(){
+      if (rafPending) return; rafPending = true;
+      requestAnimationFrame(function(){
+        rafPending = false;
+        var de = document.documentElement;
+        var denom = (de.scrollHeight - window.innerHeight) || 1;
+        var pctv = Math.min(100, Math.round(100 * (window.scrollY || de.scrollTop) / denom));
+        if (pctv > maxSc) { maxSc = pctv; cur.sc = pctv; }
+      });
+    };
+    var flushDwell = function(){
+      cur.d = Math.min(180000, (cur.d || 0) + (Date.now() - t0)); t0 = Date.now();
+      saveReads();
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'hidden') flushDwell(); });
+    window.addEventListener('pagehide', flushDwell);
   }
 
   /* ---- tab bar ---- */
@@ -265,37 +286,80 @@ window.AiCoNUpdate = (function(){
     return m ? m[1] : '';
   }
 
+  /* RANK-BEGIN */
+  /* On-device For-you ranking. Pure function (also unit-tested off-device).
+     Signals: repeat opens, recency (10-day half-life decay), dwell time (up to 4x
+     for a 3-minute read), deadline urgency, freshness. Category-diversified top
+     picks plus two day-rotating exploration slots so the rail never goes stale.
+     Already-read guides are never shown. Cold start: urgent + fresh mix. */
+  function rankPicks(cards, reads, now){
+    var DAY = 864e5, HALF = 10, TAKE = 8, EXPL = 2;
+    function slugOfH(href){ var m = /(?:^|\/)posts\/([^/]+)\.html$/.exec(href || ''); return m ? m[1] : ''; }
+    var readSlugs = {};
+    reads.forEach(function(r){ if (r && r.s) readSlugs[r.s] = 1; });
+    var cardCats = {};
+    cards.forEach(function(c){ var s2 = slugOfH(c.href); if (s2 && (c.cats||[]).length) cardCats[s2] = c.cats; });
+    var aff = {};
+    reads.forEach(function(r){
+      if (!r || !r.s) return;
+      var age = Math.max(0, (now - (r.t || now)) / DAY);
+      var w = Math.pow(0.5, age / HALF);
+      w *= 1 + Math.min(r.d || 0, 180000) / 60000;
+      (cardCats[r.s] || r.c || []).forEach(function(c){ aff[c] = (aff[c] || 0) + w; });
+    });
+    var hasAff = false; for (var k in aff) { hasAff = true; break; }
+    function urgency(c){
+      if (!c.dl) return 0;
+      var days = (c.dl - now) / DAY;
+      if (days < -0.5) return 0;
+      if (days <= 2) return 2.0;
+      if (days <= 5) return 1.0;
+      if (days <= 10) return 0.4;
+      return 0;
+    }
+    function fresh(c){
+      if (!c.date) return 0;
+      var age = (now - c.date) / DAY;
+      if (age <= 3) return 0.8;
+      if (age <= 7) return 0.4;
+      return 0;
+    }
+    function score(c){
+      var a = 0;
+      (c.cats||[]).forEach(function(ct){ a += (aff[ct] || 0); });
+      return 3 * a + urgency(c) + fresh(c);
+    }
+    var pool = cards.filter(function(c){ return !readSlugs[slugOfH(c.href)]; });
+    if (hasAff) {
+      var strong = pool.filter(function(c){ return score(c) > 0; });
+      if (strong.length) pool = strong;
+    }
+    var scored = pool.map(function(c, i){ return { c: c, s: score(c), i: i }; })
+                     .sort(function(a, b){ return b.s - a.s || a.i - b.i; });
+    /* greedy diversified take: max 2 per category */
+    var perCat = {}, main = [], rest = [];
+    scored.forEach(function(x){
+      var cats = x.c.cats || ['?'];
+      var blocked = cats.every(function(ct){ return (perCat[ct] || 0) >= 2; });
+      if (!blocked && main.length < TAKE - EXPL) {
+        main.push(x);
+        cats.forEach(function(ct){ perCat[ct] = (perCat[ct] || 0) + 1; });
+      } else rest.push(x);
+    });
+    /* day-seeded exploration: rotates daily, stable within a day */
+    var seedStr = new Date(now).toISOString().slice(0, 10) + ':' + reads.length;
+    var seed = 0; for (var si = 0; si < seedStr.length; si++) seed = (seed * 31 + seedStr.charCodeAt(si)) >>> 0;
+    function rnd(){ seed = (seed + 0x6D2B79F5) >>> 0; var t = seed; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }
+    var expl = rest.map(function(x){ return { x: x, k: Math.pow(rnd(), 1.5) * (0.3 + x.s) }; })
+                   .sort(function(a, b){ return b.k - a.k; }).slice(0, EXPL).map(function(e){ return e.x; });
+    return main.concat(expl).map(function(x){ return x.c; });
+  }
+  /* RANK-END */
+
   function buildFromCards(cards){
     if (!cards.length) return;
-    /* affinity comes only from posts the reader actually opened: use the library's own
-       card categories for opened slugs (title-regex cats are the fallback), and recent
-       reads weigh more (half-life 14 days). */
-    var cardCats = {};
-    cards.forEach(function(c){ var s = slugOf(c.href); if (s && (c.cats||[]).length) cardCats[s] = c.cats; });
-    var aff = {}, now = Date.now();
-    reads2.forEach(function(r){
-      if (!r || !r.s) return;
-      var cats = cardCats[r.s] || r.c || [];
-      var w = 3 * Math.pow(0.5, Math.max(0, (now - (r.t || now)) / DAY) / 14);
-      cats.forEach(function(c){ aff[c] = (aff[c] || 0) + w; });
-    });
-    var picked;
-    if (hasReads) {
-      /* strictly from what was read: matching category, never already-read posts,
-         no unrelated filler - if nothing matches, show nothing. */
-      picked = cards.map(function(c, i){
-        var s = 0;
-        (c.cats||[]).forEach(function(ct){ s += (aff[ct]||0); });
-        return { c: c, s: s, i: i };
-      }).filter(function(x){
-        return x.s > 0 && !readSlugs[slugOf(x.c.href)];
-      }).sort(function(a,b){ return b.s - a.s || a.i - b.i; }).slice(0,6).map(function(x){ return x.c; });
-    } else {
-      /* no reading history yet: fresh picks, clearly labelled */
-      picked = cards.filter(function(c){ return !readSlugs[slugOf(c.href)]; }).slice(0,6);
-    }
-    if (!picked.length) return;
-    var top = picked;
+    var top = rankPicks(cards, reads2, Date.now());
+    if (!top.length) return;
 
     /* minibar: the top pick */
     var mb = document.createElement('a');
@@ -352,11 +416,20 @@ window.AiCoNUpdate = (function(){
       var mc = gm ? (gm.className.match(/cat-[a-z]+/) || [''])[0] : '';
       var title = a ? a.textContent.trim() : '';
       var dc = (el.getAttribute('data-categories') || '').split(/\s+/).filter(Boolean);
+      var dl = 0;
+      try {
+        var dls = JSON.parse(el.getAttribute('data-deadlines') || '[]');
+        dls.forEach(function(d){ var ms = Date.parse(d.date + 'T00:00:00'); if (!dl || ms < dl) dl = ms; });
+      } catch(e){}
+      var dsmall = el.querySelector('.guide-meta small');
+      var dms = 0;
+      if (dsmall) { var pms = Date.parse(dsmall.textContent.trim().replace(/(\d+)(st|nd|rd|th)/, '$1')); if (!isNaN(pms)) dms = pms; }
       var isrc = img ? img.getAttribute('src') : '';
       var ext = !!isrc && !/^(https:\/\/aicon-hub\.github\.io|\/|\.)/.test(isrc);
       return { href: a ? a.getAttribute('href') : '#', title: title,
                img: isrc, ext: ext,
                mono: svg ? svg.outerHTML : '', mcat: mc,
+               dl: dl, date: dms,
                cats: dc.length ? dc : catsFor(title) };
     }).filter(function(c){ return c.title && c.href !== '#'; });
   }
