@@ -5,6 +5,8 @@ from html.parser import HTMLParser
 from html import escape,unescape
 import shutil,re,json,sys,base64
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'_site'
+APP_VERSION='1.2.7'
+APK_URL='https://github.com/aicon-hub/aicon-hub.github.io/releases/download/v%s/AiCoN-%s.apk'%(APP_VERSION,APP_VERSION)
 class Page(HTMLParser):
  def __init__(self):super().__init__(convert_charrefs=True);self.meta={};self.links={};self.in_h=False;self.h=[];self.in_p=False;self.ps=[];self.cur=[];self.article=False;self.image=''
  def handle_starttag(self,t,attrs):
@@ -352,9 +354,12 @@ def main():
  # Hidden inside the installed app; static markup + inline gate, no layout shift, first-party only.
  promo_css='<link rel="stylesheet" href="/assets/2026/app-promo.css?v=20261106promo1"/></head>'
  promo_gate='<script>(function(){try{var q=location.search,ua=navigator.userAgent||"";var inApp=(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true||/[?&]preview-app=1/.test(q)||!!(window.AiCoNNativeBridge&&window.AiCoNNativeBridge.getVersion);var dis=false;try{dis=localStorage.getItem("aicon-app-promo-dismissed")==="1";}catch(e){}if(!inApp&&!dis&&(/Android/i.test(ua)||/[?&]promo=1/.test(q)))document.documentElement.classList.add("app-promo-on");}catch(e){}})();</script></head>'
+ import json as _json
+ _vj=OUT/'version.json'
+ _vj.write_text(_json.dumps({'version':APP_VERSION,'apk':APK_URL,'url':APK_URL},indent=2)+chr(10))
  promo_wire='<script>(function(){var p=document.getElementById("app-promo");if(!p)return;p.addEventListener("click",function(e){if(e.target.closest(".ap-x")){e.preventDefault();document.documentElement.classList.remove("app-promo-on");try{localStorage.setItem("aicon-app-promo-dismissed","1");}catch(_){}}});var a=document.getElementById("app-promo-link");if(a&&window.fetch){fetch("/version.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(v){if(v&&v.apk)a.href=v.apk;}).catch(function(){});}})();</script>'
- promo_banner='<aside id="app-promo" class="ap-banner" aria-label="Get the AiCoN Android app"><img class="ap-icon" src="/assets/2026/app-icon-192.png" alt="" width="44" height="44"/><div class="ap-txt"><b>Get the AiCoN Android app</b><small>Guides, deadlines and settings in a proper app. Free, no ads.</small></div><a class="ap-btn" id="app-promo-link" href="/dl/AiCoN-1.2.7.apk">Download</a><button class="ap-x" type="button" aria-label="Dismiss">&times;</button></aside>'+promo_wire
- promo_card='<aside id="app-promo" class="ap-card" aria-label="Get the AiCoN Android app"><img class="ap-icon" src="/assets/2026/app-icon-192.png" alt="" width="38" height="38"/><div class="ap-txt"><b>AiCoN has an Android app</b><small>Same guides, deadlines and settings - free, no ads.</small></div><a class="ap-btn" id="app-promo-link" href="/dl/AiCoN-1.2.7.apk">Get the app</a><button class="ap-x" type="button" aria-label="Dismiss">&times;</button></aside>'+promo_wire
+ promo_banner='<aside id="app-promo" class="ap-banner" aria-label="Get the AiCoN Android app"><img class="ap-icon" src="/assets/2026/app-icon-192.png" alt="" width="44" height="44"/><div class="ap-txt"><b>Get the AiCoN Android app</b><small>Guides, deadlines and settings in a proper app. Free, no ads.</small></div><a class="ap-btn" id="app-promo-link" href="'+APK_URL+'">Download</a><button class="ap-x" type="button" aria-label="Dismiss">&times;</button></aside>'+promo_wire
+ promo_card='<aside id="app-promo" class="ap-card" aria-label="Get the AiCoN Android app"><img class="ap-icon" src="/assets/2026/app-icon-192.png" alt="" width="38" height="38"/><div class="ap-txt"><b>AiCoN has an Android app</b><small>Same guides, deadlines and settings - free, no ads.</small></div><a class="ap-btn" id="app-promo-link" href="'+APK_URL+'">Get the app</a><button class="ap-x" type="button" aria-label="Dismiss">&times;</button></aside>'+promo_wire
  for page in OUT.rglob('*.html'):
   rel=str(page.relative_to(OUT))
   if rel.startswith(('ml/','preview-2026/')):continue
