@@ -1,0 +1,7 @@
+Contact: mailto:aicon4tech@proton.me
+Contact: mailto:aicon4tech@gmail.com
+Contact: https://t.me/AiCoN4tech
+Expires: 2027-11-06T00:00:00Z
+Preferred-Languages: en
+Canonical: https://aicon-hub.github.io/.well-known/security.txt
+Policy: https://github.com/aicon-hub/aicon-hub.github.io/blob/main/SECURITY.md
