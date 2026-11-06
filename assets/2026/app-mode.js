@@ -40,6 +40,22 @@ window.AiCoNUpdate = (function(){
   if (LS.get('aicon-app-ranim') === '1') B.classList.add('app-ranim');
   var veil = document.createElement('div'); veil.id = 'app-pblur-veil'; B.appendChild(veil);
 
+  /* ---- native window insets -> CSS custom properties (informational: the native
+     container already pads the WebView below the status bar, so layout CSS must NOT
+     add these values again - exposed for diagnostics and future screens) ---- */
+  (function(){
+    try {
+      if (window.AiCoNNativeBridge && window.AiCoNNativeBridge.getInsets) {
+        var ins = JSON.parse(window.AiCoNNativeBridge.getInsets() || '{}');
+        var st = document.documentElement.style;
+        st.setProperty('--aicon-inset-top', (ins.top|0) + 'px');
+        st.setProperty('--aicon-inset-right', (ins.right|0) + 'px');
+        st.setProperty('--aicon-inset-bottom', (ins.bottom|0) + 'px');
+        st.setProperty('--aicon-inset-left', (ins.left|0) + 'px');
+      }
+    } catch(e){}
+  })();
+
   /* update banner */
   AiCoNUpdate.check().then(function(v){
     if (!v.newer) return;

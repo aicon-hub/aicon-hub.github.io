@@ -83,4 +83,17 @@
       }).catch(function(){ status.textContent = 'Could not check right now'; });
     });
   }
+
+  /* diagnostics row: shows installed-app facts when the native bridge exists */
+  (function(){
+    var el = document.getElementById('as-diag-text'); if(!el) return;
+    try {
+      if (window.AiCoNNativeBridge && window.AiCoNNativeBridge.getVersion) {
+        var v = AiCoNNativeBridge.getVersion();
+        var wv = (AiCoNNativeBridge.getWebViewInfo ? AiCoNNativeBridge.getWebViewInfo() : '?');
+        var ins = {}; try { ins = JSON.parse(AiCoNNativeBridge.getInsets ? AiCoNNativeBridge.getInsets() : '{}') || {}; } catch(e){}
+        el.textContent = 'AiCoN ' + v + ' \u00b7 ' + wv + ' \u00b7 insets top ' + (ins.top|0) + 'px, bottom ' + (ins.bottom|0) + 'px';
+      }
+    } catch(e){}
+  })();
 })();
