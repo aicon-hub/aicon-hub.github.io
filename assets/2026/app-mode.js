@@ -74,9 +74,10 @@ window.AiCoNUpdate = (function(){
       }
     });
     var x = document.createElement('button'); x.className = 'ub-x'; x.setAttribute('aria-label','Dismiss'); x.textContent = '\u00d7';
-    x.addEventListener('click', function(){ LS.set('aicon-app-update-dismissed', v.version); u.remove(); });
+    x.addEventListener('click', function(){ LS.set('aicon-app-update-dismissed', v.version); u.remove(); B.classList.remove('app-has-ub'); });
     u.appendChild(txt); u.appendChild(a); u.appendChild(x);
     B.appendChild(u);
+    B.classList.add('app-has-ub');
   }).catch(function(){});
 
   /* ---- category vocabulary + read tracking (on-device only) ---- */
@@ -300,11 +301,12 @@ window.AiCoNUpdate = (function(){
     var mb = document.createElement('a');
     mb.id = 'app-minibar'; mb.className = 'has';
     mb.href = top[0].href;
-    mb.innerHTML = (top[0].img ? '<img src="'+top[0].img+'" alt="" loading="lazy"/>' : '') +
+    mb.innerHTML = (top[0].img ? '<img src="'+top[0].img+'" alt="" loading="lazy" onerror="this.remove()"/>' : '') +
       '<span class="mb-txt"><span class="mb-k">For you</span><span class="mb-t"></span></span>' +
       '<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>';
     mb.querySelector('.mb-t').textContent = top[0].title;
     B.appendChild(mb);
+    B.classList.add('app-has-mb');
 
     /* rail section after hero */
     var hero = document.querySelector('.hero-section');
@@ -314,11 +316,28 @@ window.AiCoNUpdate = (function(){
     sec.innerHTML = '<div class="shell"><div class="fy-head"><h2>For you</h2><small>'+label+'</small></div><div class="fy-rail"></div>' +
       '<p class="fy-note">Picked on your device from what you open in the app. Your reading never leaves your phone.</p></div>';
     var rail = sec.querySelector('.fy-rail');
+    function monoTile(c){
+      var d = document.createElement('span');
+      d.className = 'fy-mono' + (c.mcat ? ' ' + c.mcat : ''); d.setAttribute('aria-hidden','true');
+      if (c.mono) { d.innerHTML = c.mono; }
+      else { d.textContent = (c.title || 'A').trim().charAt(0).toUpperCase(); d.classList.add('fy-mono-letter'); }
+      return d;
+    }
     top.forEach(function(c){
       var a = document.createElement('a');
       a.className = 'fy-card'; a.href = c.href;
-      a.innerHTML = (c.img ? '<img src="'+c.img+'" alt="" loading="lazy"/>' : '') + '<b></b>';
-      a.querySelector('b').textContent = c.title;
+      if (c.img) {
+        var im = document.createElement('img');
+        im.src = c.img; im.alt = ''; im.loading = 'lazy';
+        if (c.ext) im.className = 'fy-contain';
+        im.onerror = function(){ if (im.parentNode) im.parentNode.replaceChild(monoTile(c), im); };
+        a.appendChild(im);
+      } else {
+        a.appendChild(monoTile(c));
+      }
+      var b = document.createElement('b');
+      b.textContent = c.title;
+      a.appendChild(b);
       rail.appendChild(a);
     });
     if (hero && hero.parentNode) hero.parentNode.insertBefore(sec, hero.nextSibling);
@@ -328,10 +347,16 @@ window.AiCoNUpdate = (function(){
     return Array.prototype.slice.call(doc.querySelectorAll('.guide-card')).map(function(el){
       var a = el.querySelector('h3 a') || el.querySelector('a');
       var img = el.querySelector('img');
+      var gm = el.querySelector('.guide-media');
+      var svg = gm ? gm.querySelector('svg') : null;
+      var mc = gm ? (gm.className.match(/cat-[a-z]+/) || [''])[0] : '';
       var title = a ? a.textContent.trim() : '';
       var dc = (el.getAttribute('data-categories') || '').split(/\s+/).filter(Boolean);
+      var isrc = img ? img.getAttribute('src') : '';
+      var ext = !!isrc && !/^(https:\/\/aicon-hub\.github\.io|\/|\.)/.test(isrc);
       return { href: a ? a.getAttribute('href') : '#', title: title,
-               img: img ? img.getAttribute('src') : '',
+               img: isrc, ext: ext,
+               mono: svg ? svg.outerHTML : '', mcat: mc,
                cats: dc.length ? dc : catsFor(title) };
     }).filter(function(c){ return c.title && c.href !== '#'; });
   }

@@ -27,7 +27,9 @@ body.app-preview { --app: 1; }
   }
   body.app-preview .site-header { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); background: var(--appbar); border-bottom: 1px solid color-mix(in srgb, #FF6B2C 22%, transparent); }
   body.app-preview #get-app, body.app-preview .nav-cta, body.app-preview #theme-toggle, body.app-preview #aicon-avatar-frame { display: none !important; }
-  body.app-preview { padding-bottom: 96px; }
+  body.app-preview { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+  body.app-preview.app-has-mb { padding-bottom: calc(158px + env(safe-area-inset-bottom, 0px)); }
+  body.app-preview.app-has-ub { padding-bottom: calc(216px + env(safe-area-inset-bottom, 0px)); }
   body.app-preview #app-tabbar, body.app-preview #app-searchbtn { display: flex; }
 
   /* ---------- floating liquid-glass pill tab bar + round search ---------- */
@@ -128,12 +130,18 @@ body.app-preview { --app: 1; }
   #app-foryou .fy-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 10px; }
   #app-foryou .fy-head h2 { font-size: 20px; margin: 0; }
   #app-foryou .fy-head small { color: var(--mute); font-size: 10px; }
-  #app-foryou .fy-rail { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: none; }
+  #app-foryou .fy-rail { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; padding-right: 14px; scrollbar-width: none; align-items: stretch; }
   #app-foryou .fy-rail::-webkit-scrollbar { display: none; }
   #app-foryou .fy-card { scroll-snap-align: start; flex: 0 0 150px; border-radius: 18px; overflow: hidden; text-decoration: none; color: var(--ink);
     background: color-mix(in srgb, var(--card) 82%, transparent); border: 1px solid color-mix(in srgb, #FFF 10%, transparent); }
-  #app-foryou .fy-card img { width: 100%; height: 88px; object-fit: cover; display: block; }
-  #app-foryou .fy-card b { display: block; font-size: 11.5px; line-height: 1.35; padding: 8px 10px 10px; font-weight: 600; }
+  #app-foryou .fy-card img { width: 100%; height: 88px; object-fit: cover; display: block; background: color-mix(in srgb, var(--card) 60%, transparent); }
+  #app-foryou .fy-card img.fy-contain { object-fit: contain; padding: 10px; }
+  #app-foryou .fy-mono { width: 100%; height: 88px; display: grid; place-items: center; position: relative; overflow: hidden;
+    background: linear-gradient(152deg, var(--tile-a, #FF8A45), var(--tile-b, #F45D0E)); }
+  #app-foryou .fy-mono::before { content: ""; position: absolute; inset: 0; background: radial-gradient(130% 95% at 18% 0%, rgba(255,255,255,.30), transparent 55%); }
+  #app-foryou .fy-mono svg { width: 30px; height: 30px; fill: none; stroke: rgba(255,255,255,.96); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 3px 9px rgba(60,20,0,.35)); }
+  #app-foryou .fy-mono-letter { font-size: 30px; font-weight: 800; color: #FFF; }
+  #app-foryou .fy-card b { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; font-size: 11.5px; line-height: 1.35; padding: 8px 10px 10px; font-weight: 600; }
   #app-foryou .fy-note { font-size: 10px; color: var(--mute); margin-top: 8px; }
 
   /* ---------- Material 3 style option ---------- */
