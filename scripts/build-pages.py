@@ -342,8 +342,8 @@ def main():
   rel=str(page.relative_to(OUT))
   if rel.startswith(('ml/','preview-2026/')):continue
   text=page.read_text()
-  if 'app-mode.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/app-mode.css?v=20261105app3"/></head>',1)
-  if 'app-mode.js' not in text:text=text.replace('</body>','<script defer src="/assets/2026/app-mode.js?v=20261105app3"></script></body>',1)
+  if 'app-mode.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/app-mode.css?v=20261106app4"/></head>',1)
+  if 'app-mode.js' not in text:text=text.replace('</body>','<script defer src="/assets/2026/app-mode.js?v=20261106app4"></script></body>',1)
   if 'rel="manifest"' not in text:text=text.replace('</head>','<link rel="manifest" href="/manifest.webmanifest"/></head>',1)
   if 'name="theme-color"' not in text:text=text.replace('</head>','<meta name="theme-color" content="#FF6B2C"/></head>',1)
   if "/sw.js" not in text:text=text.replace('</body>','<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")})}</script></body>',1)

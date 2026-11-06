@@ -308,3 +308,34 @@ body.app-preview #terrain-hero, body.app-preview .orb { display: none !important
   body.app-style-m3 #app-searchbtn::before, body.app-style-m3 #app-minibar::before,
   body.app-style-m3 #app-updatebar::before, body.app-style-m3 #app-backbtn::before { content: none !important; }
 }
+
+/* ---- v1.2.5 quick fixes ---- */
+/* scroll-to-top must clear the app Search FAB + tab bar */
+body.app-preview .aicon-back-top { bottom: calc(96px + env(safe-area-inset-bottom, 0px)); right: 16px; z-index: 60; }
+
+/* Deadlines app view */
+#app-deadlines { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--bg); flex-direction: column; }
+#app-deadlines.open { display: flex; }
+#app-deadlines .ad-head { display: flex; align-items: center; gap: 12px; padding: 14px 16px 10px; border-bottom: 1px solid var(--border-strong); }
+#app-deadlines .ad-head h1 { font-size: 20px; margin: 0; font-family: inherit; }
+#app-deadlines .ad-head small { color: var(--mute); font-size: 12.5px; }
+#app-deadlines .ad-title { flex: 1; }
+#app-deadlines .ad-back, #app-deadlines .ad-ref { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border-strong); background: var(--card); color: var(--ink); display: flex; align-items: center; justify-content: center; padding: 0; }
+#app-deadlines .ad-back svg, #app-deadlines .ad-ref svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+#app-deadlines .ad-list { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px 16px calc(100px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: 10px; }
+#app-deadlines .ad-card { display: flex; align-items: center; gap: 12px; padding: 13px 14px; border-radius: 16px; background: var(--card); border: 1px solid var(--border-strong); text-decoration: none; color: var(--ink); }
+#app-deadlines .ad-card:active { transform: scale(.98); }
+#app-deadlines .ad-date { display: flex; flex-direction: column; align-items: center; min-width: 44px; padding: 6px 8px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border-strong); }
+#app-deadlines .ad-date b { font-size: 18px; line-height: 1.1; }
+#app-deadlines .ad-date small { font-size: 10px; letter-spacing: .08em; color: var(--mute); }
+#app-deadlines .ad-info { flex: 1; min-width: 0; }
+#app-deadlines .ad-info strong { display: block; font-size: 14px; line-height: 1.35; }
+#app-deadlines .ad-info small { display: block; color: var(--mute); font-size: 12px; margin-top: 2px; }
+#app-deadlines .ad-chip { font-size: 11.5px; font-weight: 700; padding: 5px 10px; border-radius: 99px; white-space: nowrap; }
+#app-deadlines .urg-red { border-color: #e04536; }
+#app-deadlines .urg-red .ad-chip { background: #e04536; color: #fff; }
+#app-deadlines .urg-amber { border-color: #d98a1f; }
+#app-deadlines .urg-amber .ad-chip { background: #f5a623; color: #23160a; }
+#app-deadlines .urg-soon .ad-chip { background: rgba(255,107,44,.16); color: #FF6B2C; }
+#app-deadlines .urg-ok .ad-chip { background: var(--border-strong); color: var(--mute); }
+#app-deadlines .ad-empty { color: var(--mute); text-align: center; padding: 48px 0; }

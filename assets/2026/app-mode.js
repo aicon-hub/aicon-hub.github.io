@@ -102,10 +102,20 @@ window.AiCoNUpdate = (function(){
     '<a href="/#closing" data-k="deadlines"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Deadlines</span></a>' +
     '<a href="/settings/" data-k="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3.9A7 7 0 0 0 14.6 5L14.3 2.5h-4L9.9 5a7 7 0 0 0-2 1.2l-2.3-.9-2 3.4 2 1.5a7 7 0 0 0 0 2.4l-2 1.5 2 3.4 2.3-.9a7 7 0 0 0 2 1.2l.3 2.6h4l.3-2.6a7 7 0 0 0 2-1.2l2.3.9 2-3.4-2-1.5c.06-.4.1-.8.1-1.2z"/></svg><span>Settings</span></a>';
   B.appendChild(bar);
-  var key = path === '/' || path === '/index.html' ? 'home'
-    : path.indexOf('/settings') === 0 ? 'settings'
-    : path.indexOf('/posts/') === 0 ? 'guides' : '';
-  if (key) { var act = bar.querySelector('[data-k="'+key+'"]'); if (act) act.classList.add('active'); }
+  function setActiveTab(k){
+    var links = bar.querySelectorAll('a');
+    for (var i=0;i<links.length;i++) links[i].classList.toggle('active', links[i].getAttribute('data-k') === k);
+  }
+  function tabFromLocation(){
+    var h = location.hash;
+    if (h === '#closing' || h === '#deadlines') return 'deadlines';
+    if (path === '/' || path === '/index.html') return 'home';
+    if (path.indexOf('/settings') === 0) return 'settings';
+    if (path.indexOf('/posts/') === 0) return 'guides';
+    return '';
+  }
+  setActiveTab(tabFromLocation());
+  window.addEventListener('hashchange', function(){ setActiveTab(tabFromLocation()); });
 
   var sb = document.createElement('a');
   sb.id = 'app-searchbtn';
@@ -113,6 +123,101 @@ window.AiCoNUpdate = (function(){
   sb.setAttribute('aria-label','Search guides');
   sb.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg>';
   B.appendChild(sb);
+
+  /* ---- haptics: native bridge in the app, navigator.vibrate in PWA. Default on. ---- */
+  function hapticsOn(){ return LS.get('aicon-app-haptics') !== '0'; }
+  function haptic(kind){
+    if (!hapticsOn()) return;
+    try {
+      if (window.AiCoNNativeBridge && window.AiCoNNativeBridge.vibrate) { window.AiCoNNativeBridge.vibrate(kind || 'tick'); return; }
+      if (navigator.vibrate) navigator.vibrate(8);
+    } catch(e){}
+  }
+  document.addEventListener('pointerdown', function(e){
+    if (e.button !== undefined && e.button > 0) return;
+    var t = e.target && e.target.closest ? e.target.closest('#app-tabbar a, #app-searchbtn, #app-backbtn, .fy-card, .dl-card, .ad-card, .ad-back, .ad-ref, .fchip, .as-seg button, .as-switch') : null;
+    if (t) haptic('tick');
+  }, {passive: true});
+
+  /* ---- Deadlines app view (IST day counts, same convention as the site) ---- */
+  var adSheet = null;
+  function istToday(){
+    try { return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()); }
+    catch(e){ return new Date().toISOString().slice(0,10); }
+  }
+  function adDays(date, today){ return Math.round((Date.parse(date+'T00:00:00Z') - Date.parse(today+'T00:00:00Z'))/86400000); }
+  function adLeft(d){ return d === 0 ? 'Closes today' : d === 1 ? '1 day left' : d + ' days left'; }
+  function adUrg(d){ return d <= 0 ? 'red' : d <= 3 ? 'amber' : d <= 7 ? 'soon' : 'ok'; }
+  function adParse(doc){
+    return Array.prototype.slice.call(doc.querySelectorAll('.dl-card')).map(function(el){
+      var strong = el.querySelector('strong'), small = el.querySelector('.dl-info small');
+      var day = el.querySelector('.dl-date b'), mon = el.querySelector('.dl-date small');
+      return { href: el.getAttribute('href') || '#',
+               title: strong ? strong.textContent.trim() : '',
+               sub: small ? small.textContent.trim() : '',
+               day: day ? day.textContent.trim() : '', mon: mon ? mon.textContent.trim() : '',
+               date: el.getAttribute('data-date') || '' };
+    }).filter(function(c){ return c.title && c.date; });
+  }
+  function adRender(cards){
+    var list = adSheet.querySelector('.ad-list');
+    list.innerHTML = '';
+    var today = istToday();
+    cards = cards.filter(function(c){ return adDays(c.date, today) >= 0; })
+                 .sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+    if (!cards.length) { list.innerHTML = '<p class="ad-empty">No deadlines listed right now.</p>'; }
+    cards.forEach(function(c){
+      var d = adDays(c.date, today);
+      var a = document.createElement('a');
+      a.className = 'ad-card urg-' + adUrg(d);
+      a.href = c.href;
+      a.innerHTML = '<span class="ad-date"><b></b><small></small></span><span class="ad-info"><strong></strong><small></small></span><span class="ad-chip"></span>';
+      a.querySelector('.ad-date b').textContent = c.day;
+      a.querySelector('.ad-date small').textContent = c.mon;
+      a.querySelector('.ad-info strong').textContent = c.title;
+      a.querySelector('.ad-info small').textContent = c.sub;
+      a.querySelector('.ad-chip').textContent = adLeft(d);
+      list.appendChild(a);
+    });
+    adSheet.querySelector('.ad-count').textContent = cards.length ? cards.length + ' closing soon' : 'All caught up';
+  }
+  function adFill(){
+    if (document.querySelector('.dl-card')) { adRender(adParse(document)); return; }
+    fetch('/', {cache:'no-store'}).then(function(r){ return r.text(); }).then(function(html){
+      adRender(adParse(new DOMParser().parseFromString(html, 'text/html')));
+    }).catch(function(){ adRender([]); });
+  }
+  function openDeadlines(){
+    haptic('tick');
+    if (!adSheet) {
+      adSheet = document.createElement('div');
+      adSheet.id = 'app-deadlines';
+      adSheet.innerHTML = '<div class="ad-head"><button type="button" class="ad-back" aria-label="Back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="ad-title"><h1>Deadlines</h1><small class="ad-count"></small></div><button type="button" class="ad-ref" aria-label="Refresh"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg></button></div><div class="ad-list"></div>';
+      adSheet.querySelector('.ad-back').addEventListener('click', function(){ closeDeadlines(); });
+      adSheet.querySelector('.ad-ref').addEventListener('click', function(){ haptic('tick'); adFill(); });
+      document.body.appendChild(adSheet);
+    }
+    adFill();
+    adSheet.classList.add('open');
+    if (location.hash !== '#deadlines') { try { history.pushState(null, '', '#deadlines'); } catch(e){} }
+    setActiveTab('deadlines');
+  }
+  function closeDeadlines(){
+    if (!adSheet || !adSheet.classList.contains('open')) return;
+    adSheet.classList.remove('open');
+    if (location.hash === '#deadlines') { try { history.pushState(null, '', location.pathname); } catch(e){} }
+    setActiveTab(tabFromLocation());
+  }
+  var dlTab = bar.querySelector('[data-k="deadlines"]');
+  if (dlTab) dlTab.addEventListener('click', function(e){
+    e.preventDefault();
+    if (adSheet && adSheet.classList.contains('open')) closeDeadlines(); else openDeadlines();
+  });
+  window.addEventListener('popstate', function(){
+    if (location.hash !== '#deadlines' && adSheet && adSheet.classList.contains('open')) closeDeadlines();
+    setActiveTab(tabFromLocation());
+  });
+  if (location.hash === '#closing' || location.hash === '#deadlines') openDeadlines();
 
   /* ---- back button on sub pages ---- */
   var home = path === '/' || path === '/index.html';

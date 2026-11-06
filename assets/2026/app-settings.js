@@ -42,6 +42,20 @@
   tgl('tgl-rblur','aicon-app-rblur','app-rblur');
   tgl('tgl-ranim','aicon-app-ranim','app-ranim');
 
+  /* haptics: default ON, stored as '0' when disabled */
+  (function(){
+    var el = document.getElementById('tgl-haptics'); if(!el) return;
+    el.checked = LS.get('aicon-app-haptics') !== '0';
+    el.addEventListener('change', function(){
+      if (el.checked){ LS.set('aicon-app-haptics','1'); }
+      else { LS.set('aicon-app-haptics','0'); }
+      try {
+        if (el.checked && window.AiCoNNativeBridge && window.AiCoNNativeBridge.vibrate) window.AiCoNNativeBridge.vibrate('confirm');
+        else if (el.checked && navigator.vibrate) navigator.vibrate(10);
+      } catch(e){}
+    });
+  })();
+
   /* check for updates */
   var row = document.getElementById('row-update');
   var status = document.getElementById('update-status');
