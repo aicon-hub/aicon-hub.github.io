@@ -27,7 +27,7 @@ header nav a:hover{background:color-mix(in srgb, var(--mute) 18%, transparent);t
 /* Eyebrow: quiet label, orange, no filled pill */
 .home-redesign .eyebrow{background:transparent;color:var(--brand-orange);padding:0;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
 [data-theme=light] .home-redesign .eyebrow{color:var(--brand-link)}
-.home-redesign .eyebrow::before{content:"";display:inline-block;width:22px;height:2px;background:currentColor;vertical-align:middle;margin-right:10px;border-radius:2px}
+.home-redesign .eyebrow::before{content:none}
 
 /* Hero: oversized tight headline, orange period */
 .home-redesign .hero-section h1{font-size:clamp(42px,6.2vw,80px);line-height:1.02;letter-spacing:-.045em;font-weight:700;margin:26px 0 24px}
