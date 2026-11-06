@@ -330,6 +330,10 @@ def main():
   text=p.read_text()
   text=re.sub(r'<title>.*?</title>','<title>'+ttl+'</title>',text,count=1,flags=re.S)
   p.write_text(text)
+ sys.path.insert(0,str(Path(__file__).parent))
+ try:
+     from logothumbs import make; make(OUT)
+ except Exception as e: print("logothumbs failed",e)
  seo_pass()
  write_llms()
  preserve_search_console_verification()
