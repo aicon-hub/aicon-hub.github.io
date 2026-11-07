@@ -1,7 +1,9 @@
 {
   "post_id": "aadhaar-oc-1",
   "article_url": "https://aicon-hub.github.io/posts/aadhaar-app-offline-verification-no-photocopy-300-organisations-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "42386703008",
-  "message_ids": []
+  "message_ids": [
+    588
+  ]
 }
