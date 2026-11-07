@@ -1,9 +1,11 @@
 {
   "post_id": "aicon-ntpc-edit-20261107",
   "article_url": "none",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "42328437795",
-  "message_ids": [],
+  "message_ids": [
+    579
+  ],
   "mode": "edit",
   "target_message_id": 579,
   "payload_sha256": "6945f998c94143f25f146b274aa9765f713a7d5b566491b86f83390f4a489171"
