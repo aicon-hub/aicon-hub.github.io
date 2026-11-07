@@ -205,6 +205,7 @@ def seo_pass():
  t=setmeta(t,'description',desc)
  for n,v in [('og:type','website'),('og:site_name','AiCoN'),('og:title',title),('og:description',desc),('og:url',base),('twitter:card','summary'),('twitter:title',title),('twitter:description',desc)]:t=setmeta(t,n,v)
  if 'rel="canonical"' not in t:t=t.replace('</head>','<link rel="canonical" href="'+base+'"/></head>',1)
+ if 'application/rss+xml' not in t:t=t.replace('</head>','<link rel="alternate" type="application/rss+xml" title="AiCoN guides" href="'+base+'feed.xml"/></head>',1)
  if 'application/ld+json' not in t:t=t.replace('</head>','<script type="application/ld+json">'+ld+'</script></head>',1)
  t=t.replace('<a href="#posts">Latest guides</a><a href="#checks">How we check</a>','<a href="#posts">Latest guides</a><a href="#checks">How we check</a><a href="posts/about-aicon.html">About</a><a href="#contact">Contact</a>',1)
  page.write_text(t)
@@ -212,6 +213,27 @@ def seo_pass():
  urls=[base,base+'posts/',base+'funded/',base+'authors/',base+'write/']+[base+'authors/'+f.name for f in sorted((OUT/'authors').glob('*.html')) if f.name!='index.html']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html' and 'http-equiv="refresh"' not in f.read_text()]+[base+'ml/posts/'+f.name for f in sorted((OUT/'ml/posts').glob('*.html'))]
  today=date.today().isoformat()
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
+ # RSS feed: latest 30 guides
+ from xml.sax.saxutils import escape as xesc
+ from email.utils import format_datetime
+ from datetime import datetime
+ items=[]
+ for f in sorted((OUT/'posts').glob('*.html')):
+  if f.name in ('index.html','_template.html','article-template.html'):continue
+  txt=f.read_text()
+  if 'http-equiv="refresh"' in txt:continue
+  mt=re.search(r'<title>(.*?)</title>',txt,re.S);md=re.search(r'"datePublished":"([^"]+)"',txt)
+  mdesc=re.search(r'<meta name="description" content="([^"]*)"',txt)
+  if not mt:continue
+  items.append((md[1] if md else today,' '.join(mt[1].split()),base+'posts/'+f.name,mdesc[1] if mdesc else ''))
+ items.sort(reverse=True)
+ rss=['<?xml version="1.0" encoding="UTF-8"?>','<rss version="2.0"><channel>','<title>AiCoN</title>','<link>'+base+'</link>','<description>Plain-language, source-checked guides to tech, AI tools, scholarships and opportunities.</description>']
+ for d,t2,u2,desc2 in items[:30]:
+  try:pd=format_datetime(datetime.fromisoformat(d))
+  except (ValueError,NameError):pd=format_datetime(datetime.now())
+  rss.append('<item><title>'+xesc(t2)+'</title><link>'+xesc(u2)+'</link><guid>'+xesc(u2)+'</guid><pubDate>'+pd+'</pubDate><description>'+xesc(desc2)+'</description></item>')
+ rss.append('</channel></rss>')
+ (OUT/'feed.xml').write_text('\n'.join(rss))
 
 def write_llms():
  base='https://aicon-hub.github.io/'
@@ -247,7 +269,7 @@ def preserve_search_console_verification():
 def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();audit=[]
- for name in ['index.html','privacy.html','terms.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js','.well-known','settings','version.json','dl']:
+ for name in ['index.html','robots.txt','sitemap.xml','assets','posts','funded','favicon.ico','favicon-192.png','favicon-512.png','apple-touch-icon.png','preview-2026','ml','authors','write','manifest.webmanifest','sw.js','.well-known','settings','version.json','dl']:
   src=ROOT/name
   if src.is_dir():shutil.copytree(src,OUT/name)
   elif src.is_file():shutil.copy2(src,OUT/name)
