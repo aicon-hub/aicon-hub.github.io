@@ -334,6 +334,9 @@ def main():
  try:
      from logothumbs import make; make(OUT)
  except Exception as e: print("logothumbs failed",e)
+ try:
+     from cardmedia import make as cardmedia_make; cardmedia_make(OUT)
+ except Exception as e: print("cardmedia failed",e)
  seo_pass()
  write_llms()
  preserve_search_console_verification()
