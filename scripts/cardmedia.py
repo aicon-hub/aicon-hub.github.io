@@ -8,14 +8,28 @@ from pathlib import Path
 from html import escape,unescape
 CARD=re.compile(r'<article class="guide-card"(?P<attrs>[^>]*)>(?P<body>.*?)</article>',re.S)
 MONO=re.compile(r'<a class="guide-media mono[^"]*"[^>]*href="(?P<href>[^"]+)"[^>]*>.*?</a>',re.S)
+POSTER=re.compile(r'<a class="guide-media"(?P<pre>[^>]*)href="(?P<href>[^"]+)"[^>]*><img src="[^"]*/assets/howto/[^"]*"[^>]*/?></a>')
+ALIAS={'pc-tools':'pc','government':'gov','linux':'pc','jobs':'gov','education':'learning'}
 def make(out,pages=('posts/index.html','index.html')):
- M=json.loads(Path(__file__).with_name('card-media.json').read_text());n=0
+ M=json.loads(Path(__file__).with_name('card-media.json').read_text());n=0;d=0
+ svg={}
+ src=out/'posts/index.html'
+ if src.exists():
+  for k,v in re.findall(r'<a class="guide-media mono (cat-\w+)"[^>]*>(<svg.*?</svg>)</a>',src.read_text(),re.S):svg.setdefault(k,v)
  for rel in pages:
   p=out/rel
   if not p.exists():continue
   text=p.read_text()
   def sub(m):
    nonlocal n
+   pm=POSTER.search(m['body'])
+   if pm:
+    cats=re.search(r'data-categories="([^"]*)"',m['attrs']);toks=(cats[1].split() if cats else [])
+    k=next((c for c in ('cat-'+ALIAS.get(t,t) for t in toks) if c in svg),'cat-other' if 'cat-other' in svg else None)
+    if not k:return m[0]
+    nonlocal d
+    d+=1
+    return m[0].replace(pm[0],'<a class="guide-media mono '+k+'" href="'+pm['href']+'">'+svg[k]+'</a>',1)
    mm=MONO.search(m['body'])
    if not mm:return m[0]
    s=re.search(r'/([^/]+)\.html$',mm['href'])
@@ -27,5 +41,5 @@ def make(out,pages=('posts/index.html','index.html')):
    return m[0].replace(mm[0],img,1)
   new=CARD.sub(sub,text)
   if new!=text:p.write_text(new)
- print('cardmedia',n,'cards')
+ print('cardmedia',n,'cards','demoted posters',d)
  return n
