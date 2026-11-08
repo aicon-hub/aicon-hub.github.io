@@ -46,7 +46,25 @@ def transform(text,path):
   for n in ['og:image','twitter:image']:text=setmeta(text,n,image)
  if 'assets/2026/' not in text and 'assets/theme.js' not in text:text=text.replace('</head>','<script defer src="../assets/theme.js?v=20261008share1"></script></head>',1)
  if 'assets/2026/' not in text and 'assets/theme.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="../assets/theme.css?v=20261008share1"/></head>',1)
+ if path.startswith('posts/') and 'aicon-engage' not in text and not path.endswith(('index.html','about-aicon.html')) and 'template' not in path.lower():
+  sn=engagement_snippet()
+  if '<footer' in text:text=text.replace('<footer',sn+'<footer',1)
+  else:text=text.replace('</body>',sn+'</body>',1)
  return text,dict(path=path,title=title,description=desc,url=url,image=image)
+def engagement_snippet():
+ return """
+<div class="aicon-engage" id="aicon-engage">
+<button type="button" class="aicon-like" id="aicon-like" aria-pressed="false" aria-label="Like this guide"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg> <span id="aicon-like-count"></span></button>
+<a class="aicon-discuss" href="https://t.me/AiCoN4tech" target="_blank" rel="noopener">Discuss on Telegram</a>
+</div>
+<style>.aicon-engage{display:flex;gap:10px;align-items:center;margin:28px 0;flex-wrap:wrap}.aicon-like{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;border:1px solid rgba(0,0,0,.15);background:#fff;color:#c2410c;font:inherit;cursor:pointer}.aicon-like[aria-pressed="true"]{background:#ea580c;border-color:#ea580c;color:#fff}.aicon-discuss{display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:#ea580c;color:#fff;text-decoration:none;font:inherit}.aicon-discuss:hover{background:#c2410c}@media (prefers-color-scheme:dark){.aicon-like{background:#181818;border-color:#333;color:#fb923c}.aicon-like[aria-pressed="true"]{background:#ea580c;color:#fff;border-color:#ea580c}}</style>
+<script>(function(){var API="https://aicon-likes.aicon4tech.workers.dev";var slug=location.pathname.split("/").pop().replace(/\.html$/,"");if(!/^[a-z0-9][a-z0-9-]{0,119}$/.test(slug))return;var btn=document.getElementById("aicon-like"),out=document.getElementById("aicon-like-count");if(!btn||!out)return;var key="aicon-liked:"+slug,liked=false;try{liked=localStorage.getItem(key)==="1"}catch(e){}
+function paint(n){out.textContent=n==null?"":String(n);btn.setAttribute("aria-pressed",liked?"true":"false")}
+paint(null);
+fetch(API+"/api/likes?slug="+encodeURIComponent(slug)).then(function(r){return r.json()}).then(function(j){paint(typeof j.count==="number"?j.count:0)}).catch(function(){});
+btn.addEventListener("click",function(){var cur=parseInt(out.textContent||"0",10)||0;liked=!liked;try{localStorage.setItem(key,liked?"1":"0")}catch(e){}paint(Math.max(0,cur+(liked?1:-1)));
+fetch(API+(liked?"/api/like":"/api/unlike"),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({slug:slug})}).then(function(r){return r.json()}).then(function(j){if(typeof j.count==="number")paint(j.count)}).catch(function(){liked=!liked;try{localStorage.setItem(key,liked?"1":"0")}catch(e){}paint(cur)})});})();</script>
+"""
 def replace_inner(text, marker, inner):
  start=text.index(marker);a=text.index('>',start)+1;depth=1
  for m in re.finditer(r'</?div\b[^>]*>',text[a:]):
