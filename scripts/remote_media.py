@@ -116,7 +116,6 @@ def apply(out):
  records.setdefault("entire-ai-git-forge-india-hosting", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://entire.com/news/entire-launches-an-independent-git-forge-for-agent-human-collaboration")
  records.setdefault("isro-iirs-geocomputation-geo-web-services-free-course-apply-by-8-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://isrolms.iirs.gov.in/edusatregistration/coursecalender")
  records.setdefault("ollama-run-small-ai-model-offline-on-your-computer-test-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://github.com/ollama/ollama")
- records.setdefault("ksheerasree-dairy-schemes-2026-apply-by-7-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ksheerasree.kerala.gov.in/")
  records.setdefault("gan-lab-visual-gan-training-browser-learning-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://poloclub.github.io/ganlab/")
  records.setdefault("ksmart-birth-death-marriage-certificate-download-online-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ksmart.lsgkerala.gov.in/")
  records.setdefault("kerala-sevana-welfare-pension-2000-how-to-apply-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://welfarepension.lsgkerala.gov.in/")
