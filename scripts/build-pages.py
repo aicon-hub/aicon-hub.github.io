@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from html import escape,unescape
 import shutil,re,json,sys,base64
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'_site'
-APP_VERSION='1.2.7'
+APP_VERSION='1.3.7'
 APK_URL='https://github.com/aicon-hub/aicon-hub.github.io/releases/download/v%s/AiCoN-%s.apk'%(APP_VERSION,APP_VERSION)
 class Page(HTMLParser):
  def __init__(self):super().__init__(convert_charrefs=True);self.meta={};self.links={};self.in_h=False;self.h=[];self.in_p=False;self.ps=[];self.cur=[];self.article=False;self.image=''
