@@ -1,7 +1,9 @@
 {
   "post_id": "redacted-1",
   "article_url": "https://aicon-hub.github.io/posts/redacted-text-redactor-ai-personal-data-before-sharing-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "42495559656",
-  "message_ids": []
+  "message_ids": [
+    590
+  ]
 }
