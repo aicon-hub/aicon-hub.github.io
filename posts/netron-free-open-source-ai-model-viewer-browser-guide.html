@@ -51,7 +51,7 @@
 <li><strong>Result:</strong> Netron drew a graph from the file: dense_input, then three FullyConnected layers (weights 16x1, 16x16 and 1x16, with biases 16, 16 and 1), two of them followed by Relu, then the output dense_2. Tensor shapes appeared on the connecting lines.</li>
 <li><strong>Details:</strong> clicking a layer opened a Node Properties panel with its type, attributes (for example fused activation RELU and weights format DEFAULT) and the names of its input, weights, bias and output tensors. This panel is not shown in the screenshot.</li>
 <li><strong>How we opened it:</strong> through a link in the pattern the README uses for its sample models, netron.app/?url= followed by the address of the raw model file on GitHub. We did not verify opening a file from local disk through the Open Model button, or drag and drop.</li>
-<li><strong>Not tested:</strong> the Open Model button, ONNX, PyTorch and other formats, large or quantised models, searching inside a big graph, exporting the graph as an image, the desktop apps and the pip package. We saved nothing.</li>
+<li><strong>We did not check:</strong> the Open Model button, ONNX, PyTorch and other formats, large or quantised models, searching inside a big graph, exporting the graph as an image, the desktop apps and the pip package. We saved nothing.</li>
 </ul>
 <figure><img alt="Netron showing the layer graph of a small TensorFlow Lite model" height="1080" src="../assets/howto/netron-free-open-source-ai-model-viewer-browser-guide-test.png" width="1920"/><figcaption>Our test, 27 October 2026: Netron showing the layer graph of a tiny TensorFlow Lite example model opened through a netron.app?url= link, with the page zoomed in for readability.</figcaption></figure>
 <h2>How to try it</h2>
