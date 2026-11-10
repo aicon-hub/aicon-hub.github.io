@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-10",
   "programs": [
     {
       "id": "jet-2027-alt",
@@ -14,7 +14,7 @@
       "note": "Only the ALT track was open for India this round (window closed 30 October 2026); the CIR track closed on 13 March 2026. The next ALT cycle is expected around September-October 2027.",
       "url": "https://jetprogramme.org/en/",
       "cta": "Official JET site (CLAIR)",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "commonwealth-masters-2027",
@@ -29,7 +29,7 @@
       "note": "For master's study starting September/October 2027. Nominators may set earlier internal cut-offs.",
       "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
       "cta": "Commonwealth Scholarship Commission",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "france-ela-2027",
@@ -39,12 +39,12 @@
       "status": "open",
       "deadline": "2027-01-26",
       "deadlineLabel": "Applications close 26 January 2027",
-      "funding": "Paid 7-month contract (1 October 2027 to 30 April 2028) in French public schools, about 12 classroom hours a week. The India page does not state the pay figure; the programme FAQ has current terms.",
+      "funding": "Paid 7-month contract (1 October 2027 to 30 April 2028) in French public schools, about 12 classroom hours a week. The India page now states about EUR 780-815 net a month plus French social security health cover, with the visa fee paid by IFI; return flights and first-weeks costs are on the assistant (figures from France Education international 2026-27 terms; 2027-28 amounts may differ).",
       "eligibility": "Indian students and young graduates. Around 200 Indians are selected each year through the Embassy of France and Institut Français en Inde.",
       "note": "The closest programme to Japan's JET for Indians: teach English in France, no teaching degree needed.",
       "url": "https://www.institutfrancaisindia.in/assistant-danglais/",
       "cta": "Institut Français India - apply",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "erasmus-mundus-2027",
@@ -59,7 +59,7 @@
       "note": "Apply directly to each master's through the official Erasmus Mundus catalogue; there is no single central form.",
       "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters-scholarships",
       "cta": "Erasmus+ official page and catalogue",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "swiss-eskas-2027",
@@ -74,7 +74,7 @@
       "note": "Check the India country page on the FCS/SERI site for the exact Indian deadline and the embassy contact.",
       "url": "https://www.sbfi.admin.ch/en/swiss-government-excellence-scholarships",
       "cta": "SERI / FCS official page",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "stipendium-hungaricum-2027",
@@ -89,7 +89,7 @@
       "note": "Hungarian embassies confirm the 2027/28 call is not out yet. Treat any earlier date from third-party sites as unconfirmed. The 2027/28 call is expected around mid-November 2026.",
       "url": "https://stipendiumhungaricum.hu/",
       "cta": "Stipendium Hungaricum official site",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "turkiye-burslari-2027",
@@ -104,7 +104,7 @@
       "note": "Applications are received in one period each year on the official portal only.",
       "url": "https://www.turkiyeburslari.gov.tr/",
       "cta": "Türkiye Scholarships official portal",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "csc-china-2027",
@@ -134,7 +134,7 @@
       "note": "Never send documents directly to MEXT in Japan; the embassy route is the only one for India.",
       "url": "https://www.studyinjapan.go.jp/en/smap-stopj-applications-research.html",
       "cta": "Study in Japan (official)",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "fulbright-nehru-2028",
@@ -149,7 +149,7 @@
       "note": "USIEF (United States-India Educational Foundation) is the only official channel in India.",
       "url": "https://www.usief.org.in/",
       "cta": "USIEF official site",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "spain-auxiliares-2027",
@@ -164,7 +164,7 @@
       "note": "Run by Spain's Ministry of Education, which charges no fee. Any payment request means it is not the official programme.",
       "url": "https://www.educacionfpydeportes.gob.es/india/en/convocatorias-programas/auxiliares-en-espana0.html",
       "cta": "Ministerio de Educación - India page",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "gks-2027",
@@ -179,7 +179,7 @@
       "note": "Embassy track applications are filed on the Study in Korea portal inside the announced window only.",
       "url": "https://www.studyinkorea.go.kr/en/main.do",
       "cta": "Study in Korea (official)",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "goi-ies-2027",
@@ -194,7 +194,7 @@
       "note": "Managed by Ireland's Higher Education Authority; one application per candidate per cycle.",
       "url": "https://hea.ie/policy/internationalisation/goi-ies/",
       "cta": "HEA official page",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "bdgs-2027",
@@ -209,7 +209,7 @@
       "note": "Watch the official MFA page for the 2027/28 announcement; expected around mid-December 2026.",
       "url": "https://www.mfa.gov.bn/Pages/online-bdgs.aspx",
       "cta": "Brunei MFA - BDGS",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "chevening-2028",
@@ -224,7 +224,7 @@
       "note": "Applications open every August and close around early October. Mark August 2027.",
       "url": "https://www.chevening.org/scholarships/",
       "cta": "Chevening official site",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "daad-epos-2027",
@@ -239,7 +239,7 @@
       "note": "Apply through the university that runs your chosen EPOS course, not directly to DAAD. Verified open course example on 22 October 2026: TropHEE (TU Darmstadt), EPOS applications until 30 November 2026.",
       "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50076777",
       "cta": "DAAD scholarship database (official)",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "banach-nawa-2027",
@@ -254,7 +254,7 @@
       "note": "Run by NAWA under the Polish Ministry of Foreign Affairs development cooperation programme.",
       "url": "https://nawa.gov.pl/en/students/foreign-students/the-banach-scholarship-programme/landing",
       "cta": "NAWA Banach Programme (official)",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "mtcp-2027",
@@ -269,7 +269,7 @@
       "note": "Apply only through the official MTCP portal; the application is free.",
       "url": "https://mtcp.kln.gov.my/",
       "cta": "MTCP official portal",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "knb-2027",
@@ -284,7 +284,7 @@
       "note": "The only application channel is the official KNB portal; using paid agents is prohibited.",
       "url": "https://knb.kemdiktisaintek.go.id/",
       "cta": "KNB official portal",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "romania-mfa-2027",
@@ -299,7 +299,7 @@
       "note": "Applications only via the official scholarships platform; no fee is charged.",
       "url": "https://studyinromania.gov.ro/",
       "cta": "Study in Romania (official)",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     },
     {
       "id": "maeci-2027",
@@ -314,7 +314,7 @@
       "note": "Applications only through the official Study in Italy portal.",
       "url": "https://studyinitaly.esteri.it/",
       "cta": "Study in Italy (official MAECI portal)",
-      "verified": "2026-10-31"
+      "verified": "2026-11-10"
     }
   ],
   "notEligible": [
