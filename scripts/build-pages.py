@@ -257,7 +257,7 @@ def write_llms():
  base='https://aicon-hub.github.io/'
  n=len([f for f in (OUT/'posts').glob('*.html') if f.name not in ('index.html','about-aicon.html') and 'template' not in f.name])
  lines=['# AiCoN','',
- '> AiCoN is a source-checked guide site for readers in Kerala and across India: verified tech and AI tool guides, scholarship and government service guides, and student events. It was founded by [Muhammed Salman CC](https://salman-cc.github.io/), runs without ads or affiliate links, and is published at '+base+'.','',
+ '> AiCoN is a source-checked guide site for readers in Kerala and across India: verified tech and AI tool guides, scholarship and government service guides, and student events. It was founded by Muhammed Salman CC, runs without ads or affiliate links, and is published at '+base+'.','',
  '## Key sections','',
  '- [Guides index]('+base+'posts/): every guide on the site, each a plain-language article',
  '- [Funded abroad]('+base+'funded/): funded study and opportunity listings abroad',
@@ -343,18 +343,6 @@ def main():
   if '<p class="meta">By AiCoN' not in text:continue
   text=text.replace('<p class="meta">By AiCoN','<p class="meta">By <a class="byline-link" href="../authors/muhammed-salman.html">Muhammed Salman</a>',1)
   if 'authors.css' not in text:text=text.replace('</head>','<link rel="stylesheet" href="../assets/2026/authors.css?v=20261105authors1"/></head>',1)
-  page.write_text(text)
- # Founder portfolio links: preserve author profiles and add the requested portfolio.
- portfolio='https://salman-cc.github.io/'
- for page in (OUT/'posts').glob('*.html'):
-  text=page.read_text()
-  text=re.sub(r'(<p class="meta">By (?:<a[^>]*>Muhammed Salman(?: CC)?</a>|Muhammed Salman(?: CC)?))(?!\s*\|\s*<a[^>]+href="https://salman-cc.github.io/")',lambda m:m[1]+' | <a class="byline-link" href="'+portfolio+'">Portfolio</a>',text)
-  page.write_text(text)
- for page in OUT.rglob('*.html'):
-  text=page.read_text()
-  if '<footer' not in text or 'class="founder-portfolio"' in text:continue
-  credit='<p class="founder-portfolio" style="text-align:center;margin:1rem auto 0;padding:0 1rem 1.5rem">Muhammed Salman CC - <a href="'+portfolio+'">Portfolio</a></p>'
-  text=text.replace('</footer>',credit+'</footer>',1)
   page.write_text(text)
  # Footer: authors + contribute links on every page.
  for page in OUT.rglob('*.html'):
