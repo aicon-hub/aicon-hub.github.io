@@ -99,7 +99,6 @@ def apply(out):
  records.setdefault("hyv-invite-only-ai-assistant-features-access-limits-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://hyv.me/")
  records.setdefault("dr-br-ambedkar-quiz-competition-2026-mygov-e-certificate-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://quiz.mygov.in/quiz/dr-b-r-ambedkars-life-and-contributions-quiz-competition-2026/")
  records.setdefault("national-renewable-energy-fellowship-2026-27-how-it-works-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://hrd.mnre.gov.in/")
- records.setdefault("vidyadhan-mathura-women-stem-scholarship-2026-27-apply-by-31-october-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://vidyadhan.org/apply")
  records.setdefault("ffe-scholarship-2026-27-engineering-mbbs-law-first-year-applications-open-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ffe.org/scholarships/")
  records.setdefault("entebhoomi-kerala-land-tax-records-transfer-ebtr-one-login-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://entebhoomi.kerala.gov.in/")
  records.setdefault("kerala-eep-coaching-aid-2026-27-obc-exam-coaching-egrantz-apply-by-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://egrantz.kerala.gov.in/")

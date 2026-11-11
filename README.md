@@ -26,7 +26,7 @@ Useful information should lead to a clearer decision, not another confusing tab.
 
 AiCoN turns official product pages and notices into plain-language guides. We cover AI tools, everyday apps, PC software, digital safety, scholarships, government services, student offers, events and hackathons. The focus is practical: what it does, who it is for, what it costs, how to use it and what to watch out for.
 
-Founded by **Muhammed Salman CC** as a WhatsApp channel in **December 2024**, AiCoN now brings its detailed guides together on a searchable website, with short updates on WhatsApp and Telegram.
+Founded by **[Muhammed Salman CC](https://salman-cc.github.io/)** as a WhatsApp channel in **December 2024**, AiCoN now brings its detailed guides together on a searchable website, with short updates on WhatsApp and Telegram.
 
 ## Explore by need
 
@@ -98,3 +98,5 @@ Found a mistake or a changed condition? Send the article link and the detail tha
 **AiCoN · Read clearly. Choose carefully.**
 
 </div>
+
+Founder portfolio: [https://salman-cc.github.io/](https://salman-cc.github.io/)
