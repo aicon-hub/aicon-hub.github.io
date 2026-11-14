@@ -166,7 +166,9 @@ def refresh_home():
    dlm=re.search(r'data-deadlines=(["\x27])(.*?)\1',li,re.S)
   med=re.search(r'<a\b[^>]*class="guide-media[^"]*"[^>]*>.*?</a>',li,re.S) if fmt=='card' else None
   media=''
-  if med:media=med[0].replace('href="../posts/','href="posts/').replace('src="../assets/','src="assets/')
+  if med:
+   media=med[0].replace('href="../posts/','href="posts/').replace('src="../assets/','src="assets/')
+   media=re.sub(r'href="([^"/:]+\.html)"',r'href="posts/\1"',media)
   href='posts/'+fname;row=dict(title=title,href=href,tag=tag,date=date,description=desc,media=media);rows.append(row)
   if re.search('hackathon|contest|challenge|events|fest',tag,re.I):events.append(row)
   guide=OUT/'posts'/fname
@@ -182,6 +184,9 @@ def refresh_home():
  if 'assets/2026/' in home:
   cards=''.join('<article class="guide-card">'+x.get('media','')+'<div class="guide-body"><div class="guide-meta"><span class="tag">'+esc(x['tag'])+'</span><small>'+esc(x['date'])+'</small></div><h3><a href="'+esc(x['href'])+'">'+esc(x['title'])+'</a></h3><p>'+esc(x['description'])+'</p><a class="read-link" href="'+esc(x['href'])+'">Read guide</a></div></article>' for x in rows[:6])
   home=replace_inner(home,'<div class="guide-grid"',cards)
+  if 'id="home-feature"' in home and rows:
+   feature=re.search(r'<article class="guide-card">.*?</article>',cards,re.S)
+   if feature:home=home.replace('<div id="home-feature"></div>','<div id="home-feature">'+feature[0]+'</div>',1)
   home=re.sub(r'View all \d+ guides','View all '+str(len(rows))+' guides',home)
   deadlines=''
   for x in dates:
@@ -433,6 +438,21 @@ def main():
   if not done:
    blog='<a href="https://icon4tech.blogspot.com">Blog</a>'
    if blog in text:text=text.replace(blog,blog+' &middot; <a href="https://github.com/aicon-hub/aicon-hub.github.io/releases">App</a>',1)
+  page.write_text(text)
+ # Restore supplied how-to images referenced by the shared asset paths.
+ for encoded in (OUT/'assets/2026/howto').glob('*.png.b64'):
+  encoded.with_suffix('').write_bytes(base64.b64decode(encoded.read_text().strip(),validate=True));encoded.unlink()
+ # Unified editorial layout. Keep article content and URLs untouched.
+ for page in OUT.rglob('*.html'):
+  rel=str(page.relative_to(OUT))
+  if rel.startswith(('ml/','preview-2026/','assets/')):continue
+  text=page.read_text()
+  if rel.startswith(('authors/','write/')):
+   text=text.replace('href="about-aicon.html"','href="/posts/about-aicon.html"')
+   text=re.sub(r'(<a\b[^>]*href=)"index.html"(>Posts</a>)',r'\1"/posts/index.html"\2',text)
+  if '<head' not in text or 'http-equiv="refresh"' in text:continue
+  text=re.sub(r'(assets/(?:2026/)?theme\.js)(?:\?[^"\x27<>\s]*)?',r'\1?v=20261114r1',text)
+  text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/editorial.css?v=20261114r1"/><script defer src="/assets/2026/editorial.js?v=20261114r1"></script></head>',1)
   page.write_text(text)
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()

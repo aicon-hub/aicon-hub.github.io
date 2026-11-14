@@ -8,7 +8,7 @@
  function enrich(){
  var header=document.querySelector('header'),nav=header&&header.querySelector('nav'),brand=header&&header.querySelector('.logo,.brand');
  if(brand){brand.innerHTML='Ai<span>C</span>oN';brand.setAttribute('aria-label','AiCoN home');}
- if(nav){nav.setAttribute('aria-label','Main');nav.querySelectorAll('a').forEach(function(a){if(a.textContent.trim()==='Posts'){var p=location.pathname;a.href=p.indexOf('/posts/')!==-1?'index.html':(p.indexOf('/funded/')!==-1?'../posts/index.html':'posts/index.html');}});}
+ if(nav){nav.setAttribute('aria-label','Main');nav.querySelectorAll('a').forEach(function(a){if(a.textContent.trim()==='Posts'){var p=location.pathname;a.href='/posts/index.html';}});}
  var article=document.querySelector('article.post');if(!article||article.querySelector('.on-this-page'))return;
  var hs=Array.from(article.querySelectorAll('h2')),words=article.textContent.split(/\s+/).length;if(hs.length<4||words<400)return;
  var box=document.createElement('nav');box.className='on-this-page';box.setAttribute('aria-label','On this page');var title=document.createElement('h2');title.textContent='On this page';box.appendChild(title);var list=document.createElement('ul');

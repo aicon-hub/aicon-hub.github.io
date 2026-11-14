@@ -12,8 +12,11 @@ def prepare(out):
  mapping={};brand={};rights={}
  # Generated covers and locally copied publisher art are not deployed.
  import shutil
+ # Keep the two authored Open Food Facts credit/source files linked by its guide.
+ linked_credits={n:(out/'assets/og'/n).read_bytes() for n in ['open-food-facts-AGPL-ai243.txt','open-food-facts-licensed-logo-ai243.svg'] if (out/'assets/og'/n).exists()}
  shutil.rmtree(out/'assets/og',ignore_errors=True)
  (out/'assets/og').mkdir(parents=True,exist_ok=True)
+ for n,raw in linked_credits.items():(out/'assets/og'/n).write_bytes(raw)
  # Official artwork hosted by its publisher remains remote, including list previews.
  registry=json.loads(Path(__file__).with_name('official-remote-media.json').read_text())
  remote_previews={}
