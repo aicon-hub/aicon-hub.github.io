@@ -1,6 +1,22 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-15",
   "programs": [
+    {
+      "id": "grips-japan-2027",
+      "name": "GRIPS Tokyo Master's and PhD scholarships 2027-28 (MEXT, ADB-JSP, JICA, JJ/WBGSP)",
+      "country": "Japan",
+      "type": "study",
+      "status": "open",
+      "deadline": "2026-11-20",
+      "deadlineLabel": "Online registration closes 20 November 2026, 5:00 PM JST (1:30 PM IST) for most programmes; Public Finance closes 12 February 2027. Supporting documents must reach Tokyo one week later.",
+      "funding": "Programme-specific scholarships: MEXT pays 147,000 yen monthly during master's study and 148,000 yen during doctoral study; ADB-JSP pays 147,000 yen. Both cover fees and return flights. JJ/WBGSP (Public Finance Tax) lists 306,910 yen monthly, but its 2027 availability is not announced. Self-financed fees: 30,000 yen application, 282,000 yen admission, 642,960 yen yearly tuition.",
+      "eligibility": "Bachelor's degree for Master's and five-year PhD; a master's for three-year PhD. English-taught, document-based selection. MEXT: under 35; ADB-JSP: under 36 as of 1 April 2027, plus two years' professional experience after a bachelor's and no prior master's. Each sponsor has its own country/employment rules.",
+      "note": "For 2027, MEXT is limited to MP1, MP2, G-cube and Policy Analysis under the 29 September notice, not STI. JICA candidates must be instructed by JICA first. Select funding in the admission application; scholarship allocation is competitive, not guaranteed. Public Finance has a later deadline.",
+      "url": "https://www.grips.ac.jp/en/admissions/apply/",
+      "cta": "GRIPS - apply (official)",
+      "verified": "2026-11-15",
+      "guide": "posts/grips-tokyo-masters-phd-scholarships-2027-apply-by-20-november-guide.html"
+    },
     {
       "id": "jet-2027-alt",
       "name": "JET Programme 2027 (Assistant Language Teacher)",
