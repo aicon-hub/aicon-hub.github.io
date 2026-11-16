@@ -235,7 +235,13 @@ def seo_pass():
  # sitemap: every built page
  urls=[base,base+'posts/',base+'funded/',base+'authors/',base+'write/']+[base+'authors/'+f.name for f in sorted((OUT/'authors').glob('*.html')) if f.name!='index.html']+[base+'posts/'+f.name for f in sorted((OUT/'posts').glob('*.html')) if f.name!='index.html' and 'http-equiv="refresh"' not in f.read_text()]+[base+'ml/posts/'+f.name for f in sorted((OUT/'ml/posts').glob('*.html'))]
  today=date.today().isoformat()
- (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+today+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
+ def sitemap_date(u):
+  page=OUT/u.removeprefix(base)
+  if page.is_file():
+   modified=re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})',page.read_text())
+   if modified:return max(today,modified.group(1))
+  return today
+ (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('<url><loc>'+u+'</loc><lastmod>'+sitemap_date(u)+'</lastmod></url>' for u in dict.fromkeys(urls))+'\n</urlset>\n')
  # RSS feed: latest 30 guides
  from xml.sax.saxutils import escape as xesc
  from email.utils import format_datetime
