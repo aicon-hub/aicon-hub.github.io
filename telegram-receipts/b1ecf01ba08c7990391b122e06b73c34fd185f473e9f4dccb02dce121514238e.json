@@ -1,7 +1,9 @@
 {
   "post_id": "aicon-linkbio-guest-preview-20261118",
   "article_url": "https://aicon-hub.github.io/posts/linkbio-ai-builder-guest-preview-test.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "44238527971",
-  "message_ids": []
+  "message_ids": [
+    630
+  ]
 }
