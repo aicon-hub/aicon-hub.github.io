@@ -1,9 +1,11 @@
 {
   "post_id": "aicon-inspire-she-633-v2-20261118",
   "article_url": "https://aicon-hub.github.io/posts/inspire-she-2025-december-2026-access-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "44273688499",
-  "message_ids": [],
+  "message_ids": [
+    633
+  ],
   "mode": "edit",
   "target_message_id": 633,
   "payload_sha256": "8f1ebdf267a6b77c59a92d1d6b7be0c2cff338a27e9f0f62295b327e40dd0f44"
