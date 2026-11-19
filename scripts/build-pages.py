@@ -390,6 +390,8 @@ def main():
  try:
      from cardmedia import make as cardmedia_make; cardmedia_make(OUT)
  except Exception as e: print("cardmedia failed",e)
+ from official_galleries import apply as official_galleries_apply; official_galleries_apply(OUT)
+ from subject_logos import apply as subject_logos_apply; subject_logos_apply(OUT)
  seo_pass()
  write_llms()
  preserve_search_console_verification()
