@@ -7,6 +7,7 @@ def apply(out):
  registry=Path(__file__).with_name('official-remote-media.json')
  records=json.loads(registry.read_text()) if registry.exists() else {}
  # Source-checked asset repairs. Keep the registry's remaining records untouched.
+ records.setdefault('kite-mukulam-school-login-access-guide', {}).update(**{'logo_url': 'https://mukulam.kite.kerala.gov.in/assets/logo-emblem.webp', 'logo_width': 815, 'logo_height': 511, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://mukulam.kite.kerala.gov.in/'})
  records.setdefault('belles-lettres-2026-glc-short-fiction-register-20-november-guide', {}).update(logo_url='https://cfcoseqhqwbul7td.public.blob.vercel-storage.com/wp-content/uploads/logos/GLC-logo.png',logo_width=180,logo_height=180,poster_url=None,under_chip_only=True,source_page='https://www.glcmag.com/belles-lettres')
  records.setdefault('iitm-pravartak-bodhbridge-free-school-online-training-guide', {}).update(logo_url='https://digitalskills.iitmpravartak.org.in/assets/images/pravartak-logo.png',logo_width=192,logo_height=86,poster_url=None,under_chip_only=True,source_page='https://bodhbridge.iitmpravartak.org.in/')
  records.setdefault('openworker-desktop-ai-privacy-costs-guide', {}).update(**{'logo_url': 'https://openworker.com/assets/homepage/brand/openworker.svg', 'logo_width': 128, 'logo_height': 128, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://openworker.com/'})
@@ -106,7 +107,7 @@ def apply(out):
  records.setdefault("hyv-invite-only-ai-assistant-features-access-limits-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://hyv.me/")
  records.setdefault("dr-br-ambedkar-quiz-competition-2026-mygov-e-certificate-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://quiz.mygov.in/quiz/dr-b-r-ambedkars-life-and-contributions-quiz-competition-2026/")
  records.setdefault("national-renewable-energy-fellowship-2026-27-how-it-works-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://hrd.mnre.gov.in/")
- records.setdefault("ffe-scholarship-2026-27-engineering-mbbs-law-first-year-applications-open-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://ffe.org/scholarships/")
+ records.setdefault('ffe-scholarship-2026-27-engineering-mbbs-law-first-year-applications-open-guide', {}).update(**{'logo_url': 'https://ffe.org/wp-content/uploads/2021/08/cropped-Untitled-design-1-192x192.png', 'logo_width': 192, 'logo_height': 192, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://ffe.org/'})
  records.setdefault("entebhoomi-kerala-land-tax-records-transfer-ebtr-one-login-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://entebhoomi.kerala.gov.in/")
  records.setdefault("kerala-eep-coaching-aid-2026-27-obc-exam-coaching-egrantz-apply-by-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://egrantz.kerala.gov.in/")
  records.setdefault("google-teachable-machine-train-image-classifier-in-browser-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True, source_page="https://teachablemachine.withgoogle.com/")
