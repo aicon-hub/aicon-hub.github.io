@@ -7,6 +7,9 @@ def apply(out):
  registry=Path(__file__).with_name('official-remote-media.json')
  records=json.loads(registry.read_text()) if registry.exists() else {}
  # Source-checked asset repairs. Keep the registry's remaining records untouched.
+ records.setdefault('gparted-free-disk-partition-editor-resize-partitions-bootable-usb-guide', {}).update(**{'logo_url': 'https://gparted.org/images/gparted-64x42.png', 'logo_width': 64, 'logo_height': 42, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://gparted.org/'})
+ records.setdefault('kolibri-free-offline-learning-platform-lessons-videos-android-guide', {}).update(**{'logo_url': 'https://learningequality.org/static/assets/kolibri-ecosystem-logos/kolibri.svg', 'logo_width': 240, 'logo_height': 125, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://learningequality.org/kolibri/'})
+ records.setdefault('machine-learning-for-kids-train-ai-models-browser-free-scratch-guide', {}).update(**{'logo_url': 'https://machinelearningforkids.co.uk/static/images/mlforkids-logo.svg', 'logo_width': 180, 'logo_height': 180, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://machinelearningforkids.co.uk/'})
  records.get("jio-google-ai-pro-18-months-free-offer-eligibility-deadline-guide", {}).update(logo_url="https://myjiostatic.cdn.jio.com/jiocom/static/images/jio10-mobile.svg")
  records.setdefault("losslesscut-free-lossless-video-trimmer-cut-without-quality-loss-guide", {}).update(under_chip_only=False, poster_url="https://static.mifi.no/media/MbXWWcu1zsMAinf4/1000.jpg", width=1200, height=630, source_page="https://losslesscut.app/")
  records.setdefault("musicca-free-music-theory-exercises-instruments-guide", {}).update(under_chip_only=False, poster_url="https://www.musicca.com/images/facebook-image.png", width=1200, height=630, source_page="https://www.musicca.com/")
@@ -16,7 +19,6 @@ def apply(out):
  records.get("drawio-diagrams-net-free-diagram-maker-no-signup-privacy-guide", {}).update(logo_url="https://www.drawio.com/img/logo.svg", logo_width=48, logo_height=48)
  records.get("syncthing-keep-folders-in-sync-between-your-devices-open-source-guide", {}).update(logo_url="https://syncthing.net/img/logo-horizontal.svg", logo_width=300, logo_height=82)
  records.get("antennapod-free-ad-free-podcast-player-android-guide", {}).update(logo_url="https://antennapod.org/assets/branding/logos/logo-icon.png", logo_width=512, logo_height=512)
- records.get("gparted-free-disk-partition-editor-resize-partitions-bootable-usb-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("darebee-free-ad-free-home-workouts-no-signup-2821-guide", {}).update(logo_url="https://darebee.com/images/content/press/darebee-logo.png?v=1784360397", logo_width=2579, logo_height=1029)
  records.get("fortinet-pause-free-scam-awareness-canada-india-guide", {}).update(logo_url="https://www.fortinet.com/content/dam/fortinet/images/favicon/apple-touch-icon.png", logo_width=180, logo_height=180)
  records.setdefault("musicbrainz-picard-free-music-tagger-organize-mp3-flac-guide", {}).update(logo_url="https://picard.musicbrainz.org/static/img/picard-icon-large.svg?v=dd59b67b", logo_width=154, logo_height=154, poster_url=None, under_chip_only=True, source_page="https://picard.musicbrainz.org/")
@@ -190,7 +192,6 @@ def apply(out):
  records.get("kerala-oec-post-matric-scholarship-outside-state", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-minority-itc-fee-reimbursement-2026-27-rs-10000-20000-apply-by-20-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kerala-minority-ca-cma-cs-scholarship-2026-27-rs-15000-apply-by-25-november-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
- records.get("kolibri-free-offline-learning-platform-lessons-videos-android-guide", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("knowt-free-ai-flashcards-india", {}).update(logo_url="", poster_url=None, under_chip_only=True)
  records.get("kong-portal-mcp-oauth-read-write-access-guide", {}).update(poster_url=None, under_chip_only=True)
  records.get("kontext-agent-security-free-policy-limits-guide", {}).update(poster_url=None, under_chip_only=True)
