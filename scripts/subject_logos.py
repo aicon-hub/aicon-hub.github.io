@@ -24,7 +24,7 @@ def apply(out):
    slug=Path(h[1]).stem;src=logos.get(slug)
    # Government emblems need individual clearance; do not promote them automatically.
    cats=re.search(r'data-categories="([^"]*)"',body)
-   if cats and set(cats[1].split()) & {'government','jobs','scholarships'} and slug!='trai-network-anubhav-user-speed-map-guide':return body
+   if cats and set(cats[1].split()) & {'government','jobs','scholarships'} and slug not in {'trai-network-anubhav-user-speed-map-guide','ffe-scholarship-2026-27-engineering-mbbs-law-first-year-applications-open-guide','kite-mukulam-school-login-access-guide'}:return body
    if not src:return body
    alt=escape(unescape(re.sub('<[^>]+>','',h[2])),quote=True)
    image='<a class="guide-media subject-logo" href="'+escape(h[1],quote=True)+'"><img src="'+escape(src,quote=True)+'" alt="'+alt+' logo" loading="lazy" referrerpolicy="no-referrer"/></a>'
