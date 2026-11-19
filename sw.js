@@ -1,4 +1,4 @@
-const CACHE = 'aicon-editorial-20261114';
+const CACHE = 'aicon-edition-20261119';
 self.addEventListener('install', (e) => { self.skipWaiting(); });
 self.addEventListener('activate', (e) => {
   e.waitUntil(

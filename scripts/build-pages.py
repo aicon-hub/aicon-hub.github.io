@@ -169,6 +169,8 @@ def refresh_home():
   if med:
    media=med[0].replace('href="../posts/','href="posts/').replace('src="../assets/','src="assets/')
    media=re.sub(r'href="([^"/:]+\.html)"',r'href="posts/\1"',media)
+  # These two assets are AiCoN editorial explainers, not official cover art.
+  if any(name in media for name in ('eat-right-2026-explainer.png','kile-talent-2026-explainer.png')):media=''
   href='posts/'+fname;row=dict(title=title,href=href,tag=tag,date=date,description=desc,media=media);rows.append(row)
   if re.search('hackathon|contest|challenge|events|fest',tag,re.I):events.append(row)
   guide=OUT/'posts'/fname
@@ -448,6 +450,12 @@ def main():
  # Restore supplied how-to images referenced by the shared asset paths.
  for encoded in (OUT/'assets/2026/howto').glob('*.png.b64'):
   encoded.with_suffix('').write_bytes(base64.b64decode(encoded.read_text().strip(),validate=True));encoded.unlink()
+ # Do not use locally drawn explainer illustrations as library covers.
+ for rel in ['index.html','posts/index.html']:
+  page=OUT/rel
+  text=page.read_text()
+  text=re.sub(r'<a\b[^>]*class="guide-media[^"]*"[^>]*>\s*<img\b[^>]*src="[^"]*(?:eat-right-2026-explainer|kile-talent-2026-explainer)\.png"[^>]*/?>\s*</a>','',text)
+  page.write_text(text)
  # Unified editorial layout. Keep article content and URLs untouched.
  for page in OUT.rglob('*.html'):
   rel=str(page.relative_to(OUT))
@@ -458,7 +466,8 @@ def main():
    text=re.sub(r'(<a\b[^>]*href=)"index.html"(>Posts</a>)',r'\1"/posts/index.html"\2',text)
   if '<head' not in text or 'http-equiv="refresh"' in text:continue
   text=re.sub(r'(assets/(?:2026/)?theme\.js)(?:\?[^"\x27<>\s]*)?',r'\1?v=20261114r1',text)
-  text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/editorial.css?v=20261114r1"/><script defer src="/assets/2026/editorial.js?v=20261114r1"></script></head>',1)
+  text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/editorial.css?v=20261114r1"/><script defer src="/assets/2026/editorial.js?v=20261119a"></script></head>',1)
+  text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/edition-20261119.css?v=20261119b"/></head>',1)
   page.write_text(text)
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
