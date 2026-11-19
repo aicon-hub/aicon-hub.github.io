@@ -468,7 +468,7 @@ def main():
    text=re.sub(r'(<a\b[^>]*href=)"index.html"(>Posts</a>)',r'\1"/posts/index.html"\2',text)
   if '<head' not in text or 'http-equiv="refresh"' in text:continue
   text=re.sub(r'(assets/(?:2026/)?theme\.js)(?:\?[^"\x27<>\s]*)?',r'\1?v=20261114r1',text)
-  text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/editorial.css?v=20261114r1"/><script defer src="/assets/2026/editorial.js?v=20261119a"></script></head>',1)
+  text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/editorial.css?v=20261119footer"/><script defer src="/assets/2026/editorial.js?v=20261119a"></script></head>',1)
   text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/edition-20261119.css?v=20261119b"/></head>',1)
   page.write_text(text)
  print('Built',len(audit),'article cards')

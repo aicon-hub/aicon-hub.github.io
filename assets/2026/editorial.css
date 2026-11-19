@@ -17,3 +17,6 @@ body.app-preview .back-top{bottom:100px}
 @media print{.site-header,header.top,.toc-disclosure,.back-top,.reading-progress,.aicon-share-tools,.aicon-engage,#app-tabbar{display:none!important}body,main,article{background:white!important;color:black!important}.post a{color:black!important}}
 header.site-header,header.top{background:var(--bg)!important}
 @media(min-width:721px){#nav-toggle{display:none!important}}
+
+/* Keep contact addresses distinct in every shell. */
+.site-footer .footer-mail{display:flex;flex-wrap:wrap;column-gap:18px;row-gap:8px;align-items:center}.site-footer .footer-mail a{display:inline-block;max-width:100%;overflow-wrap:anywhere}@media(max-width:640px){.site-footer .footer-mail{flex-direction:column;align-items:flex-start}}

@@ -7,6 +7,7 @@ def apply(out):
  registry=Path(__file__).with_name('official-remote-media.json')
  records=json.loads(registry.read_text()) if registry.exists() else {}
  # Source-checked asset repairs. Keep the registry's remaining records untouched.
+ records.setdefault('belles-lettres-2026-glc-short-fiction-register-20-november-guide', {}).update(logo_url='https://cfcoseqhqwbul7td.public.blob.vercel-storage.com/wp-content/uploads/logos/GLC-logo.png',logo_width=180,logo_height=180,poster_url=None,under_chip_only=True,source_page='https://www.glcmag.com/belles-lettres')
  records.setdefault('iitm-pravartak-bodhbridge-free-school-online-training-guide', {}).update(logo_url='https://digitalskills.iitmpravartak.org.in/assets/images/pravartak-logo.png',logo_width=192,logo_height=86,poster_url=None,under_chip_only=True,source_page='https://bodhbridge.iitmpravartak.org.in/')
  records.setdefault('openworker-desktop-ai-privacy-costs-guide', {}).update(**{'logo_url': 'https://openworker.com/assets/homepage/brand/openworker.svg', 'logo_width': 128, 'logo_height': 128, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://openworker.com/'})
  records.setdefault('nptel-free-iit-courses-online-certification-exam-fee-guide', {}).update(**{'logo_url': 'https://nptel.ac.in/_app/immutable/assets/logo-m.CNHeS_sM.jpg', 'logo_width': 148, 'logo_height': 34, 'poster_url': None, 'under_chip_only': True, 'source_page': 'https://nptel.ac.in/'})
