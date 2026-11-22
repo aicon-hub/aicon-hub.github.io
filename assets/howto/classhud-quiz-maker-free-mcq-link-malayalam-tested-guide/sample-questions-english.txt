@@ -1,0 +1,9 @@
+What is 2 + 3?
+4
+*5
+Why: Adding two and three gives five.
+
+What is 12 divided by 3?
+3
+*4
+Why: Three groups of four make twelve.
