@@ -194,10 +194,6 @@ section.block{padding:64px 0}
 .check-card h3{font-size:16.5px;font-weight:600;margin:10px 0 6px}
 .check-card p{font-size:14px;color:var(--mute);line-height:1.55}
 
-/* OS Explorer wrap */
-.os-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
-.os-wrap .os-explorer{background:transparent!important;border:0!important;padding:0!important}
-
 /* CTA band */
 .cta-band{position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(120deg,rgba(255,107,44,.16),rgba(255,107,44,.05) 55%),var(--surface);border:1px solid rgba(255,107,44,.28);padding:44px 40px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
 .cta-band h2{font-size:clamp(24px,3vw,34px)}
@@ -353,7 +349,7 @@ article.post section.official-media h2{border:0;padding:0;margin:0 0 14px;font-s
   .ticker-track{animation:none;flex-wrap:wrap;width:auto}
 }
 
-/* Legacy variable shim for embedded first-party apps (OS Explorer, avatar frame host). */
+/* Legacy variable shim for embedded first-party apps (avatar frame host). */
 :root{--card:var(--surface);--yellow:var(--orange-soft);--green:var(--orange);--olive:var(--faint);--black:var(--ink)}
 
 @media(max-width:400px){

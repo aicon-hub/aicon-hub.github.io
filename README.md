@@ -33,7 +33,7 @@ Founded by **Muhammed Salman CC** as a WhatsApp channel in **December 2024**, Ai
 | You want to... | Start here |
 | :--- | :--- |
 | Find a useful tool or understand an AI product | Search the [guide archive](https://aicon-hub.github.io/posts/index.html). |
-| Choose apps, PC software or Linux tools | Explore the categories and OS Explorer on the [website](https://aicon-hub.github.io/). |
+| Choose apps, PC software or Linux tools | Explore the categories on the [website](https://aicon-hub.github.io/). |
 | Understand scholarships, government services or student offers | Read the eligibility, costs, dates and official links in each guide. |
 | Find events, hackathons or time-sensitive opportunities | Check the website's dates panel, then confirm the linked official notice. |
 | Check a risk before installing or signing up | Read the digital safety guides and the limits in each article. |
@@ -57,7 +57,7 @@ Founded by **Muhammed Salman CC** as a WhatsApp channel in **December 2024**, Ai
 <details open>
 <summary><strong>Find the right guide</strong></summary>
 
-Search the archive, filter by category, or start from a topic on the homepage. The OS Explorer groups operating-system options without turning the homepage into a wall of technical detail.
+Search the archive, filter by category, or start from a topic on the homepage.
 
 </details>
 
