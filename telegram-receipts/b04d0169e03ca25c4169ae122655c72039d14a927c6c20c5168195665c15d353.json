@@ -1,9 +1,11 @@
 {
   "post_id": "industrial-deadline-20261122-31dec",
   "article_url": "https://aicon-hub.github.io/posts/industrial-rd-viksit-bharat-2047-quiz-mygov-e-certificate-ends-20-november-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "45010008846",
-  "message_ids": [],
+  "message_ids": [
+    469
+  ],
   "mode": "edit",
   "target_message_id": 469,
   "payload_sha256": "79d4b9de4bc9747dd0f437fcbaffc7d3df6713e29ea884fe7a880dade74256ab"
