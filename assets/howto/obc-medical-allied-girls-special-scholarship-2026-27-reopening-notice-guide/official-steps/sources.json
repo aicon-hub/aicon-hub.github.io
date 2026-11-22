@@ -1,0 +1,20 @@
+[
+  {
+    "name": "egrantz-home",
+    "source": "https://egrantz.kerala.gov.in/",
+    "checked": "2026-11-22",
+    "scope": "Public page only; no details entered or submitted."
+  },
+  {
+    "name": "egrantz-notice",
+    "source": "https://egrantz.kerala.gov.in/",
+    "checked": "2026-11-22",
+    "scope": "Public page only; no details entered or submitted."
+  },
+  {
+    "name": "egrantz-login",
+    "source": "https://egrantz.kerala.gov.in/Registration/index",
+    "checked": "2026-11-22",
+    "scope": "Public page only; no details entered or submitted."
+  }
+]
