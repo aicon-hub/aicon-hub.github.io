@@ -1,5 +1,14 @@
 {
-  "version": "1.4.1",
-  "apk": "https://github.com/aicon-hub/aicon-hub.github.io/releases/download/v1.4.1/AiCoN-1.4.1.apk",
-  "url": "https://github.com/aicon-hub/aicon-hub.github.io/releases/download/v1.4.1/AiCoN-1.4.1.apk"
+  "version": "1.5.1",
+  "apk": "https://github.com/aicon-hub/aicon-hub.github.io/releases/download/v1.5.1/AiCoN-1.5.1.apk",
+  "url": "https://github.com/aicon-hub/aicon-hub.github.io/releases/download/v1.5.1/AiCoN-1.5.1.apk",
+  "whatsNew": [
+    "Quick save, unread filter, sorting and continue reading",
+    "Customize guide cards, subject images, insights and startup tab",
+    "Reader find, spacing, screen awake and image enlargement",
+    "Private notes and search within saved links/history",
+    "Long-press guide actions and share saved links",
+    "Add deadline dates through your Calendar composer, no calendar permission",
+    "More reliable images, captions, source links and rapid tab switching"
+  ]
 }
