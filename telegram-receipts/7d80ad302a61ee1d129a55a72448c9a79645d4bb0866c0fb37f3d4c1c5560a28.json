@@ -1,7 +1,9 @@
 {
   "post_id": "smartconsumer-product-lookup-20261123",
   "article_url": "https://aicon-hub.github.io/posts/gs1-smart-consumer-barcode-product-details-tested-guide.html",
-  "status": "claimed",
+  "status": "partial",
   "run_id": "45102534904",
-  "message_ids": []
+  "message_ids": [
+    648
+  ]
 }
