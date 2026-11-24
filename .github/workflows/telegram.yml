@@ -79,6 +79,7 @@ jobs:
           def formatted(text):
               # Only AiCoN's established single-star bold and single-underscore italic.
               text=html.escape(text)
+              text=re.sub(r'\[([^\]\n]+)\]\((https://aicon-hub\.github\.io/posts/[A-Za-z0-9_-]+\.html)\)',r'<a href="\2">\1</a>',text)
               text=re.sub(r'(?<!\w)\*([^*\n]+)\*(?!\w)',r'<b>\1</b>',text)
               text=re.sub(r'(?<!\w)_([^_\n]+)_(?!\w)',r'<i>\1</i>',text)
               return text
