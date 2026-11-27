@@ -473,5 +473,7 @@ def main():
   text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/editorial.css?v=20261119footer"/><script defer src="/assets/2026/editorial.js?v=20261119a"></script></head>',1)
   text=text.replace('</head>','<link rel="stylesheet" href="/assets/2026/edition-20261119.css?v=20261119b"/></head>',1)
   page.write_text(text)
+ from funded_discovery import apply as apply_funded_discovery
+ apply_funded_discovery(OUT)
  print('Built',len(audit),'article cards')
 if __name__=='__main__':main()
