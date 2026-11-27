@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-27",
   "programs": [
     {
       "id": "grips-japan-2027",
@@ -99,13 +99,13 @@
       "type": "study",
       "status": "expected",
       "deadline": null,
-      "deadlineLabel": "2027/28 call not yet published; expected around November 2026 to mid-January 2027 (last cycle closed 15 January)",
+      "deadlineLabel": "2027/28 call not yet published; official site says it will open soon (last cycle closed 15 January)",
       "funding": "All tuition fees covered and accommodation costs supported, plus a monthly stipend.",
       "eligibility": "Indian applicants are eligible (India is a partner country). Applications go through the official online system with nomination by the Indian sending partner.",
-      "note": "Hungarian embassies confirm the 2027/28 call is not out yet. Treat any earlier date from third-party sites as unconfirmed. The 2027/28 call is expected around mid-November 2026.",
+      "note": "Official site banner now reads: Application for the 2027/28 academic year will open soon (seen 27 November 2026). The call is not open yet; treat any earlier date from third-party sites as unconfirmed.",
       "url": "https://stipendiumhungaricum.hu/",
       "cta": "Stipendium Hungaricum official site",
-      "verified": "2026-11-10"
+      "verified": "2026-11-27"
     },
     {
       "id": "turkiye-burslari-2027",
