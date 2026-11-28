@@ -31,7 +31,7 @@ def setmeta(text,name,value):
 def transform(text,path):
  p=Page();p.feed(text)
  if not p.article or not p.h:return text,None
- title=' '.join(''.join(p.h).split());generic='AiCoN: your safe space for tech and AI.'
+ title=p.meta.get('aicon:seo-title') or ' '.join(''.join(p.h).split());generic='AiCoN: your safe space for tech and AI.'
  desc=p.meta.get('og:description') or p.meta.get('description') or next((x for x in p.ps if x),title)
  if desc.startswith(generic):desc=next((x for x in p.ps if x),title)
  desc=short(desc);url=p.links.get('canonical') or 'https://aicon-hub.github.io/'+path
